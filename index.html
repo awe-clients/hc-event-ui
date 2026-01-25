@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>27ª Corrida Soldados do Fogo | Natal RN</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #e5e5e5; }
+        h1, h2, h3, .font-bold { font-family: 'Montserrat', sans-serif; }
+        
+        .fire-gradient { background: linear-gradient(135deg, #E31B23 0%, #FF6B00 100%); }
+        .skew-element { transform: skewX(-10deg); }
+        .unskew { transform: skewX(10deg); display: inline-block; }
+        
+        .bento-card { @apply bg-white border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300; }
+        
+        /* Modal Animation */
+        .modal-blur { backdrop-filter: blur(10px); background: rgba(0,0,0,0.8); }
+        
+        @keyframes pulse-fire {
+            0% { box-shadow: 0 0 0 0 rgba(227, 27, 35, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(227, 27, 35, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(227, 27, 35, 0); }
+        }
+        .btn-fire { animation: pulse-fire 2s infinite; }
+    </style>
+</head>
+<body class="antialiased text-zinc-900">
+
+    <div id="modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 md:p-10 modal-blur">
+        <div class="relative bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-lg shadow-2xl">
+            <button onclick="closeModal()" class="absolute top-5 right-5 text-3xl font-bold hover:text-red-600">✕</button>
+            <div id="modal-content" class="p-8 md:p-12"></div>
+        </div>
+    </div>
+
+    <nav class="fixed w-full z-50 bg-black/90 text-white py-4 border-b border-white/10">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <img src="http://www.corridasoldadosdofogo.com.br/wp-content/uploads/2024/05/cropped-logo-soldados-do-fogo-2024.png" class="h-12 brightness-0 invert">
+            <div class="hidden lg:flex gap-8 text-[10px] font-black uppercase tracking-[0.2em]">
+                <a href="#" class="text-orange-500">Home</a>
+                <a href="#prova" class="hover:text-orange-500">A Prova</a>
+                <a href="#noticias" class="hover:text-orange-500">Notícias</a>
+                <a href="#patrocinio" class="hover:text-orange-500">Patrocinadores</a>
+            </div>
+            <button class="bg-red-600 px-6 py-2 skew-element font-black text-xs uppercase italic">
+                <span class="unskew">Inscreva-se</span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="relative min-h-screen bg-black flex items-center pt-20">
+        <div class="absolute inset-0 opacity-40">
+            <img src="http://www.corridasoldadosdofogo.com.br/wp-content/uploads/2024/05/slide-01.jpg" class="w-full h-full object-cover grayscale">
+        </div>
+        
+        <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-8 relative z-10">
+            <div class="lg:col-span-8">
+                <h4 class="text-orange-500 font-black tracking-[0.3em] uppercase mb-4">Corpo de Bombeiros apresenta:</h4>
+                <h1 class="text-white text-6xl md:text-[8rem] font-black italic leading-[0.85] tracking-tighter uppercase mb-10">
+                    Soldados<br>do Fogo
+                </h1>
+                <button class="btn-fire fire-gradient text-white px-10 py-5 text-xl font-black uppercase italic skew-element">
+                    <span class="unskew">Inscreva-se Já <i class="fas fa-fire ml-2"></i></span>
+                </button>
+            </div>
+
+            <div class="lg:col-span-4 space-y-4">
+                <div class="bg-black/80 border border-orange-500/30 p-6 flex justify-between items-center">
+                    <div class="text-white">
+                        <p class="text-[10px] font-bold uppercase opacity-60">Edição</p>
+                        <p class="text-5xl font-black italic">27ª</p>
+                    </div>
+                    <div class="text-right text-white">
+                        <p class="text-[10px] font-bold uppercase opacity-60">Próxima Largada</p>
+                        <p class="text-2xl font-black">06 JULHO</p>
+                    </div>
+                </div>
+                <div class="bg-orange-500 p-6">
+                    <p class="text-[10px] font-black uppercase text-black/60 mb-2">Countdown</p>
+                    <div class="flex justify-between text-black font-black text-2xl">
+                        <span>00:00:00:00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section class="py-24 bg-white" id="prova">
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-0 border border-zinc-200 overflow-hidden shadow-2xl">
+            
+            <div class="lg:col-span-7 p-10 md:p-20 flex flex-col justify-center bg-white">
+                <div class="mb-10">
+                    <span class="text-red-600 font-black text-xs uppercase tracking-[0.4em] mb-4 block">Tradição & Bravura</span>
+                    <h2 class="text-5xl md:text-7xl font-black italic uppercase tracking-tighter leading-none mb-8">
+                        A Prova Mais <br><span class="text-zinc-400">Icônica de Natal</span>
+                    </h2>
+                    <div class="h-2 w-24 fire-gradient mb-10"></div>
+                </div>
+
+                <div class="space-y-6 text-zinc-600 leading-relaxed text-lg font-medium">
+                    <p>
+                        A <span class="text-zinc-900 font-bold">Corrida Soldados do Fogo</span> não é apenas um evento esportivo; é o momento em que a sociedade civil e o Corpo de Bombeiros Militar do RN se unem em um desafio de superação extrema. 
+                    </p>
+                    <p>
+                        Em sua 27ª edição, o evento celebra o vigor físico e a resiliência necessários para enfrentar as chamas. O percurso, que abraça a beleza da nossa costa, exige dos atletas a mesma determinação que guia nossos soldados em cada missão de salvamento.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-8 mt-16 pt-10 border-t border-zinc-100">
+                    <div>
+                        <p class="text-[10px] font-black uppercase text-zinc-400 tracking-widest mb-2">Espírito de Corpo</p>
+                        <p class="font-black italic text-xl italic uppercase">+2500 Atletas</p>
+                    </div>
+                    <div>
+                        <p class="text-[10px] font-black uppercase text-zinc-400 tracking-widest mb-2">Desafio Técnico</p>
+                        <p class="font-black italic text-xl italic uppercase">Elite & Amador</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 relative min-h-[400px] bg-zinc-900 overflow-hidden">
+                <img src="http://www.corridasoldadosdofogo.com.br/wp-content/uploads/2024/05/about-img.jpg" 
+                     class="absolute inset-0 w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-105 hover:scale-100" 
+                     alt="Bombeiros em Ação">
+                <div class="absolute inset-0 bg-red-600/10 mix-blend-multiply"></div>
+                
+                <div class="absolute bottom-10 right-10 bg-white p-6 hidden md:block skew-element">
+                    <p class="unskew font-black text-xs uppercase tracking-tighter">Est. 1995 <br> <span class="text-red-600">Natal / RN</span></p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="pb-24 bg-white">
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="p-8 bg-zinc-50 border border-zinc-100 text-center">
+                <i class="fas fa-fire text-red-600 mb-4 block text-2xl"></i>
+                <p class="text-[10px] font-black uppercase tracking-widest text-zinc-400">Clima</p>
+                <p class="text-3xl font-black italic">28°C</p>
+            </div>
+            <div class="p-8 bg-zinc-50 border border-zinc-100 text-center">
+                <i class="fas fa-mountain text-red-600 mb-4 block text-2xl"></i>
+                <p class="text-[10px] font-black uppercase tracking-widest text-zinc-400">Altimetria</p>
+                <p class="text-3xl font-black italic">78M</p>
+            </div>
+            <div class="p-8 bg-zinc-50 border border-zinc-100 text-center">
+                <i class="fas fa-clock text-red-600 mb-4 block text-2xl"></i>
+                <p class="text-[10px] font-black uppercase tracking-widest text-zinc-400">Recorde</p>
+                <p class="text-3xl font-black italic">1:20:45</p>
+            </div>
+            <div class="p-8 fire-gradient text-white text-center flex flex-col justify-center skew-element">
+                <div class="unskew">
+                    <p class="text-[10px] font-black uppercase tracking-widest opacity-80">Vagas Restantes</p>
+                    <p class="text-3xl font-black italic">Últimas!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-20 bg-zinc-100" id="infos">
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <div class="group relative overflow-hidden bg-white border border-zinc-200 shadow-sm hover:shadow-2xl transition-all duration-500">
+                <div class="p-10 relative z-10">
+                    <span class="text-red-600 font-black text-[10px] tracking-[0.3em] uppercase">Estratégia</span>
+                    <h3 class="text-4xl font-black italic uppercase mt-2 mb-6">Percursos</h3>
+                    <p class="text-zinc-500 text-sm leading-relaxed mb-8">Confira os trajetos de 5km e 10km, pontos de hidratação e altimetria detalhada para planejar sua prova.</p>
+                    <button onclick="openModal('percursos')" class="flex items-center gap-4 text-xs font-black uppercase tracking-widest group-hover:text-red-600 transition">
+                        Explorar Mapas <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                <i class="fas fa-map-marked-alt absolute -right-4 -bottom-4 text-9xl text-zinc-50 opacity-10 group-hover:opacity-20 transition-all group-hover:-rotate-12"></i>
+            </div>
+
+            <div class="relative overflow-hidden fire-gradient p-[1px] shadow-xl group cursor-pointer" onclick="openModal('kit')">
+                <div class="bg-white h-full p-10 flex flex-col justify-between items-center text-center relative overflow-hidden">
+                    <div>
+                        <span class="text-orange-500 font-black text-[10px] tracking-[0.3em] uppercase">Equipamento</span>
+                        <h3 class="text-4xl font-black italic uppercase mt-2 mb-4">O Kit 2024</h3>
+                    </div>
+                    
+                    <div class="relative py-8">
+                        <img src="https://via.placeholder.com/400x400/FFFFFF/000000?text=CAMISA+OFICIAL" class="h-56 object-contain transform group-hover:scale-110 transition duration-700">
+                        <div class="absolute top-0 -right-4 bg-black text-white p-2 skew-element">
+                            <p class="unskew text-[8px] font-black uppercase">Edição Limitada</p>
+                        </div>
+                    </div>
+
+                    <button class="bg-black text-white w-full py-4 skew-element font-black uppercase italic text-xs">
+                        <span class="unskew">Ver Itens Inclusos</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="group relative overflow-hidden bg-zinc-900 shadow-sm hover:shadow-2xl transition-all duration-500">
+                <div class="p-10 relative z-10">
+                    <span class="text-orange-500 font-black text-[10px] tracking-[0.3em] uppercase">Transparência</span>
+                    <h3 class="text-4xl font-black italic uppercase mt-2 mb-6 text-white">Regulamento</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed mb-8">Leia atentamente as regras oficiais, categorias, premiações e normas de segurança da prova.</p>
+                    
+                    <a href="#" class="inline-block bg-white text-black px-8 py-3 skew-element font-black uppercase italic text-xs hover:bg-red-600 hover:text-white transition">
+                        <span class="unskew">Baixar PDF <i class="fas fa-download ml-2"></i></span>
+                    </a>
+                </div>
+                <i class="fas fa-file-invoice absolute -right-6 -bottom-6 text-[12rem] text-white opacity-5"></i>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+  <section class="py-24 bg-white" id="noticias">
+    <div class="container mx-auto px-6">
+        
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+            <div class="max-w-2xl">
+                <span class="text-red-600 font-black text-xs uppercase tracking-[0.4em] mb-4 block">Fique por dentro</span>
+                <h2 class="text-5xl md:text-7xl font-black italic uppercase tracking-tighter leading-none">
+                    Últimas <br><span class="text-zinc-400">Notícias</span>
+                </h2>
+            </div>
+            <a href="/todas-as-noticias" class="group flex items-center gap-4 text-xs font-black uppercase tracking-widest border-b-2 border-zinc-200 pb-2 hover:border-red-600 transition-all">
+                Ler todas as postagens <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            
+            <article class="group cursor-pointer">
+                <div class="relative overflow-hidden mb-6 aspect-[4/5] bg-zinc-100">
+                    <img src="http://www.corridasoldadosdofogo.com.br/wp-content/uploads/2024/05/noticia-01.jpg" 
+                         class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700 scale-100 group-hover:scale-110">
+                    
+                    <div class="absolute top-0 left-0 bg-red-600 text-white p-6 skew-element -translate-x-2">
+                        <div class="unskew text-center">
+                            <p class="text-2xl font-black leading-none">15</p>
+                            <p class="text-[10px] font-bold uppercase">MAI</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-black uppercase italic leading-tight group-hover:text-red-600 transition mb-4">
+                        Inscrições para o segundo lote abrem nesta segunda
+                    </h3>
+                    <p class="text-zinc-500 text-sm leading-relaxed line-clamp-3">
+                        Prepare o seu fôlego e o seu cartão. As vagas para a prova de 21km estão se esgotando rapidamente após o anúncio oficial.
+                    </p>
+                </div>
+            </article>
+
+            <article class="group cursor-pointer">
+                <div class="relative overflow-hidden mb-6 aspect-[4/5] bg-zinc-100">
+                    <img src="http://www.corridasoldadosdofogo.com.br/wp-content/uploads/2024/05/noticia-02.jpg" 
+                         class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700 scale-100 group-hover:scale-110">
+                    
+                    <div class="absolute top-0 left-0 bg-zinc-900 text-white p-6 skew-element -translate-x-2">
+                        <div class="unskew text-center">
+                            <p class="text-2xl font-black leading-none">10</p>
+                            <p class="text-[10px] font-bold uppercase">MAI</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-black uppercase italic leading-tight group-hover:text-red-600 transition mb-4">
+                        Dicas de treino para vencer a subida da Via Costeira
+                    </h3>
+                    <p class="text-zinc-500 text-sm leading-relaxed line-clamp-3">
+                        Nossos instrutores prepararam um guia completo de como gerenciar seu ritmo no trecho mais desafiador do percurso.
+                    </p>
+                </div>
+            </article>
+
+            <article class="group cursor-pointer">
+                <div class="relative overflow-hidden mb-6 aspect-[4/5] bg-zinc-100">
+                    <img src="http://www.corridasoldadosdofogo.com.br/wp-content/uploads/2024/05/noticia-03.jpg" 
+                         class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700 scale-100 group-hover:scale-110">
+                    
+                    <div class="absolute top-0 left-0 bg-red-600 text-white p-6 skew-element -translate-x-2">
+                        <div class="unskew text-center">
+                            <p class="text-2xl font-black leading-none">05</p>
+                            <p class="text-[10px] font-bold uppercase">MAI</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-black uppercase italic leading-tight group-hover:text-red-600 transition mb-4">
+                        Entrega de kits: Datas, horários e locais definidos
+                    </h3>
+                    <p class="text-zinc-500 text-sm leading-relaxed line-clamp-3">
+                        Este ano a entrega será centralizada na Arena das Dunas. Confira os documentos necessários para a retirada.
+                    </p>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+  
+  
+  
+<section class="py-24 bg-white border-t border-zinc-100" id="parceiros">
+    <div class="container mx-auto px-6">
+        
+        <div class="mb-20 text-center">
+            <span class="text-zinc-400 font-black text-[10px] tracking-[0.4em] uppercase mb-10 block">Realização</span>
+            <div class="flex justify-center items-center">
+                <div class="group relative inline-block p-8 border border-zinc-100 hover:border-red-600 transition-all duration-500">
+                    <img src="http://www.corridasoldadosdofogo.com.br/wp-content/uploads/2024/05/cbmrn-logo-dark.png" 
+                         class="h-24 md:h-32 object-contain grayscale group-hover:grayscale-0 transition duration-500" 
+                         alt="Corpo de Bombeiros RN">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-red-600 text-white text-[8px] font-black px-4 py-1 skew-element">
+                        <span class="unskew uppercase">Instituição Organizadora</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-20">
+            <div class="flex items-center gap-6 mb-12">
+                <div class="h-px bg-zinc-200 flex-grow"></div>
+                <span class="text-zinc-400 font-black text-[10px] tracking-[0.4em] uppercase">Patrocínio Ouro</span>
+                <div class="h-px bg-zinc-200 flex-grow"></div>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 items-center">
+                <div class="flex justify-center p-6 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition duration-500 border border-transparent hover:border-zinc-100">
+                    <img src="https://via.placeholder.com/200x80?text=LOGO+MASTER" class="h-12 md:h-16 object-contain">
+                </div>
+                <div class="flex justify-center p-6 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition duration-500 border border-transparent hover:border-zinc-100">
+                    <img src="https://via.placeholder.com/200x80?text=LOGO+MASTER" class="h-12 md:h-16 object-contain">
+                </div>
+                <div class="flex justify-center p-6 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition duration-500 border border-transparent hover:border-zinc-100">
+                    <img src="https://via.placeholder.com/200x80?text=LOGO+MASTER" class="h-12 md:h-16 object-contain">
+                </div>
+                <div class="flex justify-center p-6 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition duration-500 border border-transparent hover:border-zinc-100">
+                    <img src="https://via.placeholder.com/200x80?text=LOGO+MASTER" class="h-12 md:h-16 object-contain">
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="flex items-center gap-6 mb-10">
+                <div class="h-px bg-zinc-200 flex-grow"></div>
+                <span class="text-zinc-400 font-black text-[10px] tracking-[0.4em] uppercase">Apoio Institucional</span>
+                <div class="h-px bg-zinc-200 flex-grow"></div>
+            </div>
+            
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-20">
+                <img src="https://via.placeholder.com/150x60?text=PARCEIRO" class="h-8 md:h-10 grayscale opacity-40 hover:opacity-100 transition duration-300">
+                <img src="https://via.placeholder.com/150x60?text=PARCEIRO" class="h-8 md:h-10 grayscale opacity-40 hover:opacity-100 transition duration-300">
+                <img src="https://via.placeholder.com/150x60?text=PARCEIRO" class="h-8 md:h-10 grayscale opacity-40 hover:opacity-100 transition duration-300">
+                <img src="https://via.placeholder.com/150x60?text=PARCEIRO" class="h-8 md:h-10 grayscale opacity-40 hover:opacity-100 transition duration-300">
+                <img src="https://via.placeholder.com/150x60?text=PARCEIRO" class="h-8 md:h-10 grayscale opacity-40 hover:opacity-100 transition duration-300">
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<footer class="bg-black text-white pt-24 pb-12">
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-20">
+            
+            <div class="lg:col-span-6">
+                <img src="http://www.corridasoldadosdofogo.com.br/wp-content/uploads/2024/05/logo-soldados-do-fogo-2024-footer.png" 
+                     class="h-20 mb-8 brightness-0 invert opacity-80">
+                <p class="text-zinc-500 text-lg leading-relaxed max-w-md font-medium">
+                    Mais que uma corrida, uma homenagem aos heróis que arriscam a vida por nós. Junte-se à elite do pedestrianismo potiguar.
+                </p>
+            </div>
+
+            <div class="lg:col-span-3">
+                <h4 class="text-red-600 font-black uppercase text-xs tracking-widest mb-8">Navegação</h4>
+                <ul class="space-y-4 font-black uppercase text-[10px] tracking-widest">
+                    <li><a href="#" class="hover:text-red-600 transition">Início</a></li>
+                    <li><a href="#prova" class="hover:text-red-600 transition">A Prova</a></li>
+                    <li><a href="#infos" class="hover:text-red-600 transition">Informações</a></li>
+                    <li><a href="#noticias" class="hover:text-red-600 transition">Notícias</a></li>
+                </ul>
+            </div>
+
+            <div class="lg:col-span-3">
+                <h4 class="text-red-600 font-black uppercase text-xs tracking-widest mb-8">Newsletter</h4>
+                <div class="relative">
+                    <input type="email" placeholder="Seu melhor e-mail" 
+                           class="w-full bg-zinc-900 border-none px-6 py-4 text-xs font-bold focus:ring-1 focus:ring-red-600 text-white outline-none">
+                    <button class="absolute right-2 top-2 bg-red-600 text-white p-2 px-4 skew-element hover:bg-white hover:text-red-600 transition">
+                        <i class="fas fa-paper-plane unskew"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="pt-10 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-8">
+            <p class="text-[10px] font-black text-zinc-600 uppercase tracking-widest">
+                © 2024 Soldados do Fogo. Desenvolvido pelo CBMRN.
+            </p>
+            <div class="flex gap-8 text-xl">
+                <a href="#" class="text-zinc-700 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-zinc-700 hover:text-white transition"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-zinc-700 hover:text-white transition"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script>
+        function openModal(type) {
+            const modal = document.getElementById('modal');
+            const content = document.getElementById('modal-content');
+            
+            modal.classList.remove('hidden');
+            
+            if(type === 'kit') {
+                content.innerHTML = `
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                        <img src="https://via.placeholder.com/600x600/000000/FFFFFF?text=CAMISA+OFICIAL" class="w-full shadow-2xl">
+                        <div>
+                            <h2 class="text-4xl font-black italic uppercase mb-6">Kit Oficial 2024</h2>
+                            <p class="text-gray-500 mb-8">O kit mais desejado do RN. Composto por materiais de alta tecnologia para sua melhor performance.</p>
+                            <ul class="space-y-4 font-bold uppercase text-sm">
+                                <li><i class="fas fa-check text-red-600 mr-2"></i> Camiseta Dry-Fit Exclusiva</li>
+                                <li><i class="fas fa-check text-red-600 mr-2"></i> Medalha de Finisher em Metal</li>
+                                <li><i class="fas fa-check text-red-600 mr-2"></i> Sacochila Esportiva</li>
+                                <li><i class="fas fa-check text-red-600 mr-2"></i> Chip de Cronometragem</li>
+                            </ul>
+                        </div>
+                    </div>
+                `;
+            } else {
+                content.innerHTML = `
+                    <h2 class="text-4xl font-black italic uppercase mb-6 text-center">Percurso ${type}</h2>
+                    <img src="https://via.placeholder.com/1200x800/000000/FFFFFF?text=MAPA+DETALHADO+${type}" class="w-full border-4 border-gray-100">
+                    <div class="mt-8 grid grid-cols-3 gap-4 text-center">
+                        <div class="p-4 bg-gray-50"><p class="text-[10px] uppercase font-bold">Hidratação</p><p class="font-black">A cada 2km</p></div>
+                        <div class="p-4 bg-gray-50"><p class="text-[10px] uppercase font-bold">Ambulância</p><p class="font-black">Pontos Fixos</p></div>
+                        <div class="p-4 bg-gray-50"><p class="text-[10px] uppercase font-bold">Piso</p><p class="font-black">Asfalto</p></div>
+                    </div>
+                `;
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('modal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
