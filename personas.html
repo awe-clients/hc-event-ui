@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>Brand Strategy & Stakeholders | Hora de Correr</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .bg-dark-hc {
+            background-color: #0f172a;
+        }
+
+        .gradient-hc {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-dark-hc text-white antialiased">
+
+    <header
+        class="p-8 border-b border-slate-800 flex justify-between items-center bg-slate-900 shadow-2xl sticky top-0 z-50">
+        <div>
+            <h1 class="text-2xl font-black italic uppercase tracking-tighter text-white">HORA DE CORRER</h1>
+            <p class="text-orange-500 text-xs font-bold uppercase tracking-[0.3em]">Brand Strategy & Stakeholder
+                Governance</p>
+        </div>
+        <div class="text-right hidden md:block text-slate-500 text-xs font-mono uppercase tracking-widest">
+            v1.2.2024 | Internal Use Only
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 py-16">
+
+        <section class="mb-24">
+            <div class="flex items-center justify-between mb-16 border-b border-slate-800 pb-8">
+                <div>
+                    <h2 class="text-4xl font-black uppercase italic tracking-tighter">Humanizing the Data</h2>
+                    <p class="text-orange-500 font-bold uppercase text-[10px] tracking-[0.4em] mt-2">Personas e Jornadas
+                        de Usuário</p>
+                </div>
+                <div class="hidden md:block">
+                    <span class="text-slate-500 text-xs font-mono">USER-CENTERED DESIGN // HORA DE CORRER</span>
+                </div>
+            </div>
+
+            <div class="space-y-16">
+
+                <div class="bg-slate-900 rounded-[3rem] p-12 border border-slate-800 relative overflow-hidden group">
+                    <div class="absolute right-0 top-0 p-10 opacity-5 group-hover:opacity-10 transition">
+                        <svg width="200" height="200" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" />
+                        </svg>
+                    </div>
+
+                    <div class="flex flex-col lg:flex-row gap-12 relative z-10">
+                        <div class="lg:w-1/3">
+                            <div
+                                class="w-24 h-24 bg-orange-600 rounded-3xl mb-6 flex items-center justify-center text-4xl font-black italic shadow-2xl">
+                                R.</div>
+                            <h3 class="text-3xl font-black italic uppercase mb-2">Ricardo, 45</h3>
+                            <p class="text-orange-500 font-bold uppercase text-[10px] tracking-widest mb-6 italic">O
+                                Organizador Exigente</p>
+                            <p class="text-slate-400 text-sm leading-relaxed border-l-2 border-slate-700 pl-4">
+                                "Minha prova é única, meu sistema não pode ser genérico."
+                            </p>
+                        </div>
+
+                        <div class="lg:w-2/3 grid md:grid-cols-2 gap-10">
+                            <div class="space-y-4 text-sm leading-relaxed">
+                                <h4
+                                    class="text-white font-bold uppercase tracking-widest text-xs border-b border-slate-700 pb-2">
+                                    Perfil & Ambição</h4>
+                                <p class="text-slate-400">Dono de produtora, busca <strong>autonomia total</strong> para
+                                    replicar a sofisticação de suas marcas. Valoriza a modularidade funcional e a
+                                    clareza técnica.</p>
+                            </div>
+                            <div class="space-y-4 text-sm leading-relaxed text-slate-400">
+                                <h4
+                                    class="text-white font-bold uppercase tracking-widest text-xs border-b border-slate-700 pb-2">
+                                    Dores Críticas</h4>
+                                <ul class="list-disc pl-4 space-y-2">
+                                    <li>Dependência de suporte para mudar layouts simples.</li>
+                                    <li>Falta de visibilidade em tempo real do fluxo financeiro.</li>
+                                    <li>Sistemas que "engessam" a experiência da marca do evento.</li>
+                                </ul>
+                            </div>
+                            <div class="md:col-span-2 p-6 bg-slate-950 rounded-2xl border-l-4 border-orange-600">
+                                <h4
+                                    class="text-orange-500 font-black uppercase text-[10px] mb-2 tracking-widest italic">
+                                    Impacto no Desenvolvimento</h4>
+                                <p class="text-xs text-slate-300">Necessita de um editor de landing pages white-label e
+                                    dashboards de BI exportáveis.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 rounded-[3rem] p-12 border border-slate-800 relative overflow-hidden group">
+                    <div class="absolute left-0 bottom-0 p-10 opacity-5 group-hover:opacity-10 transition">
+                        <svg width="200" height="200" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M13.49 14.95c1.34-1.6 2.11-3.7 2.11-6 0-4.97-4.03-9-9-9-2.3 0-4.4.87-6 2.3L2.3 2.3c-.39-.39-1.02-.39-1.41 0s-.39 1.02 0 1.41l1.7 1.7C1.4 6.8 1 8.85 1 11c0 4.97 4.03 9 9 9 2.15 0 4.2-.8 5.8-2.1l1.7 1.7c.39.39 1.02.39 1.41 0s.39-1.02 0-1.41l-1.42-1.42c.16-.14.32-.29.48-.44l3.03 3.03c.39.39 1.02.39 1.41 0s.39-1.02 0-1.41l-3.02-3.02c.15-.16.3-.32.44-.48l1.42 1.42c.39.39 1.02.39 1.41 0s.39-1.02 0-1.41l-1.7-1.7c1.3-1.6 2.1-3.65 2.1-5.8 0-2.15-.8-4.2-2.1-5.8l1.7-1.7c.39-.39.39-1.02 0-1.41s-1.02-.39-1.41 0l-1.7 1.7z" />
+                        </svg>
+                    </div>
+
+                    <div class="flex flex-col lg:flex-row-reverse gap-12 relative z-10">
+                        <div class="lg:w-1/3">
+                            <div
+                                class="w-24 h-24 bg-slate-800 rounded-3xl mb-6 flex items-center justify-center text-4xl font-black italic shadow-2xl border border-orange-600/50 text-orange-500">
+                                B.</div>
+                            <h3 class="text-3xl font-black italic uppercase mb-2">Beatriz, 32</h3>
+                            <p class="text-orange-500 font-bold uppercase text-[10px] tracking-widest mb-6 italic">A
+                                Corredora de Elite</p>
+                            <p
+                                class="text-slate-400 text-sm leading-relaxed border-r-2 border-slate-700 pr-4 text-right italic">
+                                "Eu treino duro, a inscrição tem que ser a parte fácil."
+                            </p>
+                        </div>
+
+                        <div class="lg:w-2/3 grid md:grid-cols-2 gap-10">
+                            <div class="space-y-4 text-sm leading-relaxed text-slate-400">
+                                <h4
+                                    class="text-white font-bold uppercase tracking-widest text-xs border-b border-slate-700 pb-2">
+                                    Perfil & Ambição</h4>
+                                <p>Advogada competitiva. Focada em <strong>performance absoluta</strong> e em uma
+                                    experiência digital humana e sem fricções.</p>
+                            </div>
+                            <div class="space-y-4 text-sm leading-relaxed text-slate-400">
+                                <h4
+                                    class="text-white font-bold uppercase tracking-widest text-xs border-b border-slate-700 pb-2">
+                                    Dores Críticas</h4>
+                                <ul class="list-disc pl-4 space-y-2">
+                                    <li>Processos de checkout lentos no mobile (3G/4G).</li>
+                                    <li>Insegurança sobre a confirmação do pagamento.</li>
+                                    <li>Dificuldade em acessar histórico de certificados e fotos.</li>
+                                </ul>
+                            </div>
+                            <div
+                                class="md:col-span-2 p-6 bg-slate-950 rounded-2xl border-r-4 border-orange-600 text-right">
+                                <h4
+                                    class="text-orange-500 font-black uppercase text-[10px] mb-2 tracking-widest italic">
+                                    Impacto no Desenvolvimento</h4>
+                                <p class="text-xs text-slate-300">Exige otimização de performance front-end, suporte a
+                                    Pix nativo e PWA para consulta offline.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 rounded-[3rem] p-12 border border-slate-800 relative overflow-hidden group">
+                    <div class="flex flex-col lg:flex-row gap-12 relative z-10">
+                        <div class="lg:w-1/3">
+                            <div
+                                class="w-24 h-24 bg-slate-100 rounded-3xl mb-6 flex items-center justify-center text-4xl font-black italic shadow-2xl text-slate-900">
+                                M.</div>
+                            <h3 class="text-3xl font-black italic uppercase mb-2">Marcos, 38</h3>
+                            <p class="text-orange-500 font-bold uppercase text-[10px] tracking-widest mb-6 italic">O
+                                Treinador Estratégico</p>
+                            <p class="text-slate-400 text-sm leading-relaxed border-l-2 border-slate-700 pl-4 italic">
+                                "Meu foco é o treino, não a burocracia da planilha."
+                            </p>
+                        </div>
+
+                        <div class="lg:w-2/3 grid md:grid-cols-2 gap-10">
+                            <div class="space-y-4 text-sm leading-relaxed text-slate-400">
+                                <h4
+                                    class="text-white font-bold uppercase tracking-widest text-xs border-b border-slate-700 pb-2">
+                                    Perfil & Ambição</h4>
+                                <p>Dono de assessoria esportiva. Prioriza a <strong>integridade operacional</strong> e o
+                                    cuidado centralizado com sua equipe.</p>
+                            </div>
+                            <div class="space-y-4 text-sm leading-relaxed text-slate-400">
+                                <h4
+                                    class="text-white font-bold uppercase tracking-widest text-xs border-b border-slate-700 pb-2">
+                                    Dores Críticas</h4>
+                                <ul class="list-disc pl-4 space-y-2 text-slate-400">
+                                    <li>Gestão manual de centenas de CPFs de alunos.</li>
+                                    <li>Dificuldade em aplicar descontos de grupo em tempo real.</li>
+                                    <li>Acompanhamento confuso de quem já pagou no grupo.</li>
+                                </ul>
+                            </div>
+                            <div class="md:col-span-2 p-6 bg-slate-950 rounded-2xl border-l-4 border-slate-500">
+                                <h4 class="text-slate-400 font-black uppercase text-[10px] mb-2 tracking-widest italic">
+                                    Impacto no Desenvolvimento</h4>
+                                <p class="text-xs text-slate-300">Necessita de sistema de upload massivo (CSV/Excel) e
+                                    portal de gestão de convites com tokens únicos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 rounded-[3rem] p-12 border border-slate-800 relative overflow-hidden group">
+                    <div class="flex flex-col lg:flex-row-reverse gap-12 relative z-10">
+                        <div class="lg:w-1/3">
+                            <div
+                                class="w-24 h-24 bg-slate-800 rounded-3xl mb-6 flex items-center justify-center text-4xl font-black italic shadow-2xl border border-slate-700 text-slate-400">
+                                T.</div>
+                            <h3 class="text-3xl font-black italic uppercase mb-2 text-slate-300">Tiago, 24</h3>
+                            <p class="text-slate-500 font-bold uppercase text-[10px] tracking-widest mb-6 italic">O
+                                Suporte Ágil</p>
+                            <p
+                                class="text-slate-400 text-sm leading-relaxed border-r-2 border-slate-700 pr-4 text-right italic">
+                                "Preciso de clareza para resolver problemas agora."
+                            </p>
+                        </div>
+
+                        <div class="lg:w-2/3 grid md:grid-cols-2 gap-10">
+                            <div class="space-y-4 text-sm leading-relaxed text-slate-400">
+                                <h4
+                                    class="text-white font-bold uppercase tracking-widest text-xs border-b border-slate-700 pb-2">
+                                    Perfil & Ambição</h4>
+                                <p>Estudante e Staff de eventos. Busca <strong>eficiência sistêmica</strong> para
+                                    gerenciar o suporte de milhares de inscritos simultâneos.</p>
+                            </div>
+                            <div class="space-y-4 text-sm leading-relaxed text-slate-400">
+                                <h4
+                                    class="text-white font-bold uppercase tracking-widest text-xs border-b border-slate-700 pb-2">
+                                    Dores Críticas</h4>
+                                <ul class="list-disc pl-4 space-y-2">
+                                    <li>Validação manual de documentos PCD/Idoso.</li>
+                                    <li>Informações de atletas espalhadas em diferentes abas.</li>
+                                    <li>Falta de logs claros para auditoria de erros.</li>
+                                </ul>
+                            </div>
+                            <div
+                                class="md:col-span-2 p-6 bg-slate-950 rounded-2xl border-r-4 border-slate-700 text-right">
+                                <h4 class="text-slate-500 font-black uppercase text-[10px] mb-2 tracking-widest italic">
+                                    Impacto no Desenvolvimento</h4>
+                                <p class="text-xs text-slate-300">Exige painel de controle centralizado, fila de
+                                    validação de arquivos e logs de auditoria (audit trail).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="mb-24">
+            <div class="flex items-center justify-between mb-16 border-b border-slate-800 pb-8">
+                <div>
+                    <h2 class="text-4xl font-black uppercase italic tracking-tighter">Empathy Mapping</h2>
+                    <p class="text-orange-500 font-bold uppercase text-[10px] tracking-[0.4em] mt-2">Mergulhando na
+                        Experiência do Atleta</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4 bg-slate-900 p-4 rounded-[3rem] border border-slate-800 shadow-2xl">
+
+                <div class="p-8 bg-slate-800/30 rounded-2xl border border-slate-700/50">
+                    <h4 class="text-orange-500 font-black text-xs uppercase tracking-widest mb-4 italic">O que ela VÊ?
+                    </h4>
+                    <ul class="text-slate-400 text-sm space-y-2 italic">
+                        <li>• Amigos compartilhando treinos e medalhas nas redes sociais.</li>
+                        <li>• Sites de inscrição datados, lentos e poluídos visualmente.</li>
+                        <li>• Marcas esportivas que transmitem alta performance e precisão.</li>
+                    </ul>
+                </div>
+
+                <div class="p-8 bg-slate-800/30 rounded-2xl border border-slate-700/50">
+                    <h4 class="text-orange-500 font-black text-xs uppercase tracking-widest mb-4 italic">O que ela OUVE?
+                    </h4>
+                    <ul class="text-slate-400 text-sm space-y-2 italic">
+                        <li>• O treinador cobrando o comprovante da inscrição.</li>
+                        <li>• Reclamações de colegas sobre sistemas que "caem" na abertura de lotes.</li>
+                        <li>• Podcasts de corrida sobre tecnologia e wearables de performance.</li>
+                    </ul>
+                </div>
+
+                <div
+                    class="p-10 bg-slate-950 rounded-3xl border-2 border-orange-600/50 md:col-span-2 relative overflow-hidden">
+                    <h4 class="text-orange-500 font-black text-xs uppercase tracking-widest mb-4 italic">O que ela PENSA
+                        e SENTE?</h4>
+                    <p class="text-xl font-bold italic text-white mb-4 leading-tight">
+                        "Preciso garantir minha vaga agora, mas não quero perder tempo com burocracia. O sistema é
+                        seguro para o meu cartão?"
+                    </p>
+                    <p class="text-slate-400 text-sm italic leading-relaxed">
+                        Ela sente a adrenalina da prova antes mesmo de se inscrever. Valoriza a **integridade** do
+                        processo e a sensação de que a tecnologia está ao seu lado, não contra ela.
+                    </p>
+                </div>
+
+                <div class="p-8 bg-slate-800/30 rounded-2xl border border-slate-700/50">
+                    <h4 class="text-orange-500 font-black text-xs uppercase tracking-widest mb-4 italic">O que ela FALA
+                        e FAZ?</h4>
+                    <ul class="text-slate-400 text-sm space-y-2 italic">
+                        <li>• Faz a inscrição pelo celular no intervalo do trabalho.</li>
+                        <li>• Recomenda provas que têm um processo de kit e retirada organizado.</li>
+                        <li>• Questiona o suporte quando o e-mail de confirmação demora 5 minutos.</li>
+                    </ul>
+                </div>
+
+                <div class="p-8 bg-red-900/10 rounded-2xl border border-red-900/30">
+                    <h4 class="text-red-500 font-black text-xs uppercase tracking-widest mb-4 italic">Dores (Pain)</h4>
+                    <ul class="text-slate-400 text-sm space-y-2 italic">
+                        <li>• Perder o 1º lote por causa de erro no carregamento da página.</li>
+                        <li>• Ter que preencher os mesmos dados pessoais em cada nova corrida.</li>
+                    </ul>
+                </div>
+
+                <div class="p-8 bg-green-900/10 rounded-2xl border border-green-900/30">
+                    <h4 class="text-green-500 font-black text-xs uppercase tracking-widest mb-4 italic">Ganhos (Gain)
+                    </h4>
+                    <ul class="text-slate-400 text-sm space-y-2 italic">
+                        <li>• Dashboard centralizado com todas as suas conquistas e fotos.</li>
+                        <li>• Checkout em 1-clique (Experiência Premium).</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+
+    </main>
+
+    <footer class="p-12 text-center border-t border-slate-800">
+        <p class="text-slate-600 text-[10px] uppercase font-bold tracking-[0.5em]">
+            PROJETO HORA DE CORRER — HIGH PERFORMANCE TECHNOLOGY & BRAND GOVERNANCE
+        </p>
+    </footer>
+
+</body>
+
+</html>
