@@ -1,0 +1,97 @@
+/*
+Theme Name: LI2T - Tema
+Theme URI: https://li2t.imd.ufrn.br
+Author: Alec Yalcin
+Author URI: https://github.com/AlecYalcin/LI2T/
+Description: Tema de wordpress para o site do LI2T
+Version: 1.0
+*/
+
+
+section {
+    position: relative;
+}
+
+/* utilities*/
+
+.bg-destaque{
+    background: linear-gradient(43deg, rgba(221,112,53,1) 13%, rgba(247,150,51,1) 100%);
+    border: 0;
+    color: #fff;
+}
+
+.color-destaque{
+    color:   rgb(237 28 36) !important;
+}
+
+nav, header{
+    transition: transform .3s ease;
+
+}
+
+
+.status-andamento{
+   
+    font-size: .9rem;
+    font-weight: 500;
+    background-color: #1C7ED6;
+    background-image: linear-gradient(75deg, #20659E 0%, #00C7FF 75%);
+
+  
+    /* Create the gradient. 
+
+    /home1/hcspo182/caminhadadamaepotiguar.com.br/new
+    background-image: linear-gradient(69.42deg, #6DC058 0.68%, #29C4F0 95.21%) !important;;
+    
+    /* Set the background size and repeat properties. */
+    background-size: 100%;
+    background-repeat: repeat;
+
+    /* Use the text as a mask for the background. */
+    /* This will show the gradient as a text color rather than element bg. */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+}
+
+
+
+.text-sections {
+    color: #2E2B26;
+}
+
+.section-hero {    
+    background-image: url('assets/img/hero.jpg');
+    height: 90vh;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    position: relative;
+}
+
+.section-destaque .container,
+.section-hero .container{
+    position: relative;
+    z-index: 2;
+}
+
+.section-destaque::before,
+.section-hero::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: linear-gradient(69deg, black 0%, rgba(0, 0, 0, 0) 100%, rgba(0, 0, 0, 0) 100%)
+}
+
+.section-destaque {
+    background: url('assets/img/destaque.jpg') no-repeat top right;
+    background-size: cover;
+    position: relative;
+}
