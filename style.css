@@ -1,0 +1,20 @@
+/*
+Theme Name: Equatorial Energia Solar - Tema
+Author: tzadoque
+Version: 1.0
+*/
+
+.faq-item {
+  border-radius: 6px;
+  padding: 40px 32px;
+  background-color: #ffffff;
+  transition: background-color 0.3s;
+}
+
+.faq-item.active {
+  background-color: #FFAA0D;
+}
+
+.faq-item.active * {
+  color: #000055;
+}

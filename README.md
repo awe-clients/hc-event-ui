@@ -1,1 +1,2 @@
-# Repositório de Sites de Corrida
+# equatorial-wp-theme
+Tema para o site "Equatorial Energia Solar"
