@@ -1,5 +1,18 @@
 <?php
 
+
+/**
+ * Helper para buscar campos do ACF com segurança
+ * Evita o Fatal Error se o plugin for desativado.
+ */
+function safe_get_field($field, $id = false)
+{
+    if (function_exists('get_field')) {
+        return get_field($field, $id);
+    }
+    return ''; // Retorna vazio se o ACF não existir
+}
+
 // 1. Suporte e CF7 (Igual ao seu original)
 function equatorial_setup()
 {
