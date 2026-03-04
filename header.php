@@ -1,27 +1,37 @@
-<?php
-    $theme = get_template_directory_uri();
-?>
-
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html <?php language_attributes(); ?>>
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Equatorial Energia Solar</title>
-
-    <!-- FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="<?= $theme ?>/dist/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="<?= $theme ?>/dist/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="<?= $theme ?>/dist/css/styles.css">
-	<link rel="stylesheet" href="<?= $theme ?>/style.css">
-
     <?php wp_head(); ?>
 </head>
 
-<body class="">
+<body <?php body_class(); ?>>
+    <?php
+    // Define se o header é transparente ou branco baseado na página
+    $is_home = is_front_page();
+    $header_bg = $is_home ? 'bg-transparent absolute' : 'bg-white shadow-lg';
+    $text_color = $is_home ? 'text-white' : 'text-neutral-500';
+    $logo = $is_home ? 'logo.png' : 'logo-white-theme.png';
+    ?>
+    <header class="<?= $header_bg ?> w-full top-0 z-50">
+        <nav class="py-8">
+            <div class="container mx-auto flex justify-between items-center">
+                <a href="<?= home_url() ?>">
+                    <img src="<?= get_template_directory_uri() ?>/dist/img/<?= $logo ?>" alt="<?php bloginfo('name'); ?>">
+                </a>
+
+                <div class="hidden lg:flex space-x-4">
+                    <ul class="flex gap-2 <?= $text_color ?> items-center">
+                        <?php /* Seu menu aqui... */ ?>
+                    </ul>
+                </div>
+
+                <button id="navbarToggle" class="lg:hidden <?= $text_color ?> focus:outline-none z-[999]">
+                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">...</svg>
+                </button>
+            </div>
+        </nav>
+        <?php get_template_part('template-parts/content', 'mobile-menu'); ?>
+    </header>

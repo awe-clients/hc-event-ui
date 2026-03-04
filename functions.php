@@ -1,70 +1,64 @@
 <?php
 
-function create_perguntas_post_type() {
-    $labels = array(
-        'name' => __('Perguntas'),
-        'singular_name' => __('Pergunta'),
-        'menu_name' => __('Perguntas'),
-        'name_admin_bar' => __('Pergunta'),
-        'add_new' => __('Adicionar Nova'),
-        'add_new_item' => __('Adicionar Nova Pergunta'),
-        'new_item' => __('Nova Pergunta'),
-        'edit_item' => __('Editar Pergunta'),
-        'view_item' => __('Ver Pergunta'),
-        'all_items' => __('Todas as Perguntas'),
-        'search_items' => __('Pesquisar Perguntas'),
-        'parent_item_colon' => __('Pergunta Pai:'),
-        'not_found' => __('Nenhuma pergunta encontrada.'),
-        'not_found_in_trash' => __('Nenhuma pergunta encontrada no lixo.')
-    );
+// 1. Suporte e CF7 (Igual ao seu original)
+function equatorial_setup()
+{
+    add_theme_support('post-thumbnails');
+    add_filter('wpcf7_autop_or_not', '__return_false');
+}
+add_action('after_setup_theme', 'equatorial_setup');
 
-    $args = array(
-        'labels' => $labels,
+// 2. Carregamento de CSS/JS (Necessário para as novas páginas)
+function equatorial_assets()
+{
+    $uri = get_template_directory_uri();
+    wp_enqueue_style('main-styles', $uri . '/dist/css/styles.css', [], '1.0');
+    wp_enqueue_style('theme-style', get_stylesheet_uri());
+    wp_enqueue_script('jquery');
+    wp_enqueue_script('main-js', $uri . '/dist/js/index.js', ['jquery'], '1.0', true);
+}
+add_action('wp_enqueue_scripts', 'equatorial_assets');
+
+// 3. Função Global de ID (Necessária para simplificar Home/Footer)
+function get_home_id()
+{
+    $id = get_option('page_on_front');
+    return $id ? $id : (get_page_by_path('home') ? get_page_by_path('home')->ID : null);
+}
+
+// 4. Seus CPTs (Exatamente com seus Labels originais)
+function create_custom_post_types()
+{
+    // Perguntas
+    register_post_type('perguntas', [
+        'labels' => [
+            'name' => __('Perguntas'),
+            'singular_name' => __('Pergunta'),
+            'add_new' => __('Adicionar Nova'),
+            'add_new_item' => __('Adicionar Nova Pergunta'),
+            'edit_item' => __('Editar Pergunta'),
+            'all_items' => __('Todas as Perguntas'),
+            'not_found' => __('Nenhuma pergunta encontrada.'),
+        ],
         'public' => true,
         'has_archive' => true,
-        'show_in_menu' => true,
-        'supports' => array('title'),
-        'menu_icon' => 'dashicons-editor-help'
-    );
+        'menu_icon' => 'dashicons-editor-help',
+        'supports' => ['title', 'editor', 'thumbnail']
+    ]);
 
-    register_post_type('perguntas', $args);
-}
-add_action('init', 'create_perguntas_post_type');
-
-function create_atributos_post_type() {
-    $labels = array(
-        'name' => __('Atributos'),
-        'singular_name' => __('Atributo'),
-        'menu_name' => __('Atributos'),
-        'name_admin_bar' => __('Atributo'),
-        'add_new' => __('Adicionar Novo'),
-        'add_new_item' => __('Adicionar Novo Atributo'),
-        'new_item' => __('Novo Atributo'),
-        'edit_item' => __('Editar Atributo'),
-        'view_item' => __('Ver Atributo'),
-        'all_items' => __('Todas os Atributos'),
-        'search_items' => __('Pesquisar Atributos'),
-        'parent_item_colon' => __('Atributo Pai:'),
-        'not_found' => __('Nenhum atributo encontrado.'),
-        'not_found_in_trash' => __('Nenhum atributos encontrado no lixo.')
-    );
-
-    $args = array(
-        'labels' => $labels,
+    // Atributos
+    register_post_type('atributos', [
+        'labels' => [
+            'name' => __('Atributos'),
+            'singular_name' => __('Atributo'),
+            'add_new' => __('Adicionar Novo'),
+            'add_new_item' => __('Adicionar Novo Atributo'),
+            'not_found' => __('Nenhum atributo encontrado.'),
+        ],
         'public' => true,
         'has_archive' => true,
-        'show_in_menu' => true,
-        'supports' => array('title'),
-        'menu_icon' => 'dashicons-list-view'
-    );
-
-    register_post_type('atributos', $args);
+        'menu_icon' => 'dashicons-list-view',
+        'supports' => ['title', 'editor', 'thumbnail']
+    ]);
 }
-add_action('init', 'create_atributos_post_type');
-
-# contact-form-7
-
-add_filter('wpcf7_autop_or_not', '__return_false');
-
-add_theme_support('post-thumbnails');
-
+add_action('init', 'create_custom_post_types');
