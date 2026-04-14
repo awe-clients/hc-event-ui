@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3ª Corrida COOPANEST-RN - Inscrições Abertas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .bg-pattern {
+            background-image: url('pattern-vava.png');
+        }
+
+        /* Referência à padronagem VAVA do documento [cite: 8, 9] */
+    </style>
+</head>
+
+<body class="bg-gray-50 text-slate-900">
+
+    <header class="bg-white border-b border-gray-100 sticky top-0 z-[100] shadow-sm">
+
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-20 md:h-24">
+
+                <div class="flex-shrink-0">
+                    <a href="/" class="block focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg"
+                        aria-label="Página Inicial - 3ª Corrida COOPANEST-RN">
+                        <img src="logo-coopanest-rn.png" alt="Logo 3ª Corrida COOPANEST-RN"
+                            class="h-10 md:h-14 w-auto object-contain">
+                    </a>
+                </div>
+
+                <nav class="hidden md:block" aria-label="Navegação Principal">
+                    <ul class="flex items-center space-x-8">
+                        <li>
+                            <a href="#noticias"
+                                class="text-gray-600 hover:text-blue-900 font-bold text-sm uppercase tracking-wide transition-colors focus:outline-none focus:text-blue-900">
+                                Notícias
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contato"
+                                class="text-gray-600 hover:text-blue-900 font-bold text-sm uppercase tracking-wide transition-colors focus:outline-none focus:text-blue-900">
+                                Contato
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="md:hidden flex items-center">
+                    <button type="button" onclick="toggleMenu()"
+                        class="text-blue-900 p-2 focus:outline-none focus:bg-gray-100 rounded-md" aria-expanded="false"
+                        aria-controls="mobile-menu" id="menu-button">
+                        <span class="sr-only">Abrir menu</span>
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="hidden md:hidden bg-white border-t border-gray-100" id="mobile-menu">
+            <ul class="px-4 py-6 space-y-4">
+                <li>
+                    <a href="#noticias" class="block text-gray-800 font-bold text-base uppercase tracking-wide"
+                        onclick="toggleMenu()">
+                        Notícias
+                    </a>
+                </li>
+                <li>
+                    <a href="#contato" class="block text-gray-800 font-bold text-base uppercase tracking-wide"
+                        onclick="toggleMenu()">
+                        Contato
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="bg-blue-900 md:py-12 overflow-hidden">
+            <div class="container mx-auto px-4 relative">
+
+                <!-- resultados -->
+                <div class="w-full bg-transparent pb-4 border-b border-white/10 mb-6">
+                    <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+
+                        <div id="main-cta-container" class="w-full md:w-auto">
+                            <a href="#"
+                                class="hidden md:block text-center bg-[#FFD100] hover:bg-[#E6BC00] text-blue-900 font-black uppercase tracking-tighter px-10 py-4 rounded-lg shadow-xl transition-all transform hover:scale-105 active:scale-95 text-lg">
+                                Resultados
+                            </a>
+                        </div>
+
+                        <div class="flex flex-wrap justify-center gap-3">
+                            <a href="#"
+                                class="min-w-[80px] text-center px-4 py-2 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-blue-900 transition-colors text-sm">
+                                21Km
+                            </a>
+                            <a href="#"
+                                class="min-w-[80px] text-center px-4 py-2 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-blue-900 transition-colors text-sm">
+                                10Km
+                            </a>
+                            <a href="#"
+                                class="min-w-[80px] text-center px-4 py-2 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-blue-900 transition-colors text-sm">
+                                5Km
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="relative overflow-hidden rounded-2xl shadow-2xl border-4 border-white/10">
+                    <div id="hero-slider" class="flex transition-transform duration-700 ease-in-out">
+                        <div class="min-w-full relative h-[300px] md:h-[500px]">
+                            <img src="https://meiamaratonaprf191.com.br/wp-content/uploads/2025/10/Vitrine-Obrigado.png"
+                                class="w-full h-full object-cover">
+                            <div class="absolute"></div>
+                        </div>
+                        <div class="min-w-full relative h-[300px] md:h-[500px]">
+                            <img src="https://meiamaratonaprf191.com.br/wp-content/uploads/2025/10/Vitrine-A-BR-e-do-Atleta.png"
+                                class="w-full h-full object-cover">
+                            <div class="absolute"></div>
+                        </div>
+                    </div>
+
+                    <div class="absolute bottom-6 right-8 flex space-x-3 z-10">
+                        <button onclick="moveHero(0)"
+                            class="hero-dot w-3 h-3 rounded-full bg-yellow-400 transition-all"></button>
+                        <button onclick="moveHero(1)"
+                            class="hero-dot w-3 h-3 rounded-full bg-white/50 transition-all hover:bg-white"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-blue-900 pb-20">
+            <div class="container mx-auto px-4">
+                <div id="extra-info-scroll"
+                    class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-6 cursor-grab active:cursor-grabbing select-none py-4">
+
+                    <a href="#"
+                        class="min-w-[280px] md:min-w-[calc(25%-1.5rem)] snap-center group bg-white hover:bg-blue-700 p-8 rounded-xl shadow-lg transition-all duration-300 flex flex-col items-center text-center">
+                        <div
+                            class="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <svg class="w-8 h-8 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-blue-900 group-hover:text-white uppercase mb-4">
+                            Regulamento</h3>
+                        <p class="text-gray-600 group-hover:text-blue-100 text-sm">Consulte os detalhes técnicos da 3ª
+                            edição.</p>
+                    </a>
+
+                    <a href="#"
+                        class="min-w-[280px] md:min-w-[calc(25%-1.5rem)] snap-center group bg-white hover:bg-blue-700 p-8 rounded-xl shadow-lg transition-all duration-300 flex flex-col items-center text-center">
+                        <div
+                            class="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <svg class="w-8 h-8 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-blue-900 group-hover:text-white uppercase mb-4">
+                            Regulamento</h3>
+                        <p class="text-gray-600 group-hover:text-blue-100 text-sm">Consulte os detalhes técnicos da 3ª
+                            edição.</p>
+                    </a>
+
+                    <a href="#"
+                        class="min-w-[280px] md:min-w-[calc(25%-1.5rem)] snap-center group bg-white hover:bg-blue-700 p-8 rounded-xl shadow-lg transition-all duration-300 flex flex-col items-center text-center">
+                        <div
+                            class="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <svg class="w-8 h-8 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-blue-900 group-hover:text-white uppercase mb-4">
+                            Regulamento</h3>
+                        <p class="text-gray-600 group-hover:text-blue-100 text-sm">Consulte os detalhes técnicos da 3ª
+                            edição.</p>
+                    </a>
+
+                    <a href="#"
+                        class="min-w-[280px] md:min-w-[calc(25%-1.5rem)] snap-center group bg-white hover:bg-blue-700 p-8 rounded-xl shadow-lg transition-all duration-300 flex flex-col items-center text-center">
+                        <div
+                            class="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <svg class="w-8 h-8 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-blue-900 group-hover:text-white uppercase mb-4">
+                            Regulamento</h3>
+                        <p class="text-gray-600 group-hover:text-blue-100 text-sm">Consulte os detalhes técnicos da 3ª
+                            edição.</p>
+                    </a>
+
+                    <a href="#"
+                        class="min-w-[280px] md:min-w-[calc(25%-1.5rem)] snap-center group bg-white hover:bg-blue-700 p-8 rounded-xl shadow-lg transition-all duration-300 flex flex-col items-center text-center">
+                        <div
+                            class="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <svg class="w-8 h-8 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-blue-900 group-hover:text-white uppercase mb-4">
+                            Regulamento</h3>
+                        <p class="text-gray-600 group-hover:text-blue-100 text-sm">Consulte os detalhes técnicos da 3ª
+                            edição.</p>
+                    </a>
+
+                    <a href="#"
+                        class="min-w-[280px] md:min-w-[calc(25%-1.5rem)] snap-center group bg-white hover:bg-blue-700 p-8 rounded-xl shadow-lg transition-all duration-300 flex flex-col items-center text-center">
+                        <div
+                            class="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <svg class="w-8 h-8 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-blue-900 group-hover:text-white uppercase mb-4">
+                            Regulamento</h3>
+                        <p class="text-gray-600 group-hover:text-blue-100 text-sm">Consulte os detalhes técnicos da 3ª
+                            edição.</p>
+                    </a>
+                    <a href="#"
+                        class="min-w-[280px] md:min-w-[calc(25%-1.5rem)] snap-center group bg-white hover:bg-blue-700 p-8 rounded-xl shadow-lg transition-all duration-300 flex flex-col items-center text-center">
+                        <div
+                            class="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <svg class="w-8 h-8 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-blue-900 group-hover:text-white uppercase mb-4">
+                            Regulamento</h3>
+                        <p class="text-gray-600 group-hover:text-blue-100 text-sm">Consulte os detalhes técnicos da 3ª
+                            edição.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <style>
+            .scrollbar-hide::-webkit-scrollbar {
+                display: none;
+            }
+
+            .scrollbar-hide {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+        </style>
+        <script>
+            // --- LÓGICA HERO SLIDER (Galeria Principal) ---
+            const heroSlider = document.getElementById('hero-slider');
+            const dots = document.querySelectorAll('.hero-dot');
+            let currentIdx = 0;
+
+            function moveHero(idx) {
+                currentIdx = idx;
+                heroSlider.style.transform = `translateX(-${idx * 100}%)`;
+                dots.forEach((d, i) => {
+                    d.classList.toggle('bg-yellow-400', i === idx);
+                    d.classList.toggle('bg-white/50', i !== idx);
+                });
+            }
+
+            setInterval(() => {
+                currentIdx = (currentIdx + 1) % dots.length;
+                moveHero(currentIdx);
+            }, 5000);
+
+            // --- LÓGICA INFORMAÇÕES EXTRA (ARRASTE + ROLAGEM AUTOMÁTICA) ---
+            const scrollContainer = document.getElementById('extra-info-scroll');
+            let isPressed = false;
+            let startX, scrollLeft;
+            let scrollSpeed = 0.5; // Ajuste a velocidade aqui (pixels por frame)
+            let animationId;
+
+            // Função de Rolagem Automática Infinita
+            function startAutoScroll() {
+                if (!isPressed) {
+                    scrollContainer.scrollLeft += scrollSpeed;
+
+                    // Reinicia o scroll ao chegar no fim para efeito infinito (loop)
+                    if (scrollContainer.scrollLeft >= (scrollContainer.scrollWidth - scrollContainer.offsetWidth)) {
+                        scrollContainer.scrollLeft = 0;
+                    }
+                }
+                animationId = requestAnimationFrame(startAutoScroll);
+            }
+
+            // Interações de Mouse (Drag)
+            scrollContainer.addEventListener('mousedown', (e) => {
+                isPressed = true;
+                scrollContainer.classList.replace('cursor-grab', 'cursor-grabbing');
+                startX = e.pageX - scrollContainer.offsetLeft;
+                scrollLeft = scrollContainer.scrollLeft;
+                cancelAnimationFrame(animationId);
+            });
+
+            scrollContainer.addEventListener('mouseleave', () => {
+                isPressed = false;
+                startAutoScroll();
+            });
+
+            scrollContainer.addEventListener('mouseup', () => {
+                isPressed = false;
+                scrollContainer.classList.replace('cursor-grabbing', 'cursor-grab');
+                startAutoScroll();
+            });
+
+            scrollContainer.addEventListener('mousemove', (e) => {
+                if (!isPressed) return;
+                e.preventDefault();
+                const x = e.pageX - scrollContainer.offsetLeft;
+                const walk = (x - startX) * 2;
+                scrollContainer.scrollLeft = scrollLeft - walk;
+            });
+
+            // Pausar ao passar o mouse (Hover)
+            scrollContainer.addEventListener('mouseenter', () => cancelAnimationFrame(animationId));
+
+            // Inicializa a rolagem
+            startAutoScroll();
+        </script>
+
+        <section class="relative bg-slate-900 text-white overflow-hidden">
+            <div class="absolute bottom-0 w-full py-6  h-[90px]">
+                <div class="container mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                    <div>
+                        <span class="block text-xs uppercase opacity-80 font-bold">Data</span>
+                        <span class="text-xl font-extrabold uppercase leading-tight tracking-tighter">15 Out 2026</span>
+                    </div>
+                    <div>
+                        <span class="block text-xs uppercase opacity-80 font-bold">Local</span>
+                        <span class="text-xl font-extrabold uppercase leading-tight tracking-tighter">Natal, RN</span>
+                    </div>
+                    <div>
+                        <span class="block text-xs uppercase opacity-80 font-bold">Largada</span>
+                        <span class="text-xl font-extrabold uppercase leading-tight tracking-tighter">06:00h</span>
+                    </div>
+                    <div>
+                        <span class="block text-xs uppercase opacity-80 font-bold">Kits</span>
+                        <span class="text-xl font-extrabold uppercase leading-tight tracking-tighter">Limitados</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="evento" class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto text-center">
+                    <img src="icone-corredor.png" alt="Ícone Corredor" class="mx-auto mb-6 h-20">
+                    <h2 class="text-4xl font-extrabold text-blue-900 mb-6 uppercase">Sobre a 3ª Corrida</h2>
+                    <div class="prose prose-lg mx-auto text-gray-600 mb-10">
+                        <p>A COOPANEST-RN apresenta sua terceira edição, unindo esporte e integração em um percurso
+                            técnico e vibrante.</p>
+                    </div>
+
+                    <div id="modalidades" class="flex flex-wrap justify-center gap-4">
+                        <a href="#5km"
+                            class="border-2 border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white px-8 py-3 rounded-lg font-bold transition">5
+                            KM [cite: 21, 31]</a>
+                        <a href="#10km"
+                            class="border-2 border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white px-8 py-3 rounded-lg font-bold transition">10
+                            KM [cite: 20, 29]</a>
+                        <a href="#15km"
+                            class="border-2 border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white px-8 py-3 rounded-lg font-bold transition">15
+                            KM [cite: 19]</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="noticias" class="py-20 bg-gray-100">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-end mb-10">
+                    <h2 class="text-3xl font-extrabold uppercase text-blue-900">Últimas Notícias</h2>
+                    <a href="/noticias" class="text-blue-700 font-bold hover:underline">Ver todas →</a>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <article class="bg-white rounded-2xl overflow-hidden shadow-sm group">
+                        <div class="h-64 overflow-hidden">
+                            <img src="news-1.jpg" alt=""
+                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="p-8">
+                            <time class="text-sm text-gray-500 font-bold uppercase tracking-widest">12 Abr 2026</time>
+                            <h3 class="text-2xl font-bold my-4 group-hover:text-blue-700 transition">Entrega de kits:
+                                Datas e horários confirmados para o evento.</h3>
+                            <p class="text-gray-600 mb-6 leading-relaxed">Confira os pontos de retirada e os documentos
+                                necessários para garantir sua participação...</p>
+                            <a href="#"
+                                class="inline-block bg-slate-900 text-white px-6 py-2 rounded-lg font-bold text-sm">Ler
+                                Notícia</a>
+                        </div>
+                    </article>
+                    <div class="space-y-6">
+                        <article class="flex gap-4 bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition">
+                            <img src="news-2.jpg" alt="" class="w-24 h-24 rounded-lg object-cover">
+                            <div>
+                                <h4 class="font-bold leading-tight hover:text-blue-700 transition">Percurso oficial de
+                                    15km é divulgado pela organização.</h4>
+                                <time class="text-xs text-gray-400 font-bold uppercase">10 Abr 2026</time>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="patrocinadores" class="py-20 bg-white">
+            <div class="container mx-auto px-4 text-center">
+                <h3 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-10">Realização e Apoio</h3>
+
+                <div class="mb-16">
+                    <span class="text-sm font-bold text-blue-800 uppercase block mb-6 italic">Patrocínio Master</span>
+                    <div class="flex justify-center gap-12">
+                        <img src="master-1.png" alt="Patrocinador Master"
+                            class="h-24 md:h-32 grayscale hover:grayscale-0 transition opacity-80 hover:opacity-100">
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+                    <img src="apoio-1.png" alt="Apoio"
+                        class="h-12 md:h-16 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition">
+                    <img src="apoio-2.png" alt="Apoio"
+                        class="h-12 md:h-16 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition">
+                    <img src="apoio-3.png" alt="Apoio"
+                        class="h-12 md:h-16 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-900 text-white pt-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 pb-12 border-b border-white/10">
+
+                <div class="flex flex-col items-center md:items-start">
+                    <img src="logo-coopanest-white.png" alt="3ª Corrida COOPANEST-RN" class="h-16 mb-6">
+                    <p class="text-gray-400 text-sm text-center md:text-left leading-relaxed">
+                        A maior celebração do esporte e integração da COOPANEST-RN. Junte-se a centenas de atletas em um
+                        percurso inesquecível.
+                    </p>
+                </div>
+
+                <nav class="flex flex-col items-center md:items-start" aria-label="Navegação Secundária">
+                    <h2 class="text-yellow-400 font-black uppercase tracking-widest text-sm mb-6">Links Úteis</h2>
+                    <ul class="space-y-4 text-center md:text-left">
+                        <li><a href="#"
+                                class="text-gray-300 hover:text-white transition-colors focus:ring-2 focus:ring-yellow-400 outline-none">Regulamento</a>
+                        </li>
+                        <li><a href="#"
+                                class="text-gray-300 hover:text-white transition-colors focus:ring-2 focus:ring-yellow-400 outline-none">Política
+                                de Privacidade</a></li>
+                        <li><a href="#"
+                                class="text-gray-300 hover:text-white transition-colors focus:ring-2 focus:ring-yellow-400 outline-none">Dúvidas
+                                Frequentes</a></li>
+                    </ul>
+                </nav>
+
+                <div class="flex flex-col items-center md:items-end">
+                    <h2 class="text-yellow-400 font-black uppercase tracking-widest text-sm mb-6">Siga-nos</h2>
+                    <div class="flex space-x-4">
+                        <a href="#" aria-label="Instagram"
+                            class="bg-white/10 p-3 rounded-full hover:bg-blue-600 transition-all focus:ring-2 focus:ring-yellow-400 outline-none">
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="text-gray-500 text-xs text-center md:text-left">
+                    <p>&copy; 2026 3ª Corrida COOPANEST-RN. Todos os direitos reservados.</p>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <span class="text-gray-500 text-[10px] uppercase font-bold tracking-widest">Produzido por:</span>
+                    <a href="https://hcsports.com.br" target="_blank" rel="noopener"
+                        class="opacity-70 hover:opacity-100 transition-opacity focus:outline-none">
+                        <img src="https://www.hcsports.com.br/lovable-uploads/a0c35a1e-3016-496d-9041-44bbdaf85f79.png"
+                            alt="HC Sports" class="h-6">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <div
+        class="md:hidden fixed bottom-0 left-0 w-full p-4 py-8 bg-white/80 backdrop-blur-md border-t border-gray-200 z-[100] shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
+        <div class="container mx-auto">
+            <a href="#"
+                class="block w-full text-center bg-[#FFD100] hover:bg-[#E6BC00] text-blue-900 font-black uppercase tracking-tighter py-4 rounded-xl shadow-lg transition-transform active:scale-95 text-lg">
+                Inscreva-se Agora
+            </a>
+        </div>
+    </div>
+
+    <style>
+        @media (max-width: 767px) {
+            footer {
+                padding-bottom: 12rem;
+                /* Evita que o CTA fixo cubra as informações finais do rodapé */
+            }
+        }
+    </style>
+
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const button = document.getElementById('menu-button');
+            const icon = document.getElementById('menu-icon');
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+            // Alterna visibilidade
+            menu.classList.toggle('hidden');
+
+            // Atualiza estado de acessibilidade
+            button.setAttribute('aria-expanded', !isExpanded);
+
+            // Altera ícone (Hambúrguer para X)
+            if (!isExpanded) {
+                icon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+            } else {
+                icon.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7');
+            }
+        }
+    </script>
+
+</body>
+
+</html>
