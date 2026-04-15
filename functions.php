@@ -223,22 +223,3 @@ add_action('save_post', function ($post_id) {
     if (isset($_POST['hb_label_cta']))    update_post_meta($post_id, '_label_cta', sanitize_text_field($_POST['hb_label_cta']));
     if (isset($_POST['hb_link_cta']))     update_post_meta($post_id, '_link_cta', esc_url_raw($_POST['hb_link_cta']));
 });
-
-
-function hb_register_home_metaboxes()
-{
-    // Pegamos o ID da página que está configurada como 'page_on_front'
-    $front_page_id = get_option('page_on_front');
-    $current_screen_post_id = isset($_GET['post']) ? $_GET['post'] : (isset($_POST['post_ID']) ? $_POST['post_ID'] : 0);
-
-    // Só exibe se for a página configurada como Home ou se o template for o de front-page
-    add_meta_box(
-        'hb_home_details',
-        'Configurações da Corrida (Status e Hero)',
-        'hb_home_details_callback',
-        'page', // Onde aparecer (post type)
-        'normal', // Contexto (normal, side, advanced)
-        'high'    // Prioridade
-    );
-}
-add_action('add_meta_boxes', 'hb_register_home_metaboxes');
