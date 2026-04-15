@@ -328,3 +328,103 @@ function hb_menu_classes($classes, $item, $args)
     return $classes;
 }
 add_filter('nav_menu_css_class', 'hb_menu_classes', 1, 3);
+
+
+/**
+ * Registro de Modalidades e CTA no Customizer
+ */
+function hb_register_cta_sections($wp_customize)
+{
+
+    // SEÇÃO: Modalidades e Categorias
+    $wp_customize->add_section('hb_modalidades_settings', array(
+        'title'    => 'Modalidades da Corrida',
+        'priority' => 33,
+        'description' => 'Configure os links para as distâncias disponíveis.',
+    ));
+
+    $distancias = array('21km', '10km', '5km');
+
+    foreach ($distancias as $dist) {
+        // Ativar/Desativar Modalidade
+        $wp_customize->add_setting("hb_show_$dist", array('default' => true));
+        $wp_customize->add_control("hb_show_$dist", array(
+            'label'    => "Exibir $dist",
+            'section'  => 'hb_modalidades_settings',
+            'type'     => 'checkbox',
+        ));
+
+        // Link da Modalidade
+        $wp_customize->add_setting("hb_link_$dist", array('default' => '#'));
+        $wp_customize->add_control("hb_link_$dist", array(
+            'label'    => "Link para $dist",
+            'section'  => 'hb_modalidades_settings',
+            'type'     => 'url',
+        ));
+    }
+}
+add_action('customize_register', 'hb_register_cta_sections');
+
+
+
+
+/**
+ * Configurações de CTA e Modalidades
+ */
+function hb_register_cta_settings($wp_customize)
+{
+
+    // SEÇÃO: Barra de Ações (Header Status)
+    $wp_customize->add_section('hb_cta_section', array(
+        'title'    => 'Barra de Status e Modalidades',
+        'priority' => 33,
+    ));
+
+    // 1. Configuração do Botão de Destaque
+    $wp_customize->add_setting('hb_cta_status', array('default' => 'inscricao'));
+    $wp_customize->add_control('hb_cta_status', array(
+        'label'    => 'Status do Evento (Lógica de Exibição)',
+        'section'  => 'hb_cta_section',
+        'type'     => 'select',
+        'choices'  => array(
+            'inscricao'  => 'Inscrições Abertas (Esconde no mobile)',
+            'kits'       => 'Entrega de Kits (Sempre visível)',
+            'resultados' => 'Resultados (Sempre visível)',
+        ),
+    ));
+
+    $wp_customize->add_setting('hb_cta_text', array('default' => 'Resultados'));
+    $wp_customize->add_control('hb_cta_text', array(
+        'label'    => 'Texto do Botão de Destaque',
+        'section'  => 'hb_cta_section',
+        'type'     => 'text',
+    ));
+
+    $wp_customize->add_setting('hb_cta_url', array('default' => '#'));
+    $wp_customize->add_control('hb_cta_url', array(
+        'label'    => 'Link do Botão de Destaque',
+        'section'  => 'hb_cta_section',
+        'type'     => 'url',
+    ));
+
+    // 2. Configuração das Modalidades (Links Rápidos)
+    $modalidades = array('21km', '10km', '5km');
+    foreach ($modalidades as $slug) {
+        // Toggle de exibição
+        $wp_customize->add_setting("hb_show_$slug", array('default' => true));
+        $wp_customize->add_control("hb_show_$slug", array(
+            'label'    => "Exibir link $slug",
+            'section'  => 'hb_cta_section',
+            'type'     => 'checkbox',
+        ));
+
+        // URL da modalidade
+        $wp_customize->add_setting("hb_link_$slug", array('default' => '#'));
+        $wp_customize->add_control("hb_link_$slug", array(
+            'label'    => "URL para $slug",
+            'section'  => 'hb_cta_section',
+            'type'     => 'url',
+        ));
+    }
+}
+add_action('customize_register', 'hb_register_cta_settings');
