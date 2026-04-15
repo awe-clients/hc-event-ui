@@ -305,3 +305,26 @@ function hb_customize_register($wp_customize)
     }
 }
 add_action('customize_register', 'hb_customize_register');
+
+
+/**
+ * Registro de Localizações de Menus
+ */
+function hb_register_nav_menus()
+{
+    register_nav_menus(array(
+        'header-menu' => 'Menu Superior (Header)',
+        'footer-menu' => 'Menu Inferior (Footer)',
+    ));
+}
+add_action('after_setup_theme', 'hb_register_nav_menus');
+
+
+function hb_menu_classes($classes, $item, $args)
+{
+    if (isset($args->add_li_class)) {
+        $classes[] = $args->add_li_class;
+    }
+    return $classes;
+}
+add_filter('nav_menu_css_class', 'hb_menu_classes', 1, 3);

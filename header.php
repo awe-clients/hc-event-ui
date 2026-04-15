@@ -36,16 +36,17 @@
                 <nav class="hidden md:block" aria-label="Navegação Principal">
                     <?php
                     wp_nav_menu(array(
-                        'theme_location' => 'primary',
+                        'theme_location' => 'header-menu',
                         'container'      => false,
                         'menu_class'     => 'flex items-center space-x-8',
-                        'fallback_cb'    => false,
+                        'fallback_cb'    => '__return_false',
                         'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                        'link_before'    => '<span class="text-gray-600 hover:text-blue-900 font-bold text-sm uppercase tracking-wide transition-colors">',
-                        'link_after'     => '</span>',
+                        // O walker abaixo garante que as classes de estilo sejam aplicadas aos links
+                        'add_li_class'   => 'text-gray-600 hover:text-blue-900 font-bold text-sm uppercase tracking-wide transition-colors'
                     ));
                     ?>
                 </nav>
+
 
                 <div class="md:hidden flex items-center">
                     <button type="button" onclick="toggleMenu()" class="text-blue-900 p-2 focus:outline-none rounded-md" id="menu-button">

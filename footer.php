@@ -13,9 +13,11 @@
                 <h2 class="text-yellow-400 font-black uppercase tracking-widest text-sm mb-6">Links Úteis</h2>
                 <?php
                 wp_nav_menu(array(
-                    'theme_location' => 'footer',
+                    'theme_location' => 'footer-menu',
                     'container'      => false,
-                    'menu_class'     => 'space-y-4 text-center md:text-left text-gray-300 text-sm',
+                    'menu_class'     => 'space-y-4 text-center md:text-left',
+                    'fallback_cb'    => '__return_false',
+                    'add_li_class'   => 'text-gray-300 hover:text-white transition-colors'
                 ));
                 ?>
             </nav>
