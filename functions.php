@@ -541,3 +541,105 @@ function hb_register_news_home_settings($wp_customize)
     ));
 }
 add_action('customize_register', 'hb_register_news_home_settings');
+
+
+
+
+/**
+ * Configuração dos Cards de Informações Extra
+ */
+function hb_register_extra_cards_settings($wp_customize)
+{
+
+    $wp_customize->add_section('hb_extra_cards_section', array(
+        'title'       => 'Cards de Informações (Ícones)',
+        'priority'    => 34,
+        'description' => 'Configure os cards com ícones que aparecem abaixo do carrossel.',
+    ));
+
+    // Criamos 6 slots para cards
+    for ($i = 1; $i <= 6; $i++) {
+
+        // Configuração: Ícone (Imagem/SVG)
+        $wp_customize->add_setting("hb_card_icon_$i");
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, "hb_card_icon_$i", array(
+            'label'    => "Ícone do Card $i",
+            'section'  => 'hb_extra_cards_section',
+        )));
+
+        // Configuração: Título
+        $wp_customize->add_setting("hb_card_title_$i", array('default' => ''));
+        $wp_customize->add_control("hb_card_title_$i", array(
+            'label'    => "Título do Card $i (Máx 2 palavras)",
+            'section'  => 'hb_extra_cards_section',
+            'type'     => 'text',
+        ));
+
+        // Configuração: Descrição
+        $wp_customize->add_setting("hb_card_desc_$i", array('default' => ''));
+        $wp_customize->add_control("hb_card_desc_$i", array(
+            'label'    => "Descrição do Card $i",
+            'section'  => 'hb_extra_cards_section',
+            'type'     => 'textarea',
+        ));
+
+        // Configuração: Link
+        $wp_customize->add_setting("hb_card_link_$i", array('default' => '#'));
+        $wp_customize->add_control("hb_card_link_$i", array(
+            'label'    => "Link do Card $i",
+            'section'  => 'hb_extra_cards_section',
+            'type'     => 'url',
+        ));
+    }
+}
+add_action('customize_register', 'hb_register_extra_cards_settings');
+
+
+
+/**
+ * Registro da Seção de Acessos Rápidos (Cards com Ícones)
+ */
+function hb_register_quick_links_settings($wp_customize)
+{
+
+    $wp_customize->add_section('hb_quick_links_section', array(
+        'title'       => 'Cards de Acessos Rápidos',
+        'priority'    => 36,
+        'description' => 'Configure os cards com ícones que aparecem abaixo das informações cruciais.',
+    ));
+
+    for ($i = 1; $i <= 4; $i++) {
+
+        // Ícone (Imagem ou SVG)
+        $wp_customize->add_setting("hb_quick_icon_$i");
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, "hb_quick_icon_$i", array(
+            'label'    => "Ícone do Card $i",
+            'section'  => 'hb_quick_links_section',
+        )));
+
+        // Título
+        $wp_customize->add_setting("hb_quick_title_$i", array('default' => ''));
+        $wp_customize->add_control("hb_quick_title_$i", array(
+            'label'    => "Título $i (Máx 2 palavras)",
+            'section'  => 'hb_quick_links_section',
+            'type'     => 'text',
+        ));
+
+        // Descrição
+        $wp_customize->add_setting("hb_quick_desc_$i", array('default' => ''));
+        $wp_customize->add_control("hb_quick_desc_$i", array(
+            'label'    => "Descrição $i",
+            'section'  => 'hb_quick_links_section',
+            'type'     => 'text',
+        ));
+
+        // Link
+        $wp_customize->add_setting("hb_quick_link_$i", array('default' => '#'));
+        $wp_customize->add_control("hb_quick_link_$i", array(
+            'label'    => "Link $i",
+            'section'  => 'hb_quick_links_section',
+            'type'     => 'url',
+        ));
+    }
+}
+add_action('customize_register', 'hb_register_quick_links_settings');
