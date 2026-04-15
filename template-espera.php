@@ -15,10 +15,10 @@
     </style>
 </head>
 
-<body class="bg-blue-900 min-h-screen flex items-center justify-center relative overflow-hidden">
+<body class="bg-[#252575] min-h-screen flex items-center justify-center relative overflow-hidden">
 
     <div class="absolute inset-0 opacity-10 pointer-events-none"
-        style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/pattern-vava-fill.png'); background-size: 250px; mix-blend-mode: overlay;">
+        style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/pattern-vava-fill.png'); background-size: 250px; mix-blend-mode: overlay;">
     </div>
 
     <div class="absolute -top-24 -left-24 w-96 h-96 bg-blue-800 rounded-full blur-[120px] opacity-50"></div>
@@ -26,7 +26,7 @@
 
     <div class="container mx-auto px-4 relative z-10 text-center">
         <div class="mb-12">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/logo-coopanest-white.png"
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-coopanest-white.png"
                 alt="3ª Corrida COOPANEST-RN" class="h-24 md:h-32 mx-auto drop-shadow-2xl">
         </div>
 
@@ -53,8 +53,8 @@
             <p class="text-white text-xs font-bold uppercase tracking-widest">© 2026 COOPANEST-RN</p>
             <div class="flex items-center gap-3">
                 <span class="text-white text-[10px] uppercase font-bold tracking-widest">Realização:</span>
-                <img src="https://www.hcsports.com.br/lovable-uploads/a0c35a1e-3016-496d-9041-44bbdaf85f79.png"
-                    alt="HC Sports" class="h-5 brightness-0 invert">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/hc-sports.png"
+                    alt="HC Sports" class="h-5">
             </div>
         </div>
     </div>
