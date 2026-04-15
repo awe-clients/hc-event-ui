@@ -1,9 +1,7 @@
 <?php get_header(); ?>
 
 <main class="min-h-[70vh] flex items-center justify-center bg-gray-50 relative overflow-hidden">
-    <div class="absolute inset-0 opacity-5 pointer-events-none"
-        style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/pattern-vava-fill.png'); background-size: 200px;">
-    </div>
+
 
     <div class="container mx-auto px-4 relative z-10">
         <div class="max-w-2xl mx-auto text-center">
@@ -25,18 +23,6 @@
                 O conteúdo que você está procurando não existe ou foi movido. Tente realizar uma nova busca ou retorne para a página inicial da corrida.
             </p>
 
-            <div class="mb-12">
-                <form role="search" method="get" class="flex flex-col md:flex-row gap-3 shadow-sm" action="<?php echo esc_url(home_url('/')); ?>">
-                    <input type="search"
-                        class="flex-grow px-6 py-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-900 focus:outline-none text-slate-700"
-                        placeholder="O que você procura?"
-                        value="<?php echo get_search_query(); ?>"
-                        name="s">
-                    <button type="submit" class="bg-blue-900 text-white font-black uppercase tracking-tighter px-8 py-4 rounded-xl hover:bg-blue-800 transition-all active:scale-95">
-                        Pesquisar
-                    </button>
-                </form>
-            </div>
 
             <a href="<?php echo esc_url(home_url('/')); ?>" class="inline-flex items-center text-blue-900 font-bold uppercase text-sm tracking-widest hover:text-yellow-600 transition-colors">
                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
