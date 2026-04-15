@@ -83,3 +83,73 @@ add_filter('pings_open', '__return_false', 20, 2);
 add_filter('login_errors', function () {
     return 'Erro: Credenciais inválidas.';
 });
+
+
+/**
+ * Hardening e Configurações do Tema
+ */
+
+function coopanest_scripts_setup()
+{
+    // Correção do erro de dependência: Tailwind é script, não style
+    wp_enqueue_script('tailwind-cdn', 'https://cdn.tailwindcss.com', array(), null, false);
+    wp_enqueue_style('coopanest-style', get_stylesheet_uri(), array(), '1.0.0');
+    wp_enqueue_script('coopanest-main-js', get_template_directory_uri() . '/js/main.js', array(), '1.0.0', true);
+}
+add_action('wp_enqueue_scripts', 'coopanest_scripts_setup');
+
+/**
+ * Registro de Meta Boxes Manuais (Substituindo ACF)
+ */
+function coopanest_add_custom_meta_boxes()
+{
+    add_meta_box(
+        'coopanest_status_meta',
+        'Configurações da Corrida',
+        'coopanest_status_callback',
+        'page', // Aplicado em páginas
+        'normal',
+        'high'
+    );
+}
+add_action('add_meta_boxes', 'coopanest_add_custom_meta_boxes');
+
+function coopanest_status_callback($post)
+{
+    // Fallback de segurança (Nonce)
+    wp_nonce_field('coopanest_save_meta', 'coopanest_meta_nonce');
+
+    $status = get_post_meta($post->ID, '_status_evento', true) ?: 'inscricao';
+    $link   = get_post_meta($post->ID, '_link_status', true);
+    $label  = get_post_meta($post->ID, '_label_status', true);
+?>
+    <p>
+        <label>Status do Evento:</label><br>
+        <select name="status_evento" style="width:100%">
+            <option value="inscricao" <?php selected($status, 'inscricao'); ?>>Inscrições Abertas</option>
+            <option value="kits" <?php selected($status, 'kits'); ?>>Retirada de Kits</option>
+            <option value="resultados" <?php selected($status, 'resultados'); ?>>Resultados</option>
+        </select>
+    </p>
+    <p>
+        <label>Texto do Botão:</label>
+        <input type="text" name="label_status" value="<?php echo esc_attr($label); ?>" style="width:100%">
+    </p>
+    <p>
+        <label>Link do Botão:</label>
+        <input type="url" name="link_status" value="<?php echo esc_url($link); ?>" style="width:100%">
+    </p>
+<?php
+}
+
+// Salvar os dados manuais
+function coopanest_save_meta_boxes($post_id)
+{
+    if (!isset($_POST['coopanest_meta_nonce']) || !wp_verify_nonce($_POST['coopanest_meta_nonce'], 'coopanest_save_meta')) return;
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+
+    if (isset($_POST['status_evento'])) update_post_meta($post_id, '_status_evento', sanitize_text_field($_POST['status_evento']));
+    if (isset($_POST['label_status']))  update_post_meta($post_id, '_label_status', sanitize_text_field($_POST['label_status']));
+    if (isset($_POST['link_status']))   update_post_meta($post_id, '_link_status', esc_url_raw($_POST['link_status']));
+}
+add_action('save_post', 'coopanest_save_meta_boxes');
