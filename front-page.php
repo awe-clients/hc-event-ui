@@ -27,6 +27,8 @@ $label_principal = get_post_meta($post_id, '_label_status', true) ?: 'Inscreva-s
 
     <?php get_template_part('template-parts/section', 'extra-info'); ?>
 
+    <?php get_template_part('template-parts/section', 'crucial-info'); ?>
+
     <section id="evento" class="py-20 bg-white">
         <div class="container mx-auto px-4 max-w-4xl text-center">
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>

@@ -479,3 +479,35 @@ function hb_register_extra_info_settings($wp_customize)
     }
 }
 add_action('customize_register', 'hb_register_extra_info_settings');
+
+
+
+
+/**
+ * Registro da Barra de Informações Cruciais (Data/Local/Etc)
+ */
+function hb_register_crucial_info_settings($wp_customize)
+{
+
+    $wp_customize->add_section('hb_crucial_info_section', array(
+        'title'    => 'Barra de Informações (Data/Local)',
+        'priority' => 31,
+    ));
+
+    $campos = array(
+        'data'    => array('label' => 'Data do Evento', 'default' => '15 Out 2026'),
+        'local'   => array('label' => 'Local do Evento', 'default' => 'Natal, RN'),
+        'largada' => array('label' => 'Horário da Largada', 'default' => '06:00h'),
+        'kits'    => array('label' => 'Status dos Kits', 'default' => 'Limitados'),
+    );
+
+    foreach ($campos as $id => $info) {
+        $wp_customize->add_setting("hb_info_$id", array('default' => $info['default']));
+        $wp_customize->add_control("hb_info_$id", array(
+            'label'   => $info['label'],
+            'section' => 'hb_crucial_info_section',
+            'type'    => 'text',
+        ));
+    }
+}
+add_action('customize_register', 'hb_register_crucial_info_settings');
