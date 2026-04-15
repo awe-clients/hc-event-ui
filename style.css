@@ -1,20 +1,13 @@
 /*
-Theme Name: Corrida Coopanest
-Author: tzadoque
-Version: 1.0
+Theme Name: 3ª Corrida COOPANEST-RN
+Theme URI: https://hcsports.com.br
+Author: HC Sports
+Description: Tema profissional para eventos esportivos.
+Version: 1.0.0
+Text Domain: coopanest
 */
 
-.faq-item {
-  border-radius: 6px;
-  padding: 40px 32px;
-  background-color: #ffffff;
-  transition: background-color 0.3s;
-}
-
-.faq-item.active {
-  background-color: #FFAA0D;
-}
-
-.faq-item.active * {
-  color: #000055;
-}
+/* Reset básico para evitar conflitos com Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

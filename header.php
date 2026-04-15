@@ -27,7 +27,7 @@
                         if (has_custom_logo()) {
                             the_custom_logo();
                         } else {
-                            echo '<img src="' . get_template_directory_uri() . '/img/logo-coopanest-rn.png" alt="' . get_bloginfo('name') . '" class="h-10 md:h-14 w-auto object-contain">';
+                            echo '<img src="' . get_template_directory_uri() . '/assets/img/logo-coopanest-rn.png" alt="' . get_bloginfo('name') . '" class="h-10 md:h-14 w-auto object-contain">';
                         }
                         ?>
                     </a>

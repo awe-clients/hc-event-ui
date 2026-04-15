@@ -3,7 +3,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12 pb-12 border-b border-white/10">
 
             <div class="flex flex-col items-center md:items-start">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/logo-coopanest-white.png" alt="3ª Corrida COOPANEST-RN" class="h-16 mb-6">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-coopanest-white.png" alt="3ª Corrida COOPANEST-RN" class="h-16 mb-6">
                 <p class="text-gray-400 text-sm text-center md:text-left leading-relaxed">
                     A maior celebração do esporte e integração da COOPANEST-RN.
                 </p>
@@ -39,7 +39,7 @@
             <div class="flex items-center gap-3">
                 <span class="text-gray-500 text-[10px] uppercase font-bold tracking-widest">Produzido por:</span>
                 <a href="https://hcsports.com.br" target="_blank" rel="noopener">
-                    <img src="https://www.hcsports.com.br/lovable-uploads/a0c35a1e-3016-496d-9041-44bbdaf85f79.png" alt="HC Sports" class="h-6">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/hc-sports.png" alt="HC Sports" class="h-6">
                 </a>
             </div>
         </div>

@@ -2,7 +2,7 @@
 
 <main class="min-h-[70vh] flex items-center justify-center bg-gray-50 relative overflow-hidden">
     <div class="absolute inset-0 opacity-5 pointer-events-none"
-        style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/pattern-vava-fill.png'); background-size: 200px;">
+        style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/pattern-vava-fill.png'); background-size: 200px;">
     </div>
 
     <div class="container mx-auto px-4 relative z-10">

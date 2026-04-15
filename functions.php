@@ -13,3 +13,18 @@ function coopanest_maintenance_mode()
     }
 }
 add_action('template_redirect', 'coopanest_maintenance_mode');
+
+
+
+function coopanest_scripts()
+{
+    // 1. Tailwind CSS via CDN (Crucial para renderizar as classes que usamos)
+    wp_enqueue_style('tailwind-cdn', 'https://cdn.tailwindcss.com', array(), null);
+
+    // 2. Estilo principal do tema (style.css na raiz do tema)
+    wp_enqueue_style('coopanest-main-style', get_stylesheet_uri(), array('tailwind-cdn'), '1.0.0');
+
+    // 3. Script para o Menu e Galerias (localizado na pasta /js/)
+    wp_enqueue_script('coopanest-scripts', get_template_directory_uri() . '/js/main.js', array(), '1.0.0', true);
+}
+add_action('wp_enqueue_scripts', 'coopanest_scripts');
