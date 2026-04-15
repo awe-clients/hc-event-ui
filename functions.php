@@ -19,7 +19,7 @@ add_action('template_redirect', 'coopanest_maintenance_mode');
 function coopanest_scripts()
 {
     // 1. Tailwind CSS via CDN (Crucial para renderizar as classes que usamos)
-    wp_enqueue_style('tailwind-cdn', 'https://cdn.tailwindcss.com', array(), null);
+    //wp_enqueue_style('tailwind-cdn', 'https://cdn.tailwindcss.com', array(), null);
 
     // 2. Estilo principal do tema (style.css na raiz do tema)
     wp_enqueue_style('coopanest-main-style', get_stylesheet_uri(), array('tailwind-cdn'), '1.0.0');
@@ -28,3 +28,10 @@ function coopanest_scripts()
     wp_enqueue_script('coopanest-scripts', get_template_directory_uri() . '/js/main.js', array(), '1.0.0', true);
 }
 add_action('wp_enqueue_scripts', 'coopanest_scripts');
+
+function coopanest_enqueue_tailwind()
+{
+    // O Tailwind Play CDN é um script que processa as classes em tempo real
+    wp_enqueue_script('tailwind-cdn', 'https://cdn.tailwindcss.com', array(), null, false);
+}
+add_action('wp_enqueue_scripts', 'coopanest_enqueue_tailwind');
