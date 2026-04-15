@@ -223,3 +223,85 @@ add_action('save_post', function ($post_id) {
     if (isset($_POST['hb_label_cta']))    update_post_meta($post_id, '_label_cta', sanitize_text_field($_POST['hb_label_cta']));
     if (isset($_POST['hb_link_cta']))     update_post_meta($post_id, '_link_cta', esc_url_raw($_POST['hb_link_cta']));
 });
+
+
+
+
+/**
+ * Configurações Dinâmicas do Painel (Customizer)
+ */
+function hb_customize_register($wp_customize)
+{
+
+    // SEÇÃO: Informações da Corrida
+    $wp_customize->add_section('hb_corrida_settings', array(
+        'title'    => 'Configurações da Corrida',
+        'priority' => 30,
+    ));
+
+    // Campo: Status do Evento
+    $wp_customize->add_setting('hb_status_evento', array('default' => 'inscricao'));
+    $wp_customize->add_control('hb_status_evento', array(
+        'label'    => 'Status Atual do Evento',
+        'section'  => 'hb_corrida_settings',
+        'type'     => 'select',
+        'choices'  => array(
+            'inscricao'  => 'Inscrições Abertas',
+            'kits'       => 'Entrega de Kits',
+            'resultados' => 'Resultados Disponíveis',
+        ),
+    ));
+
+    // Campo: Texto do Botão (CTA)
+    $wp_customize->add_setting('hb_cta_label', array('default' => 'Inscreva-se Agora'));
+    $wp_customize->add_control('hb_cta_label', array(
+        'label'   => 'Texto do Botão Principal',
+        'section' => 'hb_corrida_settings',
+        'type'    => 'text',
+    ));
+
+    // Campo: Link do Botão (CTA)
+    $wp_customize->add_setting('hb_cta_link', array('default' => '#'));
+    $wp_customize->add_control('hb_cta_link', array(
+        'label'   => 'Link do Botão Principal',
+        'section' => 'hb_corrida_settings',
+        'type'    => 'url',
+    ));
+
+    // SEÇÃO: Identidade Visual (Imagens)
+    $wp_customize->add_section('hb_visual_settings', array(
+        'title'    => 'Identidade e Imagens',
+        'priority' => 31,
+    ));
+
+    // Upload: Banner Principal
+    $wp_customize->add_setting('hb_hero_banner');
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hb_hero_banner', array(
+        'label'    => 'Banner Principal (Hero)',
+        'section'  => 'hb_visual_settings',
+    )));
+
+    // SEÇÃO: Carrossel de Banners
+    $wp_customize->add_section('hb_carousel_settings', array(
+        'title'    => 'Carrossel de Banners (Hero)',
+        'priority' => 32,
+    ));
+
+    for ($i = 1; $i <= 3; $i++) {
+        // Configuração da Imagem
+        $wp_customize->add_setting("hb_banner_img_$i");
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, "hb_banner_img_$i", array(
+            'label'    => "Banner $i",
+            'section'  => 'hb_carousel_settings',
+        )));
+
+        // Configuração do Link
+        $wp_customize->add_setting("hb_banner_link_$i", array('default' => '#'));
+        $wp_customize->add_control("hb_banner_link_$i", array(
+            'label'   => "Link do Banner $i",
+            'section' => 'hb_carousel_settings',
+            'type'    => 'url',
+        ));
+    }
+}
+add_action('customize_register', 'hb_customize_register');

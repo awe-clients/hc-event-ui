@@ -23,37 +23,51 @@ $label_principal = get_post_meta($post_id, '_label_status', true) ?: 'Inscreva-s
 ?>
 
 <main id="primary" class="site-main">
-    <section class="bg-blue-900 md:py-12 overflow-hidden relative">
-        <div class="container mx-auto px-4 relative z-10">
+    <section class="bg-blue-900 md:py-12 overflow-hidden">
+        <div class="container mx-auto px-4 relative">
 
-            <div class="w-full bg-transparent pb-4 border-b border-white/10 mb-6">
-                <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-
-                    <div id="main-cta-container" class="w-full md:w-auto">
-                        <a href="<?php echo esc_url($link_principal); ?>"
-                            class="<?php echo ($status_evento === 'inscricao') ? 'hidden md:block' : 'block'; ?> text-center bg-[#FFD100] hover:bg-[#E6BC00] text-blue-900 font-black uppercase tracking-tighter px-10 py-4 rounded-lg shadow-xl transition-all transform hover:scale-105 active:scale-95 text-lg">
-                            <?php echo esc_html($label_principal); ?>
-                        </a>
-                    </div>
-
-                    <div class="flex flex-wrap justify-center gap-3">
-                        <?php
-                        // Exemplo de como tratar dados repetidores manuais (usando um array simples por agora)
-                        $distancias = array('5Km', '10Km', '21Km');
-                        foreach ($distancias as $dist): ?>
-                            <a href="#" class="min-w-[80px] text-center px-4 py-2 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-blue-900 transition-colors text-sm">
-                                <?php echo $dist; ?>
-                            </a>
-                        <?php endforeach; ?>
-                    </div>
-                </div>
-            </div>
+            <?php get_template_part('template-parts/header', 'status'); ?>
 
             <div class="relative overflow-hidden rounded-2xl shadow-2xl border-4 border-white/10">
-                <div id="hero-slider" class="flex transition-transform duration-700">
-                    <div class="min-w-full relative h-[300px] md:h-[500px]">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/banner-default.jpg" class="w-full h-full object-cover">
-                    </div>
+                <div id="hero-slider" class="flex transition-transform duration-700 ease-in-out">
+
+                    <?php
+                    $has_slides = false;
+                    for ($i = 1; $i <= 3; $i++) :
+                        $img = get_theme_mod("hb_banner_img_$i");
+                        $link = get_theme_mod("hb_banner_link_$i", '#');
+
+                        if ($img) :
+                            $has_slides = true;
+                    ?>
+                            <div class="min-w-full relative h-[300px] md:h-[500px]">
+                                <a href="<?php echo esc_url($link); ?>">
+                                    <img src="<?php echo esc_url($img); ?>" class="w-full h-full object-cover">
+                                </a>
+                            </div>
+                        <?php
+                        endif;
+                    endfor;
+
+                    // Fallback: Se nenhum banner for configurado, exibe um padrão
+                    if (!$has_slides) : ?>
+                        <div class="min-w-full relative h-[300px] md:h-[500px] bg-slate-800 flex items-center justify-center">
+                            <span class="text-white opacity-50 uppercase font-black tracking-widest">Aguardando banners...</span>
+                        </div>
+                    <?php endif; ?>
+                </div>
+
+                <div class="absolute bottom-6 right-8 flex space-x-3 z-10">
+                    <?php
+                    for ($i = 1; $i <= 3; $i++) :
+                        if (get_theme_mod("hb_banner_img_$i")) :
+                            $idx = $i - 1;
+                    ?>
+                            <button onclick="moveHero(<?php echo $idx; ?>)" class="hero-dot w-3 h-3 rounded-full bg-white/50 transition-all hover:bg-white"></button>
+                    <?php
+                        endif;
+                    endfor;
+                    ?>
                 </div>
             </div>
         </div>
