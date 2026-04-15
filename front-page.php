@@ -39,6 +39,8 @@ $label_principal = get_post_meta($post_id, '_label_status', true) ?: 'Inscreva-s
             endif; ?>
         </div>
     </section>
+
+    <?php get_template_part('template-parts/section', 'home-news'); ?>
 </main>
 
 <?php get_footer(); ?>

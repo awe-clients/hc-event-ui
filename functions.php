@@ -511,3 +511,33 @@ function hb_register_crucial_info_settings($wp_customize)
     }
 }
 add_action('customize_register', 'hb_register_crucial_info_settings');
+
+
+
+/**
+ * Configurações da Seção de Notícias na Home
+ */
+function hb_register_news_home_settings($wp_customize)
+{
+    $wp_customize->add_section('hb_home_news_section', array(
+        'title'    => 'Notícias na Home',
+        'priority' => 35,
+    ));
+
+    // Título da Seção
+    $wp_customize->add_setting('hb_news_title', array('default' => 'Últimas Notícias'));
+    $wp_customize->add_control('hb_news_title', array(
+        'label'    => 'Título da Seção',
+        'section'  => 'hb_home_news_section',
+        'type'     => 'text',
+    ));
+
+    // Subtítulo da Seção
+    $wp_customize->add_setting('hb_news_subtitle', array('default' => 'Acompanhe as novidades e informativos da prova.'));
+    $wp_customize->add_control('hb_news_subtitle', array(
+        'label'    => 'Subtítulo da Seção',
+        'section'  => 'hb_home_news_section',
+        'type'     => 'textarea',
+    ));
+}
+add_action('customize_register', 'hb_register_news_home_settings');
