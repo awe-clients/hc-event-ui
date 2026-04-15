@@ -6,13 +6,19 @@
  */
 get_header();
 
-// Fallbacks Manuais
-$post_id = get_the_ID();
-$status_evento  = get_post_meta($post_id, '_status_evento', true) ?: 'inscricao';
-$label_principal = get_post_meta($post_id, '_label_status', true) ?: 'Ver Informações';
-$link_principal  = get_post_meta($post_id, '_link_status', true) ?: '#';
+// Fallbacks nativos caso o Meta Box não esteja preenchido
+$pid = get_the_ID();
+$status_evento = get_post_meta($pid, '_status_evento', true) ?: 'inscricao';
+$cta_label     = get_post_meta($pid, '_label_cta', true) ?: 'Saiba Mais';
+$cta_link      = get_post_meta($pid, '_link_cta', true) ?: '#';
 ?>
 
+<div id="main-cta-container" class="w-full md:w-auto">
+    <a href="<?php echo esc_url($cta_link); ?>"
+        class="<?php echo ($status_evento === 'inscricao') ? 'hidden md:block' : 'block'; ?> text-center bg-[#FFD100] hover:bg-[#E6BC00] text-blue-900 font-black uppercase tracking-tighter px-10 py-4 rounded-lg shadow-xl transition-all transform hover:scale-105 active:scale-95 text-lg">
+        <?php echo esc_html($cta_label); ?>
+    </a>
+</div>
 <main id="primary" class="site-main">
     <section class="bg-blue-900 md:py-12 overflow-hidden relative">
         <div class="container mx-auto px-4 relative z-10">

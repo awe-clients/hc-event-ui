@@ -16,18 +16,26 @@ add_action('template_redirect', 'coopanest_maintenance_mode');
 
 
 
-function coopanest_scripts()
+/**
+ * Enfileiramento de scripts e estilos com correção de dependências
+ */
+function coopanest_scripts_enqueue()
 {
-    // 1. Tailwind CSS via CDN (Crucial para renderizar as classes que usamos)
-    //wp_enqueue_style('tailwind-cdn', 'https://cdn.tailwindcss.com', array(), null);
+    // 1. Registra o Tailwind como SCRIPT (pois é um .js que compila as classes)
+    // Usamos o hook 'wp_head' para injetá-lo o quanto antes, mas via enqueue padrão
+    wp_enqueue_script('tailwind-cdn', 'https://cdn.tailwindcss.com', array(), null, false);
 
-    // 2. Estilo principal do tema (style.css na raiz do tema)
-    wp_enqueue_style('coopanest-main-style', get_stylesheet_uri(), array('tailwind-cdn'), '1.0.0');
+    // 2. Enfileira o estilo principal do tema
+    // REMOVEMOS 'tailwind-cdn' do array de dependências para eliminar o Notice
+    wp_enqueue_style('coopanest-main-style', get_stylesheet_uri(), array(), '1.0.0');
 
-    // 3. Script para o Menu e Galerias (localizado na pasta /js/)
-    wp_enqueue_script('coopanest-scripts', get_template_directory_uri() . '/js/main.js', array(), '1.0.0', true);
+    // 3. Enfileira o JS principal do framework
+    wp_enqueue_script('coopanest-main-js', get_template_directory_uri() . '/js/main.js', array(), '1.0.0', true);
 }
-add_action('wp_enqueue_scripts', 'coopanest_scripts');
+add_action('wp_enqueue_scripts', 'coopanest_scripts_enqueue');
+
+
+
 
 function coopanest_enqueue_tailwind()
 {
@@ -153,3 +161,65 @@ function coopanest_save_meta_boxes($post_id)
     if (isset($_POST['link_status']))   update_post_meta($post_id, '_link_status', esc_url_raw($_POST['link_status']));
 }
 add_action('save_post', 'coopanest_save_meta_boxes');
+
+
+
+
+
+/**
+ * Registro de Meta Boxes para a Front Page
+ */
+function hb_register_home_metaboxes()
+{
+    add_meta_box(
+        'hb_home_details',
+        'Configurações da Corrida (Status e Hero)',
+        'hb_home_details_callback',
+        'page',
+        'normal',
+        'high'
+    );
+}
+add_action('add_meta_boxes', 'hb_register_home_metaboxes');
+
+function hb_home_details_callback($post)
+{
+    // Segurança
+    wp_nonce_field('hb_save_home_data', 'hb_home_nonce');
+
+    // Recuperação de valores com Fallbacks
+    $status = get_post_meta($post->ID, '_status_evento', true) ?: 'inscricao';
+    $label  = get_post_meta($post->ID, '_label_cta', true) ?: 'Inscreva-se';
+    $link   = get_post_meta($post->ID, '_link_cta', true) ?: '#';
+
+?>
+    <div class="hb-admin-box">
+        <p>
+            <label><strong>Status Atual:</strong></label><br>
+            <select name="hb_status_evento" style="width:100%;">
+                <option value="inscricao" <?php selected($status, 'inscricao'); ?>>Inscrições Abertas</option>
+                <option value="kits" <?php selected($status, 'kits'); ?>>Retirada de Kits</option>
+                <option value="resultados" <?php selected($status, 'resultados'); ?>>Resultados Disponíveis</option>
+            </select>
+        </p>
+        <p>
+            <label><strong>Texto do Botão CTA:</strong></label>
+            <input type="text" name="hb_label_cta" value="<?php echo esc_attr($label); ?>" style="width:100%;">
+        </p>
+        <p>
+            <label><strong>URL do Botão CTA:</strong></label>
+            <input type="url" name="hb_link_cta" value="<?php echo esc_url($link); ?>" style="width:100%;">
+        </p>
+    </div>
+<?php
+}
+
+// Salvar os dados
+add_action('save_post', function ($post_id) {
+    if (!isset($_POST['hb_home_nonce']) || !wp_verify_nonce($_POST['hb_home_nonce'], 'hb_save_home_data')) return;
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+
+    if (isset($_POST['hb_status_evento'])) update_post_meta($post_id, '_status_evento', sanitize_text_field($_POST['hb_status_evento']));
+    if (isset($_POST['hb_label_cta']))    update_post_meta($post_id, '_label_cta', sanitize_text_field($_POST['hb_label_cta']));
+    if (isset($_POST['hb_link_cta']))     update_post_meta($post_id, '_link_cta', esc_url_raw($_POST['hb_link_cta']));
+});
