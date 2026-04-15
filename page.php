@@ -5,7 +5,7 @@
 
             <section class="relative bg-blue-900 pt-32 pb-16 overflow-hidden">
                 <div class="absolute inset-0 opacity-10 pointer-events-none"
-                    style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/pattern-vava-fill.png'); background-size: 200px; mix-blend-mode: overlay;">
+                    style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/pattern-vava-fill.png'); background-size: 200px; mix-blend-mode: overlay;">
                 </div>
 
                 <div class="container mx-auto px-4 relative z-10 max-w-4xl">
@@ -22,17 +22,22 @@
                         <?php the_content(); ?>
                     </div>
 
-                    <?php if (get_field('ativar_download_pdf')) : ?>
+                    <?php
+                    // Usando get_theme_mod para as configurações globais de regulamento
+                    $ativar_download = get_theme_mod('hb_show_regulation_download', false);
+                    $arquivo_pdf    = get_theme_mod('hb_regulation_file', '#');
+
+                    if ($ativar_download) : ?>
                         <div class="mt-16 p-8 bg-gray-50 rounded-2xl border border-gray-100 flex flex-col md:flex-row justify-between items-center gap-6 shadow-sm">
                             <div>
                                 <p class="text-blue-900 font-bold uppercase text-sm tracking-tight">
-                                    <?php the_field('titulo_arquivo'); ?>
+                                    Precisa de uma cópia offline?
                                 </p>
-                                <p class="text-gray-500 text-xs"><?php the_field('subtitulo_arquivo'); ?></p>
+                                <p class="text-gray-500 text-xs">Faça o download do regulamento em formato PDF.</p>
                             </div>
-                            <a href="<?php the_field('arquivo_pdf'); ?>" target="_blank"
+                            <a href="<?php echo esc_url($arquivo_pdf); ?>" target="_blank"
                                 class="inline-flex items-center bg-blue-900 text-white px-8 py-3 rounded-lg font-bold text-sm uppercase tracking-tighter hover:bg-blue-800 transition-all active:scale-95">
-                                Baixar Arquivo (PDF)
+                                Baixar Regulamento (PDF)
                             </a>
                         </div>
                     <?php endif; ?>
