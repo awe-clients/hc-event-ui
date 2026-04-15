@@ -30,7 +30,7 @@ function coopanest_scripts_enqueue()
     wp_enqueue_style('coopanest-main-style', get_stylesheet_uri(), array(), '1.0.0');
 
     // 3. Enfileira o JS principal do framework
-    wp_enqueue_script('coopanest-main-js', get_template_directory_uri() . '/js/main.js', array(), '1.0.0', true);
+    wp_enqueue_script('coopanest-main-js', get_template_directory_uri() . '/assets/js/main.js', array(), '1.0.0', true);
 }
 add_action('wp_enqueue_scripts', 'coopanest_scripts_enqueue');
 
@@ -428,3 +428,54 @@ function hb_register_cta_settings($wp_customize)
     }
 }
 add_action('customize_register', 'hb_register_cta_settings');
+
+
+
+/**
+ * Registro da Seção de Informações Extra no Customizer
+ */
+function hb_register_extra_info_settings($wp_customize)
+{
+
+    $wp_customize->add_section('hb_extra_info_section', array(
+        'title'    => 'Informações Extra (Cards)',
+        'priority' => 34,
+        'description' => 'Configure os cards informativos que aparecem abaixo do carrossel.',
+    ));
+
+    // Criamos 4 blocos de configuração
+    for ($i = 1; $i <= 4; $i++) {
+
+        // Upload do Ícone (Imagem ou SVG)
+        $wp_customize->add_setting("hb_info_icon_$i");
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, "hb_info_icon_$i", array(
+            'label'    => "Ícone do Card $i",
+            'section'  => 'hb_extra_info_section',
+        )));
+
+        // Título (Máximo 2 palavras sugerido no label)
+        $wp_customize->add_setting("hb_info_title_$i", array('default' => 'Título'));
+        $wp_customize->add_control("hb_info_title_$i", array(
+            'label'    => "Título do Card $i (Máx 2 palavras)",
+            'section'  => 'hb_extra_info_section',
+            'type'     => 'text',
+        ));
+
+        // Descrição Curta
+        $wp_customize->add_setting("hb_info_desc_$i", array('default' => 'Descrição curta do item.'));
+        $wp_customize->add_control("hb_info_desc_$i", array(
+            'label'    => "Descrição do Card $i",
+            'section'  => 'hb_extra_info_section',
+            'type'     => 'textarea',
+        ));
+
+        // Link do Card
+        $wp_customize->add_setting("hb_info_link_$i", array('default' => '#'));
+        $wp_customize->add_control("hb_info_link_$i", array(
+            'label'    => "Link do Card $i",
+            'section'  => 'hb_extra_info_section',
+            'type'     => 'url',
+        ));
+    }
+}
+add_action('customize_register', 'hb_register_extra_info_settings');

@@ -23,53 +23,18 @@ $label_principal = get_post_meta($post_id, '_label_status', true) ?: 'Inscreva-s
 ?>
 
 <main id="primary" class="site-main">
-    <section class="bg-blue-900 md:py-12 overflow-hidden">
-        <div class="container mx-auto px-4 relative">
+    <?php get_template_part('template-parts/section', 'hero'); ?>
 
-            <?php get_template_part('template-parts/header', 'status'); ?>
+    <?php get_template_part('template-parts/section', 'extra-info'); ?>
 
-            <div class="relative overflow-hidden rounded-2xl shadow-2xl border-4 border-white/10">
-                <div id="hero-slider" class="flex transition-transform duration-700 ease-in-out">
-
-                    <?php
-                    $has_slides = false;
-                    for ($i = 1; $i <= 3; $i++) :
-                        $img = get_theme_mod("hb_banner_img_$i");
-                        $link = get_theme_mod("hb_banner_link_$i", '#');
-
-                        if ($img) :
-                            $has_slides = true;
-                    ?>
-                            <div class="min-w-full relative h-[300px] md:h-[500px]">
-                                <a href="<?php echo esc_url($link); ?>">
-                                    <img src="<?php echo esc_url($img); ?>" class="w-full h-full object-cover">
-                                </a>
-                            </div>
-                        <?php
-                        endif;
-                    endfor;
-
-                    // Fallback: Se nenhum banner for configurado, exibe um padrão
-                    if (!$has_slides) : ?>
-                        <div class="min-w-full relative h-[300px] md:h-[500px] bg-slate-800 flex items-center justify-center">
-                            <span class="text-white opacity-50 uppercase font-black tracking-widest">Aguardando banners...</span>
-                        </div>
-                    <?php endif; ?>
-                </div>
-
-                <div class="absolute bottom-6 right-8 flex space-x-3 z-10">
-                    <?php
-                    for ($i = 1; $i <= 3; $i++) :
-                        if (get_theme_mod("hb_banner_img_$i")) :
-                            $idx = $i - 1;
-                    ?>
-                            <button onclick="moveHero(<?php echo $idx; ?>)" class="hero-dot w-3 h-3 rounded-full bg-white/50 transition-all hover:bg-white"></button>
-                    <?php
-                        endif;
-                    endfor;
-                    ?>
-                </div>
-            </div>
+    <section id="evento" class="py-20 bg-white">
+        <div class="container mx-auto px-4 max-w-4xl text-center">
+            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                    <div class="prose prose-lg mx-auto text-gray-600">
+                        <?php the_content(); ?>
+                    </div>
+            <?php endwhile;
+            endif; ?>
         </div>
     </section>
 </main>
