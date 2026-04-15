@@ -1,4 +1,4 @@
-<section class="bg-blue-900 pb-20">
+<section class="pb-20">
     <div class="container mx-auto px-4">
         <div id="quick-links-scroll" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-6 cursor-grab active:cursor-grabbing select-none py-4">
 

@@ -69,5 +69,11 @@ $news_subtitle = get_theme_mod('hb_news_subtitle', 'Acompanhe as novidades e inf
                 Ver todas as notícias
             </a>
         </div>
+        <div class="mt-16 text-center">
+            <a href="<?php echo get_post_type_archive_link('post'); ?>"
+                class="inline-block border-2 border-blue-900 text-blue-900 font-black uppercase px-10 py-4 rounded-lg hover:bg-blue-900 hover:text-white transition-all text-sm tracking-widest">
+                Ver todas as notícias
+            </a>
+        </div>
     </div>
 </section>
