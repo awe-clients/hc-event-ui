@@ -50,9 +50,9 @@ $kit_modal  = get_theme_mod('modal_kit_img', '');
             </div>
         </div>
 
-        <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="text-gray-500 text-xs">
-                &copy; <?php echo date('Y'); ?> <?php echo esc_html(get_theme_mod('footer_copyright', '3ª Corrida COOPANEST-RN. Todos os direitos reservados.')); ?>
+        <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-6 border-t-1 border-indigo-500">
+            <div class="text-gray-500 text-sm">
+                &copy; <?php echo date('Y'); ?> - <?php echo esc_html(get_theme_mod('footer_copyright', '3ª CORRIDA COOPANEST-RN. Todos os direitos reservados.')); ?>
             </div>
             <div class="flex items-center gap-3">
                 <span class="text-gray-500 text-[10px] uppercase font-bold tracking-widest">Produzido por:</span>
