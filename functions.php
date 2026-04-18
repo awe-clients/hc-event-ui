@@ -3,7 +3,7 @@
 
 /**
  * Redireciona usuários não logados para a página de espera
- */
+ 
 function coopanest_maintenance_mode()
 {
     // Verifica se o usuário não está logado e se não está na tela de login
@@ -14,7 +14,7 @@ function coopanest_maintenance_mode()
     }
 }
 add_action('template_redirect', 'coopanest_maintenance_mode');
-
+ */
 
 /**
  * COOPANEST-RN Theme Functions
