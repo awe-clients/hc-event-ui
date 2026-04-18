@@ -47,6 +47,7 @@ function coopanest_enqueue_scripts()
     wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
     wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;600&display=swap', false);
     wp_enqueue_style('coopanest-style', get_stylesheet_uri(), array(), '1.0');
+    wp_enqueue_script('coopanest-scripts', get_template_directory_uri() . '/assets/js/scripts.js', array(), '1.0', true);
 }
 add_action('wp_enqueue_scripts', 'coopanest_enqueue_scripts');
 

@@ -3,8 +3,8 @@
 /**
  * Footer do Tema
  */
-$mapa_modal = get_theme_mod('modal_mapa_img', 'https://via.placeholder.com/1200x800/e5e5e5/333333?text=MAPA+AQUI');
-$kit_modal  = get_theme_mod('modal_kit_img', 'https://via.placeholder.com/600x600/22c55e/FFFFFF?text=KIT+COMPLETO');
+$mapa_modal = get_theme_mod('modal_mapa_img', '');
+$kit_modal  = get_theme_mod('modal_kit_img', '');
 ?>
 
 <footer class="color-5km-bg pattern-vava-vazado text-white pt-24 pb-12 mt-auto">
@@ -73,7 +73,6 @@ $kit_modal  = get_theme_mod('modal_kit_img', 'https://via.placeholder.com/600x60
 </div>
 
 <script>
-    // Armazenamos as URLs do PHP em variáveis JS
     const modalData = {
         mapaImg: "<?php echo esc_url($mapa_modal); ?>",
         kitImg: "<?php echo esc_url($kit_modal); ?>"
