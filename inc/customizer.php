@@ -148,5 +148,6 @@ if (! function_exists('coopanest_customize_register')) {
         }
     } // FIM DA FUNÇÃO PRINCIPAL
 }
-// Registrar a função no gancho correto do WordPress
+
+// O Hook SEMPRE fora da função
 add_action('customize_register', 'coopanest_customize_register');
