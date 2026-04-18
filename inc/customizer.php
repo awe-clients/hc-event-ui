@@ -71,12 +71,13 @@ if (! function_exists('coopanest_customize_register')) {
         $wp_customize->add_control('sobre_text', array('label' => 'Texto Descritivo', 'section' => 'coopanest_sobre_section', 'type' => 'textarea'));
 
         $wp_customize->add_setting('sobre_image');
-        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'sobre_image', array('label' => 'Imagem Lateral', 'section' => 'coopanest_sobre_section')));
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'sobre_image', array('label' => 'Imagem Lateral (620x745', 'section' => 'coopanest_sobre_section')));
 
 
         // ==========================================
         // 4. INDICADORES DA PROVA
         // ==========================================
+        /*** DESCONTINUADO
         $wp_customize->add_section('coopanest_indicadores_section', array(
             'title'    => 'Indicadores da Prova',
             'priority' => 33,
@@ -93,6 +94,7 @@ if (! function_exists('coopanest_customize_register')) {
             $wp_customize->add_control("ind_value_$i", array('label' => "Valor $i", 'section' => 'coopanest_indicadores_section', 'type' => 'text'));
         }
 
+         *****/
 
         // ==========================================
         // 5. CARDS E MODAIS
