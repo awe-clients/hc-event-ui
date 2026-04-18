@@ -71,7 +71,7 @@ if (! function_exists('coopanest_customize_register')) {
         $wp_customize->add_control('sobre_text', array('label' => 'Texto Descritivo', 'section' => 'coopanest_sobre_section', 'type' => 'textarea'));
 
         $wp_customize->add_setting('sobre_image');
-        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'sobre_image', array('label' => 'Imagem Lateral (620x745', 'section' => 'coopanest_sobre_section')));
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'sobre_image', array('label' => 'Imagem Lateral (620x745px)', 'section' => 'coopanest_sobre_section')));
 
 
         // ==========================================
@@ -97,24 +97,42 @@ if (! function_exists('coopanest_customize_register')) {
          *****/
 
         // ==========================================
-        // 5. CARDS E MODAIS
+        // 5. CONFIGURAÇÕES DOS CARDS (LINKS DE PÁGINAS)
         // ==========================================
         $wp_customize->add_section('coopanest_cards_section', array(
-            'title'    => 'Cards e Modais',
+            'title'    => 'Cards e Links do Evento',
             'priority' => 34,
         ));
 
-        $wp_customize->add_setting('modal_mapa_img');
-        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'modal_mapa_img', array('label' => 'Mapa (Modal)', 'section' => 'coopanest_cards_section')));
+        // Card 1: Percursos
+        $wp_customize->add_setting('card_percurso_url', array('default' => '#', 'sanitize_callback' => 'esc_url_raw'));
+        $wp_customize->add_control('card_percurso_url', array(
+            'label'   => 'Link da Página de Percursos',
+            'section' => 'coopanest_cards_section',
+            'type'    => 'url',
+        ));
 
-        $wp_customize->add_setting('card_kit_img');
-        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'card_kit_img', array('label' => 'Camiseta (Capa do Card)', 'section' => 'coopanest_cards_section')));
+        // Card 2: Kit Atleta
+        $wp_customize->add_setting('card_kit_url', array('default' => '#', 'sanitize_callback' => 'esc_url_raw'));
+        $wp_customize->add_control('card_kit_url', array(
+            'label'   => 'Link da Página do Kit',
+            'section' => 'coopanest_cards_section',
+            'type'    => 'url',
+        ));
 
-        $wp_customize->add_setting('modal_kit_img');
-        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'modal_kit_img', array('label' => 'Kit Completo (Modal)', 'section' => 'coopanest_cards_section')));
+        $wp_customize->add_setting('card_kit_img'); // Mantém a imagem de capa do card
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'card_kit_img', array(
+            'label'   => 'Imagem de Capa (Card Kit)',
+            'section' => 'coopanest_cards_section',
+        )));
 
-        $wp_customize->add_setting('card_regulamento_pdf', array('default' => '#'));
-        $wp_customize->add_control('card_regulamento_pdf', array('label' => 'URL do PDF (Regulamento)', 'section' => 'coopanest_cards_section', 'type' => 'url'));
+        // Card 3: Regulamento (Página ou PDF)
+        $wp_customize->add_setting('card_regulamento_url', array('default' => '#', 'sanitize_callback' => 'esc_url_raw'));
+        $wp_customize->add_control('card_regulamento_url', array(
+            'label'   => 'Link da Página ou PDF do Regulamento',
+            'section' => 'coopanest_cards_section',
+            'type'    => 'url',
+        ));
 
 
         // ==========================================
