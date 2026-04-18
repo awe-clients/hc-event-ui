@@ -1,20 +1,6 @@
 <?php
 
 
-/**
- * Redireciona usuários não logados para a página de espera
- 
-function coopanest_maintenance_mode()
-{
-    // Verifica se o usuário não está logado e se não está na tela de login
-    if (!is_user_logged_in() && !is_login()) {
-        // Busca o arquivo template-espera.php na raiz do tema
-        include(get_template_directory() . '/template-espera.php');
-        exit;
-    }
-}
-add_action('template_redirect', 'coopanest_maintenance_mode');
- */
 
 /**
  * COOPANEST-RN Theme Functions
@@ -295,20 +281,25 @@ function coopanest_status_widget_render()
 
 
 /**
- * Interceptação de Requisições e Carregamento de Template de Espera
+ * Lógica de Visibilidade: Site Real vs. Página de Espera
+ * Referência: Identidade Visual COOPANEST-RN [cite: 2, 4]
  */
-function coopanest_status_redirect()
+function coopanest_controle_visibilidade()
 {
+    // Recupera o status salvo no Dashboard
     $status = get_option('coopanest_status_evento', 'offline');
 
-    // Permite acesso irrestrito para administradores e editores
-    if ($status !== 'online' && !current_user_can('edit_posts')) {
-        $template = get_template_directory() . '/template-espera.php';
+    // Se o evento estiver OFFLINE e o usuário NÃO for administrador/editor
+    if ('online' !== $status && !current_user_can('manage_options')) {
 
-        if (file_exists($template)) {
-            include($template);
-            exit;
+        // Caminho absoluto para o arquivo na raiz do tema
+        $template_espera = get_template_directory() . '/template-espera.php';
+
+        if (file_exists($template_espera)) {
+            include($template_espera);
+            exit; // Interrompe o carregamento do restante do WordPress
         }
     }
 }
-add_action('template_redirect', 'coopanest_status_redirect');
+// Hook de prioridade alta para interceptar antes de qualquer renderização
+add_action('template_redirect', 'coopanest_controle_visibilidade', 1);
