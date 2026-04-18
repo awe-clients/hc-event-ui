@@ -15,7 +15,7 @@ $target_date  = get_theme_mod('hero_countdown_date'); // Formato: 2026-10-15 06:
     <picture class="absolute inset-0 opacity-40">
         <source media="(max-width: 768px)" srcset="<?php echo esc_url($bg_mobile); ?>">
         <source media="(max-width: 1024px)" srcset="<?php echo esc_url($bg_tablet); ?>">
-        <img src="<?php echo esc_url($bg_desktop); ?>" class="w-full h-full object-cover grayscale" alt="Fundo Hero">
+        <img src="<?php echo esc_url($bg_desktop); ?>" class="w-full h-full object-cover" alt="Fundo Hero">
     </picture>
 
     <div class="absolute inset-0 bg-blue-900/40 mix-blend-multiply"></div>
