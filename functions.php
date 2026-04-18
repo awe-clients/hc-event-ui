@@ -292,3 +292,23 @@ function coopanest_status_widget_render()
     echo $is_online ? 'DESATIVAR SITE' : 'PUBLICAR EVENTO';
     echo '</button></form></div>';
 }
+
+
+/**
+ * Interceptação de Requisições e Carregamento de Template de Espera
+ */
+function coopanest_status_redirect()
+{
+    $status = get_option('coopanest_status_evento', 'offline');
+
+    // Permite acesso irrestrito para administradores e editores
+    if ($status !== 'online' && !current_user_can('edit_posts')) {
+        $template = get_template_directory() . '/template-espera.php';
+
+        if (file_exists($template)) {
+            include($template);
+            exit;
+        }
+    }
+}
+add_action('template_redirect', 'coopanest_status_redirect');
