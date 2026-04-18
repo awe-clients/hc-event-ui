@@ -34,7 +34,7 @@ $image    = get_theme_mod('sobre_image', 'https://via.placeholder.com/800x1200/2
             </div>
 
             <div class="lg:col-span-5 relative min-h-[400px] color-5km-bg overflow-hidden pattern-vava-vazado">
-                <img src="<?php echo esc_url($image); ?>" class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-60" alt="Sobre o Evento">
+                <img src="<?php echo esc_url($image); ?>" class="absolute inset-0 w-full h-full object-cover" alt="Sobre o Evento">
             </div>
         </div>
     </div>
