@@ -1,0 +1,13 @@
+/*
+Theme Name: 3ª Corrida COOPANEST-RN
+Theme URI: https://hcsports.com.br
+Author: HC Sports
+Description: Tema profissional para eventos esportivos.
+Version: 1.0.0
+Text Domain: coopanest
+*/
+
+/* Reset básico para evitar conflitos com Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
