@@ -13,9 +13,9 @@ $kit_modal  = get_theme_mod('modal_kit_img', 'https://via.placeholder.com/600x60
             <div class="lg:col-span-6">
                 <?php if (has_custom_logo()) : the_custom_logo();
                 else : ?>
-                    <div class="font-black italic text-3xl mb-8 tracking-tighter">COOPANEST-RN</div>
+                    <div class="font-black italic text-3xl mb-8 tracking-tighter">3ª CORRIDA COOPANEST-RN</div>
                 <?php endif; ?>
-                <p class="text-white/70 text-lg leading-relaxed max-w-md font-medium">Integração esportiva fundamentada no desenvolvimento da padronagem visual VAVA e na saúde médica potiguar.</p>
+                <p class="text-white/70 text-lg leading-relaxed max-w-md font-normal">Integração esportiva fundamentada no desenvolvimento da padronagem visual VAVA e na saúde médica potiguar.</p>
             </div>
 
             <div class="lg:col-span-3">
@@ -50,8 +50,16 @@ $kit_modal  = get_theme_mod('modal_kit_img', 'https://via.placeholder.com/600x60
             </div>
         </div>
 
-        <div class="pt-10 border-t border-white/10 text-[10px] font-black text-white/50 uppercase tracking-widest text-center">
-            &copy; <?php echo date('Y'); ?> <?php echo esc_html(get_theme_mod('footer_copyright', '3ª Corrida COOPANEST-RN. Todos os direitos reservados.')); ?>
+        <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-gray-500 text-xs">
+                &copy; <?php echo date('Y'); ?> <?php echo esc_html(get_theme_mod('footer_copyright', '3ª Corrida COOPANEST-RN. Todos os direitos reservados.')); ?>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="text-gray-500 text-[10px] uppercase font-bold tracking-widest">Produzido por:</span>
+                <a href="https://hcsports.com.br" target="_blank" rel="noopener">
+                    <img src="https://corridacoopanest.com.br/wp-content/themes/theme-coopanest/assets/img/hc-sports.png" alt="HC Sports" class="h-6">
+                </a>
+            </div>
         </div>
     </div>
 </footer>

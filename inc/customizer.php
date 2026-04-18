@@ -131,6 +131,7 @@ $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'sobre_
 // ==========================================
 // 4. CONFIGURAÇÕES DE INDICADORES
 // ==========================================
+/* --- DESCONTINUADO --------------
 $wp_customize->add_section('coopanest_indicadores_section', array(
     'title'    => 'Indicadores da Prova',
     'priority' => 33,
@@ -160,7 +161,7 @@ for ($i = 1; $i <= 4; $i++) {
     ));
 }
 
-
+*/
 
 // ==========================================
 // 5. CONFIGURAÇÕES DOS CARDS E MODAIS

@@ -53,11 +53,11 @@ $link_text     = get_theme_mod('noticias_link_text', 'Ler todas as postagens');
                             </div>
                         </div>
                         <div>
-                            <h3 class="text-2xl font-black uppercase italic leading-tight color-5km-text group-hover:opacity-70 transition-colors mb-4">
+                            <h3 class="text-xl font-black uppercase italic leading-tight color-5km-text group-hover:opacity-90 transition-colors mb-4">
                                 <?php the_title(); ?>
                             </h3>
-                            <p class="text-zinc-500 text-sm leading-relaxed line-clamp-3">
-                                <?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?>
+                            <p class="text-zinc-700 text-sm leading-relaxed line-clamp-3">
+                                <?php echo wp_trim_words(get_the_excerpt(), 40, '...'); ?>
                             </p>
                         </div>
                     </article>
