@@ -242,3 +242,53 @@ function coopanest_admin_footer_text()
     echo '<span id="footer-thankyou">Suporte Técnico: <a href="mailto:contato@exemplo.com.br" style="color:#1e3a8a; font-weight:bold;">Clique aqui para ajuda</a> | 3ª Corrida COOPANEST-RN</span>';
 }
 add_filter('admin_footer_text', 'coopanest_admin_footer_text');
+
+
+/**
+ * Registro do Widget de Status no Dashboard para a 3ª Corrida COOPANEST-RN
+ */
+function coopanest_register_status_widget()
+{
+    wp_add_dashboard_widget(
+        'coopanest_event_status_widget',
+        'Gerenciamento de Visibilidade: 3ª Corrida COOPANEST-RN',
+        'coopanest_status_widget_render'
+    );
+}
+add_action('wp_dashboard_setup', 'coopanest_register_status_widget');
+
+/**
+ * Processamento da Transição de Estado Administrativo
+ */
+function coopanest_handle_status_toggle()
+{
+    if (isset($_POST['coopanest_toggle_action']) && check_admin_referer('coopanest_status_nonce', 'coopanest_nonce_field')) {
+        $status_atual = get_option('coopanest_status_evento', 'offline');
+        $novo_status = ($status_atual === 'online') ? 'offline' : 'online';
+        update_option('coopanest_status_evento', $novo_status);
+        wp_safe_redirect(admin_url());
+        exit;
+    }
+}
+add_action('admin_init', 'coopanest_handle_status_toggle');
+
+/**
+ * Renderização da Interface de Controle no Admin
+ */
+function coopanest_status_widget_render()
+{
+    $is_online = get_option('coopanest_status_evento', 'offline') === 'online';
+
+    // Cores baseadas nas modalidades de 10km (Verde) e 15km (Roxo)
+    $cor_primaria = $is_online ? '#22c55e' : '#7e22ce';
+    $label = $is_online ? 'EVENTO PUBLICADO' : 'MODO DE ESPERA ATIVO';
+
+    echo '<div style="text-align:center; padding:15px;">';
+    echo '<div style="font-weight:900; color:' . $cor_primaria . '; margin-bottom:15px; text-transform:uppercase;">' . $label . '</div>';
+    echo '<form method="post" action="">';
+    wp_nonce_field('coopanest_status_nonce', 'coopanest_nonce_field');
+    echo '<input type="hidden" name="coopanest_toggle_action" value="1">';
+    echo '<button type="submit" class="button" style="background:' . $cor_primaria . '; color:#fff; border:none; padding:10px 20px; font-weight:bold; cursor:pointer; border-radius:4px;">';
+    echo $is_online ? 'DESATIVAR SITE' : 'PUBLICAR EVENTO';
+    echo '</button></form></div>';
+}
