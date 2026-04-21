@@ -26,7 +26,7 @@ $target_date  = get_theme_mod('hero_countdown_date'); // Formato: 2026-10-15 06:
             <h4 class="text-yellow-400 font-black tracking-[0.3em] uppercase mb-4">
                 <?php echo esc_html($hero_sub); ?>
             </h4>
-            <h1 class="text-white text-3xl md:text-[8rem] font-black italic leading-[0.85] tracking-tighter uppercase mb-10">
+            <h1 class="text-white text-6xl md:text-[4rem] font-black italic leading-[0.85] tracking-tighter uppercase mb-10">
                 <?php echo esc_html($hero_title); ?>
             </h1>
 
