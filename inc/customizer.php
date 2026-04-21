@@ -34,6 +34,9 @@ if (! function_exists('coopanest_customize_register')) {
             'priority' => 31,
         ));
 
+        $wp_customize->add_setting('hero_title', array('default' => '3 Corrida Coopanest'));
+        $wp_customize->add_control('hero_title', array('label' => 'Texto do Título principal', 'section' => 'coopanest_hero_section', 'type' => 'text'));
+
         $wp_customize->add_setting('hero_subtitle', array('default' => 'Integração e Desempenho'));
         $wp_customize->add_control('hero_subtitle', array('label' => 'Texto Menor (Acima do Título)', 'section' => 'coopanest_hero_section', 'type' => 'text'));
 
