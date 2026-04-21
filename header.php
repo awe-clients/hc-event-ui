@@ -51,6 +51,31 @@
             transform: skewX(10deg);
             display: inline-block;
         }
+
+        :root {
+            /* Cores das Modalidades e Marca */
+            --brand-cta: <?php echo get_theme_mod('brand_cta', '#FFD100'); ?>;
+            --color-5km: <?php echo get_theme_mod('color_5km', '#2e1065'); ?>;
+            --color-10km: <?php echo get_theme_mod('color_10km', '#22c55e'); ?>;
+            --color-15km: <?php echo get_theme_mod('color_15km', '#7e22ce'); ?>;
+
+            /* Cores de Interface (Craft Design) */
+            --text-main: <?php echo get_theme_mod('text_main', '#18181b'); ?>;
+            --bg-light: <?php echo get_theme_mod('bg_light', '#f4f4f5'); ?>;
+            --vava-color: <?php echo get_theme_mod('vava_pattern', 'rgba(255,255,255,0.1)'); ?>;
+            
+            /* Derivações Úteis */
+            --brand-cta-hover: color-mix(in srgb, var(--brand-cta), black 10%);
+            --border-subtle: color-mix(in srgb, var(--text-main), transparent 90%);
+        }
+
+        /* Aplicação Automática */
+        body { 
+            background-color: var(--bg-light); 
+            color: var(--text-main); 
+        }
+        .bg-yellow-brand { background-color: var(--brand-cta); }
+        .pattern-vava-vazado { color: var(--vava-color); }
     </style>
 </head>
 

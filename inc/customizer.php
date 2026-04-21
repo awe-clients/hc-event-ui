@@ -169,6 +169,37 @@ if (! function_exists('coopanest_customize_register')) {
             $wp_customize->add_setting("footer_$rede", array('default' => ''));
             $wp_customize->add_control("footer_$rede", array('label' => "URL do " . ucfirst($rede), 'section' => 'coopanest_footer_section', 'type' => 'url'));
         }
+
+
+        // Adicione isto dentro da função coopanest_customize_register($wp_customize)
+
+        $wp_customize->add_section('coopanest_colors_section', array(
+            'title'    => 'Cores do Sistema',
+            'priority' => 20,
+        ));
+
+        $cores_custom = array(
+            'brand_cta'    => array('label' => 'Cor Amarela (CTA)', 'default' => '#FFD100'),
+            'color_5km'    => array('label' => 'Cor 5km (Azul)', 'default' => '#2e1065'),
+            'color_10km'   => array('label' => 'Cor 10km (Verde)', 'default' => '#22c55e'),
+            'color_15km'   => array('label' => 'Cor 15km (Roxo)', 'default' => '#7e22ce'),
+            'text_main'    => array('label' => 'Texto Principal', 'default' => '#18181b'),
+            'bg_light'     => array('label' => 'Fundo do Site', 'default' => '#f4f4f5'),
+            'vava_pattern' => array('label' => 'Cor da Padronagem VAVA', 'default' => 'rgba(255,255,255,0.1)'),
+        );
+
+        foreach ($cores_custom as $id => $data) {
+            $wp_customize->add_setting($id, array(
+                'default'           => $data['default'],
+                'sanitize_callback' => 'sanitize_hex_color',
+                'transport'         => 'refresh',
+            ));
+
+            $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, $id, array(
+                'label'    => $data['label'],
+                'section'  => 'coopanest_colors_section',
+            )));
+        }
     } // FIM DA FUNÇÃO PRINCIPAL
 }
 
