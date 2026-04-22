@@ -32,7 +32,7 @@ $target_date  = get_theme_mod('hero_countdown_date'); // Formato: 2026-10-15 06:
 
             <?php if (get_theme_mod('header_cta_hide', false) == false) : ?>
                 <a href="<?php echo esc_url(get_theme_mod('header_cta_link', '#')); ?>"
-                    class="btn-brand bg-yellow-400 text-blue-900 px-10 py-5 text-xl font-black uppercase italic skew-element hover:bg-white transition-all inline-block">
+                    class="btn-brand bg-yellow-400 text-blue-900 px-10 py-5 text-xl font-black uppercase italic skew-element hover:bg-white transition-all inline-block" target="_blank">
                     <span class="unskew"><?php echo esc_html(get_theme_mod('header_cta_text', 'Inscreva-se')); ?> <i class="fas fa-running ml-2"></i></span>
                 </a>
             <?php endif; ?>

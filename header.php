@@ -116,7 +116,7 @@
             if (!$cta_hide) :
             ?>
                 <a href="<?php echo esc_url($cta_link); ?>"
-                    class="color-10km-bg text-white px-6 py-2 skew-element font-black text-xs uppercase italic hover:bg-green-600 transition-colors hidden md:inline-block">
+                    class="color-10km-bg text-white px-6 py-2 skew-element font-black text-xs uppercase italic hover:bg-green-600 transition-colors hidden md:inline-block"  target="_blank">
                     <span class="unskew"><?php echo esc_html($cta_text); ?></span>
                 </a>
             <?php endif; ?>
