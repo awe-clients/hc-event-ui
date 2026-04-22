@@ -117,6 +117,9 @@ if (! function_exists('coopanest_customize_register')) {
         $wp_customize->add_setting('card_percurso_text', array('default' => 'Consulte os trajetos técnicos e pontos de hidratação definidos para a prova.'));
         $wp_customize->add_control('card_percurso_text', array('label' => 'Texto de Percurso', 'section' => 'coopanest_cards_section', 'type' => 'text'));
 
+        $wp_customize->add_setting('card_percurso_link_hide', array('default' => false));
+        $wp_customize->add_control('card_percurso_link_hide', array('label' => 'Ocultar Link?', 'section' => 'coopanest_cards_section', 'type' => 'checkbox'));
+
         // Card 2: Kit Atleta
         $wp_customize->add_setting('card_kit_url', array('default' => '#', 'sanitize_callback' => 'esc_url_raw'));
         $wp_customize->add_control('card_kit_url', array(
@@ -130,6 +133,11 @@ if (! function_exists('coopanest_customize_register')) {
             'label'   => 'Imagem de Capa (Card Kit)',
             'section' => 'coopanest_cards_section',
         )));
+
+
+        $wp_customize->add_setting('card_kit_link_hide', array('default' => false));
+        $wp_customize->add_control('card_kit_link_hide', array('label' => 'Ocultar Link?', 'section' => 'coopanest_cards_section', 'type' => 'checkbox'));
+
 
         // Card 3: Regulamento (Página ou PDF)
         $wp_customize->add_setting('card_regulamento_url', array('default' => '#', 'sanitize_callback' => 'esc_url_raw'));
