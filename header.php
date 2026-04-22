@@ -9,11 +9,6 @@
 
     <style>
         /* Variáveis de Cor Injetadas para Facilidade de Manutenção */
-        :root {
-            --color-5km: #2e1065;
-            --color-10km: #22c55e;
-            --color-15km: #7e22ce;
-        }
 
         .color-5km-bg {
             background-color: var(--color-5km);
@@ -121,11 +116,24 @@
                 </a>
             <?php endif; ?>
 
-            <button type="button" class="lg:hidden text-zinc-900 p-2" aria-label="Menu">
+            <button type="button" id="menu-toggle" class="lg:hidden text-zinc-900 p-2 focus:outline-none" aria-label="Abrir Menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                 </svg>
             </button>
+
+            <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-white flex-col pt-24 px-6 lg:hidden">
+                <div class="flex flex-col gap-6 text-sm font-black uppercase tracking-widest">
+                    <?php
+                    wp_nav_menu(array(
+                        'theme_location' => 'header-menu',
+                        'container'      => false,
+                        'items_wrap'     => '%3$s', // Remove o <ul> para controle direto do flex
+                        'fallback_cb'    => '__return_false'
+                    ));
+                    ?>
+                </div>
+            </div>
 
         </div>
     </nav>
