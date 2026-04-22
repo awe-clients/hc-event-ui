@@ -308,3 +308,50 @@ add_action('template_redirect', 'coopanest_controle_visibilidade', 1);
 add_filter('jpeg_quality', function($quality) {
     return 100;
 });
+
+add_filter('big_image_size_threshold', '__return_false');
+
+
+
+
+/**
+ * Adiciona o campo de ordem na criação da categoria
+ */
+function adicionar_campo_ordem_categoria($taxonomy) {
+    ?>
+    <div class="form-field term-group">
+        <label for="ordem_categoria">Ordem de Exibição</label>
+        <input type="number" name="ordem_categoria" id="ordem_categoria" value="0">
+        <p>Números menores aparecem primeiro (ex: 1, 2, 3).</p>
+    </div>
+    <?php
+}
+add_action('tipo_marca_add_form_fields', 'adicionar_campo_ordem_categoria', 10, 1);
+
+/**
+ * Adiciona o campo de ordem na edição da categoria
+ */
+function editar_campo_ordem_categoria($term, $taxonomy) {
+    $ordem = get_term_meta($term->term_id, 'ordem_categoria', true);
+    ?>
+    <tr class="form-field term-group">
+        <th scope="row"><label for="ordem_categoria">Ordem de Exibição</label></th>
+        <td>
+            <input type="number" name="ordem_categoria" id="ordem_categoria" value="<?php echo esc_attr($ordem ? $ordem : '0'); ?>">
+            <p class="description">Defina a prioridade de exibição desta categoria.</p>
+        </td>
+    </tr>
+    <?php
+}
+add_action('tipo_marca_edit_form_fields', 'editar_campo_ordem_categoria', 10, 2);
+
+/**
+ * Salva o valor do campo de ordem
+ */
+function salvar_ordem_categoria($term_id) {
+    if (isset($_POST['ordem_categoria'])) {
+        update_term_meta($term_id, 'ordem_categoria', sanitize_text_field($_POST['ordem_categoria']));
+    }
+}
+add_action('created_tipo_marca', 'salvar_ordem_categoria', 10, 1);
+add_action('edited_tipo_marca', 'salvar_ordem_categoria', 10, 1);
