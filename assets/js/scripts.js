@@ -27,6 +27,18 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('mins').innerText = String(minutes).padStart(2, '0');
         document.getElementById('secs').innerText = String(seconds).padStart(2, '0');
     }, 1000);
+
+    // Lógica para Menu Responsivo
+const menuBtn = document.getElementById('menu-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+
+if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', function() {
+        // Alterna a visibilidade do menu (ajustar conforme classes do Tailwind)
+        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('flex');
+    });
+}
 });
 
 
