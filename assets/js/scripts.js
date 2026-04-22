@@ -1,4 +1,23 @@
 document.addEventListener('DOMContentLoaded', function() {
+
+    // 1. Lógica do Menu Responsivo
+    const menuBtn = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', function(e) {
+            e.preventDefault(); // Previne comportamento padrão do botão
+            
+            // Alterna visibilidade
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+            
+            // Bloqueia/Desbloqueia rolagem do eixo Y
+            document.body.classList.toggle('overflow-hidden');
+        });
+    }
+
+
     const wrapper = document.getElementById('countdown-wrapper');
     if (!wrapper) return;
 
@@ -28,17 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('secs').innerText = String(seconds).padStart(2, '0');
     }, 1000);
 
-    // Lógica para Menu Responsivo
-const menuBtn = document.getElementById('menu-toggle');
-const mobileMenu = document.getElementById('mobile-menu');
-
-if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener('click', function() {
-        // Alterna a visibilidade do menu (ajustar conforme classes do Tailwind)
-        mobileMenu.classList.toggle('hidden');
-        mobileMenu.classList.toggle('flex');
-    });
-}
+    
 });
 
 
