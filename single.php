@@ -50,7 +50,7 @@
             </header>
 
             <main class="container mx-auto px-4 max-w-3xl pb-24">
-                <?php if (has_post_thumbnail()) : ?>
+                <?php if (has_post_thumbnail() && false) : ?>
                     <figure class="mb-10">
                         <?php the_post_thumbnail('large', ['class' => 'w-full h-auto rounded-lg']); ?>
                         <?php if (get_the_post_thumbnail_caption()) : ?>
