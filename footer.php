@@ -14,12 +14,7 @@ $footer_logo       = get_theme_mod('footer_logo', '#');
     <div class="container mx-auto px-6">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-20">
             <div class="lg:col-span-6">
-                <?php if (has_custom_logo()) : ?>
                     <img src="<?php echo esc_url($footer_logo); ?>" class="h-48 object-contain">
-                    <?php // the_custom_logo();
-                else : ?>
-                    <div class="font-black italic text-3xl mb-8 tracking-tighter">3ª CORRIDA COOPANEST-RN</div>
-                <?php endif; ?>
                 <p class="text-white/70 text-lg leading-relaxed max-w-md font-normal"><?php echo wp_kses_post($footer_text); ?></p>
             </div>
 
