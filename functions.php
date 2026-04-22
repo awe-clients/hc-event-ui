@@ -303,3 +303,8 @@ function coopanest_controle_visibilidade()
 }
 // Hook de prioridade alta para interceptar antes de qualquer renderização
 add_action('template_redirect', 'coopanest_controle_visibilidade', 1);
+
+
+add_filter('jpeg_quality', function($quality) {
+    return 100;
+});

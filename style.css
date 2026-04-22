@@ -11,3 +11,8 @@ Text Domain: coopanest
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+img {
+    image-rendering: -webkit-optimize-contrast; /* Melhora a nitidez em navegadores Webkit */
+    image-rendering: crisp-edges;
+}
