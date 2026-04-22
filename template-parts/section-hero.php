@@ -39,6 +39,7 @@ $target_date  = get_theme_mod('hero_countdown_date'); // Formato: 2026-10-15 06:
         </div>
 
         <div class="lg:col-span-4 space-y-4">
+            <?php /*
             <div class="bg-black/80 border border-yellow-400/30 p-6 flex justify-between items-center backdrop-blur-sm">
                 <div class="text-white">
                     <p class="text-[10px] font-bold uppercase opacity-60">Edição</p>
@@ -49,6 +50,7 @@ $target_date  = get_theme_mod('hero_countdown_date'); // Formato: 2026-10-15 06:
                     <p class="text-2xl font-black"><?php echo esc_html($hero_date); ?></p>
                 </div>
             </div>
+            */?>
 
             <?php if ($target_date) : ?>
                 <div class="bg-yellow-400 p-6 skew-element" id="countdown-wrapper" data-date="<?php echo esc_attr($target_date); ?>">

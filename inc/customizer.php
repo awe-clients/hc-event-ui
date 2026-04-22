@@ -184,8 +184,6 @@ if (! function_exists('coopanest_customize_register')) {
             'color_10km'   => array('label' => 'Cor 10km (Verde)', 'default' => '#22c55e'),
             'color_15km'   => array('label' => 'Cor 15km (Roxo)', 'default' => '#7e22ce'),
             'text_main'    => array('label' => 'Texto Principal', 'default' => '#18181b'),
-            'bg_light'     => array('label' => 'Fundo do Site', 'default' => '#f4f4f5'),
-            'vava_pattern' => array('label' => 'Cor da Padronagem VAVA', 'default' => 'rgba(255,255,255,0.1)'),
         );
 
         foreach ($cores_custom as $id => $data) {
