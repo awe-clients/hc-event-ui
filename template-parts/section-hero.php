@@ -53,7 +53,7 @@ $target_date  = get_theme_mod('hero_countdown_date'); // Formato: 2026-10-15 06:
             */?>
 
             <?php if ($target_date) : ?>
-                <div class="bg-yellow-400 p-6 skew-element" id="countdown-wrapper" data-date="<?php echo esc_attr($target_date); ?>">
+                <div class="bg-yellow-400 py-2 skew-element" id="countdown-wrapper" data-date="<?php echo esc_attr($target_date); ?>">
                     <div class="unskew w-full">
                         <p class="text-[10px] font-black uppercase opacity-70 mb-2 text-center" id="countdown-label">Contagem Regressiva</p>
                         <div class="flex justify-around font-black text-2xl text-blue-900" id="timer">
