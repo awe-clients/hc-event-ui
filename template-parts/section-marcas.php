@@ -51,7 +51,7 @@ if (!empty($categorias_marca) && !is_wp_error($categorias_marca)) :
                                     if (!empty($marca_link)) echo '<a href="' . esc_url($marca_link) . '" target="_blank" rel="noopener noreferrer" class="block">';
 
                                     if (has_post_thumbnail()) {
-                                        the_post_thumbnail('medium', ['class' => 'object-contain h-16 md:h-20 w-auto', 'alt' => $alt_text]);
+                                        the_post_thumbnail('full', ['class' => 'object-contain h-16 md:h-20 w-auto', 'alt' => $alt_text]);
                                     } else {
                                         echo '<span class="font-bold text-zinc-400">' . esc_html($alt_text) . '</span>';
                                     }
