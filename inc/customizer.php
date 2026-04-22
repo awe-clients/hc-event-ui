@@ -164,6 +164,15 @@ if (! function_exists('coopanest_customize_register')) {
         $wp_customize->add_setting('footer_copyright', array('default' => '3ª Corrida COOPANEST-RN. Todos os direitos reservados.'));
         $wp_customize->add_control('footer_copyright', array('label' => 'Copyright', 'section' => 'coopanest_footer_section', 'type' => 'text'));
 
+        $wp_customize->add_setting('footer_text', array('default' => 'Integração esportiva fundamentada no desenvolvimento da padronagem visual VAVA e na saúde médica potiguar.'));
+        $wp_customize->add_control('footer_text', array('label' => 'Texto', 'section' => 'coopanest_footer_section', 'type' => 'textarea'));
+
+        $wp_customize->add_setting('footer_logo'); // Mantém a imagem de capa do card
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'footer_logo', array(
+            'label'   => 'Logo para ser incluida no footer',
+            'section' => 'coopanest_footer_section',
+        )));
+
         $redes = array('instagram', 'facebook', 'youtube');
         foreach ($redes as $rede) {
             $wp_customize->add_setting("footer_$rede", array('default' => ''));
