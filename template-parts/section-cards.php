@@ -39,13 +39,15 @@ $kit_cover       = get_theme_mod('card_kit_img', 'https://via.placeholder.com/40
                     </div>
                     <img src="<?php echo esc_url($kit_cover); ?>" class="h-48 object-contain my-4 transform group-hover:scale-110 transition duration-700" alt="Camisa Oficial">
    
-                    <div class="color-10km-bg text-white w-full py-4 skew-element font-black uppercase italic text-sm">
+                    
                         <?php if (!$kit_link_hide) : ?>
-                            <a href="<?php echo esc_url($kit_url); ?>"  class="unskew">
-                                Conhecer o Kit
-                            </a>
+                            <div class="color-10km-bg text-white w-full py-4 skew-element font-black uppercase italic text-sm">
+                                <a href="<?php echo esc_url($kit_url); ?>"  class="unskew">
+                                    Conhecer o Kit
+                                </a>
+                            </div>
                         <?php endif; ?>
-                        <span class="unskew">Conhecer o Kit</span>
+                    
                     </div>
 
                 </div>
