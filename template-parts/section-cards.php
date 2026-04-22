@@ -37,7 +37,7 @@ $kit_cover       = get_theme_mod('card_kit_img', 'https://via.placeholder.com/40
                         <span class="color-10km-text font-black text-[10px] tracking-[0.3em] uppercase">Material</span>
                         <h3 class="text-4xl font-black italic uppercase mt-2 mb-4 color-5km-text">Kit Atleta</h3>
                     </div>
-                    <img src="<?php echo esc_url($kit_cover); ?>" class="h-48 object-contain my-4 transform group-hover:scale-110 transition duration-700" alt="Camisa Oficial">
+                    <img src="<?php echo esc_url($kit_cover); ?>" class="h-48 object-contain my-4 transform group-hover:scale-110 transition duration-700">
    
                     
                         <?php if (!$kit_link_hide) : ?>

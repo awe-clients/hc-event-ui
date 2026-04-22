@@ -354,3 +354,24 @@ function salvar_ordem_categoria($term_id) {
 }
 add_action('created_tipo_marca', 'salvar_ordem_categoria', 10, 1);
 add_action('edited_tipo_marca', 'salvar_ordem_categoria', 10, 1);
+
+
+
+/**
+ * Habilitar suporte a envio de arquivos SVG
+ */
+function coopanest_permitir_svg($mimes) {
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+}
+add_filter('upload_mimes', 'coopanest_permitir_svg');
+
+/**
+ * Corrigir a visualização do SVG no painel de mídia do WordPress
+ */
+function coopanest_corrigir_visualizacao_svg() {
+    echo '<style>
+        .attachment-266x266, .thumbnail img { width: 100% !important; height: auto !important; }
+    </style>';
+}
+add_action('admin_head', 'coopanest_corrigir_visualizacao_svg');
