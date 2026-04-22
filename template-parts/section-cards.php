@@ -18,7 +18,7 @@ $kit_cover       = get_theme_mod('card_kit_img', 'https://via.placeholder.com/40
                     <span class="color-5km-text font-black text-[10px] tracking-[0.3em] uppercase">Estratégia</span>
                     <h3 class="text-4xl font-black italic uppercase mt-2 mb-6 color-5km-text">Percursos</h3>
                     <p class="text-zinc-500 text-sm leading-relaxed mb-8">
-                        <?php echo esc_url($percurso_text); ?>
+                        <?php echo wp_kses_post($percurso_text); ?>
                     </p>
                     <span class="flex items-center gap-4 text-xs font-black uppercase tracking-widest color-5km-text group-hover:gap-6 transition-all">
                         Ver detalhes <i class="fas fa-arrow-right"></i>
@@ -33,9 +33,11 @@ $kit_cover       = get_theme_mod('card_kit_img', 'https://via.placeholder.com/40
                         <h3 class="text-4xl font-black italic uppercase mt-2 mb-4 color-5km-text">Kit Atleta</h3>
                     </div>
                     <img src="<?php echo esc_url($kit_cover); ?>" class="h-48 object-contain my-4 transform group-hover:scale-110 transition duration-700" alt="Camisa Oficial">
+<!--   
                     <div class="color-10km-bg text-white w-full py-4 skew-element font-black uppercase italic text-xs">
                         <span class="unskew">Conhecer o Kit</span>
                     </div>
+-->
                 </div>
             </a>
 
