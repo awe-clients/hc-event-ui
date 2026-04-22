@@ -14,9 +14,8 @@ function coopanest_theme_setup()
     add_theme_support('post-thumbnails');
     add_theme_support('custom-logo', array(
         'height'      => 80,
-        'width'       => 250,
         'flex-width'  => true,
-        'flex-height' => true,
+        'flex-height' => false,
     ));
 
     register_nav_menus(array(
