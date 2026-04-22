@@ -13,9 +13,10 @@ function coopanest_theme_setup()
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
     add_theme_support('custom-logo', array(
-        'height'      => 60,
-        'flex-width'  => true,
-        'flex-height' => false,
+        'height'      => 60,   // Altura de referência
+        'width'       => 250,  // Largura de referência
+        'flex-height' => true, // Desativa o recorte forçado vertical
+        'flex-width'  => true, // Desativa o recorte forçado horizontal
     ));
 
     register_nav_menus(array(
