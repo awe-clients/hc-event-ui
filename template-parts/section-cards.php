@@ -4,6 +4,7 @@
  * Template Part: Seção de Cards (Redirecionamento para Páginas)
  */
 $percurso_url    = get_theme_mod('card_percurso_url', '#');
+$percurso_text    = get_theme_mod('card_percurso_text', '#');
 $kit_url         = get_theme_mod('card_kit_url', '#');
 $regulamento_url = get_theme_mod('card_regulamento_url', '#');
 $kit_cover       = get_theme_mod('card_kit_img', 'https://via.placeholder.com/400x400/FFFFFF/22c55e?text=KIT');
@@ -16,7 +17,9 @@ $kit_cover       = get_theme_mod('card_kit_img', 'https://via.placeholder.com/40
                 <div class="p-10 relative z-10">
                     <span class="color-5km-text font-black text-[10px] tracking-[0.3em] uppercase">Estratégia</span>
                     <h3 class="text-4xl font-black italic uppercase mt-2 mb-6 color-5km-text">Percursos</h3>
-                    <p class="text-zinc-500 text-sm leading-relaxed mb-8">Consulte os trajetos técnicos e pontos de hidratação definidos para a prova.</p>
+                    <p class="text-zinc-500 text-sm leading-relaxed mb-8">
+                        <?php echo esc_url($percurso_text); ?>
+                    </p>
                     <span class="flex items-center gap-4 text-xs font-black uppercase tracking-widest color-5km-text group-hover:gap-6 transition-all">
                         Ver detalhes <i class="fas fa-arrow-right"></i>
                     </span>

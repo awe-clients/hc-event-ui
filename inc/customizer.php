@@ -114,6 +114,8 @@ if (! function_exists('coopanest_customize_register')) {
             'section' => 'coopanest_cards_section',
             'type'    => 'url',
         ));
+        $wp_customize->add_setting('card_percurso_text', array('default' => 'Consulte os trajetos técnicos e pontos de hidratação definidos para a prova.'));
+        $wp_customize->add_control('card_percurso_text', array('label' => 'Texto de Percurso', 'section' => 'coopanest_cards_section', 'type' => 'text'));
 
         // Card 2: Kit Atleta
         $wp_customize->add_setting('card_kit_url', array('default' => '#', 'sanitize_callback' => 'esc_url_raw'));
