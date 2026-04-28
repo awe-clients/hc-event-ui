@@ -11,9 +11,6 @@ get_header(); ?>
 
     <?php get_template_part('template-parts/section', 'sobre'); ?>
 
-    <?php // get_template_part('template-parts/section', 'indicadores'); 
-    ?>
-
     <?php get_template_part('template-parts/section', 'cards'); ?>
 
     <?php get_template_part('template-parts/section', 'noticias'); ?>

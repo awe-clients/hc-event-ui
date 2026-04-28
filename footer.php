@@ -1,37 +1,36 @@
 <?php
-
 /**
- * Footer do Tema
+ * Footer do Tema - 1ª Corrida do Bom Vizinho
  */
-$mapa_modal = get_theme_mod('modal_mapa_img', '');
-$kit_modal  = get_theme_mod('modal_kit_img', '');
 ?>
 
-<footer class="color-5km-bg pattern-vava-vazado text-white pt-24 pb-12 mt-auto">
-    <div class="container mx-auto px-6">
+<footer class="bom-vizinho-gradient text-zinc-50 pt-24 pb-12 mt-auto relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#fca5a5 1px, transparent 1px); background-size: 32px 32px;"></div>
+
+    <div class="container mx-auto px-6 relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-20">
             <div class="lg:col-span-6">
                 <?php if (has_custom_logo()) : the_custom_logo();
                 else : ?>
-                    <div class="font-black italic text-3xl mb-8 tracking-tighter">3ª CORRIDA COOPANEST-RN</div>
+                    <div class="font-black italic text-3xl mb-8 tracking-tighter uppercase">1ª Corrida do Bom Vizinho</div>
                 <?php endif; ?>
-                <p class="text-white/70 text-lg leading-relaxed max-w-md font-normal">Integração esportiva fundamentada no desenvolvimento da padronagem visual VAVA e na saúde médica potiguar.</p>
+                <p class="text-red-100 text-lg leading-relaxed max-w-md font-medium">O evento que conecta saúde, comunidade e energia. Natal/RN.</p>
             </div>
 
             <div class="lg:col-span-3">
-                <h4 class="color-10km-text font-black uppercase text-xs tracking-widest mb-8">Navegação</h4>
+                <h4 class="text-yellow-400 font-black uppercase text-xs tracking-widest mb-8">Navegação</h4>
                 <?php
                 wp_nav_menu(array(
                     'theme_location' => 'footer-menu',
                     'container'      => false,
-                    'menu_class'     => 'space-y-4 font-black uppercase text-[10px] tracking-widest text-white/80',
+                    'menu_class'     => 'space-y-4 font-black uppercase text-[10px] tracking-widest text-red-100',
                     'fallback_cb'    => '__return_false',
                 ));
                 ?>
             </div>
 
             <div class="lg:col-span-3">
-                <h4 class="color-10km-text font-black uppercase text-xs tracking-widest mb-8">Redes Sociais</h4>
+                <h4 class="text-yellow-400 font-black uppercase text-xs tracking-widest mb-8">Redes Sociais</h4>
                 <div class="flex gap-6 text-2xl">
                     <?php
                     $redes = array('instagram', 'facebook', 'youtube');
@@ -39,7 +38,7 @@ $kit_modal  = get_theme_mod('modal_kit_img', '');
                         $url = get_theme_mod("footer_$rede");
                         if (!empty($url)) :
                     ?>
-                            <a href="<?php echo esc_url($url); ?>" target="_blank" class="text-white/70 hover:text-white transition-colors" aria-label="<?php echo ucfirst($rede); ?>">
+                            <a href="<?php echo esc_url($url); ?>" target="_blank" class="text-red-200 hover:text-yellow-400 transition-colors" aria-label="<?php echo ucfirst($rede); ?>">
                                 <i class="fab fa-<?php echo esc_attr($rede); ?>"></i>
                             </a>
                     <?php
@@ -50,36 +49,21 @@ $kit_modal  = get_theme_mod('modal_kit_img', '');
             </div>
         </div>
 
-        <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-6 border-t-1 border-indigo-500">
-            <div class="text-gray-500 text-sm">
-                &copy; <?php echo date('Y'); ?> - <?php echo esc_html(get_theme_mod('footer_copyright', '3ª CORRIDA COOPANEST-RN. Todos os direitos reservados.')); ?>
+        <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-6 border-t border-red-500/30">
+            <div class="text-red-200 text-sm">
+                &copy; <?php echo date('Y'); ?> - <?php echo esc_html(get_theme_mod('footer_copyright', '1ª Corrida do Bom Vizinho Rede MAIS. Todos os direitos reservados.')); ?>
             </div>
             <div class="flex items-center gap-3">
-                <span class="text-gray-500 text-[10px] uppercase font-bold tracking-widest">Produzido por:</span>
-                <a href="https://hcsports.com.br" target="_blank" rel="noopener">
-                    <img src="https://corridacoopanest.com.br/wp-content/themes/theme-coopanest/assets/img/hc-sports.png" alt="HC Sports" class="h-6">
+                <span class="text-red-200 text-[10px] uppercase font-bold tracking-widest">Organização Padrão:</span>
+                <a href="https://hcsports.com.br" target="_blank" rel="noopener" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/hc-sports.png" alt="HC Sports 15 anos" class="h-6">
+                    <span class="font-black text-white text-[10px] tracking-widest uppercase">HC Sports 15 Anos</span>
                 </a>
             </div>
         </div>
     </div>
 </footer>
 
-<div id="site-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 md:p-10 bg-black/80 backdrop-blur-sm" aria-hidden="true">
-    <div class="relative bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-lg shadow-2xl">
-        <button type="button" onclick="closeModal()" class="absolute top-5 right-5 text-3xl font-bold color-5km-text hover:opacity-70 transition-colors focus:outline-none" aria-label="Fechar Modal">&times;</button>
-        <div id="modal-content" class="p-8 md:p-12">
-        </div>
-    </div>
-</div>
-
-<script>
-    const modalData = {
-        mapaImg: "<?php echo esc_url($mapa_modal); ?>",
-        kitImg: "<?php echo esc_url($kit_modal); ?>"
-    };
-</script>
-
 <?php wp_footer(); ?>
 </body>
-
 </html>

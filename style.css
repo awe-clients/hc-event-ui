@@ -1,13 +1,13 @@
 /*
-Theme Name: Corrida do Bom Vizinho
+Theme Name: 1ª Corrida do Bom Vizinho - Rede MAIS
 Theme URI: https://hcsports.com.br
 Author: HC Sports
-Description: Tema 2, criado originalmente para corrida soldados do fogo e reutilizado na corrida do bom vizinho
-Version: 2.0.0
-Text Domain: coopanest
+Description: Modelo de alto desempenho focado em saúde, comunidade e energia. Desenvolvido para a 1ª Corrida do Bom Vizinho utilizando metodologia Craft Design, otimização de ativos e SEO semântico.
+Version: 1.0.0
+Text Domain: bom-vizinho
 */
 
-/* Reset básico para evitar conflitos com Tailwind */
+/* Reset básico e diretrizes Tailwind CSS */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
