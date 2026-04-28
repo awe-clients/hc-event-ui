@@ -10,35 +10,94 @@
     <style>
         /* Variáveis de Cor Dinâmicas com Fallback para a Identidade Rede MAIS */
         :root {
-            --brand-cta: <?php echo get_theme_mod('brand_cta', '#facc15'); ?>; /* Amarelo */
-            --color-5km: <?php echo get_theme_mod('color_5km', '#7f1d1d'); ?>; /* Vermelho Escuro */
-            --color-10km: <?php echo get_theme_mod('color_10km', '#b91c1c'); ?>; /* Vermelho Médio */
-            --color-15km: <?php echo get_theme_mod('color_15km', '#ef4444'); ?>; /* Vermelho Vibrante */
+            --brand-cta: <?php echo get_theme_mod('brand_cta', '#facc15'); ?>;
+            /* Amarelo */
+            --color-5km: <?php echo get_theme_mod('color_5km', '#7f1d1d'); ?>;
+            /* Vermelho Escuro */
+            --color-10km: <?php echo get_theme_mod('color_10km', '#b91c1c'); ?>;
+            /* Vermelho Médio */
+            --color-15km: <?php echo get_theme_mod('color_15km', '#ef4444'); ?>;
+            /* Vermelho Vibrante */
             --text-main: <?php echo get_theme_mod('text_main', '#18181b'); ?>;
             --bg-light: <?php echo get_theme_mod('bg_light', '#fafafa'); ?>;
         }
 
-        .color-5km-bg { background-color: var(--color-5km); }
-        .color-10km-bg { background-color: var(--color-10km); }
-        .color-15km-bg { background-color: var(--color-15km); }
-        
-        .color-5km-text { color: var(--color-5km); }
-        .color-10km-text { color: var(--color-10km); }
-        .color-15km-text { color: var(--color-15km); }
-        
-        .bg-yellow-brand { background-color: var(--brand-cta); }
+        .color-5km-bg {
+            background-color: var(--color-5km);
+        }
+
+        .color-10km-bg {
+            background-color: var(--color-10km);
+        }
+
+        .color-15km-bg {
+            background-color: var(--color-15km);
+        }
+
+        .color-5km-text {
+            color: var(--color-5km);
+        }
+
+        .color-10km-text {
+            color: var(--color-10km);
+        }
+
+        .color-15km-text {
+            color: var(--color-15km);
+        }
+
+        .bg-yellow-brand {
+            background-color: var(--brand-cta);
+        }
 
         /* Gradiente Atualizado para a Nova Identidade */
         .bom-vizinho-gradient {
             background: linear-gradient(135deg, var(--color-5km) 0%, var(--color-10km) 100%);
         }
 
-        .skew-element { transform: skewX(-10deg); }
-        .unskew { transform: skewX(10deg); display: inline-block; }
+        .skew-element {
+            transform: skewX(-10deg);
+        }
 
-        body { 
-            color: var(--text-main); 
-            background-color: var(--bg-light); 
+        .unskew {
+            transform: skewX(10deg);
+            display: inline-block;
+        }
+
+        body {
+            color: var(--text-main);
+            background-color: var(--bg-light);
+        }
+
+        /* Normalização da Logo no Header */
+        .custom-logo-link {
+            display: flex;
+            align-items: center;
+        }
+
+        .custom-logo-link img {
+            max-height: 60px;
+            /* Define a altura real que desejas no site */
+            width: auto;
+            object-fit: contain;
+            /* Garante que a logo não estique */
+            image-rendering: -webkit-optimize-contrast;
+        }
+
+        /* Normalização das Marcas de Patrocinadores */
+        .item-marca img {
+            max-height: 80px;
+            /* Altura máxima no grid */
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
+            filter: grayscale(100%);
+            /* Opcional: para o estilo unificado */
+            transition: filter 0.3s ease;
+        }
+
+        .item-marca img:hover {
+            filter: grayscale(0%);
         }
     </style>
 </head>
@@ -107,7 +166,7 @@
                     'fallback_cb'    => '__return_false'
                 ));
                 ?>
-                
+
                 <?php if (!$cta_hide) : ?>
                     <a href="<?php echo esc_url($cta_link); ?>" class="bg-yellow-brand text-zinc-900 text-center py-4 mt-4 font-black uppercase italic text-xs">
                         <?php echo esc_html($cta_text); ?>

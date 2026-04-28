@@ -27,6 +27,48 @@ function bom_vizinho_theme_setup()
 add_action('after_setup_theme', 'bom_vizinho_theme_setup');
 
 /**
+ * Define tamanho de imagem específico para marcas sem recorte (crop: false)
+ * O valor 160px de altura é ideal para garantir nitidez em telas Retina (2x 80px).
+ */
+function bom_vizinho_setup_marcas_automaticas()
+{
+    add_image_size('marca-grid', 400, 160, false);
+
+    // Garante que o suporte ao logo personalizado também não force o recorte
+    add_theme_support('custom-logo', array(
+        'height'      => 160,
+        'width'       => 400,
+        'flex-height' => true,
+        'flex-width'  => true,
+    ));
+}
+add_action('after_setup_theme', 'bom_vizinho_setup_marcas_automaticas');
+
+/**
+ * Ajuste de Redimensionamento para a Logo Principal
+ */
+function bom_vizinho_ajuste_logo_header()
+{
+    add_theme_support('custom-logo', array(
+        'height'      => 100,  // Altura máxima sugerida
+        'width'       => 300,  // Largura máxima sugerida
+        'flex-height' => true, // Permite que o cliente não corte
+        'flex-width'  => true, // Permite que o cliente não corte
+    ));
+}
+add_action('after_setup_theme', 'bom_vizinho_ajuste_logo_header', 11);
+
+/**
+ * Filtro para garantir nitidez máxima na Logo (Remove o srcset blur)
+ */
+add_filter('get_custom_logo', function ($html) {
+    // Remove o srcset para forçar o navegador a usar a imagem original de alta qualidade
+    $html = preg_replace('/srcset="[^"]*" /', '', $html);
+    $html = preg_replace('/sizes="[^"]*" /', '', $html);
+    return $html;
+});
+
+/**
  * Habilitar suporte a envio de arquivos SVG (Craft Design / Logotipos)
  */
 function bom_vizinho_permitir_svg($mimes)

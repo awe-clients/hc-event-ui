@@ -2,12 +2,16 @@
 
 /**
  * Template Part: Seção de Marcas (Patrocínio, Apoio, etc.)
+ * Adaptado para: Alta Performance Visual e Eliminação de srcset
  */
 
-// Pega todas as categorias cadastradas em "Tipos de Marca"
+// Pega todas as categorias cadastradas em "Tipos de Marca" seguindo a ordem definida
 $categorias_marca = get_terms(array(
     'taxonomy'   => 'tipo_marca',
-    'hide_empty' => true, // Só traz se tiver marcas cadastradas dentro
+    'hide_empty' => true,
+    'meta_key'   => 'ordem_categoria',
+    'orderby'    => 'meta_value_num',
+    'order'      => 'ASC',
 ));
 
 // Se não houver categorias, não exibe a seção
@@ -46,12 +50,21 @@ if (!empty($categorias_marca) && !is_wp_error($categorias_marca)) :
                                 $alt_text   = get_the_title();
                                 $marca_link = get_post_meta(get_the_ID(), '_coopanest_marca_url', true);
                             ?>
-                                <div class="group relative flex justify-center p-6 transition duration-500 border border-transparent hover:border-zinc-100">
+                                <div class="group relative flex justify-center items-center p-6 transition duration-500 border border-transparent hover:border-zinc-100">
                                     <?php
-                                    if (!empty($marca_link)) echo '<a href="' . esc_url($marca_link) . '" target="_blank" rel="noopener noreferrer" class="block">';
+                                    if (!empty($marca_link)) echo '<a href="' . esc_url($marca_link) . '" target="_blank" rel="noopener noreferrer" class="block w-full h-full">';
 
                                     if (has_post_thumbnail()) {
-                                        the_post_thumbnail('medium', ['class' => 'object-contain h-16 md:h-20 w-auto grayscale hover:grayscale-0 transition-all duration-300', 'alt' => $alt_text]);
+                                        // Busca o tamanho 'marca-grid' que configuramos para não cortar
+                                        $imagem_id = get_post_thumbnail_id();
+                                        $imagem_data = wp_get_attachment_image_src($imagem_id, 'marca-grid');
+                                        $url_otimizada = $imagem_data[0];
+
+                                        // Renderização com container flexível (h-16 ou h-20) e normalização visual
+                                        echo '<img src="' . esc_url($url_otimizada) . '" 
+                                        alt="' . esc_attr($alt_text) . '" 
+                                        class="h-16 md:h-20 w-full object-contain mx-auto" 
+                                        style="image-rendering: -webkit-optimize-contrast; transform: translateZ(0);">';
                                     } else {
                                         echo '<span class="font-bold text-zinc-400">' . esc_html($alt_text) . '</span>';
                                     }
