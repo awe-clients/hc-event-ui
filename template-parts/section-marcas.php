@@ -39,7 +39,7 @@ if (!empty($categorias_marca) && !is_wp_error($categorias_marca)) :
                     <div class="mb-16">
                         <div class="flex items-center gap-6 mb-12">
                             <div class="h-px bg-zinc-200 flex-grow"></div>
-                            <span class="color-5km-text font-black text-[10px] tracking-[0.4em] uppercase">
+                            <span class="color-5km-text font-bold text-sm tracking-[0.2em] uppercase">
                                 <?php echo esc_html($categoria->name); ?>
                             </span>
                             <div class="h-px bg-zinc-200 flex-grow"></div>
@@ -63,7 +63,7 @@ if (!empty($categorias_marca) && !is_wp_error($categorias_marca)) :
                                         // Renderização com container flexível (h-16 ou h-20) e normalização visual
                                         echo '<img src="' . esc_url($url_otimizada) . '" 
                                         alt="' . esc_attr($alt_text) . '" 
-                                        class="h-16 md:h-20 w-full object-contain mx-auto" 
+                                        class="h-10 md:h-12 w-full object-contain mx-auto" 
                                         style="image-rendering: -webkit-optimize-contrast; transform: translateZ(0);">';
                                     } else {
                                         echo '<span class="font-bold text-zinc-400">' . esc_html($alt_text) . '</span>';
