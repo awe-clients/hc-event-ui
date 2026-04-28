@@ -29,13 +29,15 @@ add_action('after_setup_theme', 'bom_vizinho_theme_setup');
 /**
  * Habilitar suporte a envio de arquivos SVG (Craft Design / Logotipos)
  */
-function bom_vizinho_permitir_svg($mimes) {
+function bom_vizinho_permitir_svg($mimes)
+{
     $mimes['svg'] = 'image/svg+xml';
     return $mimes;
 }
 add_filter('upload_mimes', 'bom_vizinho_permitir_svg');
 
-function bom_vizinho_corrigir_visualizacao_svg() {
+function bom_vizinho_corrigir_visualizacao_svg()
+{
     echo '<style>.attachment-266x266, .thumbnail img { width: 100% !important; height: auto !important; }</style>';
 }
 add_action('admin_head', 'bom_vizinho_corrigir_visualizacao_svg');
@@ -43,11 +45,12 @@ add_action('admin_head', 'bom_vizinho_corrigir_visualizacao_svg');
 // ==========================================
 // 2. PERFORMANCE E LIMPEZA (PAGESPEED)
 // ==========================================
-function bom_vizinho_performance_cleanup() {
+function bom_vizinho_performance_cleanup()
+{
     // Remove Emojis
     remove_action('wp_head', 'print_emoji_detection_script', 7);
     remove_action('wp_print_styles', 'print_emoji_styles');
-    
+
     // Remove tags oEmbed, RSD e WLW
     remove_action('wp_head', 'wp_oembed_add_discovery_links');
     remove_action('wp_head', 'rsd_link');
@@ -57,11 +60,12 @@ function bom_vizinho_performance_cleanup() {
     // Remove CSS global do Gutenberg (Tailwind assumirá)
     wp_dequeue_style('wp-block-library');
     wp_dequeue_style('wp-block-library-theme');
-    wp_dequeue_style('wc-blocks-style'); 
+    wp_dequeue_style('wc-blocks-style');
 }
 add_action('wp_enqueue_scripts', 'bom_vizinho_performance_cleanup', 100);
 
-function bom_vizinho_defer_scripts($tag, $handle, $src) {
+function bom_vizinho_defer_scripts($tag, $handle, $src)
+{
     if (is_admin()) return $tag;
     return '<script src="' . esc_url($src) . '" defer="defer"></script>' . "
 ";
@@ -69,10 +73,16 @@ function bom_vizinho_defer_scripts($tag, $handle, $src) {
 add_filter('script_loader_tag', 'bom_vizinho_defer_scripts', 10, 3);
 
 // Compressão de imagens sem perda (WebP Default)
-add_filter('wp_image_editors', function($classes) { return array_merge(['WP_Image_Editor_Imagick'], $classes); });
-add_filter('wp_generate_attachment_metadata', function($image_meta) {
-    add_filter('jpeg_quality', function() { return 100; });
-    add_filter('webp_quality', function() { return 100; });
+add_filter('wp_image_editors', function ($classes) {
+    return array_merge(['WP_Image_Editor_Imagick'], $classes);
+});
+add_filter('wp_generate_attachment_metadata', function ($image_meta) {
+    add_filter('jpeg_quality', function () {
+        return 100;
+    });
+    add_filter('webp_quality', function () {
+        return 100;
+    });
     return $image_meta;
 });
 add_filter('big_image_size_threshold', '__return_false');
@@ -129,20 +139,22 @@ add_action('init', 'bom_vizinho_register_marcas_cpt');
 /**
  * Adiciona o campo de ordem na criação da categoria de marca
  */
-function bom_vizinho_adicionar_campo_ordem_categoria($taxonomy) {
-    ?>
+function bom_vizinho_adicionar_campo_ordem_categoria($taxonomy)
+{
+?>
     <div class="form-field term-group">
         <label for="ordem_categoria">Ordem de Exibição</label>
         <input type="number" name="ordem_categoria" id="ordem_categoria" value="0">
         <p>Números menores aparecem primeiro (ex: 1 = Realização, 2 = Patrocínio Master).</p>
     </div>
-    <?php
+<?php
 }
 add_action('tipo_marca_add_form_fields', 'bom_vizinho_adicionar_campo_ordem_categoria', 10, 1);
 
-function bom_vizinho_editar_campo_ordem_categoria($term, $taxonomy) {
+function bom_vizinho_editar_campo_ordem_categoria($term, $taxonomy)
+{
     $ordem = get_term_meta($term->term_id, 'ordem_categoria', true);
-    ?>
+?>
     <tr class="form-field term-group">
         <th scope="row"><label for="ordem_categoria">Ordem de Exibição</label></th>
         <td>
@@ -150,11 +162,12 @@ function bom_vizinho_editar_campo_ordem_categoria($term, $taxonomy) {
             <p class="description">Defina a prioridade de exibição desta categoria.</p>
         </td>
     </tr>
-    <?php
+<?php
 }
 add_action('tipo_marca_edit_form_fields', 'bom_vizinho_editar_campo_ordem_categoria', 10, 2);
 
-function bom_vizinho_salvar_ordem_categoria($term_id) {
+function bom_vizinho_salvar_ordem_categoria($term_id)
+{
     if (isset($_POST['ordem_categoria'])) {
         update_term_meta($term_id, 'ordem_categoria', sanitize_text_field($_POST['ordem_categoria']));
     }
@@ -305,6 +318,32 @@ function bom_vizinho_controle_visibilidade()
     }
 }
 add_action('template_redirect', 'bom_vizinho_controle_visibilidade', 1);
+
+
+// ==========================================
+// OTIMIZAÇÃO DE IMAGENS (QUALIDADE MÁXIMA)
+// ==========================================
+
+// 1. Prioriza a biblioteca Imagick, que possui um algoritmo de amostragem superior ao GD
+add_filter('wp_image_editors', function ($classes) {
+    return array_merge(['WP_Image_Editor_Imagick'], $classes);
+});
+
+// 2. Bloqueia o motor do WordPress de converter formatos nativos (PNG/JPG) para WebP lossy
+add_filter('image_editor_output_format', '__return_empty_array');
+
+// 3. Força o compilador a preservar 100% da matriz de pixels originais no redimensionamento
+add_filter('jpeg_quality', function () {
+    return 100;
+}, 10, 2);
+add_filter('webp_quality', function () {
+    return 100;
+}, 10, 2);
+
+// 4. Desabilita o corte destrutivo de imagens superiores a 2560px (threshold)
+add_filter('big_image_size_threshold', '__return_false');
+
+
 
 // Importação do Customizer
 require get_template_directory() . '/inc/customizer.php';
