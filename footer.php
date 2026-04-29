@@ -54,10 +54,9 @@ $kit_modal  = get_theme_mod('modal_kit_img', '');
             <div class="text-gray-500 text-sm">
                 &copy; <?php echo date('Y'); ?> - <?php echo esc_html(get_theme_mod('footer_copyright', '3ª CORRIDA COOPANEST-RN. Todos os direitos reservados.')); ?>
             </div>
-            <div class="flex items-center gap-3">
-                <span class="text-gray-500 text-[10px] uppercase font-bold tracking-widest">Produzido por:</span>
-                <a href="https://hcsports.com.br" target="_blank" rel="noopener">
-                    <img src="https://corridacoopanest.com.br/wp-content/themes/theme-coopanest/assets/img/hc-sports.png" alt="HC Sports" class="h-6">
+            <div class="flex items-center gap-1">
+                <span class="text-red-200 text-[12px] uppercase">Produzido por:</span>
+                <a href="https://horadecorrer.com.br" target="_blank" rel="noopener" class="flex items-center hover:opacity-80 transition-opacity"><span class="font-bold text-white text-[12px] uppercase">Hora de Correr</span>
                 </a>
             </div>
         </div>
