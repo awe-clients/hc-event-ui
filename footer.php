@@ -54,10 +54,9 @@
                 &copy; <?php echo date('Y'); ?> - <?php echo esc_html(get_theme_mod('footer_copyright', '1ª Corrida do Bom Vizinho Rede MAIS. Todos os direitos reservados.')); ?>
             </div>
             <div class="flex items-center gap-3">
-                <span class="text-red-200 text-[10px] uppercase font-bold tracking-widest">Organização Padrão:</span>
-                <a href="https://hcsports.com.br" target="_blank" rel="noopener" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/hc-sports.png" alt="HC Sports 15 anos" class="h-6">
-                    <span class="font-black text-white text-[10px] tracking-widest uppercase">HC Sports 15 Anos</span>
+                <span class="text-red-200 text-[10px] uppercase font-bold tracking-widest">Produzido por:</span>
+                <a href="https://horadecorrer.com.br" target="_blank" rel="noopener" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                    <span class="font-black text-white text-[12px] tracking-widest uppercase">Hora de Correr</span>
                 </a>
             </div>
         </div>
