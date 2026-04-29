@@ -11,3 +11,21 @@ Text Domain: coopanest
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Anti-Serrilhamento para Logos de Patrocinadores */
+img {
+    /* Garante que a imagem não distorça as proporções */
+    object-fit: contain !important; 
+    
+    /* Força a renderização em alta qualidade via GPU */
+    transform: translateZ(0);
+    backface-visibility: hidden !important;
+    perspective: 1000px !important;
+    
+    /* Melhora o contraste em escalonamentos */
+    image-rendering: -webkit-optimize-contrast !important;
+    image-rendering: crisp-edges !important;
+    
+    /* Suaviza as bordas (Anti-aliasing) */
+    -webkit-font-smoothing: antialiased !important;
+}

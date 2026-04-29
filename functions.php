@@ -13,10 +13,10 @@ function coopanest_theme_setup()
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
     add_theme_support('custom-logo', array(
-        'height'      => 80,
-        'width'       => 250,
-        'flex-width'  => true,
-        'flex-height' => true,
+        'height'      => 60,   // Altura de referência
+        'width'       => 250,  // Largura de referência
+        'flex-height' => true, // Desativa o recorte forçado vertical
+        'flex-width'  => true, // Desativa o recorte forçado horizontal
     ));
 
     register_nav_menus(array(
@@ -303,3 +303,76 @@ function coopanest_controle_visibilidade()
 }
 // Hook de prioridade alta para interceptar antes de qualquer renderização
 add_action('template_redirect', 'coopanest_controle_visibilidade', 1);
+
+
+add_filter('jpeg_quality', function($quality) {
+    return 100;
+});
+
+add_filter('big_image_size_threshold', '__return_false');
+
+
+
+
+/**
+ * Adiciona o campo de ordem na criação da categoria
+ */
+function adicionar_campo_ordem_categoria($taxonomy) {
+    ?>
+    <div class="form-field term-group">
+        <label for="ordem_categoria">Ordem de Exibição</label>
+        <input type="number" name="ordem_categoria" id="ordem_categoria" value="0">
+        <p>Números menores aparecem primeiro (ex: 1, 2, 3).</p>
+    </div>
+    <?php
+}
+add_action('tipo_marca_add_form_fields', 'adicionar_campo_ordem_categoria', 10, 1);
+
+/**
+ * Adiciona o campo de ordem na edição da categoria
+ */
+function editar_campo_ordem_categoria($term, $taxonomy) {
+    $ordem = get_term_meta($term->term_id, 'ordem_categoria', true);
+    ?>
+    <tr class="form-field term-group">
+        <th scope="row"><label for="ordem_categoria">Ordem de Exibição</label></th>
+        <td>
+            <input type="number" name="ordem_categoria" id="ordem_categoria" value="<?php echo esc_attr($ordem ? $ordem : '0'); ?>">
+            <p class="description">Defina a prioridade de exibição desta categoria.</p>
+        </td>
+    </tr>
+    <?php
+}
+add_action('tipo_marca_edit_form_fields', 'editar_campo_ordem_categoria', 10, 2);
+
+/**
+ * Salva o valor do campo de ordem
+ */
+function salvar_ordem_categoria($term_id) {
+    if (isset($_POST['ordem_categoria'])) {
+        update_term_meta($term_id, 'ordem_categoria', sanitize_text_field($_POST['ordem_categoria']));
+    }
+}
+add_action('created_tipo_marca', 'salvar_ordem_categoria', 10, 1);
+add_action('edited_tipo_marca', 'salvar_ordem_categoria', 10, 1);
+
+
+
+/**
+ * Habilitar suporte a envio de arquivos SVG
+ */
+function coopanest_permitir_svg($mimes) {
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+}
+add_filter('upload_mimes', 'coopanest_permitir_svg');
+
+/**
+ * Corrigir a visualização do SVG no painel de mídia do WordPress
+ */
+function coopanest_corrigir_visualizacao_svg() {
+    echo '<style>
+        .attachment-266x266, .thumbnail img { width: 100% !important; height: auto !important; }
+    </style>';
+}
+add_action('admin_head', 'coopanest_corrigir_visualizacao_svg');

@@ -34,6 +34,9 @@ if (! function_exists('coopanest_customize_register')) {
             'priority' => 31,
         ));
 
+        $wp_customize->add_setting('hero_title', array('default' => '3 Corrida Coopanest'));
+        $wp_customize->add_control('hero_title', array('label' => 'Texto do Título principal', 'section' => 'coopanest_hero_section', 'type' => 'text'));
+
         $wp_customize->add_setting('hero_subtitle', array('default' => 'Integração e Desempenho'));
         $wp_customize->add_control('hero_subtitle', array('label' => 'Texto Menor (Acima do Título)', 'section' => 'coopanest_hero_section', 'type' => 'text'));
 
@@ -111,6 +114,11 @@ if (! function_exists('coopanest_customize_register')) {
             'section' => 'coopanest_cards_section',
             'type'    => 'url',
         ));
+        $wp_customize->add_setting('card_percurso_text', array('default' => 'Consulte os trajetos técnicos e pontos de hidratação definidos para a prova.'));
+        $wp_customize->add_control('card_percurso_text', array('label' => 'Texto de Percurso', 'section' => 'coopanest_cards_section', 'type' => 'text'));
+
+        $wp_customize->add_setting('card_percurso_link_hide', array('default' => false));
+        $wp_customize->add_control('card_percurso_link_hide', array('label' => 'Ocultar Link?', 'section' => 'coopanest_cards_section', 'type' => 'checkbox'));
 
         // Card 2: Kit Atleta
         $wp_customize->add_setting('card_kit_url', array('default' => '#', 'sanitize_callback' => 'esc_url_raw'));
@@ -125,6 +133,11 @@ if (! function_exists('coopanest_customize_register')) {
             'label'   => 'Imagem de Capa (Card Kit)',
             'section' => 'coopanest_cards_section',
         )));
+
+
+        $wp_customize->add_setting('card_kit_link_hide', array('default' => false));
+        $wp_customize->add_control('card_kit_link_hide', array('label' => 'Ocultar Link?', 'section' => 'coopanest_cards_section', 'type' => 'checkbox'));
+
 
         // Card 3: Regulamento (Página ou PDF)
         $wp_customize->add_setting('card_regulamento_url', array('default' => '#', 'sanitize_callback' => 'esc_url_raw'));
@@ -161,10 +174,48 @@ if (! function_exists('coopanest_customize_register')) {
         $wp_customize->add_setting('footer_copyright', array('default' => '3ª Corrida COOPANEST-RN. Todos os direitos reservados.'));
         $wp_customize->add_control('footer_copyright', array('label' => 'Copyright', 'section' => 'coopanest_footer_section', 'type' => 'text'));
 
+        $wp_customize->add_setting('footer_text', array('default' => 'Integração esportiva fundamentada no desenvolvimento da padronagem visual VAVA e na saúde médica potiguar.'));
+        $wp_customize->add_control('footer_text', array('label' => 'Texto', 'section' => 'coopanest_footer_section', 'type' => 'textarea'));
+
+        $wp_customize->add_setting('footer_logo'); // Mantém a imagem de capa do card
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'footer_logo', array(
+            'label'   => 'Logo para ser incluida no footer',
+            'section' => 'coopanest_footer_section',
+        )));
+
         $redes = array('instagram', 'facebook', 'youtube');
         foreach ($redes as $rede) {
             $wp_customize->add_setting("footer_$rede", array('default' => ''));
             $wp_customize->add_control("footer_$rede", array('label' => "URL do " . ucfirst($rede), 'section' => 'coopanest_footer_section', 'type' => 'url'));
+        }
+
+
+        // Adicione isto dentro da função coopanest_customize_register($wp_customize)
+
+        $wp_customize->add_section('coopanest_colors_section', array(
+            'title'    => 'Cores do Sistema',
+            'priority' => 20,
+        ));
+
+        $cores_custom = array(
+            'brand_cta'    => array('label' => 'Cor Amarela (CTA)', 'default' => '#FFD100'),
+            'color_5km'    => array('label' => 'Cor 5km (Azul)', 'default' => '#2e1065'),
+            'color_10km'   => array('label' => 'Cor 10km (Verde)', 'default' => '#22c55e'),
+            'color_15km'   => array('label' => 'Cor 15km (Roxo)', 'default' => '#7e22ce'),
+            'text_main'    => array('label' => 'Texto Principal', 'default' => '#18181b'),
+        );
+
+        foreach ($cores_custom as $id => $data) {
+            $wp_customize->add_setting($id, array(
+                'default'           => $data['default'],
+                'sanitize_callback' => 'sanitize_hex_color',
+                'transport'         => 'refresh',
+            ));
+
+            $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, $id, array(
+                'label'    => $data['label'],
+                'section'  => 'coopanest_colors_section',
+            )));
         }
     } // FIM DA FUNÇÃO PRINCIPAL
 }

@@ -4,6 +4,7 @@
  * Template Part: Hero Section com Cronómetro
  */
 $hero_sub     = get_theme_mod('hero_subtitle', 'Integração e Desempenho');
+$hero_title   = get_theme_mod('hero_title', '3ª Corrida COOPANEST');
 $hero_date    = get_theme_mod('hero_date_text', '15 OUTUBRO');
 $bg_desktop = get_theme_mod('hero_bg_desktop');
 $bg_tablet  = get_theme_mod('hero_bg_tablet');
@@ -25,19 +26,20 @@ $target_date  = get_theme_mod('hero_countdown_date'); // Formato: 2026-10-15 06:
             <h4 class="text-yellow-400 font-black tracking-[0.3em] uppercase mb-4">
                 <?php echo esc_html($hero_sub); ?>
             </h4>
-            <h1 class="text-white text-6xl md:text-[8rem] font-black italic leading-[0.85] tracking-tighter uppercase mb-10">
-                3ª Corrida<br>COOPANEST
+            <h1 class="text-white text-6xl md:text-[4rem] font-black italic leading-[0.85] tracking-tighter uppercase mb-10">
+                <?php echo esc_html($hero_title); ?>
             </h1>
 
             <?php if (get_theme_mod('header_cta_hide', false) == false) : ?>
                 <a href="<?php echo esc_url(get_theme_mod('header_cta_link', '#')); ?>"
-                    class="btn-brand bg-yellow-400 text-blue-900 px-10 py-5 text-xl font-black uppercase italic skew-element hover:bg-white transition-all inline-block">
+                    class="btn-brand bg-yellow-400 text-blue-900 px-10 py-5 text-xl font-black uppercase italic skew-element hover:bg-white transition-all inline-block" target="_blank">
                     <span class="unskew"><?php echo esc_html(get_theme_mod('header_cta_text', 'Inscreva-se')); ?> <i class="fas fa-running ml-2"></i></span>
                 </a>
             <?php endif; ?>
         </div>
 
         <div class="lg:col-span-4 space-y-4">
+            <?php /*
             <div class="bg-black/80 border border-yellow-400/30 p-6 flex justify-between items-center backdrop-blur-sm">
                 <div class="text-white">
                     <p class="text-[10px] font-bold uppercase opacity-60">Edição</p>
@@ -48,9 +50,10 @@ $target_date  = get_theme_mod('hero_countdown_date'); // Formato: 2026-10-15 06:
                     <p class="text-2xl font-black"><?php echo esc_html($hero_date); ?></p>
                 </div>
             </div>
+            */?>
 
             <?php if ($target_date) : ?>
-                <div class="bg-yellow-400 p-6 skew-element" id="countdown-wrapper" data-date="<?php echo esc_attr($target_date); ?>">
+                <div class="bg-yellow-400 py-2 skew-element" id="countdown-wrapper" data-date="<?php echo esc_attr($target_date); ?>">
                     <div class="unskew w-full">
                         <p class="text-[10px] font-black uppercase opacity-70 mb-2 text-center" id="countdown-label">Contagem Regressiva</p>
                         <div class="flex justify-around font-black text-2xl text-blue-900" id="timer">

@@ -5,17 +5,18 @@
  */
 $mapa_modal = get_theme_mod('modal_mapa_img', '');
 $kit_modal  = get_theme_mod('modal_kit_img', '');
+$footer_text = get_theme_mod('footer_text', 'Integração esportiva fundamentada no desenvolvimento da padronagem visual VAVA e na saúde médica potiguar.');
+$footer_logo       = get_theme_mod('footer_logo', '#');
+
 ?>
 
 <footer class="color-5km-bg pattern-vava-vazado text-white pt-24 pb-12 mt-auto">
     <div class="container mx-auto px-6">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-20">
             <div class="lg:col-span-6">
-                <?php if (has_custom_logo()) : the_custom_logo();
-                else : ?>
-                    <div class="font-black italic text-3xl mb-8 tracking-tighter">3ª CORRIDA COOPANEST-RN</div>
-                <?php endif; ?>
-                <p class="text-white/70 text-lg leading-relaxed max-w-md font-normal">Integração esportiva fundamentada no desenvolvimento da padronagem visual VAVA e na saúde médica potiguar.</p>
+
+                <img src="<?php echo esc_url($footer_logo); ?>" class="h-16">
+                <p class="text-white/70 text-lg leading-relaxed max-w-md font-normal pt-4"><?php echo wp_kses_post($footer_text); ?></p>
             </div>
 
             <div class="lg:col-span-3">

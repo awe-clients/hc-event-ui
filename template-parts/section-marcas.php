@@ -4,10 +4,13 @@
  * Template Part: Seção de Marcas (Patrocínio, Apoio, etc.)
  */
 
-// Pega todas as categorias cadastradas em "Tipos de Marca"
+// Pega todas as categorias cadastradas em "Tipos de Marca" seguindo a ordem definida
 $categorias_marca = get_terms(array(
     'taxonomy'   => 'tipo_marca',
-    'hide_empty' => true, // Só traz se tiver marcas cadastradas dentro
+    'hide_empty' => true,
+    'meta_key'   => 'ordem_categoria', // Chave que criamos para a ordem
+    'orderby'    => 'meta_value_num',  // Ordena numericamente
+    'order'      => 'ASC',             // Do menor para o maior
 ));
 
 // Se não houver categorias, não exibe a seção
@@ -51,7 +54,7 @@ if (!empty($categorias_marca) && !is_wp_error($categorias_marca)) :
                                     if (!empty($marca_link)) echo '<a href="' . esc_url($marca_link) . '" target="_blank" rel="noopener noreferrer" class="block">';
 
                                     if (has_post_thumbnail()) {
-                                        the_post_thumbnail('medium', ['class' => 'object-contain h-16 md:h-20 w-auto grayscale hover:grayscale-0 transition-all duration-300', 'alt' => $alt_text]);
+                                        the_post_thumbnail('full', ['class' => 'h-16 md:h-20 w-auto', 'alt' => $alt_text]);
                                     } else {
                                         echo '<span class="font-bold text-zinc-400">' . esc_html($alt_text) . '</span>';
                                     }
