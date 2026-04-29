@@ -54,9 +54,9 @@
                 &copy; <?php echo date('Y'); ?> - <?php echo esc_html(get_theme_mod('footer_copyright', '1ª Corrida do Bom Vizinho Rede MAIS. Todos os direitos reservados.')); ?>
             </div>
             <div class="flex items-center gap-3">
-                <span class="text-red-200 text-[10px] uppercase font-bold tracking-widest">Produzido por:</span>
+                <span class="text-red-200 text-[12px] uppercase">Produzido por:</span>
                 <a href="https://horadecorrer.com.br" target="_blank" rel="noopener" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                    <span class="font-black text-white text-[12px] tracking-widest uppercase">Hora de Correr</span>
+                    <span class="font-bold text-white text-[12px] uppercase">Hora de Correr</span>
                 </a>
             </div>
         </div>
