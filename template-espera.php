@@ -11,12 +11,19 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #dc2626; /* Red-600 Tailwind */
+            background-color: #dc2626;
+            /* Red-600 Tailwind */
         }
-        
+
         /* Utilitários de inclinação estrutural */
-        .skew-element { transform: skewX(-10deg); }
-        .unskew { transform: skewX(10deg); display: inline-block; }
+        .skew-element {
+            transform: skewX(-10deg);
+        }
+
+        .unskew {
+            transform: skewX(10deg);
+            display: inline-block;
+        }
     </style>
 </head>
 
@@ -55,7 +62,7 @@
         <div class="mt-24 pt-8 border-t border-red-500/30 flex flex-col md:flex-row justify-between items-center gap-6 opacity-80">
             <p class="text-red-200 text-xs font-bold uppercase tracking-widest">© 2026 REDE MAIS</p>
             <div class="flex items-center gap-4">
-                <span class="text-red-200 text-[10px] uppercase font-bold tracking-widest">Organização Padrão:</span>
+                <span class="text-red-200 text-[10px] uppercase font-bold tracking-widest">Organização:</span>
                 <span class="font-black text-sm tracking-widest">HC SPORTS 15 ANOS</span>
             </div>
         </div>
