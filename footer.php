@@ -57,7 +57,8 @@ $footer_logo       = get_theme_mod('footer_logo', '#');
             </div>
             <div class="flex items-center gap-1">
                 <span class="text-red-200 text-[12px] uppercase">Produzido por:</span>
-                <a href="https://horadecorrer.com.br" target="_blank" rel="noopener" class="flex items-center hover:opacity-80 transition-opacity"><span class="font-bold text-white text-[12px] uppercase">Hora de Correr</span>
+                <a href="https://horadecorrer.com.br" target="_blank" rel="noopener" class="flex items-center hover:opacity-80 transition-opacity">
+                    <span class="font-bold text-white text-[12px] uppercase">Hora de Correr</span>
                 </a>
             </div>
         </div>
