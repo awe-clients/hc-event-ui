@@ -6,7 +6,7 @@
 $subtitle = get_theme_mod('sobre_subtitle', 'Saúde & Integração');
 $title    = get_theme_mod('sobre_title', 'A Corrida do Bom Vizinho');
 $text     = get_theme_mod('sobre_text', 'A corrida do bom vizinho');
-$image    = get_theme_mod('sobre_image', 'https://via.placeholder.com/800x1200/2e1065/FFFFFF?text=ATLETA');
+$image    = get_theme_mod('sobre_image', '');
 ?>
 <section class="py-24 bg-white" id="prova">
     <div class="container mx-auto px-6">
