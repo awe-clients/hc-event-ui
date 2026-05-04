@@ -106,9 +106,24 @@ function bom_vizinho_performance_cleanup()
 }
 add_action('wp_enqueue_scripts', 'bom_vizinho_performance_cleanup', 100);
 
+/**
+ * Flash of Unstyled Content (FOUC). Trata-se de uma anomalia visual que ocorre quando o navegador renderiza o HTML nativo antes que as regras de estilo (CSS) sejam processadas.
+ *
 function bom_vizinho_defer_scripts($tag, $handle, $src)
 {
     if (is_admin()) return $tag;
+    return '<script src="' . esc_url($src) . '" defer="defer"></script>' . "\n";
+}
+ */
+function bom_vizinho_defer_scripts($tag, $handle, $src)
+{
+    if (is_admin()) return $tag;
+
+    // Exclui o Tailwind da política de deferimento para evitar Flash of Unstyled Content (FOUC)
+    if ($handle === 'tailwind') {
+        return $tag;
+    }
+
     return '<script src="' . esc_url($src) . '" defer="defer"></script>' . "\n";
 }
 add_filter('script_loader_tag', 'bom_vizinho_defer_scripts', 10, 3);
