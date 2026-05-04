@@ -356,33 +356,34 @@ function bom_vizinho_status_widget_render()
 // Intercepta a URL e define o cookie se o token estiver correto
 function bom_vizinho_configurar_cookie_stakeholder()
 {
-    $token_autorizado = 'acesso-revisao-2026'; // Token configurado na URL
+    $token_autorizado = 'acesso-revisao-2026';
 
     if (isset($_GET['preview_token']) && $_GET['preview_token'] === $token_autorizado) {
-        // Define o cookie com validade de 30 dias
-        setcookie('stakeholder_bypass', 'concedido', time() + (86400 * 30), COOKIEPATH, COOKIE_DOMAIN);
 
-        // Redireciona de volta para a mesma URL, mas limpando o parâmetro do token
+        // Emissão de diretivas para contornar cache do servidor durante o redirecionamento
+        nocache_headers();
+
+        // Define o cookie com validade de 30 dias com escopo global ('/')
+        setcookie('stakeholder_bypass', 'concedido', time() + (86400 * 30), '/');
+
+        // Redireciona de volta para a mesma URL, mas limpando o parâmetro
         wp_safe_redirect(remove_query_arg('preview_token'));
         exit;
     }
 }
-add_action('init', 'bom_vizinho_configurar_cookie_stakeholder');
+add_action('init', 'bom_vizinho_configurar_cookie_stakeholder', 1);
 
 // Função refatorada para aceitar Admin OU o Cookie de Homologação
 function bom_vizinho_controle_visibilidade()
 {
-    // 1. Verifica se o site está online no painel
     $status = get_option('coopanest_status_evento', 'offline');
-
-    // 2. Verifica se o usuário atual é o administrador logado
     $is_admin = current_user_can('manage_options');
-
-    // 3. Verifica se o visitante tem o cookie especial de stakeholder
     $has_bypass_cookie = (isset($_COOKIE['stakeholder_bypass']) && $_COOKIE['stakeholder_bypass'] === 'concedido');
 
-    // Se o site NÃO está online, NÃO é admin, e NÃO tem o cookie, redireciona para a página de espera.
     if ('online' !== $status && !$is_admin && !$has_bypass_cookie) {
+        // Impede que o servidor faça cache da página de bloqueio
+        nocache_headers();
+
         $template_espera = get_template_directory() . '/template-espera.php';
         if (file_exists($template_espera)) {
             include($template_espera);
@@ -390,9 +391,7 @@ function bom_vizinho_controle_visibilidade()
         }
     }
 }
-// Mantém a prioridade 1 para rodar antes do WordPress carregar o template real
 add_action('template_redirect', 'bom_vizinho_controle_visibilidade', 1);
-
 
 // ==========================================
 // 7. OTIMIZAÇÃO DE IMAGENS (QUALIDADE MÁXIMA)
