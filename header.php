@@ -142,7 +142,7 @@
                     if (!$cta_hide) :
                     ?>
                         <a href="<?php echo esc_url($cta_link); ?>"
-                            class="bg-yellow-brand text-zinc-900 px-6 py-2 skew-element font-black text-xs uppercase italic hover:brightness-90 transition-all hidden md:inline-block" target="_blank">
+                            class="bg-[#cf0000] text-[#FFF] px-6 py-2 skew-element font-black text-xs uppercase italic hover:brightness-90 transition-all hidden md:inline-block" target="_blank">
                             <span class="unskew"><?php echo esc_html($cta_text); ?></span>
                         </a>
                     <?php endif; ?>
@@ -168,7 +168,7 @@
                 ?>
 
                 <?php if (!$cta_hide) : ?>
-                    <a href="<?php echo esc_url($cta_link); ?>" class="bg-yellow-brand text-zinc-900 text-center py-4 mt-4 font-black uppercase italic text-xs">
+                    <a href="<?php echo esc_url($cta_link); ?>" class="bg-[#cf0000] text-[#FFF] text-center py-4 mt-4 font-black uppercase italic text-xs">
                         <?php echo esc_html($cta_text); ?>
                     </a>
                 <?php endif; ?>

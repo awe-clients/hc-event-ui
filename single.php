@@ -29,7 +29,7 @@
                             <?php echo substr(get_the_author(), 0, 2); ?>
                         </div>
                         <div class="text-sm">
-                            <p class="font-bold text-slate-900">Por <?php the_author(); ?></p>
+                            <p class="font-bold text-slate-900 hidden">Por <?php the_author(); ?></p>
                             <p class="text-gray-500">Natal, RN</p>
                         </div>
                     </div>
