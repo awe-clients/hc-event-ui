@@ -63,7 +63,7 @@ if (!empty($categorias_marca) && !is_wp_error($categorias_marca)) :
                                         // Renderização com container flexível (h-16 ou h-20) e normalização visual
                                         echo '<img src="' . esc_url($url_otimizada) . '" 
                                         alt="' . esc_attr($alt_text) . '" 
-                                        class="h-10 md:h-12 w-full object-contain mx-auto" 
+                                        class="max-w-[200px] w-full object-contain mx-auto" 
                                         style="image-rendering: -webkit-optimize-contrast; transform: translateZ(0);">';
                                     } else {
                                         echo '<span class="font-bold text-zinc-400">' . esc_html($alt_text) . '</span>';
