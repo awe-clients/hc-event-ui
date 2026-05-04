@@ -296,42 +296,70 @@ function bom_vizinho_admin_footer_text()
 add_filter('admin_footer_text', 'bom_vizinho_admin_footer_text');
 
 // ==========================================
-// 6. DASHBOARD WIDGETS & STATUS
+// 6.1 BYPASS DE VISIBILIDADE (FRONT-END SESSION & FALLBACK)
 // ==========================================
-function bom_vizinho_add_dashboard_widgets()
-{
-    wp_add_dashboard_widget('bom_vizinho_welcome_widget', 'Painel - 1ª Corrida do Bom Vizinho', 'bom_vizinho_dashboard_welcome_html');
-    wp_add_dashboard_widget('bom_vizinho_event_status_widget', 'Controle de Visibilidade do Site', 'bom_vizinho_status_widget_render');
-}
-add_action('wp_dashboard_setup', 'bom_vizinho_add_dashboard_widgets');
 
-function bom_vizinho_dashboard_welcome_html()
+function bom_vizinho_controle_visibilidade()
 {
-    echo '
-    <div style="padding:10px; border-left: 4px solid #7f1d1d;">
-        <h2 style="color:#7f1d1d; font-weight:900; text-transform:uppercase; italic">Bem-vindo, Rede MAIS!</h2>
-        <p>Sistema otimizado para a gestão da <strong>1ª Corrida do Bom Vizinho</strong>.</p>
-        <hr>
-        <h4 style="margin-bottom:5px;">Guia Rápido:</h4>
-        <ul style="list-style:disc; padding-left:20px;">
-            <li><strong>Textos e Cores:</strong> Acesse <a href="customize.php">Aparência > Personalizar</a>.</li>
-            <li><strong>Patrocinadores:</strong> Menu "Marcas & Patrocínios" (Suba os logos preferencialmente em SVG).</li>
-            <li><strong>Link para Stakeholders:</strong> <code>/?preview_token=acesso-revisao-2026</code></li>
-        </ul>
-    </div>';
-}
+    // 0. Gatilho Temporal: Publicação automática às 00:00 de 05/05/2026 (GMT-3)
+    $data_publicacao_automatica = strtotime('2026-05-05 00:00:00 -0300');
+    if (time() >= $data_publicacao_automatica) {
+        return; // Libera o acesso universal irrevogavelmente após a data
+    }
 
-function bom_vizinho_handle_status_toggle()
-{
-    if (isset($_POST['coopanest_toggle_action']) && check_admin_referer('coopanest_status_nonce', 'coopanest_nonce_field')) {
-        $status_atual = get_option('coopanest_status_evento', 'offline');
-        $novo_status = ($status_atual === 'online') ? 'offline' : 'online';
-        update_option('coopanest_status_evento', $novo_status);
-        wp_safe_redirect(admin_url());
-        exit;
+    $status = get_option('coopanest_status_evento', 'offline');
+
+    // 1. Regra Manual: Se publicado via painel, suprime restrição
+    if ($status === 'online') {
+        return;
+    }
+
+    // 2. Liberação nativa para administradores logados
+    if (current_user_can('manage_options')) {
+        return;
+    }
+
+    // Nomenclatura arquitetural para mitigação de cache do servidor
+    $cookie_name = 'wp-postpass_stakeholder';
+    $has_cookie = (isset($_COOKIE[$cookie_name]) && $_COOKIE[$cookie_name] === 'concedido');
+    $has_token  = (isset($_GET['preview_token']) && $_GET['preview_token'] === 'acesso-revisao-2026');
+
+    // 3. Interceção de acesso inválido
+    if (!$has_cookie && !$has_token) {
+        nocache_headers();
+
+        // Mitigação de Cache de Navegador
+        echo "<script>
+            if (document.cookie.indexOf('" . $cookie_name . "=concedido') !== -1) {
+                window.location.replace(window.location.pathname + '?preview_token=acesso-revisao-2026');
+            }
+        </script>";
+
+        $template_espera = get_template_directory() . '/template-espera.php';
+        if (file_exists($template_espera)) {
+            include($template_espera);
+            exit;
+        }
     }
 }
-add_action('admin_init', 'bom_vizinho_handle_status_toggle');
+add_action('template_redirect', 'bom_vizinho_controle_visibilidade', 1);
+
+function bom_vizinho_injetar_script_autorizacao()
+{
+    // 4. Manutenção de Sessão
+    if (isset($_GET['preview_token']) && $_GET['preview_token'] === 'acesso-revisao-2026') {
+        echo "<script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Estabelece ciclo de vida estrito de 24 horas (86400s)
+                document.cookie = 'wp-postpass_stakeholder=concedido; max-age=86400; path=/; samesite=Lax';
+                
+                // Mascara a URL apagando o token visualmente, mantendo a navegação limpa
+                window.history.replaceState({}, document.title, window.location.pathname);
+            });
+        </script>";
+    }
+}
+add_action('wp_head', 'bom_vizinho_injetar_script_autorizacao', 1);
 
 function bom_vizinho_status_widget_render()
 {
