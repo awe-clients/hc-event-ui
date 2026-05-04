@@ -199,6 +199,23 @@ if (! function_exists('bom_vizinho_customize_register')) {
             $wp_customize->add_setting("footer_$rede", array('default' => ''));
             $wp_customize->add_control("footer_$rede", array('label' => "URL do " . ucfirst($rede), 'section' => 'bom_vizinho_footer_section', 'type' => 'url'));
         }
+
+        // Logo do Rodapé
+        $wp_customize->add_setting('footer_logo');
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'footer_logo', array(
+            'label'   => 'Logotipo do Rodapé',
+            'section' => 'bom_vizinho_footer_section',
+        )));
+
+        // Texto de Apoio do Rodapé
+        $wp_customize->add_setting('footer_text', array(
+            'default' => 'O evento que conecta saúde, comunidade e energia. Natal/RN.'
+        ));
+        $wp_customize->add_control('footer_text', array(
+            'label'   => 'Texto de Apoio',
+            'section' => 'bom_vizinho_footer_section',
+            'type'    => 'textarea',
+        ));
     } // FIM DA FUNÇÃO PRINCIPAL
 }
 

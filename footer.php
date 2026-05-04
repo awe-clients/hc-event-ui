@@ -1,7 +1,13 @@
 <?php
+
 /**
  * Footer do Tema - 1ª Corrida do Bom Vizinho
  */
+
+// Extração de metadados customizáveis
+$footer_text = get_theme_mod('footer_text', 'O evento que conecta saúde, comunidade e energia. Natal/RN.');
+$footer_logo = get_theme_mod('footer_logo', '');
+
 ?>
 
 <footer class="bom-vizinho-gradient text-zinc-50 pt-24 pb-12 mt-auto relative overflow-hidden">
@@ -10,11 +16,20 @@
     <div class="container mx-auto px-6 relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-20">
             <div class="lg:col-span-6">
-                <?php if (has_custom_logo()) : the_custom_logo();
+
+                <?php
+                // Renderização condicional da logo customizada ou fallback
+                if (!empty($footer_logo)) : ?>
+                    <img src="<?php echo esc_url($footer_logo); ?>" class="h-16 mb-8" alt="Logo Footer">
+                <?php elseif (has_custom_logo()) :
+                    the_custom_logo();
                 else : ?>
                     <div class="font-black italic text-3xl mb-8 tracking-tighter uppercase">1ª Corrida do Bom Vizinho</div>
                 <?php endif; ?>
-                <p class="text-red-100 text-lg leading-relaxed max-w-md font-medium">O evento que conecta saúde, comunidade e energia. Natal/RN.</p>
+
+                <p class="text-red-100 text-lg leading-relaxed max-w-md font-medium">
+                    <?php echo wp_kses_post($footer_text); ?>
+                </p>
             </div>
 
             <div class="lg:col-span-3">
@@ -55,7 +70,8 @@
             </div>
             <div class="flex items-center gap-1">
                 <span class="text-red-200 text-[12px] uppercase">Produzido por:</span>
-                <a href="https://horadecorrer.com.br" target="_blank" rel="noopener" class="flex items-center hover:opacity-80 transition-opacity"><span class="font-bold text-white text-[12px] uppercase">Hora de Correr</span>
+                <a href="https://horadecorrer.com.br" target="_blank" rel="noopener" class="flex items-center hover:opacity-80 transition-opacity">
+                    <span class="font-bold text-white text-[12px] uppercase">Hora de Correr</span>
                 </a>
             </div>
         </div>
@@ -64,4 +80,5 @@
 
 <?php wp_footer(); ?>
 </body>
+
 </html>
