@@ -137,7 +137,14 @@ if (! function_exists('bom_vizinho_customize_register')) {
             'priority' => 34,
         ));
 
-        // Card 1: Percursos
+        // --- CARD 1: Percursos ---
+        $wp_customize->add_setting('card_percurso_text', array('default' => 'Conheça os trajetos desenhados para conectar a comunidade.'));
+        $wp_customize->add_control('card_percurso_text', array(
+            'label'   => 'Texto Descritivo (Percursos)',
+            'section' => 'bom_vizinho_cards_section',
+            'type'    => 'textarea',
+        ));
+
         $wp_customize->add_setting('card_percurso_url', array('default' => '#', 'sanitize_callback' => 'esc_url_raw'));
         $wp_customize->add_control('card_percurso_url', array(
             'label'   => 'Link da Página de Percursos',
@@ -145,7 +152,16 @@ if (! function_exists('bom_vizinho_customize_register')) {
             'type'    => 'url',
         ));
 
-        // Card 2: Kit Atleta
+        // NOVO: Checkbox para ocultar link do Percurso
+        $wp_customize->add_setting('card_percurso_link_hide', array('default' => false));
+        $wp_customize->add_control('card_percurso_link_hide', array(
+            'label'   => 'Ocultar botão/link "Ver detalhes"?',
+            'section' => 'bom_vizinho_cards_section',
+            'type'    => 'checkbox',
+        ));
+
+
+        // --- CARD 2: Kit Atleta ---
         $wp_customize->add_setting('card_kit_url', array('default' => '#', 'sanitize_callback' => 'esc_url_raw'));
         $wp_customize->add_control('card_kit_url', array(
             'label'   => 'Link da Página do Kit',
@@ -153,13 +169,22 @@ if (! function_exists('bom_vizinho_customize_register')) {
             'type'    => 'url',
         ));
 
-        $wp_customize->add_setting('card_kit_img'); // Mantém a imagem de capa do card
+        $wp_customize->add_setting('card_kit_img');
         $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'card_kit_img', array(
             'label'   => 'Imagem de Capa (Card Kit)',
             'section' => 'bom_vizinho_cards_section',
         )));
 
-        // Card 3: Regulamento (Página ou PDF)
+        // NOVO: Checkbox para ocultar link do Kit
+        $wp_customize->add_setting('card_kit_link_hide', array('default' => false));
+        $wp_customize->add_control('card_kit_link_hide', array(
+            'label'   => 'Ocultar botão/link "Conhecer o Kit"?',
+            'section' => 'bom_vizinho_cards_section',
+            'type'    => 'checkbox',
+        ));
+
+
+        // --- CARD 3: Regulamento (Página ou PDF) ---
         $wp_customize->add_setting('card_regulamento_url', array('default' => '#', 'sanitize_callback' => 'esc_url_raw'));
         $wp_customize->add_control('card_regulamento_url', array(
             'label'   => 'Link da Página ou PDF do Regulamento',
