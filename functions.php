@@ -350,19 +350,19 @@ function bom_vizinho_status_widget_render()
 }
 
 // ==========================================
-// 6.1 BYPASS DE VISIBILIDADE (STAKEHOLDERS VIA COOKIE)
+// 6.1 BYPASS DE VISIBILIDADE (FRONT-END SESSION)
 // ==========================================
 
 function bom_vizinho_controle_visibilidade()
 {
     $status = get_option('coopanest_status_evento', 'offline');
     $is_admin = current_user_can('manage_options');
-    $has_bypass_cookie = (isset($_COOKIE['stakeholder_bypass']) && $_COOKIE['stakeholder_bypass'] === 'concedido');
 
-    // Verifica se a requisição atual possui o token de homologação
+    // Validação reconfigurada para identificar o cookie com prefixo reservado
+    $has_bypass_cookie = (isset($_COOKIE['wp_stakeholder_bypass']) && $_COOKIE['wp_stakeholder_bypass'] === 'concedido');
+
     $has_url_token = (isset($_GET['preview_token']) && $_GET['preview_token'] === 'acesso-revisao-2026');
 
-    // Se o site estiver offline, o usuário não for admin, não tiver a sessão de 24h E não apresentar o token na URL
     if ('online' !== $status && !$is_admin && !$has_bypass_cookie && !$has_url_token) {
         nocache_headers();
         $template_espera = get_template_directory() . '/template-espera.php';
@@ -376,15 +376,14 @@ add_action('template_redirect', 'bom_vizinho_controle_visibilidade', 1);
 
 function bom_vizinho_injetar_script_autorizacao()
 {
-    // Injeta o script de sessão apenas quando o token é detectado
     if (isset($_GET['preview_token']) && $_GET['preview_token'] === 'acesso-revisao-2026') {
         echo "<script>
             document.addEventListener('DOMContentLoaded', function() {
-                // Escrita efetuada no cliente para contornar políticas de cache do servidor
-                // Expiração rigorosa configurada para 24 horas (86400 segundos)
-                document.cookie = 'stakeholder_bypass=concedido; max-age=86400; path=/; samesite=strict';
+                // Escrita no cliente utilizando o prefixo 'wp_' para forçar o bypass do cache do servidor
+                // A diretiva samesite=Lax assegura a estabilidade da sessão
+                document.cookie = 'wp_stakeholder_bypass=concedido; max-age=86400; path=/; samesite=Lax';
                 
-                // Supressão do token na URL visual do navegador para evitar partilhas indevidas
+                // Supressão do token na URL visual
                 window.history.replaceState({}, document.title, window.location.pathname);
             });
         </script>";
