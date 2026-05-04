@@ -350,21 +350,40 @@ function bom_vizinho_status_widget_render()
 }
 
 // ==========================================
-// 6.1 BYPASS DE VISIBILIDADE (FRONT-END SESSION)
+// 6.1 BYPASS DE VISIBILIDADE (FRONT-END SESSION & FALLBACK)
 // ==========================================
 
 function bom_vizinho_controle_visibilidade()
 {
     $status = get_option('coopanest_status_evento', 'offline');
-    $is_admin = current_user_can('manage_options');
 
-    // Validação reconfigurada para identificar o cookie com prefixo reservado
-    $has_bypass_cookie = (isset($_COOKIE['wp_stakeholder_bypass']) && $_COOKIE['wp_stakeholder_bypass'] === 'concedido');
+    // 1. Regra Absoluta: Se publicado, suprime qualquer restrição
+    if ($status === 'online') {
+        return;
+    }
 
-    $has_url_token = (isset($_GET['preview_token']) && $_GET['preview_token'] === 'acesso-revisao-2026');
+    // 2. Liberação nativa para administradores
+    if (current_user_can('manage_options')) {
+        return;
+    }
 
-    if ('online' !== $status && !$is_admin && !$has_bypass_cookie && !$has_url_token) {
+    // O prefixo 'wp-postpass_' é o padrão arquitetural do WordPress para forçar o bypass em servidores Nginx/Varnish
+    $cookie_name = 'wp-postpass_stakeholder';
+    $has_cookie = (isset($_COOKIE[$cookie_name]) && $_COOKIE[$cookie_name] === 'concedido');
+    $has_token  = (isset($_GET['preview_token']) && $_GET['preview_token'] === 'acesso-revisao-2026');
+
+    // 3. Interceção de acesso inválido
+    if (!$has_cookie && !$has_token) {
         nocache_headers();
+
+        // Mitigação de Cache: Se o servidor entregar a página de espera indevidamente,
+        // o navegador valida a sessão local e força o recarregamento autenticado.
+        echo "<script>
+            if (document.cookie.indexOf('" . $cookie_name . "=concedido') !== -1) {
+                window.location.replace(window.location.pathname + '?preview_token=acesso-revisao-2026');
+            }
+        </script>";
+
         $template_espera = get_template_directory() . '/template-espera.php';
         if (file_exists($template_espera)) {
             include($template_espera);
@@ -376,20 +395,22 @@ add_action('template_redirect', 'bom_vizinho_controle_visibilidade', 1);
 
 function bom_vizinho_injetar_script_autorizacao()
 {
+    // 4. Manutenção de Sessão
     if (isset($_GET['preview_token']) && $_GET['preview_token'] === 'acesso-revisao-2026') {
         echo "<script>
             document.addEventListener('DOMContentLoaded', function() {
-                // Escrita no cliente utilizando o prefixo 'wp_' para forçar o bypass do cache do servidor
-                // A diretiva samesite=Lax assegura a estabilidade da sessão
-                document.cookie = 'wp_stakeholder_bypass=concedido; max-age=86400; path=/; samesite=Lax';
+                // Estabelece ciclo de vida estrito de 24 horas (86400s)
+                document.cookie = 'wp-postpass_stakeholder=concedido; max-age=86400; path=/; samesite=Lax';
                 
-                // Supressão do token na URL visual
+                // Mascara a URL apagando o token visualmente, mantendo a navegação limpa
                 window.history.replaceState({}, document.title, window.location.pathname);
             });
         </script>";
     }
 }
 add_action('wp_head', 'bom_vizinho_injetar_script_autorizacao', 1);
+
+
 
 // ==========================================
 // 7. OTIMIZAÇÃO DE IMAGENS (QUALIDADE MÁXIMA)
