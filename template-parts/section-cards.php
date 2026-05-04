@@ -64,7 +64,7 @@ $kit_cover          = get_theme_mod('card_kit_img', 'https://via.placeholder.com
                     <p class="text-white/90 text-sm leading-relaxed mb-auto">Informações fundamentais sobre categorias e diretrizes técnicas da competição.</p>
 
                     <?php if (!$regulamento_link_hide) : ?>
-                        <div class="color-10km-bg text-white w-full py-4 skew-element font-black uppercase italic text-sm hover:brightness-110 transition-all">
+                        <div>
                             <a href="<?php echo esc_url($regulamento_url); ?>" class="mt-8 inline-block bg-white text-red-900 px-8 py-3 skew-element font-black uppercase italic text-xs group-hover:bg-yellow-brand transition-colors text-center w-max">
                                 <span class="unskew">Acessar Documento</span>
                             </a>
