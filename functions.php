@@ -109,25 +109,10 @@ add_action('wp_enqueue_scripts', 'bom_vizinho_performance_cleanup', 100);
 function bom_vizinho_defer_scripts($tag, $handle, $src)
 {
     if (is_admin()) return $tag;
-    return '<script src="' . esc_url($src) . '" defer="defer"></script>' . "
-";
+    return '<script src="' . esc_url($src) . '" defer="defer"></script>' . "\n";
 }
 add_filter('script_loader_tag', 'bom_vizinho_defer_scripts', 10, 3);
 
-// Compressão de imagens sem perda (WebP Default)
-add_filter('wp_image_editors', function ($classes) {
-    return array_merge(['WP_Image_Editor_Imagick'], $classes);
-});
-add_filter('wp_generate_attachment_metadata', function ($image_meta) {
-    add_filter('jpeg_quality', function () {
-        return 100;
-    });
-    add_filter('webp_quality', function () {
-        return 100;
-    });
-    return $image_meta;
-});
-add_filter('big_image_size_threshold', '__return_false');
 
 // ==========================================
 // 3. ENQUEUE SCRIPTS & STYLES
@@ -316,6 +301,7 @@ function bom_vizinho_dashboard_welcome_html()
         <ul style="list-style:disc; padding-left:20px;">
             <li><strong>Textos e Cores:</strong> Acesse <a href="customize.php">Aparência > Personalizar</a>.</li>
             <li><strong>Patrocinadores:</strong> Menu "Marcas & Patrocínios" (Suba os logos preferencialmente em SVG).</li>
+            <li><strong>Link para Stakeholders:</strong> <code>/?preview_token=acesso-revisao-2026</code></li>
         </ul>
     </div>';
 }
@@ -348,10 +334,40 @@ function bom_vizinho_status_widget_render()
     echo '</button></form></div>';
 }
 
+// ==========================================
+// 6.1 BYPASS DE VISIBILIDADE (STAKEHOLDERS VIA COOKIE)
+// ==========================================
+
+// Intercepta a URL e define o cookie se o token estiver correto
+function bom_vizinho_configurar_cookie_stakeholder()
+{
+    $token_autorizado = 'acesso-revisao-2026'; // Token configurado na URL
+
+    if (isset($_GET['preview_token']) && $_GET['preview_token'] === $token_autorizado) {
+        // Define o cookie com validade de 30 dias
+        setcookie('stakeholder_bypass', 'concedido', time() + (86400 * 30), COOKIEPATH, COOKIE_DOMAIN);
+
+        // Redireciona de volta para a mesma URL, mas limpando o parâmetro do token
+        wp_safe_redirect(remove_query_arg('preview_token'));
+        exit;
+    }
+}
+add_action('init', 'bom_vizinho_configurar_cookie_stakeholder');
+
+// Função refatorada para aceitar Admin OU o Cookie de Homologação
 function bom_vizinho_controle_visibilidade()
 {
+    // 1. Verifica se o site está online no painel
     $status = get_option('coopanest_status_evento', 'offline');
-    if ('online' !== $status && !current_user_can('manage_options')) {
+
+    // 2. Verifica se o usuário atual é o administrador logado
+    $is_admin = current_user_can('manage_options');
+
+    // 3. Verifica se o visitante tem o cookie especial de stakeholder
+    $has_bypass_cookie = (isset($_COOKIE['stakeholder_bypass']) && $_COOKIE['stakeholder_bypass'] === 'concedido');
+
+    // Se o site NÃO está online, NÃO é admin, e NÃO tem o cookie, redireciona para a página de espera.
+    if ('online' !== $status && !$is_admin && !$has_bypass_cookie) {
         $template_espera = get_template_directory() . '/template-espera.php';
         if (file_exists($template_espera)) {
             include($template_espera);
@@ -359,11 +375,12 @@ function bom_vizinho_controle_visibilidade()
         }
     }
 }
+// Mantém a prioridade 1 para rodar antes do WordPress carregar o template real
 add_action('template_redirect', 'bom_vizinho_controle_visibilidade', 1);
 
 
 // ==========================================
-// OTIMIZAÇÃO DE IMAGENS (QUALIDADE MÁXIMA)
+// 7. OTIMIZAÇÃO DE IMAGENS (QUALIDADE MÁXIMA)
 // ==========================================
 
 // 1. Prioriza a biblioteca Imagick, que possui um algoritmo de amostragem superior ao GD
@@ -384,7 +401,6 @@ add_filter('webp_quality', function () {
 
 // 4. Desabilita o corte destrutivo de imagens superiores a 2560px (threshold)
 add_filter('big_image_size_threshold', '__return_false');
-
 
 
 // Importação do Customizer
