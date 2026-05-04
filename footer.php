@@ -32,7 +32,7 @@ $footer_logo = get_theme_mod('footer_logo', '');
                 </p>
             </div>
 
-            <div class="lg:col-span-3">
+            <div class="lg:col-span-3 hidden">
                 <h4 class="text-yellow-400 font-black uppercase text-xs tracking-widest mb-8">Navegação</h4>
                 <?php
                 wp_nav_menu(array(
