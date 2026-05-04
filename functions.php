@@ -353,37 +353,18 @@ function bom_vizinho_status_widget_render()
 // 6.1 BYPASS DE VISIBILIDADE (STAKEHOLDERS VIA COOKIE)
 // ==========================================
 
-// Intercepta a URL e define o cookie se o token estiver correto
-function bom_vizinho_configurar_cookie_stakeholder()
-{
-    $token_autorizado = 'acesso-revisao-2026';
-
-    if (isset($_GET['preview_token']) && $_GET['preview_token'] === $token_autorizado) {
-
-        // Emissão de diretivas para contornar cache do servidor durante o redirecionamento
-        nocache_headers();
-
-        // Define o cookie com validade de 30 dias com escopo global ('/')
-        setcookie('stakeholder_bypass', 'concedido', time() + (86400 * 30), '/');
-
-        // Redireciona de volta para a mesma URL, mas limpando o parâmetro
-        wp_safe_redirect(remove_query_arg('preview_token'));
-        exit;
-    }
-}
-add_action('init', 'bom_vizinho_configurar_cookie_stakeholder', 1);
-
-// Função refatorada para aceitar Admin OU o Cookie de Homologação
 function bom_vizinho_controle_visibilidade()
 {
     $status = get_option('coopanest_status_evento', 'offline');
     $is_admin = current_user_can('manage_options');
     $has_bypass_cookie = (isset($_COOKIE['stakeholder_bypass']) && $_COOKIE['stakeholder_bypass'] === 'concedido');
 
-    if ('online' !== $status && !$is_admin && !$has_bypass_cookie) {
-        // Impede que o servidor faça cache da página de bloqueio
-        nocache_headers();
+    // Verifica se a requisição atual possui o token de homologação
+    $has_url_token = (isset($_GET['preview_token']) && $_GET['preview_token'] === 'acesso-revisao-2026');
 
+    // Se o site estiver offline, o usuário não for admin, não tiver a sessão de 24h E não apresentar o token na URL
+    if ('online' !== $status && !$is_admin && !$has_bypass_cookie && !$has_url_token) {
+        nocache_headers();
         $template_espera = get_template_directory() . '/template-espera.php';
         if (file_exists($template_espera)) {
             include($template_espera);
@@ -392,6 +373,24 @@ function bom_vizinho_controle_visibilidade()
     }
 }
 add_action('template_redirect', 'bom_vizinho_controle_visibilidade', 1);
+
+function bom_vizinho_injetar_script_autorizacao()
+{
+    // Injeta o script de sessão apenas quando o token é detectado
+    if (isset($_GET['preview_token']) && $_GET['preview_token'] === 'acesso-revisao-2026') {
+        echo "<script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Escrita efetuada no cliente para contornar políticas de cache do servidor
+                // Expiração rigorosa configurada para 24 horas (86400 segundos)
+                document.cookie = 'stakeholder_bypass=concedido; max-age=86400; path=/; samesite=strict';
+                
+                // Supressão do token na URL visual do navegador para evitar partilhas indevidas
+                window.history.replaceState({}, document.title, window.location.pathname);
+            });
+        </script>";
+    }
+}
+add_action('wp_head', 'bom_vizinho_injetar_script_autorizacao', 1);
 
 // ==========================================
 // 7. OTIMIZAÇÃO DE IMAGENS (QUALIDADE MÁXIMA)
