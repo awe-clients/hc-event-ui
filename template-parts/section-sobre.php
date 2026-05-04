@@ -27,9 +27,9 @@ $image    = get_theme_mod('sobre_image', '');
                 </div>
 
                 <div class="grid grid-cols-3 gap-4 mt-16 pt-10 border-t border-zinc-100 text-white text-center font-black italic uppercase">
-                    <div class="color-5km-bg p-4 skew-element"><span class="unskew">5 KM</span></div>
-                    <div class="color-10km-bg p-4 skew-element"><span class="unskew">10 KM</span></div>
-                    <div class="color-15km-bg p-4 skew-element"><span class="unskew">15 KM</span></div>
+                    <a href="https://www.strava.com/routes/3486378123703328092" target="_percurso" class="color-5km-bg p-4 skew-element"><span class="unskew">5 KM</span></a>
+                    <a href="https://www.strava.com/routes/3486380060480933338" target="_percurso" class="color-10km-bg p-4 skew-element"><span class="unskew">10 KM</span></a>
+                    <a href="https://www.strava.com/routes/3486377308495654962" target="_percurso" class="color-15km-bg p-4 skew-element"><span class="unskew">15 KM</span></a>
                 </div>
             </div>
 
