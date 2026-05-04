@@ -361,22 +361,6 @@ function bom_vizinho_injetar_script_autorizacao()
 }
 add_action('wp_head', 'bom_vizinho_injetar_script_autorizacao', 1);
 
-function bom_vizinho_status_widget_render()
-{
-    $is_online = get_option('coopanest_status_evento', 'offline') === 'online';
-    $cor_primaria = $is_online ? '#22c55e' : '#7f1d1d'; // Verde padrão ou Vermelho
-    $label = $is_online ? 'EVENTO PUBLICADO' : 'MODO DE ESPERA ATIVO';
-
-    echo '<div style="text-align:center; padding:15px;">';
-    echo '<div style="font-weight:900; color:' . $cor_primaria . '; margin-bottom:15px; text-transform:uppercase;">' . $label . '</div>';
-    echo '<form method="post" action="">';
-    wp_nonce_field('coopanest_status_nonce', 'coopanest_nonce_field');
-    echo '<input type="hidden" name="coopanest_toggle_action" value="1">';
-    echo '<button type="submit" class="button" style="background:' . $cor_primaria . '; color:#fff; border:none; padding:10px 20px; font-weight:bold; cursor:pointer; border-radius:4px;">';
-    echo $is_online ? 'DESATIVAR SITE' : 'PUBLICAR EVENTO';
-    echo '</button></form></div>';
-}
-
 // ==========================================
 // 6.1 BYPASS DE VISIBILIDADE (FRONT-END SESSION & FALLBACK)
 // ==========================================
