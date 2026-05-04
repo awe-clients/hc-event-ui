@@ -192,6 +192,14 @@ if (! function_exists('bom_vizinho_customize_register')) {
             'type'    => 'url',
         ));
 
+        // NOVO: Checkbox para ocultar link do Kit
+        $wp_customize->add_setting('card_regulamento_link_hide', array('default' => false));
+        $wp_customize->add_control('card_regulamento_link_hide', array(
+            'label'   => 'Ocultar botão/link "Acessador documento"?',
+            'section' => 'bom_vizinho_cards_section',
+            'type'    => 'checkbox',
+        ));
+
 
         // ==========================================
         // 6. NOTÍCIAS E MARCAS

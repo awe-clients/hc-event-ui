@@ -10,6 +10,7 @@ $percurso_link_hide = get_theme_mod('card_percurso_link_hide', false);
 $kit_url            = get_theme_mod('card_kit_url', '#');
 $kit_link_hide      = get_theme_mod('card_kit_link_hide', false);
 $regulamento_url    = get_theme_mod('card_regulamento_url', '#');
+$regulamento_link_hide      = get_theme_mod('card_regulamento_link_hide', false);
 $kit_cover          = get_theme_mod('card_kit_img', 'https://via.placeholder.com/400x400/FFFFFF/dc2626?text=KIT');
 ?>
 <section class="py-20 bg-zinc-50 border-t border-zinc-200" id="infos">
@@ -51,17 +52,22 @@ $kit_cover          = get_theme_mod('card_kit_img', 'https://via.placeholder.com
                 </div>
             </div>
 
-            <a href="<?php echo esc_url($regulamento_url); ?>" class="group block relative overflow-hidden color-15km-bg border border-transparent hover:brightness-110 transition-all duration-300">
+            <div class="group block relative overflow-hidden color-15km-bg border border-transparent hover:brightness-110 transition-all duration-300">
                 <div class="p-10 relative z-10 text-white flex flex-col h-full">
                     <span class="text-white/70 font-black text-[10px] tracking-[0.3em] uppercase">Normas</span>
                     <h3 class="text-4xl font-black italic uppercase mt-2 mb-6">Regulamento</h3>
                     <p class="text-white/90 text-sm leading-relaxed mb-auto">Informações fundamentais sobre categorias e diretrizes técnicas da competição.</p>
 
-                    <div class="mt-8 inline-block bg-white text-red-900 px-8 py-3 skew-element font-black uppercase italic text-xs group-hover:bg-yellow-brand transition-colors text-center w-max">
-                        <span class="unskew">Acessar Documento</span>
-                    </div>
+                    <?php if (!$regulamento_link_hide) : ?>
+                        <div class="color-10km-bg text-white w-full py-4 skew-element font-black uppercase italic text-sm hover:brightness-110 transition-all">
+                            <a href="<?php echo esc_url($regulamento_url); ?>" class="mt-8 inline-block bg-white text-red-900 px-8 py-3 skew-element font-black uppercase italic text-xs group-hover:bg-yellow-brand transition-colors text-center w-max">
+                                <span class="unskew">Acessar Documento</span>
+                            </a>
+                        </div>
+                    <?php endif; ?>
+
                 </div>
-            </a>
+            </div>
 
         </div>
     </div>
