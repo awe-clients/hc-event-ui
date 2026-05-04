@@ -353,43 +353,66 @@ function bom_vizinho_status_widget_render()
 // 6.1 BYPASS DE VISIBILIDADE (FRONT-END SESSION)
 // ==========================================
 
-function bom_vizinho_controle_visibilidade()
-{
-    $status = get_option('coopanest_status_evento', 'offline');
-    $is_admin = current_user_can('manage_options');
+if (!function_exists('bom_vizinho_controle_visibilidade')) {
+    function bom_vizinho_controle_visibilidade()
+    {
+        // 0. Gatilho Temporal: Publicação automática às 00:00 de 05/05/2026 (GMT-3)
+        $data_publicacao_automatica = strtotime('2026-05-05 00:00:00 -0300');
+        if (time() >= $data_publicacao_automatica) {
+            return; // Libera o acesso universal irrevogavelmente
+        }
 
-    // Validação reconfigurada para identificar o cookie com prefixo reservado
-    $has_bypass_cookie = (isset($_COOKIE['wp_stakeholder_bypass']) && $_COOKIE['wp_stakeholder_bypass'] === 'concedido');
+        $status = get_option('coopanest_status_evento', 'offline');
 
-    $has_url_token = (isset($_GET['preview_token']) && $_GET['preview_token'] === 'acesso-revisao-2026');
+        // 1. Regra Manual: Se publicado via painel, suprime restrição
+        if ($status === 'online') {
+            return;
+        }
 
-    if ('online' !== $status && !$is_admin && !$has_bypass_cookie && !$has_url_token) {
-        nocache_headers();
-        $template_espera = get_template_directory() . '/template-espera.php';
-        if (file_exists($template_espera)) {
-            include($template_espera);
-            exit;
+        // 2. Liberação nativa para administradores logados
+        if (current_user_can('manage_options')) {
+            return;
+        }
+
+        // Nomenclatura arquitetural para mitigação de cache do servidor
+        $cookie_name = 'wp-postpass_stakeholder';
+        $has_cookie = (isset($_COOKIE[$cookie_name]) && $_COOKIE[$cookie_name] === 'concedido');
+        $has_token  = (isset($_GET['preview_token']) && $_GET['preview_token'] === 'acesso-revisao-2026');
+
+        // 3. Interceção de acesso inválido
+        if (!$has_cookie && !$has_token) {
+            nocache_headers();
+
+            $template_espera = get_template_directory() . '/template-espera.php';
+            if (file_exists($template_espera)) {
+                // Mitigação de Cache de Navegador injetada imediatamente antes do carregamento do documento
+                echo "<script>if(document.cookie.indexOf('" . esc_js($cookie_name) . "=concedido') !== -1) { window.location.replace(window.location.pathname + '?preview_token=acesso-revisao-2026'); }</script>";
+                include($template_espera);
+                exit;
+            }
         }
     }
+    add_action('template_redirect', 'bom_vizinho_controle_visibilidade', 1);
 }
-add_action('template_redirect', 'bom_vizinho_controle_visibilidade', 1);
 
-function bom_vizinho_injetar_script_autorizacao()
-{
-    if (isset($_GET['preview_token']) && $_GET['preview_token'] === 'acesso-revisao-2026') {
-        echo "<script>
-            document.addEventListener('DOMContentLoaded', function() {
-                // Escrita no cliente utilizando o prefixo 'wp_' para forçar o bypass do cache do servidor
-                // A diretiva samesite=Lax assegura a estabilidade da sessão
-                document.cookie = 'wp_stakeholder_bypass=concedido; max-age=86400; path=/; samesite=Lax';
-                
-                // Supressão do token na URL visual
-                window.history.replaceState({}, document.title, window.location.pathname);
-            });
-        </script>";
+if (!function_exists('bom_vizinho_injetar_script_autorizacao')) {
+    function bom_vizinho_injetar_script_autorizacao()
+    {
+        // 4. Manutenção de Sessão
+        if (isset($_GET['preview_token']) && $_GET['preview_token'] === 'acesso-revisao-2026') {
+            echo "<script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    // Estabelece ciclo de vida estrito de 24 horas (86400s)
+                    document.cookie = 'wp-postpass_stakeholder=concedido; max-age=86400; path=/; samesite=Lax';
+                    
+                    // Mascara a URL apagando o token visualmente, mantendo a navegação limpa
+                    window.history.replaceState({}, document.title, window.location.pathname);
+                });
+            </script>\n";
+        }
     }
+    add_action('wp_head', 'bom_vizinho_injetar_script_autorizacao', 1);
 }
-add_action('wp_head', 'bom_vizinho_injetar_script_autorizacao', 1);
 
 // ==========================================
 // 7. OTIMIZAÇÃO DE IMAGENS (QUALIDADE MÁXIMA)
