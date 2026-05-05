@@ -25,6 +25,7 @@
             display: inline-block;
         }
     </style>
+    <?php wp_head(); ?>
 </head>
 
 <body class="min-h-screen flex items-center justify-center relative overflow-hidden text-zinc-50">
@@ -67,6 +68,8 @@
             </div>
         </div>
     </div>
+
+    <?php wp_footer(); ?>
 </body>
 
 </html>
