@@ -2,15 +2,14 @@
 
 /**
  * Template Part: Hero Section com Cronômetro
- * Adaptado para: 1ª Corrida do Bom Vizinho - Rede MAIS
  */
 $hero_sub     = get_theme_mod('hero_subtitle', 'O evento que conecta saúde, comunidade e energia.');
-$hero_title   = get_theme_mod('hero_title', '1ª Corrida do Bom Vizinho');
-$hero_date    = get_theme_mod('hero_date_text', '02 DE AGOSTO 2026');
+$hero_title   = get_theme_mod('hero_title', '');
+$hero_date    = get_theme_mod('hero_date_text', '');
 $bg_desktop   = get_theme_mod('hero_bg_desktop');
 $bg_tablet    = get_theme_mod('hero_bg_tablet');
 $bg_mobile    = get_theme_mod('hero_bg_mobile');
-$target_date  = get_theme_mod('hero_countdown_date', '2026-08-02 06:00:00'); 
+$target_date  = get_theme_mod('hero_countdown_date', '2026-12-02 06:00:00');
 ?>
 
 <section class="relative min-h-screen color-5km-bg flex items-center pt-20 overflow-hidden">
