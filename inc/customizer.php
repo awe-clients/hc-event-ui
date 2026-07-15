@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Customizer do Tema 1ª Corrida do Bom Vizinho - Rede MAIS
+ * Customizer do Tema 1ª Corrida do Empreendedor - SEBRAE RN
  * Todas as seções devem estar obrigatoriamente dentro desta função.
  */
 if (! function_exists('bom_vizinho_customize_register')) {
@@ -16,11 +16,12 @@ if (! function_exists('bom_vizinho_customize_register')) {
             'priority' => 20,
         ));
 
+        // Rótulos atualizados para a nova identidade visual. As IDs originais foram mantidas para estabilidade do código.
         $cores_custom = array(
-            'brand_cta'    => array('label' => 'Cor Amarela (CTA)', 'default' => '#facc15'),
-            'color_5km'    => array('label' => 'Cor 5km (Vermelho Escuro)', 'default' => '#7f1d1d'),
-            'color_10km'   => array('label' => 'Cor 10km (Vermelho Médio)', 'default' => '#b91c1c'),
-            'color_15km'   => array('label' => 'Cor 15km (Vermelho Vibrante)', 'default' => '#ef4444'),
+            'brand_cta'    => array('label' => 'Cor de Destaque (Magenta)', 'default' => '#e81c62'),
+            'color_5km'    => array('label' => 'Cor Primária (Azul Institucional)', 'default' => '#123774'),
+            'color_10km'   => array('label' => 'Cor de Apoio 1 (Amarelo)', 'default' => '#f9db3d'),
+            'color_15km'   => array('label' => 'Cor de Apoio 2 (Ciano)', 'default' => '#3b93a5'),
             'text_main'    => array('label' => 'Texto Principal', 'default' => '#18181b'),
             'bg_light'     => array('label' => 'Fundo do Site', 'default' => '#fafafa'),
         );
@@ -46,7 +47,7 @@ if (! function_exists('bom_vizinho_customize_register')) {
             'priority' => 25,
         ));
 
-        $wp_customize->add_setting('seo_meta_description', array('default' => 'O evento que conecta saúde, comunidade e energia. Natal/RN.'));
+        $wp_customize->add_setting('seo_meta_description', array('default' => 'Toda grande conquista é uma soma de pequenas vitórias. Participe da Corrida do Empreendedor em Natal/RN.'));
         $wp_customize->add_control('seo_meta_description', array(
             'label'   => 'Meta Descrição Global',
             'section' => 'base_theme_seo_section',
@@ -90,7 +91,7 @@ if (! function_exists('bom_vizinho_customize_register')) {
             'priority' => 31,
         ));
 
-        $wp_customize->add_setting('hero_subtitle', array('default' => 'O evento que conecta saúde, comunidade e energia.'));
+        $wp_customize->add_setting('hero_subtitle', array('default' => '1ª EDIÇÃO'));
         $wp_customize->add_control('hero_subtitle', array('label' => 'Texto Menor (Acima do Título)', 'section' => 'bom_vizinho_hero_section', 'type' => 'text'));
 
         $wp_customize->add_setting('hero_bg_desktop');
@@ -102,10 +103,10 @@ if (! function_exists('bom_vizinho_customize_register')) {
         $wp_customize->add_setting('hero_bg_mobile');
         $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_bg_mobile', array('label' => 'Fundo (Mobile 1080x1920px)', 'section' => 'bom_vizinho_hero_section')));
 
-        $wp_customize->add_setting('hero_date_text', array('default' => '02 DE AGOSTO'));
+        $wp_customize->add_setting('hero_date_text', array('default' => '24 DE OUTUBRO'));
         $wp_customize->add_control('hero_date_text', array('label' => 'Data de Exibição', 'section' => 'bom_vizinho_hero_section', 'type' => 'text'));
 
-        $wp_customize->add_setting('hero_countdown_date', array('default' => '2026-08-02 06:00:00'));
+        $wp_customize->add_setting('hero_countdown_date', array('default' => '2026-10-24 06:00:00'));
         $wp_customize->add_control('hero_countdown_date', array('label' => 'Data/Hora Alvo (AAAA-MM-DD HH:MM:SS)', 'section' => 'bom_vizinho_hero_section', 'type' => 'text'));
 
 
@@ -117,13 +118,13 @@ if (! function_exists('bom_vizinho_customize_register')) {
             'priority' => 32,
         ));
 
-        $wp_customize->add_setting('sobre_subtitle', array('default' => 'Saúde & Comunidade'));
+        $wp_customize->add_setting('sobre_subtitle', array('default' => 'Networking & Esporte'));
         $wp_customize->add_control('sobre_subtitle', array('label' => 'Subtítulo', 'section' => 'bom_vizinho_sobre_section', 'type' => 'text'));
 
-        $wp_customize->add_setting('sobre_title', array('default' => 'A Corrida da Rede MAIS'));
+        $wp_customize->add_setting('sobre_title', array('default' => 'A Corrida do Empreendedor'));
         $wp_customize->add_control('sobre_title', array('label' => 'Título Principal', 'section' => 'bom_vizinho_sobre_section', 'type' => 'text'));
 
-        $wp_customize->add_setting('sobre_text', array('default' => 'Participe da 1ª Corrida do Bom Vizinho e conecte-se com a energia da nossa comunidade.'));
+        $wp_customize->add_setting('sobre_text', array('default' => 'Sua empresa não precisa correr sozinha. Olhe ao redor. Participe da 1ª Corrida do Empreendedor e expanda a sua rede de contatos em movimento.'));
         $wp_customize->add_control('sobre_text', array('label' => 'Texto Descritivo', 'section' => 'bom_vizinho_sobre_section', 'type' => 'textarea'));
 
         $wp_customize->add_setting('sobre_image');
@@ -138,7 +139,7 @@ if (! function_exists('bom_vizinho_customize_register')) {
         ));
 
         // --- CARD 1: Percursos ---
-        $wp_customize->add_setting('card_percurso_text', array('default' => 'Conheça os trajetos desenhados para conectar a comunidade.'));
+        $wp_customize->add_setting('card_percurso_text', array('default' => 'Conheça os trajetos desenhados para conectar o ecossistema empresarial.'));
         $wp_customize->add_control('card_percurso_text', array(
             'label'   => 'Texto Descritivo (Percursos)',
             'section' => 'bom_vizinho_cards_section',
@@ -152,14 +153,12 @@ if (! function_exists('bom_vizinho_customize_register')) {
             'type'    => 'url',
         ));
 
-        // NOVO: Checkbox para ocultar link do Percurso
         $wp_customize->add_setting('card_percurso_link_hide', array('default' => false));
         $wp_customize->add_control('card_percurso_link_hide', array(
             'label'   => 'Ocultar botão/link "Ver detalhes"?',
             'section' => 'bom_vizinho_cards_section',
             'type'    => 'checkbox',
         ));
-
 
         // --- CARD 2: Kit Atleta ---
         $wp_customize->add_setting('card_kit_url', array('default' => '#', 'sanitize_callback' => 'esc_url_raw'));
@@ -175,14 +174,12 @@ if (! function_exists('bom_vizinho_customize_register')) {
             'section' => 'bom_vizinho_cards_section',
         )));
 
-        // NOVO: Checkbox para ocultar link do Kit
         $wp_customize->add_setting('card_kit_link_hide', array('default' => false));
         $wp_customize->add_control('card_kit_link_hide', array(
             'label'   => 'Ocultar botão/link "Conhecer o Kit"?',
             'section' => 'bom_vizinho_cards_section',
             'type'    => 'checkbox',
         ));
-
 
         // --- CARD 3: Regulamento (Página ou PDF) ---
         $wp_customize->add_setting('card_regulamento_url', array('default' => '#', 'sanitize_callback' => 'esc_url_raw'));
@@ -192,10 +189,9 @@ if (! function_exists('bom_vizinho_customize_register')) {
             'type'    => 'url',
         ));
 
-        // NOVO: Checkbox para ocultar link do Kit
         $wp_customize->add_setting('card_regulamento_link_hide', array('default' => false));
         $wp_customize->add_control('card_regulamento_link_hide', array(
-            'label'   => 'Ocultar botão/link "Acessador documento"?',
+            'label'   => 'Ocultar botão/link "Acessar documento"?',
             'section' => 'bom_vizinho_cards_section',
             'type'    => 'checkbox',
         ));
@@ -224,7 +220,7 @@ if (! function_exists('bom_vizinho_customize_register')) {
             'priority' => 36,
         ));
 
-        $wp_customize->add_setting('footer_copyright', array('default' => '1ª Corrida do Bom Vizinho Rede MAIS. Todos os direitos reservados.'));
+        $wp_customize->add_setting('footer_copyright', array('default' => '1ª Corrida do Empreendedor SEBRAE RN. Todos os direitos reservados.'));
         $wp_customize->add_control('footer_copyright', array('label' => 'Copyright', 'section' => 'bom_vizinho_footer_section', 'type' => 'text'));
 
         $redes = array('instagram', 'facebook', 'youtube');
@@ -242,15 +238,14 @@ if (! function_exists('bom_vizinho_customize_register')) {
 
         // Texto de Apoio do Rodapé
         $wp_customize->add_setting('footer_text', array(
-            'default' => 'O evento que conecta saúde, comunidade e energia. Natal/RN.'
+            'default' => 'Toda grande conquista é uma soma de pequenas vitórias. Arena das Dunas, Natal/RN.'
         ));
         $wp_customize->add_control('footer_text', array(
             'label'   => 'Texto de Apoio',
             'section' => 'bom_vizinho_footer_section',
             'type'    => 'textarea',
         ));
-    } // FIM DA FUNÇÃO PRINCIPAL
+    }
 }
 
-// O Hook SEMPRE fora da função
 add_action('customize_register', 'bom_vizinho_customize_register');
