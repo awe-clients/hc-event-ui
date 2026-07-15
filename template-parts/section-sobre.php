@@ -4,8 +4,8 @@
  * Template Part: Seção Sobre
  */
 $subtitle = get_theme_mod('sobre_subtitle', 'Saúde & Integração');
-$title    = get_theme_mod('sobre_title', 'A Corrida do Bom Vizinho');
-$text     = get_theme_mod('sobre_text', 'A corrida do bom vizinho');
+$title    = get_theme_mod('sobre_title', 'A Corrida');
+$text     = get_theme_mod('sobre_text', 'A corrida');
 $image    = get_theme_mod('sobre_image', '');
 ?>
 <section class="py-24 bg-white" id="prova">
