@@ -356,11 +356,14 @@ function bom_vizinho_status_widget_render()
 if (!function_exists('bom_vizinho_controle_visibilidade')) {
     function bom_vizinho_controle_visibilidade()
     {
-        // 0. Gatilho Temporal: Publicação automática às 00:00 de 05/05/2026 (GMT-3)
+        // 0. Gatilho Temporal: Publicação automática
+        // Comentado temporariamente para reativar o modo de espera
+        /*
         $data_publicacao_automatica = strtotime('2026-05-05 00:00:00 -0300');
         if (time() >= $data_publicacao_automatica) {
             return; // Libera o acesso universal irrevogavelmente
         }
+        */
 
         $status = get_option('coopanest_status_evento', 'offline');
 
