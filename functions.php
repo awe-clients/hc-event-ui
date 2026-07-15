@@ -247,13 +247,13 @@ function bom_vizinho_custom_login_logo()
 {
     echo '<style type="text/css">
         h1 a {
-            background-image: none !important; /* Idealmente apontar para SVG da Rede Mais */
+            background-image: none !important; 
             width: 100% !important;
             height: 80px !important;
         }
-        body.login { background-color: #7f1d1d; } /* Vermelho da Marca */
-        .login form { border-radius: 12px; border: 2px solid #facc15; }
-        .wp-core-ui .button-primary { background: #facc15 !important; border-color: #eab308 !important; color: #7f1d1d !important; font-weight: bold; text-transform: uppercase; }
+        body.login { background-color: #123774; } /* Azul Institucional */
+        .login form { border-radius: 12px; border: 2px solid #f9db3d; } /* Amarelo */
+        .wp-core-ui .button-primary { background: #e81c62 !important; border-color: #c21450 !important; color: #ffffff !important; font-weight: bold; text-transform: uppercase; }
     </style>';
 }
 add_action('login_enqueue_scripts', 'bom_vizinho_custom_login_logo');
@@ -262,15 +262,15 @@ function bom_vizinho_admin_styles()
 {
     echo '<style>
         /* Top Bar e Sidebar */
-        #wpadminbar, #adminmenu, #adminmenu .wp-submenu, #adminmenuback, #adminmenuwrap { background-color: #7f1d1d !important; }
+        #wpadminbar, #adminmenu, #adminmenu .wp-submenu, #adminmenuback, #adminmenuwrap { background-color: #123774 !important; }
         
         /* Itens Ativos e Hover */
-        #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu, #adminmenu li.current a.menu-top, .wp-ui-primary { background: #facc15 !important; color: #7f1d1d !important; }
-        #adminmenu li.menu-top:hover, #adminmenu li.opensub > a.menu-top, #adminmenu li > a.menu-top:focus { background-color: #450a0a !important; color: #facc15 !important; }
+        #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu, #adminmenu li.current a.menu-top, .wp-ui-primary { background: #f9db3d !important; color: #123774 !important; }
+        #adminmenu li.menu-top:hover, #adminmenu li.opensub > a.menu-top, #adminmenu li > a.menu-top:focus { background-color: #0c2b6b !important; color: #f9db3d !important; }
         
         /* Botões Primários */
-        .wp-core-ui .button-primary { background: #facc15 !important; border-color: #eab308 !important; color: #7f1d1d !important; font-weight: bold; text-shadow: none; box-shadow: none; }
-        .wp-core-ui .button-primary:hover { background: #450a0a !important; color: #facc15 !important; border-color: #450a0a !important; }
+        .wp-core-ui .button-primary { background: #e81c62 !important; border-color: #c21450 !important; color: #ffffff !important; font-weight: bold; text-shadow: none; box-shadow: none; }
+        .wp-core-ui .button-primary:hover { background: #c21450 !important; color: #ffffff !important; border-color: #c21450 !important; }
 
         #dashboard_quick_press, #dashboard_primary, #dashboard_activity, #dashboard_right_now { display: none; }
     </style>';
@@ -291,9 +291,63 @@ add_action('admin_menu', 'bom_vizinho_remove_menus');
 
 function bom_vizinho_admin_footer_text()
 {
-    echo '<span id="footer-thankyou">Suporte Técnico: <a href="https://hcsports.com.br" target="_blank" style="color:#7f1d1d; font-weight:bold;">HC Sports</a> | 1ª Corrida do Bom Vizinho</span>';
+    echo '<span id="footer-thankyou">Tecnologia: <a href="https://horadecorrer.com.br" target="_blank" style="color:#e81c62; font-weight:bold;">Hora de Correr</a> | Gestão de Eventos</span>';
 }
 add_filter('admin_footer_text', 'bom_vizinho_admin_footer_text');
+
+// ==========================================
+// 6. DASHBOARD WIDGETS & STATUS
+// ==========================================
+function bom_vizinho_add_dashboard_widgets()
+{
+    wp_add_dashboard_widget('bom_vizinho_welcome_widget', 'Painel de Gestão', 'bom_vizinho_dashboard_welcome_html');
+    wp_add_dashboard_widget('bom_vizinho_event_status_widget', 'Controle de Visibilidade do Site', 'bom_vizinho_status_widget_render');
+}
+add_action('wp_dashboard_setup', 'bom_vizinho_add_dashboard_widgets');
+
+function bom_vizinho_dashboard_welcome_html()
+{
+    echo '
+    <div style="padding:10px; border-left: 4px solid #123774;">
+        <h2 style="color:#123774; font-weight:900; text-transform:uppercase; font-style: italic;">Painel de Controle</h2>
+        <p>Sistema otimizado para a gestão da <strong>Corrida do Empreendedor</strong>.</p>
+        <hr style="border-top: 1px solid #e2e8f0; margin: 15px 0;">
+        <h4 style="margin-bottom:5px;">Guia Rápido de Configuração:</h4>
+        <ul style="list-style:disc; padding-left:20px;">
+            <li><strong>Identidade e Textos:</strong> Acesse <a href="customize.php" style="color:#e81c62;">Aparência > Personalizar</a> para definir as cores globais e conteúdos estruturais.</li>
+            <li><strong>Patrocinadores:</strong> Menu "Marcas & Patrocínios" (Suba os logos em formato PNG/SVG sem fundo).</li>
+            <li><strong>Link Seguro para Stakeholders:</strong> <code>/?preview_token=acesso-revisao-2026</code></li>
+        </ul>
+    </div>';
+}
+
+function bom_vizinho_handle_status_toggle()
+{
+    if (isset($_POST['coopanest_toggle_action']) && check_admin_referer('coopanest_status_nonce', 'coopanest_nonce_field')) {
+        $status_atual = get_option('coopanest_status_evento', 'offline');
+        $novo_status = ($status_atual === 'online') ? 'offline' : 'online';
+        update_option('coopanest_status_evento', $novo_status);
+        wp_safe_redirect(admin_url());
+        exit;
+    }
+}
+add_action('admin_init', 'bom_vizinho_handle_status_toggle');
+
+function bom_vizinho_status_widget_render()
+{
+    $is_online = get_option('coopanest_status_evento', 'offline') === 'online';
+    $cor_primaria = $is_online ? '#3b93a5' : '#e81c62'; // Ciano para Online, Magenta para Offline
+    $label = $is_online ? 'SISTEMA ONLINE (PÚBLICO)' : 'MODO DE ESPERA ATIVO (PRIVADO)';
+
+    echo '<div style="text-align:center; padding:15px;">';
+    echo '<div style="font-weight:900; color:' . $cor_primaria . '; margin-bottom:15px; text-transform:uppercase;">' . $label . '</div>';
+    echo '<form method="post" action="">';
+    wp_nonce_field('coopanest_status_nonce', 'coopanest_nonce_field');
+    echo '<input type="hidden" name="coopanest_toggle_action" value="1">';
+    echo '<button type="submit" class="button" style="background:' . $cor_primaria . '; color:#fff; border:none; padding:10px 20px; font-weight:bold; cursor:pointer; border-radius:4px;">';
+    echo $is_online ? 'OCULTAR SITE' : 'PUBLICAR EVENTO';
+    echo '</button></form></div>';
+}
 
 // ==========================================
 // 6. DASHBOARD WIDGETS & STATUS
