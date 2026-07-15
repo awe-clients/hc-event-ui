@@ -4,19 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1ª Corrida do Bom Vizinho Rede Mais | Em Breve</title>
+    <title>1ª Corrida do Empreendedor | SEBRAE</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Tipografia de alto impacto e dinamismo similar à imagem de referência */
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,900&display=swap');
+        /* Tipografia institucional e de impacto */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;1,900&display=swap');
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #0c2b6b;
-            /* Azul base do banner */
+            background-color: #123774;
+            /* Azul predominante do material */
         }
 
-        /* Padrão de ondas estilizado via CSS */
+        /* Padronização de texturas visuais */
         .wave-bg {
             background: repeating-radial-gradient(circle at 50% 150%,
                     transparent,
@@ -26,20 +26,22 @@
         }
 
         .skew-element {
-            transform: skewX(-10deg);
+            transform: skewX(-12deg);
         }
 
         .unskew {
-            transform: skewX(10deg);
+            transform: skewX(12deg);
             display: inline-block;
         }
 
-        /* Elementos tipo "pílula" observados no banner */
+        /* Elementos taxonômicos (Pílulas de conteúdo) */
         .badge-pill {
             border-radius: 9999px;
-            padding: 0.25rem 1rem;
-            font-size: 0.875rem;
-            font-weight: 700;
+            padding: 0.35rem 1.25rem;
+            font-size: 0.85rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
     </style>
     <?php wp_head(); ?>
@@ -49,59 +51,71 @@
 
     <div class="absolute inset-0 wave-bg pointer-events-none"></div>
 
-    <div class="container mx-auto px-4 relative z-10 flex flex-col md:flex-row items-center justify-center gap-10">
+    <div class="container mx-auto px-6 relative z-10 flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-20 py-12">
 
-        <div class="max-w-xl text-center md:text-left flex flex-col items-center md:items-start">
+        <div class="max-w-2xl text-center lg:text-left flex flex-col items-center lg:items-start">
 
             <p class="text-yellow-400 font-black italic tracking-widest text-sm md:text-base mb-2">
                 / / / / / 1ª EDIÇÃO
             </p>
 
-            <h1 class="text-5xl md:text-7xl font-black text-white uppercase italic tracking-tighter leading-none mb-4">
-                CORRIDA DO <br>
-                <span class="text-[#e81c62]">BOM VIZINHO</span>
+            <h1 class="text-6xl md:text-8xl font-black text-white uppercase italic tracking-tighter leading-none mb-4" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
+                CORRIDA <br>
+                <span class="text-white text-4xl md:text-6xl block mt-1">DO <span class="text-[#3b93a5]">EMPREENDEDOR</span></span>
             </h1>
 
-            <p class="text-yellow-400 font-black italic tracking-widest text-lg md:text-xl mb-4">
-                / / / / 02 DE AGOSTO \ \ \ \
+            <p class="text-yellow-400 font-black italic tracking-widest text-xl md:text-2xl mb-6">
+                / / / / 24 DE OUTUBRO \ \ \ \
             </p>
 
-            <div class="flex items-center gap-2 mb-6">
-                <svg class="w-6 h-6 text-[#e81c62]" fill="currentColor" viewBox="0 0 20 20">
+            <div class="flex items-center gap-3 mb-8">
+                <svg class="w-7 h-7 text-[#e81c62]" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
                 </svg>
-                <span class="text-white font-bold uppercase tracking-wider">Natal / RN</span>
+                <span class="text-white font-bold uppercase tracking-widest text-lg">Arena das Dunas</span>
             </div>
 
-            <div class="flex flex-col gap-2 items-center md:items-start mb-8">
-                <span class="badge-pill bg-[#4fa7d1] text-white">Esporte</span>
-                <span class="badge-pill bg-yellow-400 text-blue-900">Comunidade Escolar</span>
-                <span class="badge-pill bg-[#e81c62] text-white">Saúde e Energia</span>
+            <div class="flex flex-wrap justify-center lg:justify-start gap-3 mb-8">
+                <span class="badge-pill bg-[#8cb8d9] text-[#123774]">Exposições</span>
+                <span class="badge-pill bg-[#f9db3d] text-[#123774]">Palestras sobre empreendedorismo</span>
+                <span class="badge-pill bg-[#e81c62] text-white">Apresentações culturais</span>
             </div>
         </div>
 
-        <div class="flex flex-col items-center text-center">
-            <h2 class="text-2xl md:text-4xl font-black italic uppercase text-white mb-2">
-                CORRA NO <br>RITMO DE SUAS
-            </h2>
-            <h3 class="text-3xl md:text-5xl font-black italic uppercase text-[#e81c62] mb-6">
-                CONQUISTAS!
-            </h3>
+        <div class="flex flex-col items-center lg:items-end text-center lg:text-right">
 
-            <div class="flex items-center gap-4 border border-white/20 bg-white/10 backdrop-blur-sm p-4 skew-element">
-                <div class="unskew text-left">
-                    <p class="text-white font-black text-2xl italic uppercase">Aguarde</p>
-                    <p class="text-yellow-400 font-black text-sm uppercase tracking-widest">Inscrições em Breve</p>
+            <div class="mb-10">
+                <h2 class="text-3xl md:text-5xl font-black italic uppercase text-white mb-1 leading-tight text-shadow">
+                    CORRA NO <br>RITMO DE SUAS
+                </h2>
+                <h3 class="text-4xl md:text-6xl font-black italic uppercase text-[#e81c62] leading-tight">
+                    CONQUISTAS!
+                </h3>
+            </div>
+
+            <div class="border-2 border-yellow-400/50 bg-[#123774]/80 backdrop-blur-md p-6 skew-element w-full max-w-sm shadow-xl">
+                <div class="unskew text-center">
+                    <p class="text-white font-black text-xl italic uppercase mb-2">Preparação em Andamento</p>
+                    <p class="text-yellow-400 font-bold text-sm uppercase tracking-widest mb-4">Inscrições abrem em breve</p>
+                    <hr class="border-white/20 mb-4">
+                    <p class="text-xs text-[#8cb8d9] font-medium leading-relaxed">
+                        "Sua empresa não precisa correr sozinha. Olhe ao redor."
+                    </p>
                 </div>
             </div>
+
         </div>
     </div>
 
-    <div class="absolute bottom-0 left-0 w-full p-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 z-20">
-        <p class="text-white/60 text-xs font-bold uppercase tracking-widest">© 2026 REDE MAIS</p>
-        <div class="flex items-center gap-4">
-            <span class="text-white/60 text-[10px] uppercase font-bold tracking-widest">Organização:</span>
-            <span class="font-black text-sm tracking-widest text-white">HC SPORTS 15 ANOS</span>
+    <div class="absolute bottom-0 left-0 w-full p-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 z-20 bg-[#123774]/90 backdrop-blur-sm">
+        <div class="flex flex-col md:flex-row items-center gap-2 md:gap-6">
+            <span class="text-white/80 text-[11px] font-bold uppercase tracking-widest">© 2026 SEBRAE RN</span>
+            <span class="hidden md:inline text-white/30">|</span>
+            <span class="text-white/60 text-[10px] font-semibold tracking-wider">TODA GRANDE CONQUISTA É UMA SOMA DE PEQUENAS VITÓRIAS.</span>
+        </div>
+        <div class="flex items-center gap-3">
+            <span class="text-white/80 text-[10px] uppercase font-bold tracking-widest">Realização:</span>
+            <span class="font-black text-sm tracking-widest text-white">SEBRAE</span>
         </div>
     </div>
 
