@@ -47,7 +47,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body class="min-h-screen flex items-center justify-center relative overflow-hidden text-zinc-50">
+<body class="min-h-screen flex items-center justify-center relative text-zinc-50">
 
     <div class="absolute inset-0 wave-bg pointer-events-none"></div>
 
