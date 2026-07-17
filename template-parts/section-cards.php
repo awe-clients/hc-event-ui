@@ -28,9 +28,9 @@ $kit_cover          = get_theme_mod('card_kit_img', 'https://via.placeholder.com
 
                     <?php if (!$percurso_link_hide) : ?>
                         <div class="grid grid-cols-3 gap-4 mt-16 pt-10 border-t border-zinc-100 text-center font-black italic uppercase">
-                            <a href="https://www.strava.com/routes/3486378123703328092" target="_percurso" class="color-5km-text p-4 border border-zinc-200 hover:color-5km-bg hover:text-white transition-colors"><span class="unskew">5 KM</span></a>
-                            <a href="https://www.strava.com/routes/3486380060480933338" target="_percurso" class="color-5km-text p-4 border border-zinc-200 hover:color-5km-bg hover:text-white transition-colors"><span class="unskew">10 KM</span></a>
-                            <a href="https://www.strava.com/routes/3486377308495654962" target="_percurso" class="color-5km-text p-4 border border-zinc-200 hover:color-5km-bg hover:text-white transition-colors"><span class="unskew">15 KM</span></a>
+                            <a href="https://www.strava.com/routes/3486378123703328092" target="_percurso" class="color-5km-text hover:text-[var(--brand-cta)] p-4 border border-zinc-200 hover:color-5km-bg hover:text-white transition-colors"><span class="unskew">5 KM</span></a>
+                            <a href="https://www.strava.com/routes/3486380060480933338" target="_percurso" class="color-5km-text hover:text-[var(--brand-cta)] p-4 border border-zinc-200 hover:color-5km-bg hover:text-white transition-colors"><span class="unskew">10 KM</span></a>
+                            <a href="https://www.strava.com/routes/3486377308495654962" target="_percurso" class="color-5km-text hover:text-[var(--brand-cta)] p-4 border border-zinc-200 hover:color-5km-bg hover:text-white transition-colors"><span class="unskew">15 KM</span></a>
                         </div>
                         <!-- Link inferior suprimido ou mantido conforme necessidade original -->
                         <a href="<?php echo esc_url($percurso_url); ?>" class="hidden flex items-center gap-4 text-xs font-black uppercase tracking-widest color-5km-text group-hover:gap-6 group-hover:text-[var(--brand-cta)] transition-all">
