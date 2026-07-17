@@ -58,7 +58,7 @@ $mapa_15km = get_theme_mod('sobre_mapa_15km', '');
 
             <div class="lg:col-span-5 relative min-h-[400px] color-5km-bg overflow-hidden">
                 <?php if ($image) : ?>
-                    <img src="<?php echo esc_url($image); ?>" class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-80" alt="Sobre o Evento">
+                    <img src="<?php echo esc_url($image); ?>" class="absolute inset-0 w-full h-full object-cover" alt="Sobre o Evento">
                 <?php endif; ?>
                 <div class="absolute inset-0 pointer-events-none" style="background: repeating-radial-gradient(circle at 50% 50%, transparent, transparent 40px, rgba(255, 255, 255, 0.05) 41px, rgba(255, 255, 255, 0.05) 80px);"></div>
             </div>
