@@ -21,16 +21,7 @@ $link_text     = get_theme_mod('noticias_link_text', 'Ler todas as postagens');
                     ?>
                 </h2>
             </div>
-            <?php
 
-            /**
-
-            <a href="<?php echo get_post_type_archive_link('post'); ?>" class="hide group flex items-center gap-4 text-xs font-black uppercase tracking-widest color-5km-text border-b-2 border-zinc-200 pb-2 hover:border-yellow-400 transition-all">
-                <?php echo esc_html($link_text); ?> <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
-            </a>
-             **/
-
-            ?>
 
         </div>
 
