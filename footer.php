@@ -51,7 +51,7 @@ $footer_logo = get_theme_mod('footer_logo', '');
             </div>
 
             <div class="lg:col-span-3">
-                <h4 class="font-black uppercase text-xs tracking-widest mb-8" style="color: var(--color-10km);">Redes Sociais</h4>
+                <h4 class="font-black uppercase text-xs tracking-widest mb-8 text-[#FFF]">Redes Sociais</h4>
                 <div class="flex gap-6 text-2xl">
                     <?php
                     $redes = array('instagram', 'facebook', 'youtube');
@@ -60,7 +60,7 @@ $footer_logo = get_theme_mod('footer_logo', '');
                         if (!empty($url)) :
                     ?>
                             <!-- Transição de cor herdando a variável de apoio (ex: Amarelo do Sebrae) -->
-                            <a href="<?php echo esc_url($url); ?>" target="_blank" class="text-white/60 transition-colors hover:text-white" aria-label="<?php echo ucfirst($rede); ?>" onmouseover="this.style.color='var(--color-10km)'" onmouseout="this.style.color=''">
+                            <a href="<?php echo esc_url($url); ?>" target="_blank" class="text-white/60 transition-colors hover:text-[var(--brand-color)]" aria-label="<?php echo ucfirst($rede); ?>" onmouseover="this.style.color='var(--color-10km)'" onmouseout="this.style.color=''">
                                 <i class="fab fa-<?php echo esc_attr($rede); ?>"></i>
                             </a>
                     <?php
