@@ -37,19 +37,19 @@ $mapa_15km = get_theme_mod('sobre_mapa_15km', '');
 
                     <?php if (!empty($mapa_5km)) : ?>
                         <a href="<?php echo esc_url($mapa_5km); ?>" class="modal-trigger color-5km-bg p-4 skew-element cursor-pointer hover:brightness-110 transition-all">
-                            <span class="unskew">5 KM</span>
+                            <span class="unskew">Kit 5 KM</span>
                         </a>
                     <?php endif; ?>
 
                     <?php if (!empty($mapa_10km)) : ?>
                         <a href="<?php echo esc_url($mapa_10km); ?>" class="modal-trigger color-10km-bg p-4 skew-element cursor-pointer hover:brightness-110 transition-all text-[var(--color-5km)]">
-                            <span class="unskew">10 KM</span>
+                            <span class="unskew">Kit 10 KM</span>
                         </a>
                     <?php endif; ?>
 
                     <?php if (!empty($mapa_15km)) : ?>
                         <a href="<?php echo esc_url($mapa_15km); ?>" class="modal-trigger color-15km-bg p-4 skew-element cursor-pointer hover:brightness-110 transition-all">
-                            <span class="unskew">15 KM</span>
+                            <span class="unskew">Kit 15 KM</span>
                         </a>
                     <?php endif; ?>
 
