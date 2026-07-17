@@ -44,16 +44,16 @@ $kit_cover          = get_theme_mod('card_kit_img', 'https://via.placeholder.com
             <div class="relative block overflow-hidden color-10km-bg group border border-transparent transition-colors duration-300">
                 <div class="bg-white h-full p-10 flex flex-col justify-between items-center text-center m-[2px]">
                     <div>
-                        <span class="font-black text-[10px] tracking-[0.3em] uppercase color-5km-text">Material</span>
-                        <h3 class="text-4xl font-black italic uppercase mt-2 mb-4 text-[var(--text-main)]">Kit Atleta</h3>
+                        <span class="font-black text-[10px] tracking-[0.3em] uppercase color-5km-text">Desconto</span>
+                        <h3 class="text-4xl font-black italic uppercase mt-2 mb-4 text-[var(--text-main)]">Empreendedor</h3>
                     </div>
                     <img src="<?php echo esc_url($kit_cover); ?>" class="h-48 object-contain my-4 transform group-hover:scale-110 transition duration-700" alt="Kit Atleta">
 
                     <?php if (!$kit_link_hide) : ?>
                         <!-- Atualizado para fundo da cor primária (5km) para garantir contraste com a borda de cor secundária (10km) -->
                         <div class="color-5km-bg text-white w-full py-4 skew-element font-black uppercase italic text-sm hover:brightness-110 transition-all">
-                            <a href="<?php echo esc_url($kit_url); ?>" class="unskew w-full block">
-                                Conhecer o Kit
+                            <a href="<?php echo esc_url($kit_url); ?>" class="unskew w-full block" target="_blank">
+                                Fale com o Sebrae/RN
                             </a>
                         </div>
                     <?php endif; ?>
