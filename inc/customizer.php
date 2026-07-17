@@ -132,13 +132,13 @@ if (! function_exists('bom_vizinho_customize_register')) {
 
         // Controles de Imagem para os Mapas de Percurso (Modal)
         $wp_customize->add_setting('sobre_mapa_5km');
-        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'sobre_mapa_5km', array('label' => 'Mapa do Percurso (5 KM) - Imagem do Modal', 'section' => 'bom_vizinho_sobre_section')));
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'sobre_mapa_5km', array('label' => 'Imagem do Kit (5 KM) - Imagem do Modal', 'section' => 'bom_vizinho_sobre_section')));
 
         $wp_customize->add_setting('sobre_mapa_10km');
-        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'sobre_mapa_10km', array('label' => 'Mapa do Percurso (10 KM) - Imagem do Modal', 'section' => 'bom_vizinho_sobre_section')));
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'sobre_mapa_10km', array('label' => 'Imagem do Kit (10 KM) - Imagem do Modal', 'section' => 'bom_vizinho_sobre_section')));
 
         $wp_customize->add_setting('sobre_mapa_15km');
-        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'sobre_mapa_15km', array('label' => 'Mapa do Percurso (15 KM) - Imagem do Modal', 'section' => 'bom_vizinho_sobre_section')));
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'sobre_mapa_15km', array('label' => 'Imagem do Kit (15 KM) - Imagem do Modal', 'section' => 'bom_vizinho_sobre_section')));
 
 
         // ==========================================
