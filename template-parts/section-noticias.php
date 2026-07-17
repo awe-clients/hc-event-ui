@@ -4,7 +4,7 @@
  * Template Part: Seção de Notícias (Últimos 3 Posts)
  */
 $section_title = get_theme_mod('noticias_title', 'Últimas Notícias');
-$link_text     = get_theme_mod('noticias_link_text', 'Ler todas as postagens');
+$link_text     = get_theme_mod('noticias_link_text', '');
 ?>
 <section class="py-24 bg-white" id="noticias">
     <div class="container mx-auto px-6">
