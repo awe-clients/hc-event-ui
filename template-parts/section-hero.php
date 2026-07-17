@@ -11,6 +11,7 @@ $bg_desktop   = get_theme_mod('hero_bg_desktop');
 $bg_tablet    = get_theme_mod('hero_bg_tablet');
 $bg_mobile    = get_theme_mod('hero_bg_mobile');
 $target_date  = get_theme_mod('hero_countdown_date', '2026-10-24 06:00:00');
+// style="background: repeating-radial-gradient(circle at 50% 150%, transparent, transparent 40px, rgba(255, 255, 255, 0.04) 41px, rgba(255, 255, 255, 0.04) 80px);"
 ?>
 
 <section class="relative min-h-screen bg-[#123774] flex items-center pt-20 overflow-hidden font-montserrat">
@@ -22,7 +23,7 @@ $target_date  = get_theme_mod('hero_countdown_date', '2026-10-24 06:00:00');
     </picture>
 
     <div class="absolute inset-0 bg-[#0c2b6b]/70"></div>
-    <div class="absolute inset-0 pointer-events-none" style="background: repeating-radial-gradient(circle at 50% 150%, transparent, transparent 40px, rgba(255, 255, 255, 0.04) 41px, rgba(255, 255, 255, 0.04) 80px);"></div>
+    <div class="absolute inset-0 pointer-events-none"></div>
 
     <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-8 relative z-10 py-12">
 
