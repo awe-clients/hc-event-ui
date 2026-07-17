@@ -7,6 +7,12 @@
 $percurso_url       = get_theme_mod('card_percurso_url', '#');
 $percurso_text      = get_theme_mod('card_percurso_text', 'Conheça os trajetos desenhados para conectar o ecossistema empresarial.');
 $percurso_link_hide = get_theme_mod('card_percurso_link_hide', false);
+
+// Extração das hiperligações dinâmicas dos percursos
+$link_5km           = get_theme_mod('card_percurso_link_5km', '');
+$link_10km          = get_theme_mod('card_percurso_link_10km', '');
+$link_15km          = get_theme_mod('card_percurso_link_15km', '');
+
 $kit_url            = get_theme_mod('card_kit_url', '#');
 $kit_link_hide      = get_theme_mod('card_kit_link_hide', false);
 $regulamento_url    = get_theme_mod('card_regulamento_url', '#');
@@ -28,11 +34,21 @@ $kit_cover          = get_theme_mod('card_kit_img', 'https://via.placeholder.com
 
                     <?php if (!$percurso_link_hide) : ?>
                         <div class="grid grid-cols-3 gap-4 mt-16 pt-10 border-t border-zinc-100 text-center font-black italic uppercase">
-                            <a href="https://www.strava.com/routes/3486378123703328092" target="_percurso" class="color-5km-text hover:text-[var(--brand-cta)] p-4 border border-zinc-200 hover:color-5km-bg hover:text-white transition-colors"><span class="unskew">5 KM</span></a>
-                            <a href="https://www.strava.com/routes/3486380060480933338" target="_percurso" class="color-5km-text hover:text-[var(--brand-cta)] p-4 border border-zinc-200 hover:color-5km-bg hover:text-white transition-colors"><span class="unskew">10 KM</span></a>
-                            <a href="https://www.strava.com/routes/3486377308495654962" target="_percurso" class="color-5km-text hover:text-[var(--brand-cta)] p-4 border border-zinc-200 hover:color-5km-bg hover:text-white transition-colors"><span class="unskew">15 KM</span></a>
+
+                            <?php if (!empty($link_5km)) : ?>
+                                <a href="<?php echo esc_url($link_5km); ?>" target="_percurso" class="color-5km-text hover:text-[var(--brand-cta)] p-4 border border-zinc-200 hover:color-5km-bg hover:text-white transition-colors"><span class="unskew">5 KM</span></a>
+                            <?php endif; ?>
+
+                            <?php if (!empty($link_10km)) : ?>
+                                <a href="<?php echo esc_url($link_10km); ?>" target="_percurso" class="color-5km-text hover:text-[var(--brand-cta)] p-4 border border-zinc-200 hover:color-5km-bg hover:text-white transition-colors"><span class="unskew">10 KM</span></a>
+                            <?php endif; ?>
+
+                            <?php if (!empty($link_15km)) : ?>
+                                <a href="<?php echo esc_url($link_15km); ?>" target="_percurso" class="color-5km-text hover:text-[var(--brand-cta)] p-4 border border-zinc-200 hover:color-5km-bg hover:text-white transition-colors"><span class="unskew">15 KM</span></a>
+                            <?php endif; ?>
+
                         </div>
-                        <!-- Link inferior suprimido ou mantido conforme necessidade original -->
+
                         <a href="<?php echo esc_url($percurso_url); ?>" class="hidden flex items-center gap-4 text-xs font-black uppercase tracking-widest color-5km-text group-hover:gap-6 group-hover:text-[var(--brand-cta)] transition-all">
                             Ver detalhes <i class="fas fa-arrow-right"></i>
                         </a>
@@ -50,7 +66,6 @@ $kit_cover          = get_theme_mod('card_kit_img', 'https://via.placeholder.com
                     <img src="<?php echo esc_url($kit_cover); ?>" class="h-48 object-contain my-4 transform group-hover:scale-110 transition duration-700" alt="Kit Atleta">
 
                     <?php if (!$kit_link_hide) : ?>
-                        <!-- Atualizado para fundo da cor primária (5km) para garantir contraste com a borda de cor secundária (10km) -->
                         <div class="color-5km-bg text-white w-full py-4 skew-element font-black uppercase italic text-sm hover:brightness-110 transition-all">
                             <a href="<?php echo esc_url($kit_url); ?>" class="unskew w-full block" target="_blank">
                                 Fale com o Sebrae/RN
@@ -70,7 +85,6 @@ $kit_cover          = get_theme_mod('card_kit_img', 'https://via.placeholder.com
 
                     <?php if (!$regulamento_link_hide) : ?>
                         <div>
-                            <!-- Botão invertido: Fundo branco, texto primário e hover com cor de apoio dinâmica -->
                             <a href="<?php echo esc_url($regulamento_url); ?>" class="mt-8 inline-block bg-white text-[var(--color-5km)] px-8 py-3 skew-element font-black uppercase italic text-xs hover:bg-[var(--brand-cta)] hover:text-[#FFF] transition-colors text-center w-max shadow-md">
                                 <span class="unskew">Acessar Documento</span>
                             </a>
