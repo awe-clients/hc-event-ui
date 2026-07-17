@@ -157,9 +157,24 @@ if (! function_exists('bom_vizinho_customize_register')) {
             'type'    => 'textarea',
         ));
 
-        $wp_customize->add_setting('card_percurso_url', array('default' => '#', 'sanitize_callback' => 'esc_url_raw'));
-        $wp_customize->add_control('card_percurso_url', array(
-            'label'   => 'Link da Página de Percursos',
+        // Controles de Hiperligação para os Percursos (Strava/GPS)
+        $wp_customize->add_setting('card_percurso_link_5km', array('default' => '', 'sanitize_callback' => 'esc_url_raw'));
+        $wp_customize->add_control('card_percurso_link_5km', array(
+            'label'   => 'Link Strava/Rota (5 KM)',
+            'section' => 'bom_vizinho_cards_section',
+            'type'    => 'url',
+        ));
+
+        $wp_customize->add_setting('card_percurso_link_10km', array('default' => '', 'sanitize_callback' => 'esc_url_raw'));
+        $wp_customize->add_control('card_percurso_link_10km', array(
+            'label'   => 'Link Strava/Rota (10 KM)',
+            'section' => 'bom_vizinho_cards_section',
+            'type'    => 'url',
+        ));
+
+        $wp_customize->add_setting('card_percurso_link_15km', array('default' => '', 'sanitize_callback' => 'esc_url_raw'));
+        $wp_customize->add_control('card_percurso_link_15km', array(
+            'label'   => 'Link Strava/Rota (15 KM)',
             'section' => 'bom_vizinho_cards_section',
             'type'    => 'url',
         ));
