@@ -36,19 +36,19 @@ $mapa_15km = get_theme_mod('sobre_mapa_15km', '');
                 <div class="grid grid-cols-3 gap-4 mt-16 pt-10 border-t border-zinc-100 text-white text-center font-black italic uppercase">
 
                     <?php if (!empty($mapa_5km)) : ?>
-                        <a href="<?php echo esc_url($mapa_5km); ?>" class="modal-trigger color-5km-bg p-4 skew-element cursor-pointer hover:brightness-110 transition-all">
+                        <a href="<?php echo esc_url($mapa_5km); ?>" class="modal-trigger color-5km-bg p-4 skew-element cursor-pointer hover:brightness-110">
                             <span class="unskew">Kit 5Km</span>
                         </a>
                     <?php endif; ?>
 
                     <?php if (!empty($mapa_10km)) : ?>
-                        <a href="<?php echo esc_url($mapa_10km); ?>" class="modal-trigger color-10km-bg p-4 skew-element cursor-pointer hover:brightness-110 transition-all text-[var(--color-5km)]">
+                        <a href="<?php echo esc_url($mapa_10km); ?>" class="modal-trigger color-10km-bg p-4 skew-element cursor-pointer hover:brightness-110">
                             <span class="unskew">Kit 10Km</span>
                         </a>
                     <?php endif; ?>
 
                     <?php if (!empty($mapa_15km)) : ?>
-                        <a href="<?php echo esc_url($mapa_15km); ?>" class="modal-trigger color-15km-bg p-4 skew-element cursor-pointer hover:brightness-110 transition-all">
+                        <a href="<?php echo esc_url($mapa_15km); ?>" class="modal-trigger color-15km-bg p-4 skew-element cursor-pointer hover:brightness-110">
                             <span class="unskew">Kit 15Km</span>
                         </a>
                     <?php endif; ?>
