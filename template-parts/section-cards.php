@@ -36,11 +36,11 @@ $kit_cover          = get_theme_mod('card_kit_img', 'https://via.placeholder.com
                         <div class="grid grid-cols-3 gap-4 mt-16 pt-10 border-t border-zinc-100 text-center font-black italic uppercase">
 
                             <?php if (!empty($link_5km)) : ?>
-                                <a href="<?php echo esc_url($link_5km); ?>" target="_percurso" class="color-5km-text hover:text-[var(--brand-cta)] p-4 border border-zinc-200 hover:text-[var(--brand-cta)] transition-colors"><span class="unskew">5 KM</span></a>
+                                <a href="<?php echo esc_url($link_5km); ?>" target="_percurso" class="bg-[#123774] text-[#fff] p-4 border border-zinc-200 hover:text-[var(--brand-cta)] transition-colors"><span class="unskew">5 KM</span></a>
                             <?php endif; ?>
 
                             <?php if (!empty($link_10km)) : ?>
-                                <a href="<?php echo esc_url($link_10km); ?>" target="_percurso" class="text-[var(--brand-cta)] hover:color-5km-text p-4 border border-zinc-200 hover:text-[var(--brand-cta)] transition-colors"><span class="unskew">10 KM</span></a>
+                                <a href="<?php echo esc_url($link_10km); ?>" target="_percurso" class="bg-[var(--brand-cta)] text-[#fff] p-4 border border-zinc-200  transition-colors"><span class="unskew">10 KM</span></a>
                             <?php endif; ?>
 
                             <?php if (!empty($link_15km)) : ?>
