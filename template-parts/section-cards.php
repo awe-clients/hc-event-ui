@@ -40,7 +40,7 @@ $kit_cover          = get_theme_mod('card_kit_img', 'https://via.placeholder.com
                             <?php endif; ?>
 
                             <?php if (!empty($link_10km)) : ?>
-                                <a href="<?php echo esc_url($link_10km); ?>" target="_percurso" class="color-5km-text hover:text-[var(--brand-cta)] p-4 border border-zinc-200 hover:text-[var(--brand-cta)] transition-colors"><span class="unskew">10 KM</span></a>
+                                <a href="<?php echo esc_url($link_10km); ?>" target="_percurso" class="text-[var(--brand-cta)] hover:color-5km-text p-4 border border-zinc-200 hover:text-[var(--brand-cta)] transition-colors"><span class="unskew">10 KM</span></a>
                             <?php endif; ?>
 
                             <?php if (!empty($link_15km)) : ?>
@@ -68,7 +68,7 @@ $kit_cover          = get_theme_mod('card_kit_img', 'https://via.placeholder.com
                     <?php if (!$kit_link_hide) : ?>
                         <div class="color-5km-bg text-white w-full py-4 skew-element font-black uppercase italic text-sm hover:brightness-110 transition-all">
                             <a href="<?php echo esc_url($kit_url); ?>" class="unskew w-full block" target="_blank">
-                                Fale com o Sebrae/RN
+                                Fale conosco
                             </a>
                         </div>
                     <?php endif; ?>
