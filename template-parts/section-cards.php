@@ -85,7 +85,7 @@ $kit_cover          = get_theme_mod('card_kit_img', 'https://via.placeholder.com
 
                     <?php if (!$regulamento_link_hide) : ?>
                         <div>
-                            <a href="<?php echo esc_url($regulamento_url); ?>" class="mt-8 inline-block bg-white text-[var(--color-5km)] px-8 py-3 skew-element font-black uppercase italic text-xs hover:bg-[var(--brand-cta)] hover:text-[#FFF] transition-colors text-center w-max shadow-md">
+                            <a href="<?php echo esc_url($regulamento_url); ?>" target="_blank" class="mt-8 inline-block bg-white text-[var(--color-5km)] px-8 py-3 skew-element font-black uppercase italic text-xs hover:bg-[var(--brand-cta)] hover:text-[#FFF] transition-colors text-center w-max shadow-md">
                                 <span class="unskew">Acessar Documento</span>
                             </a>
                         </div>
