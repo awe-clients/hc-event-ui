@@ -443,3 +443,95 @@ add_filter('big_image_size_threshold', '__return_false');
 
 // Importação do Customizer
 require get_template_directory() . '/inc/customizer.php';
+
+// ==========================================
+// 8. OTIMIZAÇÃO DE MOTORES DE BUSCA (SEO, JSON-LD & OPEN GRAPH)
+// ==========================================
+
+if (!function_exists('bom_vizinho_injetar_seo_estruturado')) {
+    function bom_vizinho_injetar_seo_estruturado()
+    {
+        $status = get_option('coopanest_status_evento', 'offline');
+        if ($status === 'offline' && !current_user_can('manage_options')) {
+            echo '<meta name="robots" content="noindex, nofollow">' . "\n";
+            return;
+        }
+
+        // 1. Meta Tags Primárias e Canonical
+        $meta_desc = get_theme_mod('seo_meta_description', 'Toda grande conquista é uma soma de pequenas vitórias.');
+        echo '<meta name="description" content="' . esc_attr($meta_desc) . '">' . "\n";
+
+        global $wp;
+        $current_url = home_url(add_query_arg(array(), $wp->request));
+        echo '<link rel="canonical" href="' . esc_url($current_url) . '">' . "\n";
+
+        // 2. Variáveis de Contexto (White Label)
+        $titulo_evento = get_theme_mod('sobre_title', get_bloginfo('name'));
+        $data_alvo     = get_theme_mod('hero_countdown_date', '2026-10-24 06:00:00');
+        $imagem_capa   = get_theme_mod('hero_bg_desktop', '');
+
+        // 3. Protocolo Open Graph (Partilha em Redes e WhatsApp)
+        echo '<meta property="og:locale" content="pt_BR">' . "\n";
+        echo '<meta property="og:type" content="website">' . "\n";
+        echo '<meta property="og:title" content="' . esc_attr($titulo_evento) . ' - ' . esc_attr(get_bloginfo('name')) . '">' . "\n";
+        echo '<meta property="og:description" content="' . esc_attr($meta_desc) . '">' . "\n";
+        echo '<meta property="og:url" content="' . esc_url($current_url) . '">' . "\n";
+        echo '<meta property="og:site_name" content="' . esc_attr(get_bloginfo('name')) . '">' . "\n";
+        if (!empty($imagem_capa)) {
+            echo '<meta property="og:image" content="' . esc_url($imagem_capa) . '">' . "\n";
+            echo '<meta property="og:image:width" content="1200">' . "\n";
+            echo '<meta property="og:image:height" content="630">' . "\n";
+            echo '<meta name="twitter:card" content="summary_large_image">' . "\n";
+        }
+
+        // 4. Construção da Estrutura Schema.org (Event)
+        $data_iso = date('c', strtotime($data_alvo));
+        $data_fim_iso = date('c', strtotime($data_alvo . ' + 6 hours'));
+
+        $schema_event = array(
+            "@context" => "https://schema.org",
+            "@type" => "Event",
+            "name" => $titulo_evento,
+            "startDate" => $data_iso,
+            "endDate" => $data_fim_iso,
+            "eventAttendanceMode" => "https://schema.org/OfflineEventAttendanceMode",
+            "eventStatus" => "https://schema.org/EventScheduled",
+            "description" => $meta_desc,
+            "image" => array(esc_url($imagem_capa)),
+            "location" => array(
+                "@type" => "Place",
+                "name" => "Arena das Dunas",
+                "address" => array(
+                    "@type" => "PostalAddress",
+                    "streetAddress" => "Av. Prudente de Morais, 5121 - Lagoa Nova",
+                    "addressLocality" => "Natal",
+                    "addressRegion" => "RN",
+                    "postalCode" => "59065-500",
+                    "addressCountry" => "BR"
+                )
+            ),
+            "organizer" => array(
+                "@type" => "Organization",
+                "name" => get_bloginfo('name'),
+                "url" => esc_url(home_url())
+            ),
+            "offers" => array(
+                "@type" => "Offer",
+                "url" => esc_url(get_theme_mod('header_cta_link', home_url())),
+                "price" => "0",
+                "priceCurrency" => "BRL",
+                "availability" => "https://schema.org/InStock",
+                "validFrom" => date('c')
+            )
+        );
+
+        echo '<script type="application/ld+json">' . wp_json_encode($schema_event) . '</script>' . "\n";
+    }
+
+    add_action('wp_head', 'bom_vizinho_injetar_seo_estruturado', 2);
+}
+
+// 5. Suporte Automático de Title Tag (Requisito SEO)
+if (!current_theme_supports('title-tag')) {
+    add_theme_support('title-tag');
+}
