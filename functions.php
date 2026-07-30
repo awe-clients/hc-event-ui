@@ -462,7 +462,7 @@ if (!function_exists('bom_vizinho_injetar_seo_estruturado')) {
         echo '<meta name="description" content="' . esc_attr($meta_desc) . '">' . "\n";
 
         global $wp;
-        $current_url = home_url(add_query_arg(array(), $wp->request));
+        $current_url = "https://corridadoempreendedor.rn.sebrae.com.br"; //home_url(add_query_arg(array(), $wp->request));
         echo '<link rel="canonical" href="' . esc_url($current_url) . '">' . "\n";
 
         // 2. Variáveis de Contexto (White Label)
