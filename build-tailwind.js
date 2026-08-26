@@ -3,15 +3,17 @@ const path = require('path');
 const { compile } = require('/usr/local/slides_js/node_modules/tailwindcss/dist/lib.js');
 
 const dir = __dirname;
-const html = fs.readFileSync(path.join(dir, 'index.html'), 'utf8');
+const pages = ['index.html', 'expo.html'];
 const candidates = new Set();
 
-for (const match of html.matchAll(/class\s*=\s*["']([^"']+)["']/g)) {
-  match[1].split(/\s+/).filter(Boolean).forEach(x => candidates.add(x));
-}
-// Include classes referenced from JavaScript string literals.
-for (const match of html.matchAll(/(?:add|remove|toggle)\(\s*["']([^"']+)["']/g)) {
-  if (!match[1].includes(' ')) candidates.add(match[1]);
+for (const page of pages) {
+  const html = fs.readFileSync(path.join(dir, page), 'utf8');
+  for (const match of html.matchAll(/class\s*=\s*["']([^"']+)["']/g)) {
+    match[1].split(/\s+/).filter(Boolean).forEach(x => candidates.add(x));
+  }
+  for (const match of html.matchAll(/(?:add|remove|toggle)\(\s*["']([^"']+)["']/g)) {
+    if (!match[1].includes(' ')) candidates.add(match[1]);
+  }
 }
 
 const twBase = '/usr/local/slides_js/node_modules/tailwindcss';
@@ -30,5 +32,5 @@ const source = fs.readFileSync(path.join(twBase, 'index.css'), 'utf8');
   });
   const css = compiler.build([...candidates]);
   fs.writeFileSync(path.join(dir, 'tailwind.css'), css);
-  console.log(`Generated tailwind.css with ${candidates.size} candidates (${Math.round(css.length/1024)} KB)`);
+  console.log(`Generated shared tailwind.css from ${pages.join(' + ')} with ${candidates.size} candidates (${Math.round(css.length/1024)} KB)`);
 })();
