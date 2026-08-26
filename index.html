@@ -1,15 +1,19 @@
 <!doctype html>
 <html lang="pt-BR" class="scroll-smooth">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Corrida do Empreendedor 2026 — três dias de movimento, conhecimento, negócios e conexões na Arena das Dunas, em Natal/RN." />
+  <meta name="description"
+    content="Corrida do Empreendedor 2026 — três dias de movimento, conhecimento, negócios e conexões na Arena das Dunas, em Natal/RN." />
   <meta name="theme-color" content="#082F72" />
   <title>Corrida do Empreendedor 2026</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800&family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700;1,800&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800&family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700;1,800&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
   <link rel="stylesheet" href="./tailwind.css" />
 
@@ -24,9 +28,17 @@
       --paper: #f6f3ed;
     }
 
-    html { scroll-padding-top: 92px; }
-    body { font-family: "Barlow", ui-sans-serif, system-ui, sans-serif; }
-    .font-display { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; }
+    html {
+      scroll-padding-top: 92px;
+    }
+
+    body {
+      font-family: "Barlow", ui-sans-serif, system-ui, sans-serif;
+    }
+
+    .font-display {
+      font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+    }
 
     .noise {
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E");
@@ -35,40 +47,69 @@
 
     .track-grid {
       background-image:
-        linear-gradient(rgba(255,255,255,.07) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.07) 1px, transparent 1px);
+        linear-gradient(rgba(255, 255, 255, .07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .07) 1px, transparent 1px);
       background-size: 56px 56px;
     }
 
     .hero-mask {
       background:
-        linear-gradient(90deg, rgba(6,28,74,.97) 0%, rgba(6,28,74,.83) 40%, rgba(6,28,74,.38) 66%, rgba(6,28,74,.17) 100%),
-        linear-gradient(0deg, rgba(6,28,74,.55) 0%, transparent 50%);
+        linear-gradient(90deg, rgba(6, 28, 74, .97) 0%, rgba(6, 28, 74, .83) 40%, rgba(6, 28, 74, .38) 66%, rgba(6, 28, 74, .17) 100%),
+        linear-gradient(0deg, rgba(6, 28, 74, .55) 0%, transparent 50%);
     }
 
-    .clip-slant { clip-path: polygon(0 0, 100% 0, 93% 100%, 0 100%); }
-    .clip-arrow { clip-path: polygon(0 0, 84% 0, 100% 50%, 84% 100%, 0 100%, 10% 50%); }
+    .clip-slant {
+      clip-path: polygon(0 0, 100% 0, 93% 100%, 0 100%);
+    }
+
+    .clip-arrow {
+      clip-path: polygon(0 0, 84% 0, 100% 50%, 84% 100%, 0 100%, 10% 50%);
+    }
 
     .outline-text {
       color: transparent;
-      -webkit-text-stroke: 1px rgba(255,255,255,.35);
-      text-stroke: 1px rgba(255,255,255,.35);
+      -webkit-text-stroke: 1px rgba(255, 255, 255, .35);
+      text-stroke: 1px rgba(255, 255, 255, .35);
     }
 
-    .vertical-writing { writing-mode: vertical-rl; transform: rotate(180deg); }
+    .vertical-writing {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+    }
 
-    .marquee-track { animation: marquee 28s linear infinite; width: max-content; }
-    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .marquee-track {
+      animation: marquee 28s linear infinite;
+      width: max-content;
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
 
     .reveal-ready [data-reveal] {
       opacity: 0;
       transform: translateY(24px);
-      transition: opacity .65s ease, transform .65s cubic-bezier(.2,.75,.2,1);
+      transition: opacity .65s ease, transform .65s cubic-bezier(.2, .75, .2, 1);
     }
-    .reveal-ready [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
 
-    .schedule-panel[hidden] { display: none; }
-    .faq-panel[hidden] { display: none; }
+    .reveal-ready [data-reveal].is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .schedule-panel[hidden] {
+      display: none;
+    }
+
+    .faq-panel[hidden] {
+      display: none;
+    }
 
     .focus-ring:focus-visible,
     a:focus-visible,
@@ -78,38 +119,50 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
+
+      *,
+      *::before,
+      *::after {
         animation-duration: .01ms !important;
         animation-iteration-count: 1 !important;
         scroll-behavior: auto !important;
         transition-duration: .01ms !important;
       }
-      .reveal-ready [data-reveal] { opacity: 1; transform: none; }
+
+      .reveal-ready [data-reveal] {
+        opacity: 1;
+        transform: none;
+      }
     }
   </style>
 </head>
+
 <body class="bg-[#f6f3ed] text-[#101827] antialiased selection:bg-[#ffd51f] selection:text-[#082f72]">
-  <a href="#conteudo" class="focus-ring fixed left-4 top-4 z-[100] -translate-y-24 rounded-full bg-white px-5 py-3 text-sm font-bold text-[#082f72] shadow-lg transition focus:translate-y-0">Pular para o conteúdo</a>
+  <a href="#conteudo"
+    class="focus-ring fixed left-4 top-4 z-[100] -translate-y-24 rounded-full bg-white px-5 py-3 text-sm font-bold text-[#082f72] shadow-lg transition focus:translate-y-0">Pular
+    para o conteúdo</a>
 
   <!-- Alert bar -->
   <div class="relative z-50 bg-[#ffd51f] text-[#082f72]">
-    <div class="mx-auto flex min-h-10 max-w-[1440px] items-center justify-center gap-3 px-5 py-2 text-center text-xs font-extrabold uppercase tracking-[.12em] sm:text-sm">
+    <div
+      class="mx-auto flex min-h-10 max-w-[1440px] items-center justify-center gap-3 px-5 py-2 text-center text-xs font-extrabold uppercase tracking-[.12em] sm:text-sm">
       <span class="hidden h-2 w-2 rounded-full bg-[#e5187e] sm:inline-block" aria-hidden="true"></span>
       22 a 24 de outubro · Arena das Dunas · Natal/RN
-      <a href="#corrida" class="ml-1 inline-flex items-center gap-1 underline decoration-2 underline-offset-4 hover:no-underline">5K · 10K · 15K <i class="ph ph-arrow-up-right text-[1.05em]" aria-hidden="true"></i></a>
+      <a href="#corrida"
+        class="ml-1 inline-flex items-center gap-1 underline decoration-2 underline-offset-4 hover:no-underline">5K ·
+        10K · 15K <i class="ph ph-arrow-up-right text-[1.05em]" aria-hidden="true"></i></a>
     </div>
   </div>
 
   <!-- Header -->
   <header class="sticky top-0 z-40 border-b border-white/10 bg-[#082f72]/95 text-white backdrop-blur-xl">
     <div class="mx-auto flex h-[76px] max-w-[1440px] items-center justify-between px-5 lg:px-8">
-      <a href="#inicio" class="group flex items-center gap-3" aria-label="Corrida do Empreendedor — início">
-        <span class="grid h-10 w-10 place-items-center bg-white text-[#082f72]">
-          <span class="font-display text-[23px] font-extrabold italic leading-none">CE</span>
-        </span>
-        <span class="hidden leading-none sm:block">
-          <span class="font-display block text-[17px] font-extrabold uppercase italic tracking-[.02em]">Corrida do</span>
-          <span class="font-display block text-[17px] font-extrabold uppercase italic tracking-[.02em]">Empreendedor</span>
+      <a href="#inicio" class="group -ml-5 flex h-full shrink-0 items-center lg:-ml-8"
+        aria-label="Corrida do Empreendedor — início">
+        <span
+          class="relative flex h-full w-[168px] items-center bg-[#f7f6ef] pl-5 pr-8 [clip-path:polygon(0_0,100%_0,88%_100%,0_100%)] sm:w-[190px] sm:pl-6 sm:pr-9 lg:w-[208px] lg:pl-8">
+          <img src="./site-assets/logo.webp" alt="Corrida do Empreendedor"
+            class="h-auto w-[112px] object-contain sm:w-[126px] lg:w-[134px]" />
         </span>
       </a>
 
@@ -123,11 +176,13 @@
       </nav>
 
       <div class="flex items-center gap-2">
-        <a href="#inscricao" class="focus-ring hidden h-11 items-center justify-center bg-[#e5187e] px-5 text-sm font-bold uppercase tracking-wide text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-[#082f72] sm:inline-flex">
+        <a href="#inscricao"
+          class="focus-ring hidden h-11 items-center justify-center bg-[#e5187e] px-5 text-sm font-bold uppercase tracking-wide text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-[#082f72] sm:inline-flex">
           Inscreva-se
           <i class="ph ph-arrow-right ml-2 text-base" aria-hidden="true"></i>
         </a>
-        <button id="menuButton" class="focus-ring grid h-11 w-11 place-items-center border border-white/20 lg:hidden" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menu">
+        <button id="menuButton" class="focus-ring grid h-11 w-11 place-items-center border border-white/20 lg:hidden"
+          aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menu">
           <i id="menuIcon" class="ph ph-list text-xl" aria-hidden="true"></i>
         </button>
       </div>
@@ -141,7 +196,8 @@
         <a class="border-b border-white/10 py-3" href="#programacao">Programação</a>
         <a class="border-b border-white/10 py-3" href="#local">Kit e local</a>
         <a class="py-3" href="#faq">FAQ</a>
-        <a class="mt-4 inline-flex h-12 items-center justify-center bg-[#e5187e] font-bold uppercase tracking-wide" href="#inscricao">Inscreva-se</a>
+        <a class="mt-4 inline-flex h-12 items-center justify-center bg-[#e5187e] font-bold uppercase tracking-wide"
+          href="#inscricao">Inscreva-se</a>
       </nav>
     </div>
   </header>
@@ -149,20 +205,24 @@
   <main id="conteudo">
     <!-- HERO -->
     <section id="inicio" class="relative isolate min-h-[calc(100svh-116px)] overflow-hidden bg-[#082f72] text-white">
-      <img src="./site-assets/arena-aerial.webp" alt="Vista aérea da Arena das Dunas, em Natal" class="absolute inset-0 h-full w-full object-cover object-center" fetchpriority="high" />
+      <img src="./site-assets/arena-aerial.webp" alt="Vista aérea da Arena das Dunas, em Natal"
+        class="absolute inset-0 h-full w-full object-cover object-center" fetchpriority="high" />
       <div class="hero-mask absolute inset-0"></div>
       <div class="track-grid absolute inset-0 opacity-30"></div>
       <div class="noise pointer-events-none absolute inset-0 opacity-30" aria-hidden="true"></div>
 
       <div class="absolute right-0 top-0 hidden h-full w-28 grid-cols-4 lg:grid" aria-hidden="true">
-        <span class="bg-[#0a3d91]/80"></span><span class="bg-[#e5187e]/80"></span><span class="bg-[#79c143]/80"></span><span class="bg-[#ffd51f]/85"></span>
+        <span class="bg-[#0a3d91]/80"></span><span class="bg-[#e5187e]/80"></span><span
+          class="bg-[#79c143]/80"></span><span class="bg-[#ffd51f]/85"></span>
       </div>
 
-      <div class="relative mx-auto flex min-h-[calc(100svh-116px)] max-w-[1440px] flex-col justify-between px-5 py-8 sm:py-10 lg:px-8 lg:py-12">
+      <div
+        class="relative mx-auto flex min-h-[calc(100svh-116px)] max-w-[1440px] flex-col justify-between px-5 py-8 sm:py-10 lg:px-8 lg:py-12">
         <div class="flex items-start justify-between gap-8">
           <div class="inline-flex items-center gap-3 border border-white/25 bg-[#082f72]/35 px-3 py-2 backdrop-blur-md">
             <span class="h-2 w-8 bg-[#ffd51f]" aria-hidden="true"></span>
-            <span class="text-[11px] font-extrabold uppercase tracking-[.22em] sm:text-xs">Corrida do Empreendedor 2026 · Sebrae RN</span>
+            <span class="text-[11px] font-extrabold uppercase tracking-[.22em] sm:text-xs">Corrida do Empreendedor 2026
+              · Sebrae RN</span>
           </div>
           <div class="hidden items-center gap-4 pr-24 lg:flex">
             <span class="font-display text-sm font-bold uppercase tracking-[.2em] text-white/65">Natal · RN</span>
@@ -173,97 +233,124 @@
 
         <div class="grid items-end gap-10 pb-8 pt-12 lg:grid-cols-[minmax(0,1.15fr)_390px] lg:pb-14">
           <div>
-            <p class="mb-5 flex items-center gap-3 text-xs font-extrabold uppercase tracking-[.2em] text-[#ffd51f] sm:text-sm" data-reveal>
+            <p class="mb-5 flex items-center gap-3 text-xs font-extrabold uppercase tracking-[.2em] text-[#ffd51f] sm:text-sm"
+              data-reveal>
               <span class="h-px w-10 bg-[#ffd51f]" aria-hidden="true"></span>
               22—24 outubro · Arena das Dunas · Natal/RN
             </p>
 
-            <h1 class="font-display max-w-[980px] text-[clamp(4.1rem,8.7vw,8.75rem)] font-extrabold uppercase italic leading-[.8]" data-reveal>
+            <h1
+              class="font-display max-w-[980px] text-[clamp(4.1rem,8.7vw,8.75rem)] font-extrabold uppercase italic leading-[.8]"
+              data-reveal>
               <span class="block">Três dias.</span>
               <span class="block">Uma Arena inteira</span>
               <span class="block text-[#ffd51f]">em movimento.</span>
             </h1>
 
             <p class="mt-7 max-w-2xl text-base font-semibold leading-relaxed text-white/80 sm:text-lg" data-reveal>
-              Corrida, palestras, Expo Sebrae, cultura, conexões e oportunidades reunidas em uma experiência para quem move ideias, negócios e pessoas.
+              Corrida, palestras, Expo Sebrae, cultura, conexões e oportunidades reunidas em uma experiência para quem
+              move ideias, negócios e pessoas.
             </p>
 
             <div class="mt-7 flex flex-wrap items-end gap-x-8 gap-y-4" data-reveal>
               <div>
                 <div class="text-[10px] font-extrabold uppercase tracking-[.2em] text-white/55">O grande encontro</div>
-                <div class="mt-1 font-display text-4xl font-extrabold uppercase leading-none sm:text-5xl">22 · 23 · 24 OUT</div>
+                <div class="mt-1 font-display text-4xl font-extrabold uppercase leading-none sm:text-5xl">22 · 23 · 24
+                  OUT</div>
               </div>
               <div class="hidden h-12 w-px bg-white/25 sm:block" aria-hidden="true"></div>
               <div>
-                <div class="text-[10px] font-extrabold uppercase tracking-[.2em] text-[#79c143]">24 OUT · O dia da corrida</div>
-                <div class="mt-1 font-display text-3xl font-extrabold uppercase leading-none sm:text-4xl">5K · 10K · 15K</div>
+                <div class="text-[10px] font-extrabold uppercase tracking-[.2em] text-[#79c143]">24 OUT · O dia da
+                  corrida</div>
+                <div class="mt-1 font-display text-3xl font-extrabold uppercase leading-none sm:text-4xl">5K · 10K · 15K
+                </div>
               </div>
             </div>
 
             <div class="mt-8 flex flex-col gap-3 sm:flex-row" data-reveal>
-              <a href="#participar" class="focus-ring group inline-flex min-h-14 items-center justify-center bg-[#e5187e] px-7 text-sm font-bold uppercase tracking-[.08em] text-white transition hover:-translate-y-1 hover:bg-white hover:text-[#082f72]">
+              <a href="#participar"
+                class="focus-ring group inline-flex min-h-14 items-center justify-center bg-[#e5187e] px-7 text-sm font-bold uppercase tracking-[.08em] text-white transition hover:-translate-y-1 hover:bg-white hover:text-[#082f72]">
                 Inscreva-se no evento
                 <i class="ph ph-arrow-right ml-3 text-xl transition group-hover:translate-x-1" aria-hidden="true"></i>
               </a>
-              <a href="#inscricao" class="focus-ring group inline-flex min-h-14 items-center justify-center border border-white/35 bg-white/5 px-7 text-sm font-bold uppercase tracking-[.08em] backdrop-blur transition hover:bg-white hover:text-[#082f72]">
+              <a href="#inscricao"
+                class="focus-ring group inline-flex min-h-14 items-center justify-center border border-white/35 bg-white/5 px-7 text-sm font-bold uppercase tracking-[.08em] backdrop-blur transition hover:bg-white hover:text-[#082f72]">
                 Inscreva-se na corrida
-                <i class="ph ph-arrow-up-right ml-3 text-lg transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true"></i>
+                <i class="ph ph-arrow-up-right ml-3 text-lg transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                  aria-hidden="true"></i>
               </a>
             </div>
           </div>
 
-          <aside class="relative overflow-hidden border border-white/20 bg-[#071f4d]/78 p-5 shadow-2xl backdrop-blur-xl sm:p-6" data-reveal aria-label="Programação resumida dos três dias do evento">
-            <div class="absolute right-0 top-0 h-1 w-full bg-gradient-to-r from-[#0a3d91] via-[#e5187e] via-60% to-[#79c143]" aria-hidden="true"></div>
+          <aside
+            class="relative overflow-hidden border border-white/20 bg-[#071f4d]/78 p-5 shadow-2xl backdrop-blur-xl sm:p-6"
+            data-reveal aria-label="Programação resumida dos três dias do evento">
+            <div
+              class="absolute right-0 top-0 h-1 w-full bg-gradient-to-r from-[#0a3d91] via-[#e5187e] via-60% to-[#79c143]"
+              aria-hidden="true"></div>
             <div class="flex items-start justify-between gap-4">
               <div>
-                <p class="text-[10px] font-extrabold uppercase tracking-[.25em] text-[#ffd51f]">22—24 outubro · Arena das Dunas</p>
+                <p class="text-[10px] font-extrabold uppercase tracking-[.25em] text-[#ffd51f]">22—24 outubro · Arena
+                  das Dunas</p>
                 <p class="mt-2 font-display text-3xl font-extrabold uppercase leading-[.8]">3 dias na Arena</p>
               </div>
               <i class="ph ph-map-pin-area text-3xl text-white/25" aria-hidden="true"></i>
             </div>
 
             <div class="mt-6 divide-y divide-white/15 border-y border-white/15">
-              <a href="#programacao" class="group grid grid-cols-[64px_1fr_auto] items-center gap-4 py-4 transition hover:pl-1">
+              <a href="#programacao"
+                class="group grid grid-cols-[64px_1fr_auto] items-center gap-4 py-4 transition hover:pl-1">
                 <span class="font-display text-5xl font-extrabold leading-none text-[#ffd51f]">22</span>
                 <span>
                   <span class="block text-[10px] font-extrabold uppercase tracking-[.2em] text-white/50">Abertura</span>
                   <span class="mt-1 block text-sm font-semibold leading-snug">Expo · Palestras · Kits · Cultura</span>
                 </span>
-                <i class="ph ph-arrow-right text-lg text-white/35 transition group-hover:translate-x-1 group-hover:text-[#ffd51f]" aria-hidden="true"></i>
+                <i class="ph ph-arrow-right text-lg text-white/35 transition group-hover:translate-x-1 group-hover:text-[#ffd51f]"
+                  aria-hidden="true"></i>
               </a>
-              <a href="#programacao" class="group grid grid-cols-[64px_1fr_auto] items-center gap-4 py-4 transition hover:pl-1">
+              <a href="#programacao"
+                class="group grid grid-cols-[64px_1fr_auto] items-center gap-4 py-4 transition hover:pl-1">
                 <span class="font-display text-5xl font-extrabold leading-none text-[#e5187e]">23</span>
                 <span>
                   <span class="block text-[10px] font-extrabold uppercase tracking-[.2em] text-white/50">Imersão</span>
                   <span class="mt-1 block text-sm font-semibold leading-snug">Expo · Palestras · Kits · Cultura</span>
                 </span>
-                <i class="ph ph-arrow-right text-lg text-white/35 transition group-hover:translate-x-1 group-hover:text-[#e5187e]" aria-hidden="true"></i>
+                <i class="ph ph-arrow-right text-lg text-white/35 transition group-hover:translate-x-1 group-hover:text-[#e5187e]"
+                  aria-hidden="true"></i>
               </a>
-              <a href="#corrida" class="group grid grid-cols-[64px_1fr_auto] items-center gap-4 py-4 transition hover:pl-1">
+              <a href="#corrida"
+                class="group grid grid-cols-[64px_1fr_auto] items-center gap-4 py-4 transition hover:pl-1">
                 <span class="font-display text-5xl font-extrabold leading-none text-[#79c143]">24</span>
                 <span>
                   <span class="block text-[10px] font-extrabold uppercase tracking-[.2em] text-white/50">Corrida</span>
                   <span class="mt-1 block text-sm font-semibold leading-snug">5K · 10K · 15K · Pós-corrida</span>
                 </span>
-                <i class="ph ph-arrow-right text-lg text-white/35 transition group-hover:translate-x-1 group-hover:text-[#79c143]" aria-hidden="true"></i>
+                <i class="ph ph-arrow-right text-lg text-white/35 transition group-hover:translate-x-1 group-hover:text-[#79c143]"
+                  aria-hidden="true"></i>
               </a>
             </div>
 
             <div class="mt-5 flex items-center justify-between gap-5">
               <div>
-                <p class="text-xs font-bold uppercase tracking-[.12em] text-white/50">Uma Arena. Muitas experiências.</p>
+                <p class="text-xs font-bold uppercase tracking-[.12em] text-white/50">Uma Arena. Muitas experiências.
+                </p>
                 <p class="mt-1 text-sm font-semibold">Tudo acontece aqui.</p>
               </div>
-              <span class="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-white/20 text-[#ffd51f]" aria-hidden="true"><i class="ph ph-arrow-down-right text-lg"></i></span>
+              <span
+                class="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-white/20 text-[#ffd51f]"
+                aria-hidden="true"><i class="ph ph-arrow-down-right text-lg"></i></span>
             </div>
           </aside>
         </div>
 
-        <div class="flex items-center justify-between border-t border-white/20 pt-5 text-[10px] font-extrabold uppercase tracking-[.18em] text-white/55 sm:text-xs">
+        <div
+          class="flex items-center justify-between border-t border-white/20 pt-5 text-[10px] font-extrabold uppercase tracking-[.18em] text-white/55 sm:text-xs">
           <span>Tudo acontece na Arena.</span>
           <a href="#participar" class="group flex items-center gap-3 text-white hover:text-[#ffd51f]">
             Descubra como participar
-            <span class="grid h-8 w-8 place-items-center rounded-full border border-white/20 transition group-hover:border-[#ffd51f]" aria-hidden="true"><i class="ph ph-arrow-down"></i></span>
+            <span
+              class="grid h-8 w-8 place-items-center rounded-full border border-white/20 transition group-hover:border-[#ffd51f]"
+              aria-hidden="true"><i class="ph ph-arrow-down"></i></span>
           </a>
         </div>
       </div>
@@ -271,72 +358,113 @@
 
     <!-- Marquee -->
     <section class="overflow-hidden border-y border-[#082f72]/15 bg-white py-3" aria-label="Experiências do evento">
-      <div class="marquee-track flex gap-10 whitespace-nowrap font-display text-2xl font-extrabold uppercase italic tracking-tight text-[#082f72] sm:text-3xl" aria-hidden="true">
-        <span>Movimento</span><span class="text-[#e5187e]">/////</span><span>Conhecimento</span><span class="text-[#79c143]">/////</span><span>Conexões</span><span class="text-[#ffd51f]">/////</span><span>Negócios</span><span class="text-[#0a3d91]">/////</span><span>Experiência</span><span class="text-[#e5187e]">/////</span>
-        <span>Movimento</span><span class="text-[#e5187e]">/////</span><span>Conhecimento</span><span class="text-[#79c143]">/////</span><span>Conexões</span><span class="text-[#ffd51f]">/////</span><span>Negócios</span><span class="text-[#0a3d91]">/////</span><span>Experiência</span><span class="text-[#e5187e]">/////</span>
+      <div
+        class="marquee-track flex gap-10 whitespace-nowrap font-display text-2xl font-extrabold uppercase italic tracking-tight text-[#082f72] sm:text-3xl"
+        aria-hidden="true">
+        <span>Movimento</span><span class="text-[#e5187e]">/////</span><span>Conhecimento</span><span
+          class="text-[#79c143]">/////</span><span>Conexões</span><span
+          class="text-[#ffd51f]">/////</span><span>Negócios</span><span
+          class="text-[#0a3d91]">/////</span><span>Experiência</span><span class="text-[#e5187e]">/////</span>
+        <span>Movimento</span><span class="text-[#e5187e]">/////</span><span>Conhecimento</span><span
+          class="text-[#79c143]">/////</span><span>Conexões</span><span
+          class="text-[#ffd51f]">/////</span><span>Negócios</span><span
+          class="text-[#0a3d91]">/////</span><span>Experiência</span><span class="text-[#e5187e]">/////</span>
       </div>
     </section>
 
     <!-- Manifesto + participation -->
     <section id="participar" class="relative overflow-hidden bg-[#f6f3ed] py-20 sm:py-28 lg:py-36">
-      <div class="pointer-events-none absolute -right-8 top-10 font-display text-[28vw] font-extrabold uppercase leading-none text-[#082f72]/[.035]" aria-hidden="true">MOVIMENTO</div>
+      <div
+        class="pointer-events-none absolute -right-8 top-10 font-display text-[28vw] font-extrabold uppercase leading-none text-[#082f72]/[.035]"
+        aria-hidden="true">MOVIMENTO</div>
       <div class="mx-auto max-w-[1440px] px-5 lg:px-8">
         <div class="grid gap-12 lg:grid-cols-[.75fr_1.25fr] lg:gap-20">
           <div data-reveal>
             <div class="mb-5 flex items-center gap-3 text-xs font-bold uppercase tracking-[.18em] text-[#e5187e]">
               <span class="h-1 w-10 bg-[#e5187e]"></span> Um evento. Muitas formas de viver.
             </div>
-            <h2 class="font-display text-[clamp(4rem,8vw,8rem)] font-extrabold uppercase italic leading-[.8] text-[#082f72]">
+            <h2
+              class="font-display text-[clamp(4rem,8vw,8rem)] font-extrabold uppercase italic leading-[.8] text-[#082f72]">
               A Arena inteira<br><span class="text-[#e5187e]">em movimento.</span>
             </h2>
           </div>
           <div class="flex flex-col justify-end" data-reveal>
             <p class="max-w-2xl text-xl font-medium leading-relaxed text-[#26334d] sm:text-2xl">
-              Corrida, conhecimento, negócios, cultura e conexões dividem o mesmo palco por três dias. Você escolhe por onde começar — e a experiência continua pela Arena.
+              Corrida, conhecimento, negócios, cultura e conexões dividem o mesmo palco por três dias. Você escolhe por
+              onde começar — e a experiência continua pela Arena.
             </p>
-            <div class="mt-10 grid grid-cols-2 gap-px overflow-hidden border border-[#082f72]/15 bg-[#082f72]/15 sm:grid-cols-4">
-              <div class="bg-white p-5"><span class="font-display text-4xl font-extrabold text-[#082f72]">03</span><p class="mt-1 text-xs font-bold uppercase tracking-[.14em] text-[#4f5c72]">Dias de evento</p></div>
-              <div class="bg-white p-5"><span class="font-display text-4xl font-extrabold text-[#e5187e]">03</span><p class="mt-1 text-xs font-bold uppercase tracking-[.14em] text-[#4f5c72]">Distâncias</p></div>
-              <div class="bg-white p-5"><span class="font-display text-4xl font-extrabold text-[#79c143]">05</span><p class="mt-1 text-xs font-bold uppercase tracking-[.14em] text-[#4f5c72]">KMs da experiência</p></div>
-              <div class="bg-white p-5"><span class="font-display text-4xl font-extrabold text-[#082f72]">01</span><p class="mt-1 text-xs font-bold uppercase tracking-[.14em] text-[#4f5c72]">Arena</p></div>
+            <div
+              class="mt-10 grid grid-cols-2 gap-px overflow-hidden border border-[#082f72]/15 bg-[#082f72]/15 sm:grid-cols-4">
+              <div class="bg-white p-5"><span class="font-display text-4xl font-extrabold text-[#082f72]">03</span>
+                <p class="mt-1 text-xs font-bold uppercase tracking-[.14em] text-[#4f5c72]">Dias de evento</p>
+              </div>
+              <div class="bg-white p-5"><span class="font-display text-4xl font-extrabold text-[#e5187e]">03</span>
+                <p class="mt-1 text-xs font-bold uppercase tracking-[.14em] text-[#4f5c72]">Distâncias</p>
+              </div>
+              <div class="bg-white p-5"><span class="font-display text-4xl font-extrabold text-[#79c143]">05</span>
+                <p class="mt-1 text-xs font-bold uppercase tracking-[.14em] text-[#4f5c72]">KMs da experiência</p>
+              </div>
+              <div class="bg-white p-5"><span class="font-display text-4xl font-extrabold text-[#082f72]">01</span>
+                <p class="mt-1 text-xs font-bold uppercase tracking-[.14em] text-[#4f5c72]">Arena</p>
+              </div>
             </div>
           </div>
         </div>
 
         <div class="mt-16 grid gap-3 lg:grid-cols-12" data-reveal>
           <article class="group relative min-h-[360px] overflow-hidden bg-[#082f72] p-7 text-white lg:col-span-5">
-            <img src="./site-assets/start-arena.webp" alt="Largada de corrida dentro da Arena das Dunas" class="absolute inset-0 h-full w-full object-cover opacity-35 transition duration-700 group-hover:scale-105 group-hover:opacity-45" loading="lazy" />
+            <img src="./site-assets/start-arena.webp" alt="Largada de corrida dentro da Arena das Dunas"
+              class="absolute inset-0 h-full w-full object-cover opacity-35 transition duration-700 group-hover:scale-105 group-hover:opacity-45"
+              loading="lazy" />
             <div class="absolute inset-0 bg-gradient-to-t from-[#041a45] via-[#082f72]/55 to-transparent"></div>
             <div class="relative flex h-full flex-col justify-between">
-              <span class="self-start bg-[#ffd51f] px-3 py-2 text-[10px] font-bold uppercase tracking-[.15em] text-[#082f72]">01 · Movimento</span>
+              <span
+                class="self-start bg-[#ffd51f] px-3 py-2 text-[10px] font-bold uppercase tracking-[.15em] text-[#082f72]">01
+                · Movimento</span>
               <div class="mt-28">
-                <h3 class="font-display text-5xl font-extrabold uppercase italic leading-none sm:text-6xl">Quero correr</h3>
-                <p class="mt-3 max-w-sm text-base text-white/75">Escolha entre 5K, 10K ou 15K e viva a Arena da concentração à celebração pós-prova.</p>
-                <a href="#corrida" class="mt-6 inline-flex items-center gap-3 font-bold uppercase tracking-[.08em] text-[#ffd51f]">Inscreva-se na corrida <i class="ph ph-arrow-up-right text-[1.05em]" aria-hidden="true"></i></a>
+                <h3 class="font-display text-5xl font-extrabold uppercase italic leading-none sm:text-6xl">Quero correr
+                </h3>
+                <p class="mt-3 max-w-sm text-base text-white/75">Escolha entre 5K, 10K ou 15K e viva a Arena da
+                  concentração à celebração pós-prova.</p>
+                <a href="#corrida"
+                  class="mt-6 inline-flex items-center gap-3 font-bold uppercase tracking-[.08em] text-[#ffd51f]">Inscreva-se
+                  na corrida <i class="ph ph-arrow-up-right text-[1.05em]" aria-hidden="true"></i></a>
               </div>
             </div>
           </article>
 
           <article class="group relative min-h-[360px] overflow-hidden bg-[#e5187e] p-7 text-white lg:col-span-4">
-            <div class="absolute -right-10 -top-4 font-display text-[180px] font-extrabold leading-none text-white/10" aria-hidden="true">02</div>
+            <div class="absolute -right-10 -top-4 font-display text-[180px] font-extrabold leading-none text-white/10"
+              aria-hidden="true">02</div>
             <div class="relative flex h-full flex-col justify-between">
-              <span class="self-start border border-white/35 px-3 py-2 text-[10px] font-bold uppercase tracking-[.15em]">02 · Inspira</span>
+              <span
+                class="self-start border border-white/35 px-3 py-2 text-[10px] font-bold uppercase tracking-[.15em]">02
+                · Inspira</span>
               <div class="mt-28">
                 <h3 class="font-display text-5xl font-extrabold uppercase italic leading-none">Quero as palestras</h3>
-                <p class="mt-3 text-base text-white/80">Grandes ideias ganham palco na Arena com conteúdos e convidados para quem quer aprender, trocar e avançar.</p>
-                <a href="#palestras" class="mt-6 inline-flex items-center gap-3 font-bold uppercase tracking-[.08em] text-[#ffd51f]">Ver palestras <i class="ph ph-arrow-up-right text-[1.05em]" aria-hidden="true"></i></a>
+                <p class="mt-3 text-base text-white/80">Grandes ideias ganham palco na Arena com conteúdos e convidados
+                  para quem quer aprender, trocar e avançar.</p>
+                <a href="#palestras"
+                  class="mt-6 inline-flex items-center gap-3 font-bold uppercase tracking-[.08em] text-[#ffd51f]">Ver
+                  palestras <i class="ph ph-arrow-up-right text-[1.05em]" aria-hidden="true"></i></a>
               </div>
             </div>
           </article>
 
           <article class="group relative min-h-[360px] overflow-hidden bg-[#79c143] p-7 text-[#082f72] lg:col-span-3">
-            <div class="absolute bottom-0 right-0 h-44 w-44 rounded-full border-[34px] border-[#082f72]/10" aria-hidden="true"></div>
+            <div class="absolute bottom-0 right-0 h-44 w-44 rounded-full border-[34px] border-[#082f72]/10"
+              aria-hidden="true"></div>
             <div class="relative flex h-full flex-col justify-between">
-              <span class="self-start bg-[#082f72] px-3 py-2 text-[10px] font-bold uppercase tracking-[.15em] text-white">03 · Expo</span>
+              <span
+                class="self-start bg-[#082f72] px-3 py-2 text-[10px] font-bold uppercase tracking-[.15em] text-white">03
+                · Expo</span>
               <div class="mt-28">
                 <h3 class="font-display text-5xl font-extrabold uppercase italic leading-none">Quero visitar a Expo</h3>
-                <p class="mt-3 text-base font-medium text-[#082f72]/75">Descubra empresas, sabores, Feito Potiguar e experiências de marca em uma Expo que ocupa a Arena.</p>
-                <a href="./expo.html" class="mt-6 inline-flex items-center gap-3 font-bold uppercase tracking-[.08em]">Conhecer a Expo <i class="ph ph-arrow-up-right text-[1.05em]" aria-hidden="true"></i></a>
+                <p class="mt-3 text-base font-medium text-[#082f72]/75">Descubra empresas, sabores, Feito Potiguar e
+                  experiências de marca em uma Expo que ocupa a Arena.</p>
+                <a href="./expo.html"
+                  class="mt-6 inline-flex items-center gap-3 font-bold uppercase tracking-[.08em]">Conhecer a Expo <i
+                    class="ph ph-arrow-up-right text-[1.05em]" aria-hidden="true"></i></a>
               </div>
             </div>
           </article>
@@ -344,10 +472,16 @@
           <article class="relative overflow-hidden bg-[#ffd51f] p-7 text-[#082f72] lg:col-span-12 lg:min-h-[220px]">
             <div class="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
               <div>
-                <span class="inline-flex border border-[#082f72]/25 px-3 py-2 text-[10px] font-bold uppercase tracking-[.15em]">04 · Conecta</span>
-                <h3 class="mt-8 max-w-4xl font-display text-5xl font-extrabold uppercase italic leading-[.9] sm:text-6xl lg:text-7xl">Sua empresa também pode fazer parte dessa experiência.</h3>
+                <span
+                  class="inline-flex border border-[#082f72]/25 px-3 py-2 text-[10px] font-bold uppercase tracking-[.15em]">04
+                  · Conecta</span>
+                <h3
+                  class="mt-8 max-w-4xl font-display text-5xl font-extrabold uppercase italic leading-[.9] sm:text-6xl lg:text-7xl">
+                  Sua empresa também pode fazer parte dessa experiência.</h3>
               </div>
-              <a href="./expo.html#empresas" class="focus-ring inline-flex min-h-14 items-center justify-center bg-[#082f72] px-7 text-sm font-bold uppercase tracking-[.08em] text-white transition hover:bg-[#e5187e]">Participar com minha empresa <i class="ph ph-arrow-up-right ml-3 text-lg" aria-hidden="true"></i></a>
+              <a href="./expo.html#empresas"
+                class="focus-ring inline-flex min-h-14 items-center justify-center bg-[#082f72] px-7 text-sm font-bold uppercase tracking-[.08em] text-white transition hover:bg-[#e5187e]">Participar
+                com minha empresa <i class="ph ph-arrow-up-right ml-3 text-lg" aria-hidden="true"></i></a>
             </div>
           </article>
         </div>
@@ -360,10 +494,13 @@
         <div class="grid gap-10 lg:grid-cols-[.8fr_1.2fr] lg:items-end">
           <div data-reveal>
             <span class="text-xs font-bold uppercase tracking-[.22em] text-[#ffd51f]">///// Percurso digital</span>
-            <h2 class="mt-4 font-display text-[clamp(4.3rem,8vw,8rem)] font-extrabold uppercase italic leading-[.8]">Os KMs da<br>experiência.</h2>
+            <h2 class="mt-4 font-display text-[clamp(4.3rem,8vw,8rem)] font-extrabold uppercase italic leading-[.8]">Os
+              KMs da<br>experiência.</h2>
           </div>
           <div data-reveal>
-            <p class="max-w-2xl text-lg leading-relaxed text-white/70 sm:text-xl">Cinco KMs organizam tudo o que acontece na Arena: movimento, conhecimento, conexões, negócios e experiências. Escolha seu ponto de partida.</p>
+            <p class="max-w-2xl text-lg leading-relaxed text-white/70 sm:text-xl">Cinco KMs organizam tudo o que
+              acontece na Arena: movimento, conhecimento, conexões, negócios e experiências. Escolha seu ponto de
+              partida.</p>
           </div>
         </div>
 
@@ -371,27 +508,36 @@
           <li class="group bg-[#082f72] p-6 transition hover:bg-[#0a3d91]">
             <span class="font-display text-6xl font-extrabold leading-none text-[#ffd51f]">01</span>
             <p class="mt-10 font-display text-3xl font-extrabold uppercase italic">Movimento</p>
-            <p class="mt-2 text-sm leading-relaxed text-white/60">Corrida, percursos, largada, kit, retirada e premiação.</p>
+            <p class="mt-2 text-sm leading-relaxed text-white/60">Corrida, percursos, largada, kit, retirada e
+              premiação.</p>
           </li>
           <li class="group bg-[#082f72] p-6 transition hover:bg-[#e5187e]">
-            <span class="font-display text-6xl font-extrabold leading-none text-[#e5187e] group-hover:text-white">02</span>
+            <span
+              class="font-display text-6xl font-extrabold leading-none text-[#e5187e] group-hover:text-white">02</span>
             <p class="mt-10 font-display text-3xl font-extrabold uppercase italic">Inspira</p>
-            <p class="mt-2 text-sm leading-relaxed text-white/60 group-hover:text-white/80">Palestras, temas, convidados, horários e ingressos.</p>
+            <p class="mt-2 text-sm leading-relaxed text-white/60 group-hover:text-white/80">Palestras, temas,
+              convidados, horários e ingressos.</p>
           </li>
           <li class="group bg-[#082f72] p-6 transition hover:bg-[#ffd51f] hover:text-[#082f72]">
-            <span class="font-display text-6xl font-extrabold leading-none text-[#ffd51f] group-hover:text-[#082f72]">03</span>
+            <span
+              class="font-display text-6xl font-extrabold leading-none text-[#ffd51f] group-hover:text-[#082f72]">03</span>
             <p class="mt-10 font-display text-3xl font-extrabold uppercase italic">Conecta</p>
-            <p class="mt-2 text-sm leading-relaxed text-white/60 group-hover:text-[#082f72]/70">Networking, empresas, assessorias e oportunidades.</p>
+            <p class="mt-2 text-sm leading-relaxed text-white/60 group-hover:text-[#082f72]/70">Networking, empresas,
+              assessorias e oportunidades.</p>
           </li>
           <li class="group bg-[#082f72] p-6 transition hover:bg-[#79c143] hover:text-[#082f72]">
-            <span class="font-display text-6xl font-extrabold leading-none text-[#79c143] group-hover:text-[#082f72]">04</span>
+            <span
+              class="font-display text-6xl font-extrabold leading-none text-[#79c143] group-hover:text-[#082f72]">04</span>
             <p class="mt-10 font-display text-3xl font-extrabold uppercase italic">Expo</p>
-            <p class="mt-2 text-sm leading-relaxed text-white/60 group-hover:text-[#082f72]/70">Expositores, marcas, Feito Potiguar e gastronomia.</p>
+            <p class="mt-2 text-sm leading-relaxed text-white/60 group-hover:text-[#082f72]/70">Expositores, marcas,
+              Feito Potiguar e gastronomia.</p>
           </li>
           <li class="group bg-[#082f72] p-6 transition hover:bg-white hover:text-[#082f72]">
-            <span class="font-display text-6xl font-extrabold leading-none text-white/30 group-hover:text-[#e5187e]">05</span>
+            <span
+              class="font-display text-6xl font-extrabold leading-none text-white/30 group-hover:text-[#e5187e]">05</span>
             <p class="mt-10 font-display text-3xl font-extrabold uppercase italic">Experiência</p>
-            <p class="mt-2 text-sm leading-relaxed text-white/60 group-hover:text-[#082f72]/70">Programação, Arena, mapa, acesso e atrações.</p>
+            <p class="mt-2 text-sm leading-relaxed text-white/60 group-hover:text-[#082f72]/70">Programação, Arena,
+              mapa, acesso e atrações.</p>
           </li>
         </ol>
       </div>
@@ -402,103 +548,177 @@
       <div class="mx-auto max-w-[1440px] px-5 lg:px-8">
         <div class="grid gap-10 lg:grid-cols-[.7fr_1.3fr] lg:items-end">
           <div data-reveal>
-            <span class="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[.2em] text-[#0a3d91]"><span class="h-1 w-9 bg-[#ffd51f]"></span> KM 01 · Movimento</span>
-            <h2 class="mt-5 font-display text-[clamp(4.5rem,9vw,9rem)] font-extrabold uppercase italic leading-[.8] text-[#082f72]">Corra no<br><span class="text-[#e5187e]">seu ritmo.</span></h2>
+            <span
+              class="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[.2em] text-[#0a3d91]"><span
+                class="h-1 w-9 bg-[#ffd51f]"></span> KM 01 · Movimento</span>
+            <h2
+              class="mt-5 font-display text-[clamp(4.5rem,9vw,9rem)] font-extrabold uppercase italic leading-[.8] text-[#082f72]">
+              Corra no<br><span class="text-[#e5187e]">seu ritmo.</span></h2>
           </div>
           <div class="lg:pb-2" data-reveal>
-            <p class="max-w-xl text-xl font-medium leading-relaxed text-[#405069]">No dia 24 de outubro, a Arena das Dunas vira ponto de partida para três percursos. Escolha a distância que combina com seu momento.</p>
+            <p class="max-w-xl text-xl font-medium leading-relaxed text-[#405069]">No dia 24 de outubro, a Arena das
+              Dunas vira ponto de partida para três percursos. Escolha a distância que combina com seu momento.</p>
           </div>
         </div>
 
         <div class="mt-14 grid gap-4 lg:grid-cols-3" data-reveal>
           <article class="group relative min-h-[500px] overflow-hidden bg-[#0a3d91] text-white">
-            <img src="./site-assets/shirt-blue.webp" alt="Camiseta azul da Corrida do Empreendedor" class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" loading="lazy" />
+            <img src="./site-assets/shirt-blue.webp" alt="Camiseta azul da Corrida do Empreendedor"
+              class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
+              loading="lazy" />
             <div class="absolute inset-0 bg-gradient-to-t from-[#041a45] via-[#082f72]/20 to-transparent"></div>
             <div class="relative flex h-full min-h-[500px] flex-col justify-between p-7">
-              <div class="flex items-start justify-between"><span class="border border-white/30 px-3 py-2 text-[10px] font-bold uppercase tracking-[.15em]">Percurso 01</span><span class="text-[#ffd51f]">/////</span></div>
+              <div class="flex items-start justify-between"><span
+                  class="border border-white/30 px-3 py-2 text-[10px] font-bold uppercase tracking-[.15em]">Percurso
+                  01</span><span class="text-[#ffd51f]">/////</span></div>
               <div>
-                <p class="font-display text-[7rem] font-extrabold leading-[.65]">5<span class="ml-2 text-3xl">KM</span></p>
-                <p class="mt-5 max-w-xs text-white/70">Uma distância para entrar no movimento e viver a Arena por inteiro.</p>
-                <a href="#inscricao" class="mt-6 inline-flex items-center gap-2 font-bold uppercase tracking-[.08em] text-[#ffd51f]">Quero correr 5K <i class="ph ph-arrow-up-right text-[1.05em]" aria-hidden="true"></i></a>
+                <p class="font-display text-[7rem] font-extrabold leading-[.65]">5<span class="ml-2 text-3xl">KM</span>
+                </p>
+                <p class="mt-5 max-w-xs text-white/70">Uma distância para entrar no movimento e viver a Arena por
+                  inteiro.</p>
+                <a href="#inscricao"
+                  class="mt-6 inline-flex items-center gap-2 font-bold uppercase tracking-[.08em] text-[#ffd51f]">Quero
+                  correr 5K <i class="ph ph-arrow-up-right text-[1.05em]" aria-hidden="true"></i></a>
               </div>
             </div>
           </article>
 
           <article class="group relative min-h-[500px] overflow-hidden bg-[#e5187e] text-white lg:-translate-y-8">
-            <img src="./site-assets/shirt-pink.webp" alt="Camiseta rosa da Corrida do Empreendedor" class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" loading="lazy" />
+            <img src="./site-assets/shirt-pink.webp" alt="Camiseta rosa da Corrida do Empreendedor"
+              class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
+              loading="lazy" />
             <div class="absolute inset-0 bg-gradient-to-t from-[#791146] via-[#e5187e]/15 to-transparent"></div>
             <div class="relative flex h-full min-h-[500px] flex-col justify-between p-7">
-              <div class="flex items-start justify-between"><span class="border border-white/30 px-3 py-2 text-[10px] font-bold uppercase tracking-[.15em]">Percurso 02</span><span class="text-[#ffd51f]">/////</span></div>
+              <div class="flex items-start justify-between"><span
+                  class="border border-white/30 px-3 py-2 text-[10px] font-bold uppercase tracking-[.15em]">Percurso
+                  02</span><span class="text-[#ffd51f]">/////</span></div>
               <div>
-                <p class="font-display text-[7rem] font-extrabold leading-[.65]">10<span class="ml-2 text-3xl">KM</span></p>
-                <p class="mt-5 max-w-xs text-white/80">Para quem quer aumentar a distância e transformar energia em conquista.</p>
-                <a href="#inscricao" class="mt-6 inline-flex items-center gap-2 font-bold uppercase tracking-[.08em] text-[#ffd51f]">Quero correr 10K <i class="ph ph-arrow-up-right text-[1.05em]" aria-hidden="true"></i></a>
+                <p class="font-display text-[7rem] font-extrabold leading-[.65]">10<span class="ml-2 text-3xl">KM</span>
+                </p>
+                <p class="mt-5 max-w-xs text-white/80">Para quem quer aumentar a distância e transformar energia em
+                  conquista.</p>
+                <a href="#inscricao"
+                  class="mt-6 inline-flex items-center gap-2 font-bold uppercase tracking-[.08em] text-[#ffd51f]">Quero
+                  correr 10K <i class="ph ph-arrow-up-right text-[1.05em]" aria-hidden="true"></i></a>
               </div>
             </div>
           </article>
 
           <article class="group relative min-h-[500px] overflow-hidden bg-[#79c143] text-[#082f72]">
-            <img src="./site-assets/shirt-white.webp" alt="Camiseta branca da Corrida do Empreendedor" class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" loading="lazy" />
+            <img src="./site-assets/shirt-white.webp" alt="Camiseta branca da Corrida do Empreendedor"
+              class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
+              loading="lazy" />
             <div class="absolute inset-0 bg-gradient-to-t from-[#79c143] via-[#79c143]/10 to-transparent"></div>
             <div class="relative flex h-full min-h-[500px] flex-col justify-between p-7">
-              <div class="flex items-start justify-between"><span class="border border-[#082f72]/25 bg-white/65 px-3 py-2 text-[10px] font-bold uppercase tracking-[.15em] backdrop-blur">Percurso 03</span><span>/////</span></div>
+              <div class="flex items-start justify-between"><span
+                  class="border border-[#082f72]/25 bg-white/65 px-3 py-2 text-[10px] font-bold uppercase tracking-[.15em] backdrop-blur">Percurso
+                  03</span><span>/////</span></div>
               <div>
-                <p class="font-display text-[7rem] font-extrabold leading-[.65]">15<span class="ml-2 text-3xl">KM</span></p>
-                <p class="mt-5 max-w-xs font-medium text-[#082f72]/75">Mais distância, mais estratégia, mais história para levar da Arena.</p>
-                <a href="#inscricao" class="mt-6 inline-flex items-center gap-2 font-bold uppercase tracking-[.08em]">Quero correr 15K <i class="ph ph-arrow-up-right text-[1.05em]" aria-hidden="true"></i></a>
+                <p class="font-display text-[7rem] font-extrabold leading-[.65]">15<span class="ml-2 text-3xl">KM</span>
+                </p>
+                <p class="mt-5 max-w-xs font-medium text-[#082f72]/75">Mais distância, mais estratégia, mais história
+                  para levar da Arena.</p>
+                <a href="#inscricao"
+                  class="mt-6 inline-flex items-center gap-2 font-bold uppercase tracking-[.08em]">Quero correr 15K <i
+                    class="ph ph-arrow-up-right text-[1.05em]" aria-hidden="true"></i></a>
               </div>
             </div>
           </article>
         </div>
 
-        <div class="mt-8 grid gap-px overflow-hidden border border-[#082f72]/15 bg-[#082f72]/15 sm:grid-cols-2 lg:grid-cols-4" data-reveal>
-          <a href="#local" class="group bg-[#f6f3ed] p-6 transition hover:bg-[#082f72] hover:text-white"><span class="text-xs font-bold uppercase tracking-[.16em] text-[#e5187e]">01</span><p class="mt-8 font-display text-3xl font-extrabold uppercase italic">Largada</p><p class="mt-2 text-sm text-[#4e5a70] group-hover:text-white/60">Experiência com largada dentro da Arena.</p></a>
-          <a href="#local" class="group bg-[#f6f3ed] p-6 transition hover:bg-[#082f72] hover:text-white"><span class="text-xs font-bold uppercase tracking-[.16em] text-[#e5187e]">02</span><p class="mt-8 font-display text-3xl font-extrabold uppercase italic">Kit</p><p class="mt-2 text-sm text-[#4e5a70] group-hover:text-white/60">Retirada integrada à programação de 22 e 23.</p></a>
-          <a href="#programacao" class="group bg-[#f6f3ed] p-6 transition hover:bg-[#082f72] hover:text-white"><span class="text-xs font-bold uppercase tracking-[.16em] text-[#e5187e]">03</span><p class="mt-8 font-display text-3xl font-extrabold uppercase italic">Premiação</p><p class="mt-2 text-sm text-[#4e5a70] group-hover:text-white/60">Confira as informações oficiais quando publicadas.</p></a>
-          <a href="#faq" class="group bg-[#f6f3ed] p-6 transition hover:bg-[#082f72] hover:text-white"><span class="text-xs font-bold uppercase tracking-[.16em] text-[#e5187e]">04</span><p class="mt-8 font-display text-3xl font-extrabold uppercase italic">Regulamento</p><p class="mt-2 text-sm text-[#4e5a70] group-hover:text-white/60">Regras e condições da prova em um só lugar.</p></a>
+        <div
+          class="mt-8 grid gap-px overflow-hidden border border-[#082f72]/15 bg-[#082f72]/15 sm:grid-cols-2 lg:grid-cols-4"
+          data-reveal>
+          <a href="#local" class="group bg-[#f6f3ed] p-6 transition hover:bg-[#082f72] hover:text-white"><span
+              class="text-xs font-bold uppercase tracking-[.16em] text-[#e5187e]">01</span>
+            <p class="mt-8 font-display text-3xl font-extrabold uppercase italic">Largada</p>
+            <p class="mt-2 text-sm text-[#4e5a70] group-hover:text-white/60">Experiência com largada dentro da Arena.
+            </p>
+          </a>
+          <a href="#local" class="group bg-[#f6f3ed] p-6 transition hover:bg-[#082f72] hover:text-white"><span
+              class="text-xs font-bold uppercase tracking-[.16em] text-[#e5187e]">02</span>
+            <p class="mt-8 font-display text-3xl font-extrabold uppercase italic">Kit</p>
+            <p class="mt-2 text-sm text-[#4e5a70] group-hover:text-white/60">Retirada integrada à programação de 22 e
+              23.</p>
+          </a>
+          <a href="#programacao" class="group bg-[#f6f3ed] p-6 transition hover:bg-[#082f72] hover:text-white"><span
+              class="text-xs font-bold uppercase tracking-[.16em] text-[#e5187e]">03</span>
+            <p class="mt-8 font-display text-3xl font-extrabold uppercase italic">Premiação</p>
+            <p class="mt-2 text-sm text-[#4e5a70] group-hover:text-white/60">Confira as informações oficiais quando
+              publicadas.</p>
+          </a>
+          <a href="#faq" class="group bg-[#f6f3ed] p-6 transition hover:bg-[#082f72] hover:text-white"><span
+              class="text-xs font-bold uppercase tracking-[.16em] text-[#e5187e]">04</span>
+            <p class="mt-8 font-display text-3xl font-extrabold uppercase italic">Regulamento</p>
+            <p class="mt-2 text-sm text-[#4e5a70] group-hover:text-white/60">Regras e condições da prova em um só lugar.
+            </p>
+          </a>
         </div>
       </div>
     </section>
 
     <!-- Palestras -->
     <section id="palestras" class="relative overflow-hidden bg-[#e5187e] py-20 text-white sm:py-28 lg:py-32">
-      <div class="absolute -left-24 top-8 h-72 w-72 rounded-full border-[50px] border-[#ffd51f]/20" aria-hidden="true"></div>
+      <div class="absolute -left-24 top-8 h-72 w-72 rounded-full border-[50px] border-[#ffd51f]/20" aria-hidden="true">
+      </div>
       <div class="mx-auto max-w-[1440px] px-5 lg:px-8">
         <div class="grid gap-10 lg:grid-cols-[1.05fr_.95fr] lg:items-end">
           <div data-reveal>
             <span class="text-xs font-bold uppercase tracking-[.2em] text-[#ffd51f]">KM 02 · Inspira</span>
-            <h2 class="mt-5 max-w-4xl font-display text-[clamp(4.2rem,8vw,8rem)] font-extrabold uppercase italic leading-[.8]">Ideias também<br>colocam a gente<br><span class="text-[#ffd51f]">em movimento.</span></h2>
+            <h2
+              class="mt-5 max-w-4xl font-display text-[clamp(4.2rem,8vw,8rem)] font-extrabold uppercase italic leading-[.8]">
+              Ideias também<br>colocam a gente<br><span class="text-[#ffd51f]">em movimento.</span></h2>
           </div>
           <div data-reveal>
-            <p class="max-w-xl text-xl font-medium leading-relaxed text-white/80">Na Arena, conteúdo também é atração. Palestras, convidados e temas ganham palco com ingresso próprio, programação oficial e atualização por aqui.</p>
+            <p class="max-w-xl text-xl font-medium leading-relaxed text-white/80">Na Arena, conteúdo também é atração.
+              Palestras, convidados e temas ganham palco com ingresso próprio, programação oficial e atualização por
+              aqui.</p>
           </div>
         </div>
 
         <div class="mt-14 grid gap-4 lg:grid-cols-3" data-reveal>
-          <article class="group min-h-[430px] border border-white/25 bg-[#ca116d] p-7 transition hover:-translate-y-2 hover:bg-[#082f72]">
-            <div class="flex items-center justify-between"><span class="border border-white/25 px-3 py-2 text-[10px] font-bold uppercase tracking-[.16em]">22 out</span><span class="font-display text-5xl font-extrabold text-white/15">01</span></div>
+          <article
+            class="group min-h-[430px] border border-white/25 bg-[#ca116d] p-7 transition hover:-translate-y-2 hover:bg-[#082f72]">
+            <div class="flex items-center justify-between"><span
+                class="border border-white/25 px-3 py-2 text-[10px] font-bold uppercase tracking-[.16em]">22
+                out</span><span class="font-display text-5xl font-extrabold text-white/15">01</span></div>
             <div class="mt-24">
               <p class="text-xs font-bold uppercase tracking-[.18em] text-[#ffd51f]">Programação em construção</p>
-              <h3 class="mt-3 font-display text-4xl font-extrabold uppercase italic leading-none">Palestrante será anunciado</h3>
-              <p class="mt-4 text-sm leading-relaxed text-white/65">Tema, horário, resumo e acesso serão publicados assim que a programação for confirmada.</p>
+              <h3 class="mt-3 font-display text-4xl font-extrabold uppercase italic leading-none">Palestrante será
+                anunciado</h3>
+              <p class="mt-4 text-sm leading-relaxed text-white/65">Tema, horário, resumo e acesso serão publicados
+                assim que a programação for confirmada.</p>
             </div>
           </article>
-          <article class="group min-h-[430px] border border-white/25 bg-[#ca116d] p-7 transition hover:-translate-y-2 hover:bg-[#082f72]">
-            <div class="flex items-center justify-between"><span class="border border-white/25 px-3 py-2 text-[10px] font-bold uppercase tracking-[.16em]">23 out</span><span class="font-display text-5xl font-extrabold text-white/15">02</span></div>
+          <article
+            class="group min-h-[430px] border border-white/25 bg-[#ca116d] p-7 transition hover:-translate-y-2 hover:bg-[#082f72]">
+            <div class="flex items-center justify-between"><span
+                class="border border-white/25 px-3 py-2 text-[10px] font-bold uppercase tracking-[.16em]">23
+                out</span><span class="font-display text-5xl font-extrabold text-white/15">02</span></div>
             <div class="mt-24">
               <p class="text-xs font-bold uppercase tracking-[.18em] text-[#ffd51f]">Programação em construção</p>
-              <h3 class="mt-3 font-display text-4xl font-extrabold uppercase italic leading-none">Novos conteúdos chegando</h3>
-              <p class="mt-4 text-sm leading-relaxed text-white/65">Acompanhe a agenda oficial e combine palestras, Expo, conexões e atrações em uma mesma visita à Arena.</p>
+              <h3 class="mt-3 font-display text-4xl font-extrabold uppercase italic leading-none">Novos conteúdos
+                chegando</h3>
+              <p class="mt-4 text-sm leading-relaxed text-white/65">Acompanhe a agenda oficial e combine palestras,
+                Expo, conexões e atrações em uma mesma visita à Arena.</p>
             </div>
           </article>
-          <article class="group relative min-h-[430px] overflow-hidden bg-[#082f72] p-7 transition hover:-translate-y-2">
-            <img src="./site-assets/knowledge-stage.webp" alt="Estrutura conceitual da Arena do Conhecimento" class="absolute inset-0 h-full w-full object-cover opacity-25 transition duration-700 group-hover:scale-105 group-hover:opacity-35" loading="lazy" />
+          <article
+            class="group relative min-h-[430px] overflow-hidden bg-[#082f72] p-7 transition hover:-translate-y-2">
+            <img src="./site-assets/knowledge-stage.webp" alt="Estrutura conceitual da Arena do Conhecimento"
+              class="absolute inset-0 h-full w-full object-cover opacity-25 transition duration-700 group-hover:scale-105 group-hover:opacity-35"
+              loading="lazy" />
             <div class="absolute inset-0 bg-gradient-to-t from-[#041a45] via-[#082f72]/70 to-transparent"></div>
             <div class="relative flex h-full flex-col justify-between">
-              <span class="self-start bg-[#79c143] px-3 py-2 text-[10px] font-bold uppercase tracking-[.16em] text-[#082f72]">Arena do conhecimento</span>
+              <span
+                class="self-start bg-[#79c143] px-3 py-2 text-[10px] font-bold uppercase tracking-[.16em] text-[#082f72]">Arena
+                do conhecimento</span>
               <div class="mt-40">
-                <h3 class="font-display text-4xl font-extrabold uppercase italic leading-none">Conteúdo no centro da Arena.</h3>
-                <a href="#programacao" class="mt-6 inline-flex items-center gap-2 font-bold uppercase tracking-[.08em] text-[#ffd51f]">Ver programação <i class="ph ph-arrow-up-right text-[1.05em]" aria-hidden="true"></i></a>
+                <h3 class="font-display text-4xl font-extrabold uppercase italic leading-none">Conteúdo no centro da
+                  Arena.</h3>
+                <a href="#programacao"
+                  class="mt-6 inline-flex items-center gap-2 font-bold uppercase tracking-[.08em] text-[#ffd51f]">Ver
+                  programação <i class="ph ph-arrow-up-right text-[1.05em]" aria-hidden="true"></i></a>
               </div>
             </div>
           </article>
@@ -507,11 +727,16 @@
         <div class="mt-4 grid overflow-hidden bg-[#ffd51f] text-[#082f72] lg:grid-cols-[1.25fr_.75fr]" data-reveal>
           <div class="p-7 sm:p-9 lg:p-11">
             <span class="text-xs font-bold uppercase tracking-[.18em]">Benefício de quem corre</span>
-            <h3 class="mt-4 max-w-3xl font-display text-5xl font-extrabold uppercase italic leading-[.86] sm:text-6xl">Você corre. E ainda leva duas palestras.</h3>
-            <p class="mt-5 max-w-2xl text-base font-medium leading-relaxed text-[#082f72]/75">Quem realizar inscrição na corrida terá direito a duas cortesias adicionais para participação nas palestras. O fluxo de resgate será divulgado com as regras oficiais.</p>
+            <h3 class="mt-4 max-w-3xl font-display text-5xl font-extrabold uppercase italic leading-[.86] sm:text-6xl">
+              Você corre. E ainda leva duas palestras.</h3>
+            <p class="mt-5 max-w-2xl text-base font-medium leading-relaxed text-[#082f72]/75">Quem realizar inscrição na
+              corrida terá direito a duas cortesias adicionais para participação nas palestras. O fluxo de resgate será
+              divulgado com as regras oficiais.</p>
           </div>
           <div class="flex items-end justify-start bg-[#ffd51f] p-7 sm:p-9 lg:justify-end lg:p-11">
-            <a href="#faq" class="focus-ring inline-flex min-h-14 items-center justify-center bg-[#082f72] px-7 text-sm font-bold uppercase tracking-[.08em] text-white transition hover:bg-[#e5187e]">Como vão funcionar as cortesias <i class="ph ph-arrow-up-right ml-3 text-lg" aria-hidden="true"></i></a>
+            <a href="#faq"
+              class="focus-ring inline-flex min-h-14 items-center justify-center bg-[#082f72] px-7 text-sm font-bold uppercase tracking-[.08em] text-white transition hover:bg-[#e5187e]">Como
+              vão funcionar as cortesias <i class="ph ph-arrow-up-right ml-3 text-lg" aria-hidden="true"></i></a>
           </div>
         </div>
       </div>
@@ -523,46 +748,75 @@
         <div class="grid gap-10 lg:grid-cols-[.9fr_1.1fr] lg:items-end">
           <div data-reveal>
             <span class="text-xs font-bold uppercase tracking-[.2em] text-[#79c143]">KM 04 · Expo</span>
-            <h2 class="mt-5 font-display text-[clamp(4.5rem,8.5vw,8.5rem)] font-extrabold uppercase italic leading-[.8] text-[#082f72]">Onde o movimento<br><span class="text-[#e5187e]">encontra negócios.</span></h2>
+            <h2
+              class="mt-5 font-display text-[clamp(4.5rem,8.5vw,8.5rem)] font-extrabold uppercase italic leading-[.8] text-[#082f72]">
+              Onde o movimento<br><span class="text-[#e5187e]">encontra negócios.</span></h2>
           </div>
           <div data-reveal>
-            <p class="max-w-2xl text-xl font-medium leading-relaxed text-[#405069]">A Expo Sebrae ocupa a Arena com empresas, espaços de hospitalidade, alimentação, Feito Potiguar e experiências de marca.</p>
+            <p class="max-w-2xl text-xl font-medium leading-relaxed text-[#405069]">A Expo Sebrae ocupa a Arena com
+              empresas, espaços de hospitalidade, alimentação, Feito Potiguar e experiências de marca.</p>
           </div>
         </div>
 
         <div class="mt-14 grid auto-rows-[260px] gap-3 sm:grid-cols-2 lg:grid-cols-12" data-reveal>
           <article class="group relative overflow-hidden bg-[#082f72] sm:row-span-2 lg:col-span-7">
-            <img src="./site-assets/expo-map.webp" alt="Mapa conceitual dos espaços da Expo Sebrae na Arena" class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" loading="lazy" />
+            <img src="./site-assets/expo-map.webp" alt="Mapa conceitual dos espaços da Expo Sebrae na Arena"
+              class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
+              loading="lazy" />
             <div class="absolute inset-0 bg-gradient-to-t from-[#041a45]/95 via-[#082f72]/15 to-transparent"></div>
             <div class="relative flex h-full flex-col justify-end p-7 text-white sm:p-9">
-              <span class="mb-3 text-xs font-bold uppercase tracking-[.18em] text-[#ffd51f]">Uma Arena de possibilidades</span>
+              <span class="mb-3 text-xs font-bold uppercase tracking-[.18em] text-[#ffd51f]">Uma Arena de
+                possibilidades</span>
               <h3 class="font-display text-5xl font-extrabold uppercase italic sm:text-6xl">Expo Sebrae</h3>
-              <p class="mt-3 max-w-xl text-white/70">Explore marcas, soluções, experiências e novas conexões durante os três dias.</p>
+              <p class="mt-3 max-w-xl text-white/70">Explore marcas, soluções, experiências e novas conexões durante os
+                três dias.</p>
             </div>
           </article>
 
           <article class="group relative overflow-hidden bg-[#e5187e] lg:col-span-5">
-            <img src="./site-assets/feito-potiguar.webp" alt="Espaço conceitual do Feito Potiguar" class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" loading="lazy" />
+            <img src="./site-assets/feito-potiguar.webp" alt="Espaço conceitual do Feito Potiguar"
+              class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
+              loading="lazy" />
             <div class="absolute inset-0 bg-gradient-to-r from-[#e5187e]/90 via-[#e5187e]/30 to-transparent"></div>
-            <div class="relative flex h-full items-end p-7 text-white"><div><span class="text-[10px] font-bold uppercase tracking-[.16em] text-[#ffd51f]">Experiência local</span><h3 class="mt-2 font-display text-4xl font-extrabold uppercase italic">Feito Potiguar</h3></div></div>
+            <div class="relative flex h-full items-end p-7 text-white">
+              <div><span class="text-[10px] font-bold uppercase tracking-[.16em] text-[#ffd51f]">Experiência
+                  local</span>
+                <h3 class="mt-2 font-display text-4xl font-extrabold uppercase italic">Feito Potiguar</h3>
+              </div>
+            </div>
           </article>
 
           <article class="group relative overflow-hidden bg-[#79c143] lg:col-span-3">
-            <img src="./site-assets/food.webp" alt="Espaço conceitual de alimentação" class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" loading="lazy" />
+            <img src="./site-assets/food.webp" alt="Espaço conceitual de alimentação"
+              class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
+              loading="lazy" />
             <div class="absolute inset-0 bg-gradient-to-t from-[#082f72]/85 to-transparent"></div>
-            <div class="relative flex h-full items-end p-6 text-white"><h3 class="font-display text-3xl font-extrabold uppercase italic">Gastronomia</h3></div>
+            <div class="relative flex h-full items-end p-6 text-white">
+              <h3 class="font-display text-3xl font-extrabold uppercase italic">Gastronomia</h3>
+            </div>
           </article>
 
           <article class="group relative overflow-hidden bg-white lg:col-span-2">
-            <img src="./site-assets/stand.webp" alt="Estande conceitual para empresas expositoras" class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" loading="lazy" />
+            <img src="./site-assets/stand.webp" alt="Estande conceitual para empresas expositoras"
+              class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
+              loading="lazy" />
             <div class="absolute inset-0 bg-gradient-to-t from-[#082f72]/85 to-transparent"></div>
-            <div class="relative flex h-full items-end p-6 text-white"><h3 class="font-display text-3xl font-extrabold uppercase italic">Empresas</h3></div>
+            <div class="relative flex h-full items-end p-6 text-white">
+              <h3 class="font-display text-3xl font-extrabold uppercase italic">Empresas</h3>
+            </div>
           </article>
         </div>
 
-        <div class="mt-4 flex flex-col justify-between gap-6 bg-[#082f72] p-7 text-white sm:flex-row sm:items-center sm:p-9" data-reveal>
-          <div><span class="text-xs font-bold uppercase tracking-[.18em] text-[#79c143]">Sua marca aqui</span><p class="mt-2 font-display text-3xl font-extrabold uppercase italic sm:text-4xl">Quer participar como expositor, parceiro ou patrocinador?</p></div>
-          <a href="#contato" class="focus-ring inline-flex min-h-14 shrink-0 items-center justify-center bg-[#ffd51f] px-7 text-sm font-bold uppercase tracking-[.08em] text-[#082f72] transition hover:bg-[#e5187e] hover:text-white">Quero participar <i class="ph ph-arrow-up-right ml-3 text-lg" aria-hidden="true"></i></a>
+        <div
+          class="mt-4 flex flex-col justify-between gap-6 bg-[#082f72] p-7 text-white sm:flex-row sm:items-center sm:p-9"
+          data-reveal>
+          <div><span class="text-xs font-bold uppercase tracking-[.18em] text-[#79c143]">Sua marca aqui</span>
+            <p class="mt-2 font-display text-3xl font-extrabold uppercase italic sm:text-4xl">Quer participar como
+              expositor, parceiro ou patrocinador?</p>
+          </div>
+          <a href="#contato"
+            class="focus-ring inline-flex min-h-14 shrink-0 items-center justify-center bg-[#ffd51f] px-7 text-sm font-bold uppercase tracking-[.08em] text-[#082f72] transition hover:bg-[#e5187e] hover:text-white">Quero
+            participar <i class="ph ph-arrow-up-right ml-3 text-lg" aria-hidden="true"></i></a>
         </div>
       </div>
     </section>
@@ -573,68 +827,177 @@
         <div class="grid gap-10 lg:grid-cols-[.8fr_1.2fr] lg:items-end">
           <div data-reveal>
             <span class="text-xs font-bold uppercase tracking-[.2em] text-[#ffd51f]">22 · 23 · 24 Outubro</span>
-            <h2 class="mt-5 font-display text-[clamp(4.3rem,8vw,8rem)] font-extrabold uppercase italic leading-[.8]">Três dias.<br><span class="text-[#79c143]">Um movimento.</span></h2>
+            <h2 class="mt-5 font-display text-[clamp(4.3rem,8vw,8rem)] font-extrabold uppercase italic leading-[.8]">
+              Três dias.<br><span class="text-[#79c143]">Um movimento.</span></h2>
           </div>
           <div data-reveal>
-            <p class="max-w-xl text-xl leading-relaxed text-white/70">Cada dia oferece uma razão diferente para estar na Arena. Consulte corrida, palestras, Expo, retirada de kits e atrações em um só lugar.</p>
+            <p class="max-w-xl text-xl leading-relaxed text-white/70">Cada dia oferece uma razão diferente para estar na
+              Arena. Consulte corrida, palestras, Expo, retirada de kits e atrações em um só lugar.</p>
           </div>
         </div>
 
         <div class="mt-14" data-reveal>
           <div class="grid gap-px bg-white/15 lg:grid-cols-3" role="tablist" aria-label="Dias da programação">
-            <button class="schedule-tab focus-ring bg-[#ffd51f] p-6 text-left text-[#082f72]" id="tab-22" role="tab" aria-selected="true" aria-controls="panel-22" data-day="22">
-              <span class="font-display block text-6xl font-extrabold leading-none">22</span><span class="mt-2 block text-xs font-bold uppercase tracking-[.17em]">Outubro · Abertura</span>
+            <button class="schedule-tab focus-ring bg-[#ffd51f] p-6 text-left text-[#082f72]" id="tab-22" role="tab"
+              aria-selected="true" aria-controls="panel-22" data-day="22">
+              <span class="font-display block text-6xl font-extrabold leading-none">22</span><span
+                class="mt-2 block text-xs font-bold uppercase tracking-[.17em]">Outubro · Abertura</span>
             </button>
-            <button class="schedule-tab focus-ring bg-[#082f72] p-6 text-left text-white" id="tab-23" role="tab" aria-selected="false" aria-controls="panel-23" data-day="23">
-              <span class="font-display block text-6xl font-extrabold leading-none">23</span><span class="mt-2 block text-xs font-bold uppercase tracking-[.17em] text-white/65">Outubro · Imersão</span>
+            <button class="schedule-tab focus-ring bg-[#082f72] p-6 text-left text-white" id="tab-23" role="tab"
+              aria-selected="false" aria-controls="panel-23" data-day="23">
+              <span class="font-display block text-6xl font-extrabold leading-none">23</span><span
+                class="mt-2 block text-xs font-bold uppercase tracking-[.17em] text-white/65">Outubro · Imersão</span>
             </button>
-            <button class="schedule-tab focus-ring bg-[#082f72] p-6 text-left text-white" id="tab-24" role="tab" aria-selected="false" aria-controls="panel-24" data-day="24">
-              <span class="font-display block text-6xl font-extrabold leading-none">24</span><span class="mt-2 block text-xs font-bold uppercase tracking-[.17em] text-white/65">Outubro · Corrida</span>
+            <button class="schedule-tab focus-ring bg-[#082f72] p-6 text-left text-white" id="tab-24" role="tab"
+              aria-selected="false" aria-controls="panel-24" data-day="24">
+              <span class="font-display block text-6xl font-extrabold leading-none">24</span><span
+                class="mt-2 block text-xs font-bold uppercase tracking-[.17em] text-white/65">Outubro · Corrida</span>
             </button>
           </div>
 
           <div class="bg-white text-[#101827]">
             <div id="panel-22" class="schedule-panel p-6 sm:p-8 lg:p-10" role="tabpanel" aria-labelledby="tab-22">
               <div class="grid gap-8 lg:grid-cols-[240px_1fr]">
-                <div><span class="text-xs font-bold uppercase tracking-[.16em] text-[#e5187e]">Dia 01 · Abertura</span><p class="mt-3 font-display text-5xl font-extrabold uppercase italic leading-none text-[#082f72]">O portão abre.</p><p class="mt-4 text-sm text-[#5a6578]">Programação geral prevista das 12h às 20h.</p></div>
+                <div><span class="text-xs font-bold uppercase tracking-[.16em] text-[#e5187e]">Dia 01 · Abertura</span>
+                  <p class="mt-3 font-display text-5xl font-extrabold uppercase italic leading-none text-[#082f72]">O
+                    portão abre.</p>
+                  <p class="mt-4 text-sm text-[#5a6578]">Programação geral prevista das 12h às 20h.</p>
+                </div>
                 <div class="divide-y divide-[#082f72]/10 border-y border-[#082f72]/10">
-                  <div class="grid grid-cols-[80px_1fr_auto] items-center gap-4 py-5"><span class="font-display text-xl font-extrabold text-[#082f72]">12—20h</span><div><p class="font-bold">Retirada de kits</p><p class="text-sm text-[#687387]">Arena das Dunas</p></div><span class="hidden bg-[#ffd51f] px-3 py-1 text-[10px] font-bold uppercase sm:inline">Kit</span></div>
-                  <div class="grid grid-cols-[80px_1fr_auto] items-center gap-4 py-5"><span class="font-display text-xl font-extrabold text-[#082f72]">Em breve</span><div><p class="font-bold">Expo Sebrae</p><p class="text-sm text-[#687387]">Empresas e experiências de marca</p></div><span class="hidden bg-[#79c143] px-3 py-1 text-[10px] font-bold uppercase text-[#082f72] sm:inline">Expo</span></div>
-                  <div class="grid grid-cols-[80px_1fr_auto] items-center gap-4 py-5"><span class="font-display text-xl font-extrabold text-[#082f72]">Em breve</span><div><p class="font-bold">Palestras</p><p class="text-sm text-[#687387]">Programação em confirmação</p></div><span class="hidden bg-[#e5187e] px-3 py-1 text-[10px] font-bold uppercase text-white sm:inline">Inspira</span></div>
-                  <div class="grid grid-cols-[80px_1fr_auto] items-center gap-4 py-5"><span class="font-display text-xl font-extrabold text-[#082f72]">Em breve</span><div><p class="font-bold">Atrações culturais</p><p class="text-sm text-[#687387]">Programação em confirmação</p></div><span class="hidden bg-[#082f72] px-3 py-1 text-[10px] font-bold uppercase text-white sm:inline">Cultura</span></div>
+                  <div class="grid grid-cols-[80px_1fr_auto] items-center gap-4 py-5"><span
+                      class="font-display text-xl font-extrabold text-[#082f72]">12—20h</span>
+                    <div>
+                      <p class="font-bold">Retirada de kits</p>
+                      <p class="text-sm text-[#687387]">Arena das Dunas</p>
+                    </div><span
+                      class="hidden bg-[#ffd51f] px-3 py-1 text-[10px] font-bold uppercase sm:inline">Kit</span>
+                  </div>
+                  <div class="grid grid-cols-[80px_1fr_auto] items-center gap-4 py-5"><span
+                      class="font-display text-xl font-extrabold text-[#082f72]">Em breve</span>
+                    <div>
+                      <p class="font-bold">Expo Sebrae</p>
+                      <p class="text-sm text-[#687387]">Empresas e experiências de marca</p>
+                    </div><span
+                      class="hidden bg-[#79c143] px-3 py-1 text-[10px] font-bold uppercase text-[#082f72] sm:inline">Expo</span>
+                  </div>
+                  <div class="grid grid-cols-[80px_1fr_auto] items-center gap-4 py-5"><span
+                      class="font-display text-xl font-extrabold text-[#082f72]">Em breve</span>
+                    <div>
+                      <p class="font-bold">Palestras</p>
+                      <p class="text-sm text-[#687387]">Programação em confirmação</p>
+                    </div><span
+                      class="hidden bg-[#e5187e] px-3 py-1 text-[10px] font-bold uppercase text-white sm:inline">Inspira</span>
+                  </div>
+                  <div class="grid grid-cols-[80px_1fr_auto] items-center gap-4 py-5"><span
+                      class="font-display text-xl font-extrabold text-[#082f72]">Em breve</span>
+                    <div>
+                      <p class="font-bold">Atrações culturais</p>
+                      <p class="text-sm text-[#687387]">Programação em confirmação</p>
+                    </div><span
+                      class="hidden bg-[#082f72] px-3 py-1 text-[10px] font-bold uppercase text-white sm:inline">Cultura</span>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div id="panel-23" class="schedule-panel p-6 sm:p-8 lg:p-10" role="tabpanel" aria-labelledby="tab-23" hidden>
+            <div id="panel-23" class="schedule-panel p-6 sm:p-8 lg:p-10" role="tabpanel" aria-labelledby="tab-23"
+              hidden>
               <div class="grid gap-8 lg:grid-cols-[240px_1fr]">
-                <div><span class="text-xs font-bold uppercase tracking-[.16em] text-[#e5187e]">Dia 02 · Imersão</span><p class="mt-3 font-display text-5xl font-extrabold uppercase italic leading-none text-[#082f72]">Um dia inteiro de experiências.</p><p class="mt-4 text-sm text-[#5a6578]">Programação geral prevista das 12h às 20h.</p></div>
+                <div><span class="text-xs font-bold uppercase tracking-[.16em] text-[#e5187e]">Dia 02 · Imersão</span>
+                  <p class="mt-3 font-display text-5xl font-extrabold uppercase italic leading-none text-[#082f72]">Um
+                    dia inteiro de experiências.</p>
+                  <p class="mt-4 text-sm text-[#5a6578]">Programação geral prevista das 12h às 20h.</p>
+                </div>
                 <div class="divide-y divide-[#082f72]/10 border-y border-[#082f72]/10">
-                  <div class="grid grid-cols-[80px_1fr_auto] items-center gap-4 py-5"><span class="font-display text-xl font-extrabold text-[#082f72]">12—20h</span><div><p class="font-bold">Retirada de kits</p><p class="text-sm text-[#687387]">Arena das Dunas</p></div><span class="hidden bg-[#ffd51f] px-3 py-1 text-[10px] font-bold uppercase sm:inline">Kit</span></div>
-                  <div class="grid grid-cols-[80px_1fr_auto] items-center gap-4 py-5"><span class="font-display text-xl font-extrabold text-[#082f72]">Em breve</span><div><p class="font-bold">Expo Sebrae</p><p class="text-sm text-[#687387]">Empresas e experiências de marca</p></div><span class="hidden bg-[#79c143] px-3 py-1 text-[10px] font-bold uppercase text-[#082f72] sm:inline">Expo</span></div>
-                  <div class="grid grid-cols-[80px_1fr_auto] items-center gap-4 py-5"><span class="font-display text-xl font-extrabold text-[#082f72]">Em breve</span><div><p class="font-bold">Palestras</p><p class="text-sm text-[#687387]">Programação em confirmação</p></div><span class="hidden bg-[#e5187e] px-3 py-1 text-[10px] font-bold uppercase text-white sm:inline">Inspira</span></div>
-                  <div class="grid grid-cols-[80px_1fr_auto] items-center gap-4 py-5"><span class="font-display text-xl font-extrabold text-[#082f72]">Em breve</span><div><p class="font-bold">Atrações culturais</p><p class="text-sm text-[#687387]">Programação em confirmação</p></div><span class="hidden bg-[#082f72] px-3 py-1 text-[10px] font-bold uppercase text-white sm:inline">Cultura</span></div>
+                  <div class="grid grid-cols-[80px_1fr_auto] items-center gap-4 py-5"><span
+                      class="font-display text-xl font-extrabold text-[#082f72]">12—20h</span>
+                    <div>
+                      <p class="font-bold">Retirada de kits</p>
+                      <p class="text-sm text-[#687387]">Arena das Dunas</p>
+                    </div><span
+                      class="hidden bg-[#ffd51f] px-3 py-1 text-[10px] font-bold uppercase sm:inline">Kit</span>
+                  </div>
+                  <div class="grid grid-cols-[80px_1fr_auto] items-center gap-4 py-5"><span
+                      class="font-display text-xl font-extrabold text-[#082f72]">Em breve</span>
+                    <div>
+                      <p class="font-bold">Expo Sebrae</p>
+                      <p class="text-sm text-[#687387]">Empresas e experiências de marca</p>
+                    </div><span
+                      class="hidden bg-[#79c143] px-3 py-1 text-[10px] font-bold uppercase text-[#082f72] sm:inline">Expo</span>
+                  </div>
+                  <div class="grid grid-cols-[80px_1fr_auto] items-center gap-4 py-5"><span
+                      class="font-display text-xl font-extrabold text-[#082f72]">Em breve</span>
+                    <div>
+                      <p class="font-bold">Palestras</p>
+                      <p class="text-sm text-[#687387]">Programação em confirmação</p>
+                    </div><span
+                      class="hidden bg-[#e5187e] px-3 py-1 text-[10px] font-bold uppercase text-white sm:inline">Inspira</span>
+                  </div>
+                  <div class="grid grid-cols-[80px_1fr_auto] items-center gap-4 py-5"><span
+                      class="font-display text-xl font-extrabold text-[#082f72]">Em breve</span>
+                    <div>
+                      <p class="font-bold">Atrações culturais</p>
+                      <p class="text-sm text-[#687387]">Programação em confirmação</p>
+                    </div><span
+                      class="hidden bg-[#082f72] px-3 py-1 text-[10px] font-bold uppercase text-white sm:inline">Cultura</span>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div id="panel-24" class="schedule-panel p-6 sm:p-8 lg:p-10" role="tabpanel" aria-labelledby="tab-24" hidden>
+            <div id="panel-24" class="schedule-panel p-6 sm:p-8 lg:p-10" role="tabpanel" aria-labelledby="tab-24"
+              hidden>
               <div class="grid gap-8 lg:grid-cols-[240px_1fr]">
-                <div><span class="text-xs font-bold uppercase tracking-[.16em] text-[#79c143]">Dia 03 · Corrida</span><p class="mt-3 font-display text-5xl font-extrabold uppercase italic leading-none text-[#082f72]">A linha de chegada.</p><p class="mt-4 text-sm text-[#5a6578]">Atividades previstas a partir das 4h.</p></div>
+                <div><span class="text-xs font-bold uppercase tracking-[.16em] text-[#79c143]">Dia 03 · Corrida</span>
+                  <p class="mt-3 font-display text-5xl font-extrabold uppercase italic leading-none text-[#082f72]">A
+                    linha de chegada.</p>
+                  <p class="mt-4 text-sm text-[#5a6578]">Atividades previstas a partir das 4h.</p>
+                </div>
                 <div class="divide-y divide-[#082f72]/10 border-y border-[#082f72]/10">
-                  <div class="grid grid-cols-[80px_1fr_auto] items-center gap-4 py-5"><span class="font-display text-xl font-extrabold text-[#082f72]">A partir 4h</span><div><p class="font-bold">Corrida do Empreendedor</p><p class="text-sm text-[#687387]">5K · 10K · 15K</p></div><span class="hidden bg-[#ffd51f] px-3 py-1 text-[10px] font-bold uppercase sm:inline">Corrida</span></div>
-                  <div class="grid grid-cols-[80px_1fr_auto] items-center gap-4 py-5"><span class="font-display text-xl font-extrabold text-[#082f72]">Em breve</span><div><p class="font-bold">Premiação do pódio</p><p class="text-sm text-[#687387]">Detalhes serão publicados</p></div><span class="hidden bg-[#e5187e] px-3 py-1 text-[10px] font-bold uppercase text-white sm:inline">Pódio</span></div>
-                  <div class="grid grid-cols-[80px_1fr_auto] items-center gap-4 py-5"><span class="font-display text-xl font-extrabold text-[#082f72]">Em breve</span><div><p class="font-bold">Pós-corrida com Expo</p><p class="text-sm text-[#687387]">Experiências na Arena</p></div><span class="hidden bg-[#79c143] px-3 py-1 text-[10px] font-bold uppercase text-[#082f72] sm:inline">Expo</span></div>
-                  <div class="grid grid-cols-[80px_1fr_auto] items-center gap-4 py-5"><span class="font-display text-xl font-extrabold text-[#082f72]">Em breve</span><div><p class="font-bold">Atrações culturais</p><p class="text-sm text-[#687387]">Programação em confirmação</p></div><span class="hidden bg-[#082f72] px-3 py-1 text-[10px] font-bold uppercase text-white sm:inline">Cultura</span></div>
+                  <div class="grid grid-cols-[80px_1fr_auto] items-center gap-4 py-5"><span
+                      class="font-display text-xl font-extrabold text-[#082f72]">A partir 4h</span>
+                    <div>
+                      <p class="font-bold">Corrida do Empreendedor</p>
+                      <p class="text-sm text-[#687387]">5K · 10K · 15K</p>
+                    </div><span
+                      class="hidden bg-[#ffd51f] px-3 py-1 text-[10px] font-bold uppercase sm:inline">Corrida</span>
+                  </div>
+                  <div class="grid grid-cols-[80px_1fr_auto] items-center gap-4 py-5"><span
+                      class="font-display text-xl font-extrabold text-[#082f72]">Em breve</span>
+                    <div>
+                      <p class="font-bold">Premiação do pódio</p>
+                      <p class="text-sm text-[#687387]">Detalhes serão publicados</p>
+                    </div><span
+                      class="hidden bg-[#e5187e] px-3 py-1 text-[10px] font-bold uppercase text-white sm:inline">Pódio</span>
+                  </div>
+                  <div class="grid grid-cols-[80px_1fr_auto] items-center gap-4 py-5"><span
+                      class="font-display text-xl font-extrabold text-[#082f72]">Em breve</span>
+                    <div>
+                      <p class="font-bold">Pós-corrida com Expo</p>
+                      <p class="text-sm text-[#687387]">Experiências na Arena</p>
+                    </div><span
+                      class="hidden bg-[#79c143] px-3 py-1 text-[10px] font-bold uppercase text-[#082f72] sm:inline">Expo</span>
+                  </div>
+                  <div class="grid grid-cols-[80px_1fr_auto] items-center gap-4 py-5"><span
+                      class="font-display text-xl font-extrabold text-[#082f72]">Em breve</span>
+                    <div>
+                      <p class="font-bold">Atrações culturais</p>
+                      <p class="text-sm text-[#687387]">Programação em confirmação</p>
+                    </div><span
+                      class="hidden bg-[#082f72] px-3 py-1 text-[10px] font-bold uppercase text-white sm:inline">Cultura</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="mt-6 flex flex-col justify-between gap-5 border border-white/20 p-6 sm:flex-row sm:items-center" data-reveal>
-          <p class="text-sm text-white/65"><strong class="text-white">Programação dinâmica.</strong> Horários, palestrantes e atividades poderão ser atualizados pela organização.</p>
-          <a href="#faq" class="shrink-0 text-sm font-bold uppercase tracking-[.08em] text-[#ffd51f]">Ver informações práticas <i class="ph ph-arrow-right ml-2" aria-hidden="true"></i></a>
+        <div class="mt-6 flex flex-col justify-between gap-5 border border-white/20 p-6 sm:flex-row sm:items-center"
+          data-reveal>
+          <p class="text-sm text-white/65"><strong class="text-white">Programação dinâmica.</strong> Horários,
+            palestrantes e atividades poderão ser atualizados pela organização.</p>
+          <a href="#faq" class="shrink-0 text-sm font-bold uppercase tracking-[.08em] text-[#ffd51f]">Ver informações
+            práticas <i class="ph ph-arrow-right ml-2" aria-hidden="true"></i></a>
         </div>
       </div>
     </section>
@@ -645,9 +1008,11 @@
         <div class="grid gap-4 lg:grid-cols-12" data-reveal>
           <article class="relative overflow-hidden bg-[#082f72] p-7 text-white lg:col-span-5 lg:min-h-[650px] sm:p-9">
             <span class="text-xs font-bold uppercase tracking-[.2em] text-[#ffd51f]">Kit do corredor</span>
-            <h2 class="mt-5 font-display text-6xl font-extrabold uppercase italic leading-[.8] sm:text-7xl">Tudo pronto<br>para sua<br><span class="text-[#e5187e]">largada.</span></h2>
+            <h2 class="mt-5 font-display text-6xl font-extrabold uppercase italic leading-[.8] sm:text-7xl">Tudo
+              pronto<br>para sua<br><span class="text-[#e5187e]">largada.</span></h2>
             <div class="absolute bottom-0 left-0 right-0 h-[52%] overflow-hidden">
-              <img src="./site-assets/medal.webp" alt="Medalha conceitual da Corrida do Empreendedor" class="h-full w-full object-cover object-center" loading="lazy" />
+              <img src="./site-assets/medal.webp" alt="Medalha conceitual da Corrida do Empreendedor"
+                class="h-full w-full object-cover object-center" loading="lazy" />
               <div class="absolute inset-0 bg-gradient-to-t from-transparent to-[#082f72]"></div>
             </div>
           </article>
@@ -656,23 +1021,35 @@
             <article class="grid gap-6 bg-[#ffd51f] p-7 text-[#082f72] sm:grid-cols-2 sm:p-9">
               <div>
                 <span class="text-xs font-bold uppercase tracking-[.18em]">Retirada de kits</span>
-                <p class="mt-4 font-display text-5xl font-extrabold uppercase italic leading-none">22 e 23<br>de outubro</p>
+                <p class="mt-4 font-display text-5xl font-extrabold uppercase italic leading-none">22 e 23<br>de outubro
+                </p>
               </div>
               <div class="flex flex-col justify-end">
                 <p class="font-bold">Arena das Dunas</p>
-                <p class="mt-2 text-sm font-medium text-[#082f72]/70">Dias, horários, documentos necessários e regras para retirada por terceiros ficarão concentrados nesta área.</p>
-                <a href="#faq" class="mt-6 text-sm font-bold uppercase tracking-[.08em]">Ver FAQ do kit <i class="ph ph-arrow-right ml-2" aria-hidden="true"></i></a>
+                <p class="mt-2 text-sm font-medium text-[#082f72]/70">Dias, horários, documentos necessários e regras
+                  para retirada por terceiros ficarão concentrados nesta área.</p>
+                <a href="#faq" class="mt-6 text-sm font-bold uppercase tracking-[.08em]">Ver FAQ do kit <i
+                    class="ph ph-arrow-right ml-2" aria-hidden="true"></i></a>
               </div>
             </article>
 
             <article class="group relative min-h-[390px] overflow-hidden bg-[#082f72] text-white">
-              <img src="./site-assets/arena-aerial.webp" alt="Arena das Dunas vista do alto em Natal" class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" loading="lazy" />
+              <img src="./site-assets/arena-aerial.webp" alt="Arena das Dunas vista do alto em Natal"
+                class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                loading="lazy" />
               <div class="absolute inset-0 bg-gradient-to-r from-[#041a45]/95 via-[#082f72]/70 to-[#082f72]/10"></div>
               <div class="relative flex min-h-[390px] max-w-xl flex-col justify-end p-7 sm:p-9">
-                <span class="text-xs font-bold uppercase tracking-[.18em] text-[#79c143]">Arena das Dunas · Natal/RN</span>
-                <h3 class="mt-3 font-display text-5xl font-extrabold uppercase italic leading-none sm:text-6xl">O palco do movimento.</h3>
-                <p class="mt-4 max-w-md text-sm leading-relaxed text-white/70">Acesso, estacionamento, transporte, entradas e acessibilidade estarão organizados em uma única jornada de serviço.</p>
-                <div class="mt-6 flex flex-wrap gap-3"><a href="#faq" class="focus-ring inline-flex min-h-11 items-center bg-white px-5 text-xs font-bold uppercase tracking-[.08em] text-[#082f72]">Como chegar</a><a href="#faq" class="focus-ring inline-flex min-h-11 items-center border border-white/30 px-5 text-xs font-bold uppercase tracking-[.08em]">Acessibilidade</a></div>
+                <span class="text-xs font-bold uppercase tracking-[.18em] text-[#79c143]">Arena das Dunas ·
+                  Natal/RN</span>
+                <h3 class="mt-3 font-display text-5xl font-extrabold uppercase italic leading-none sm:text-6xl">O palco
+                  do movimento.</h3>
+                <p class="mt-4 max-w-md text-sm leading-relaxed text-white/70">Acesso, estacionamento, transporte,
+                  entradas e acessibilidade estarão organizados em uma única jornada de serviço.</p>
+                <div class="mt-6 flex flex-wrap gap-3"><a href="#faq"
+                    class="focus-ring inline-flex min-h-11 items-center bg-white px-5 text-xs font-bold uppercase tracking-[.08em] text-[#082f72]">Como
+                    chegar</a><a href="#faq"
+                    class="focus-ring inline-flex min-h-11 items-center border border-white/30 px-5 text-xs font-bold uppercase tracking-[.08em]">Acessibilidade</a>
+                </div>
               </div>
             </article>
           </div>
@@ -684,14 +1061,39 @@
     <section id="contato" class="bg-[#f6f3ed] py-20 sm:py-24">
       <div class="mx-auto max-w-[1440px] px-5 lg:px-8">
         <div class="grid gap-10 border-b border-[#082f72]/15 pb-14 lg:grid-cols-[.85fr_1.15fr] lg:items-end">
-          <div data-reveal><span class="text-xs font-bold uppercase tracking-[.2em] text-[#e5187e]">Quem empreende. E quem caminha ao lado.</span><h2 class="mt-4 font-display text-6xl font-extrabold uppercase italic leading-[.8] text-[#082f72] sm:text-7xl">Marcas que<br>movem a experiência.</h2></div>
-          <p class="max-w-xl text-lg leading-relaxed text-[#4a566d]" data-reveal>O evento abre espaço para marcas que querem estar no centro das experiências, conexões e oportunidades geradas durante os três dias.</p>
+          <div data-reveal><span class="text-xs font-bold uppercase tracking-[.2em] text-[#e5187e]">Quem empreende. E
+              quem caminha ao lado.</span>
+            <h2
+              class="mt-4 font-display text-6xl font-extrabold uppercase italic leading-[.8] text-[#082f72] sm:text-7xl">
+              Marcas que<br>movem a experiência.</h2>
+          </div>
+          <p class="max-w-xl text-lg leading-relaxed text-[#4a566d]" data-reveal>O evento abre espaço para marcas que
+            querem estar no centro das experiências, conexões e oportunidades geradas durante os três dias.</p>
         </div>
 
         <div class="mt-10 grid gap-3 lg:grid-cols-12" data-reveal>
-          <div class="flex min-h-44 flex-col justify-between bg-white p-6 lg:col-span-5"><span class="text-[10px] font-bold uppercase tracking-[.18em] text-[#7a8495]">Realização</span><div class="font-display text-5xl font-extrabold uppercase text-[#082f72]">SEBRAE</div></div>
-          <div class="flex min-h-44 flex-col justify-between bg-white p-6 lg:col-span-3"><span class="text-[10px] font-bold uppercase tracking-[.18em] text-[#7a8495]">Produção da corrida</span><div class="font-display text-4xl font-extrabold uppercase text-[#101827]">HC Sports</div></div>
-          <div class="flex min-h-44 flex-col justify-between border-2 border-dashed border-[#082f72]/15 p-6 lg:col-span-4"><span class="text-[10px] font-bold uppercase tracking-[.18em] text-[#7a8495]">Patrocinadores</span><div><p class="font-display text-3xl font-extrabold uppercase italic text-[#082f72]/35">Novas marcas em breve</p><p class="mt-2 text-sm text-[#657084]">Área pronta para categorias Master, Ouro, Prata, Bronze e Apoio.</p></div></div>
+          <div class="flex min-h-44 flex-col justify-between bg-white p-6 lg:col-span-5"><span
+              class="text-[10px] font-bold uppercase tracking-[.18em] text-[#7a8495]">Realização</span>
+            <div class="font-display text-5xl font-extrabold uppercase text-[#082f72]">
+              <img src="site-assets/500px-Sebrae.svg.webp" class="h-[48px]" alt="">
+            </div>
+          </div>
+          <div class="flex min-h-44 flex-col justify-between bg-white p-6 lg:col-span-3"><span
+              class="text-[10px] font-bold uppercase tracking-[.18em] text-[#7a8495]">Produção da corrida</span>
+            <div class="font-display text-4xl font-extrabold uppercase text-[#101827]">
+              <img src="site-assets/Logo HC Sports.svg" class="h-10" alt="">
+            </div>
+          </div>
+          <div
+            class="flex min-h-44 flex-col justify-between border-2 border-dashed border-[#082f72]/15 p-6 lg:col-span-4">
+            <span class="text-[10px] font-bold uppercase tracking-[.18em] text-[#7a8495]">Patrocinadores</span>
+            <div>
+              <p class="font-display text-3xl font-extrabold uppercase italic text-[#082f72]/35">Novas marcas em breve
+              </p>
+              <p class="mt-2 text-sm text-[#657084]">Área pronta para categorias Master, Ouro, Prata, Bronze e Apoio.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -702,30 +1104,62 @@
         <div class="grid gap-10 lg:grid-cols-[.75fr_1.25fr]">
           <div data-reveal>
             <span class="text-xs font-bold uppercase tracking-[.2em] text-[#79c143]">Informação sem ruído</span>
-            <h2 class="mt-4 font-display text-6xl font-extrabold uppercase italic leading-[.8] text-[#082f72] sm:text-7xl">Você pergunta.<br><span class="text-[#e5187e]">A gente resolve.</span></h2>
-            <p class="mt-6 max-w-md text-base leading-relaxed text-[#596579]">As perguntas serão organizadas por corrida, kit, palestras, Expo e local para reduzir dependência do atendimento.</p>
+            <h2
+              class="mt-4 font-display text-6xl font-extrabold uppercase italic leading-[.8] text-[#082f72] sm:text-7xl">
+              Você pergunta.<br><span class="text-[#e5187e]">A gente resolve.</span></h2>
+            <p class="mt-6 max-w-md text-base leading-relaxed text-[#596579]">As perguntas serão organizadas por
+              corrida, kit, palestras, Expo e local para reduzir dependência do atendimento.</p>
           </div>
 
           <div class="border-t border-[#082f72]/15" data-reveal>
             <div class="faq-item border-b border-[#082f72]/15">
-              <h3><button class="faq-button focus-ring flex w-full items-center justify-between gap-6 py-6 text-left" aria-expanded="true" aria-controls="faq-1"><span class="text-lg font-bold text-[#082f72]">Quais são as distâncias da corrida?</span><span class="faq-symbol grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#f6f3ed] text-xl" aria-hidden="true"><i class="ph ph-minus"></i></span></button></h3>
-              <div id="faq-1" class="faq-panel pb-6 pr-12 text-[#596579]">A Corrida do Empreendedor 2026 terá percursos de 5K, 10K e 15K, com corrida no dia 24 de outubro.</div>
+              <h3><button class="faq-button focus-ring flex w-full items-center justify-between gap-6 py-6 text-left"
+                  aria-expanded="true" aria-controls="faq-1"><span class="text-lg font-bold text-[#082f72]">Quais são as
+                    distâncias da corrida?</span><span
+                    class="faq-symbol grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#f6f3ed] text-xl"
+                    aria-hidden="true"><i class="ph ph-minus"></i></span></button></h3>
+              <div id="faq-1" class="faq-panel pb-6 pr-12 text-[#596579]">A Corrida do Empreendedor 2026 terá percursos
+                de 5K, 10K e 15K, com corrida no dia 24 de outubro.</div>
             </div>
             <div class="faq-item border-b border-[#082f72]/15">
-              <h3><button class="faq-button focus-ring flex w-full items-center justify-between gap-6 py-6 text-left" aria-expanded="false" aria-controls="faq-2"><span class="text-lg font-bold text-[#082f72]">Quando será a retirada dos kits?</span><span class="faq-symbol grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#f6f3ed] text-xl" aria-hidden="true"><i class="ph ph-plus"></i></span></button></h3>
-              <div id="faq-2" class="faq-panel pb-6 pr-12 text-[#596579]" hidden>A retirada está prevista para os dias 22 e 23 de outubro e fará parte da programação oficial. Horários e regras detalhadas serão publicados aqui.</div>
+              <h3><button class="faq-button focus-ring flex w-full items-center justify-between gap-6 py-6 text-left"
+                  aria-expanded="false" aria-controls="faq-2"><span class="text-lg font-bold text-[#082f72]">Quando será
+                    a retirada dos kits?</span><span
+                    class="faq-symbol grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#f6f3ed] text-xl"
+                    aria-hidden="true"><i class="ph ph-plus"></i></span></button></h3>
+              <div id="faq-2" class="faq-panel pb-6 pr-12 text-[#596579]" hidden>A retirada está prevista para os dias
+                22 e 23 de outubro e fará parte da programação oficial. Horários e regras detalhadas serão publicados
+                aqui.</div>
             </div>
             <div class="faq-item border-b border-[#082f72]/15">
-              <h3><button class="faq-button focus-ring flex w-full items-center justify-between gap-6 py-6 text-left" aria-expanded="false" aria-controls="faq-3"><span class="text-lg font-bold text-[#082f72]">Quem corre tem direito a palestras?</span><span class="faq-symbol grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#f6f3ed] text-xl" aria-hidden="true"><i class="ph ph-plus"></i></span></button></h3>
-              <div id="faq-3" class="faq-panel pb-6 pr-12 text-[#596579]" hidden>Sim. Quem fizer inscrição na corrida terá direito a duas cortesias adicionais para participação nas palestras. O fluxo de resgate ainda será detalhado pela organização.</div>
+              <h3><button class="faq-button focus-ring flex w-full items-center justify-between gap-6 py-6 text-left"
+                  aria-expanded="false" aria-controls="faq-3"><span class="text-lg font-bold text-[#082f72]">Quem corre
+                    tem direito a palestras?</span><span
+                    class="faq-symbol grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#f6f3ed] text-xl"
+                    aria-hidden="true"><i class="ph ph-plus"></i></span></button></h3>
+              <div id="faq-3" class="faq-panel pb-6 pr-12 text-[#596579]" hidden>Sim. Quem fizer inscrição na corrida
+                terá direito a duas cortesias adicionais para participação nas palestras. O fluxo de resgate ainda será
+                detalhado pela organização.</div>
             </div>
             <div class="faq-item border-b border-[#082f72]/15">
-              <h3><button class="faq-button focus-ring flex w-full items-center justify-between gap-6 py-6 text-left" aria-expanded="false" aria-controls="faq-4"><span class="text-lg font-bold text-[#082f72]">A Expo será aberta ao público?</span><span class="faq-symbol grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#f6f3ed] text-xl" aria-hidden="true"><i class="ph ph-plus"></i></span></button></h3>
-              <div id="faq-4" class="faq-panel pb-6 pr-12 text-[#596579]" hidden>As condições de acesso da Expo ainda serão confirmadas na programação oficial. Esta área foi preparada para receber essa informação assim que for homologada.</div>
+              <h3><button class="faq-button focus-ring flex w-full items-center justify-between gap-6 py-6 text-left"
+                  aria-expanded="false" aria-controls="faq-4"><span class="text-lg font-bold text-[#082f72]">A Expo será
+                    aberta ao público?</span><span
+                    class="faq-symbol grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#f6f3ed] text-xl"
+                    aria-hidden="true"><i class="ph ph-plus"></i></span></button></h3>
+              <div id="faq-4" class="faq-panel pb-6 pr-12 text-[#596579]" hidden>As condições de acesso da Expo ainda
+                serão confirmadas na programação oficial. Esta área foi preparada para receber essa informação assim que
+                for homologada.</div>
             </div>
             <div class="faq-item border-b border-[#082f72]/15">
-              <h3><button class="faq-button focus-ring flex w-full items-center justify-between gap-6 py-6 text-left" aria-expanded="false" aria-controls="faq-5"><span class="text-lg font-bold text-[#082f72]">Onde acontece o evento?</span><span class="faq-symbol grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#f6f3ed] text-xl" aria-hidden="true"><i class="ph ph-plus"></i></span></button></h3>
-              <div id="faq-5" class="faq-panel pb-6 pr-12 text-[#596579]" hidden>Na Arena das Dunas, em Natal/RN. Informações sobre acessos, transporte, estacionamento e mapa interno serão consolidadas na seção de local.</div>
+              <h3><button class="faq-button focus-ring flex w-full items-center justify-between gap-6 py-6 text-left"
+                  aria-expanded="false" aria-controls="faq-5"><span class="text-lg font-bold text-[#082f72]">Onde
+                    acontece o evento?</span><span
+                    class="faq-symbol grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#f6f3ed] text-xl"
+                    aria-hidden="true"><i class="ph ph-plus"></i></span></button></h3>
+              <div id="faq-5" class="faq-panel pb-6 pr-12 text-[#596579]" hidden>Na Arena das Dunas, em Natal/RN.
+                Informações sobre acessos, transporte, estacionamento e mapa interno serão consolidadas na seção de
+                local.</div>
             </div>
           </div>
         </div>
@@ -734,17 +1168,26 @@
 
     <!-- Final CTA -->
     <section id="inscricao" class="relative isolate overflow-hidden bg-[#082f72] py-24 text-white sm:py-32 lg:py-40">
-      <img src="./site-assets/start-arena.webp" alt="" class="absolute inset-0 -z-20 h-full w-full object-cover opacity-20" aria-hidden="true" />
+      <img src="./site-assets/start-arena.webp" alt=""
+        class="absolute inset-0 -z-20 h-full w-full object-cover opacity-20" aria-hidden="true" />
       <div class="absolute inset-0 -z-10 bg-gradient-to-r from-[#082f72] via-[#082f72]/94 to-[#082f72]/70"></div>
       <div class="track-grid absolute inset-0 -z-10 opacity-40"></div>
       <div class="mx-auto max-w-[1440px] px-5 lg:px-8" data-reveal>
-        <span class="text-xs font-bold uppercase tracking-[.23em] text-[#ffd51f]">22 · 23 · 24 outubro · Arena das Dunas</span>
-        <h2 class="mt-5 max-w-6xl font-display text-[clamp(5rem,10vw,10rem)] font-extrabold uppercase italic leading-[.8]">Escolha como você quer<br><span class="text-[#e5187e]">viver esse movimento.</span></h2>
+        <span class="text-xs font-bold uppercase tracking-[.23em] text-[#ffd51f]">22 · 23 · 24 outubro · Arena das
+          Dunas</span>
+        <h2
+          class="mt-5 max-w-6xl font-display text-[clamp(5rem,10vw,10rem)] font-extrabold uppercase italic leading-[.8]">
+          Escolha como você quer<br><span class="text-[#e5187e]">viver esse movimento.</span></h2>
         <div class="mt-10 flex flex-col gap-3 sm:flex-row">
-          <a href="#" class="focus-ring inline-flex min-h-16 items-center justify-center bg-[#ffd51f] px-8 text-base font-bold uppercase tracking-[.08em] text-[#082f72] transition hover:-translate-y-1 hover:bg-white">Inscreva-se na corrida <i class="ph ph-arrow-up-right ml-3 text-lg" aria-hidden="true"></i></a>
-          <a href="#programacao" class="focus-ring inline-flex min-h-16 items-center justify-center border border-white/25 bg-white/5 px-8 text-base font-bold uppercase tracking-[.08em] backdrop-blur transition hover:bg-white hover:text-[#082f72]">Ver programação</a>
+          <a href="#"
+            class="focus-ring inline-flex min-h-16 items-center justify-center bg-[#ffd51f] px-8 text-base font-bold uppercase tracking-[.08em] text-[#082f72] transition hover:-translate-y-1 hover:bg-white">Inscreva-se
+            na corrida <i class="ph ph-arrow-up-right ml-3 text-lg" aria-hidden="true"></i></a>
+          <a href="#programacao"
+            class="focus-ring inline-flex min-h-16 items-center justify-center border border-white/25 bg-white/5 px-8 text-base font-bold uppercase tracking-[.08em] backdrop-blur transition hover:bg-white hover:text-[#082f72]">Ver
+            programação</a>
         </div>
-        <p class="mt-5 text-xs text-white/50">Corrida, palestras, Expo, cultura e conexões durante três dias na Arena das Dunas.</p>
+        <p class="mt-5 text-xs text-white/50">Corrida, palestras, Expo, cultura e conexões durante três dias na Arena
+          das Dunas.</p>
       </div>
     </section>
   </main>
@@ -752,23 +1195,50 @@
   <footer class="bg-[#061f4e] text-white">
     <div class="mx-auto grid max-w-[1440px] gap-12 px-5 py-14 sm:grid-cols-2 lg:grid-cols-4 lg:px-8">
       <div class="sm:col-span-2 lg:col-span-1">
-        <div class="font-display text-3xl font-extrabold uppercase italic leading-[.85]">Corrida do<br>Empreendedor</div>
-        <p class="mt-5 max-w-xs text-sm leading-relaxed text-white/55">22 a 24 de outubro de 2026<br>Arena das Dunas · Natal/RN</p>
+        <div class="relative inline-flex min-h-[148px] w-full max-w-[302px] items-center px-7 py-5">
+          <img src="./site-assets/logo-white.png" alt="Corrida do Empreendedor"
+            class="h-auto w-full max-w-[238px] object-contain" />
+          <span class="absolute bottom-0 left-0 h-1.5 w-20 bg-[#ffd51f]" aria-hidden="true"></span>
+        </div>
+        <p class="mt-5 max-w-xs text-sm leading-relaxed text-white/55">22 a 24 de outubro de 2026<br>Arena das Dunas ·
+          Natal/RN</p>
       </div>
-      <div><p class="text-xs font-bold uppercase tracking-[.18em] text-[#ffd51f]">Experiência</p><nav class="mt-4 grid gap-3 text-sm text-white/70"><a href="#corrida" class="hover:text-white">Corrida</a><a href="#palestras" class="hover:text-white">Palestras</a><a href="./expo.html" class="hover:text-white">Expo</a><a href="#programacao" class="hover:text-white">Programação</a></nav></div>
-      <div><p class="text-xs font-bold uppercase tracking-[.18em] text-[#79c143]">Informações</p><nav class="mt-4 grid gap-3 text-sm text-white/70"><a href="#local" class="hover:text-white">Kit do corredor</a><a href="#local" class="hover:text-white">Arena das Dunas</a><a href="#faq" class="hover:text-white">FAQ</a><a href="#faq" class="hover:text-white">Acessibilidade</a></nav></div>
-      <div><p class="text-xs font-bold uppercase tracking-[.18em] text-[#e5187e]">Realização</p><p class="mt-4 font-display text-3xl font-extrabold uppercase">SEBRAE RN</p><p class="mt-4 text-sm text-white/55">Produção da corrida<br><strong class="text-white">HC Sports</strong></p></div>
+      <div>
+        <p class="text-xs font-bold uppercase tracking-[.18em] text-[#ffd51f]">Experiência</p>
+        <nav class="mt-4 grid gap-3 text-sm text-white/70"><a href="#corrida" class="hover:text-white">Corrida</a><a
+            href="#palestras" class="hover:text-white">Palestras</a><a href="./expo.html"
+            class="hover:text-white">Expo</a><a href="#programacao" class="hover:text-white">Programação</a></nav>
+      </div>
+      <div>
+        <p class="text-xs font-bold uppercase tracking-[.18em] text-[#79c143]">Informações</p>
+        <nav class="mt-4 grid gap-3 text-sm text-white/70"><a href="#local" class="hover:text-white">Kit do
+            corredor</a><a href="#local" class="hover:text-white">Arena das Dunas</a><a href="#faq"
+            class="hover:text-white">FAQ</a><a href="#faq" class="hover:text-white">Acessibilidade</a></nav>
+      </div>
+      <div>
+        <p class="text-xs font-bold uppercase tracking-[.18em] text-[#e5187e]">Realização</p>
+        <p class="mt-4 font-display text-3xl font-extrabold uppercase">SEBRAE RN</p>
+        <p class="mt-4 text-sm text-white/55">Produção da corrida<br><strong class="text-white">HC Sports</strong></p>
+      </div>
     </div>
     <div class="border-t border-white/10">
-      <div class="mx-auto flex max-w-[1440px] flex-col gap-3 px-5 py-5 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between lg:px-8"><p>© 2026 Corrida do Empreendedor.</p><div class="flex gap-5"><a href="#" class="hover:text-white">Privacidade</a><a href="#" class="hover:text-white">Cookies</a><a href="#" class="hover:text-white">Termos</a></div></div>
+      <div
+        class="mx-auto flex max-w-[1440px] flex-col gap-3 px-5 py-5 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between lg:px-8">
+        <p>© 2026 Corrida do Empreendedor.</p>
+        <div class="flex gap-5"><a href="#" class="hover:text-white">Privacidade</a><a href="#"
+            class="hover:text-white">Cookies</a><a href="#" class="hover:text-white">Termos</a></div>
+      </div>
     </div>
   </footer>
 
   <!-- Mobile persistent CTA -->
-  <div class="fixed inset-x-0 bottom-0 z-50 border-t border-[#082f72]/10 bg-white/95 p-3 shadow-[0_-8px_30px_rgba(8,47,114,.12)] backdrop-blur lg:hidden">
+  <div
+    class="fixed inset-x-0 bottom-0 z-50 border-t border-[#082f72]/10 bg-white/95 p-3 shadow-[0_-8px_30px_rgba(8,47,114,.12)] backdrop-blur lg:hidden">
     <div class="mx-auto flex max-w-lg gap-2">
-      <a href="#inscricao" class="focus-ring inline-flex h-12 flex-1 items-center justify-center bg-[#e5187e] text-sm font-bold uppercase tracking-[.06em] text-white">Inscreva-se</a>
-      <a href="#programacao" class="focus-ring inline-flex h-12 items-center justify-center border border-[#082f72]/20 px-4 text-xs font-bold uppercase tracking-[.06em] text-[#082f72]">Programação</a>
+      <a href="#inscricao"
+        class="focus-ring inline-flex h-12 flex-1 items-center justify-center bg-[#e5187e] text-sm font-bold uppercase tracking-[.06em] text-white">Inscreva-se</a>
+      <a href="#programacao"
+        class="focus-ring inline-flex h-12 items-center justify-center border border-[#082f72]/20 px-4 text-xs font-bold uppercase tracking-[.06em] text-[#082f72]">Programação</a>
     </div>
   </div>
 
@@ -841,4 +1311,5 @@
     }
   </script>
 </body>
+
 </html>
