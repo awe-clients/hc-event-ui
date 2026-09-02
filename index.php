@@ -30,7 +30,7 @@ $assets = get_stylesheet_directory_uri() . '/assets/';
   <meta property="og:title" content="Crion Eventos | Tudo começa antes de acontecer">
   <meta property="og:description" content="Estratégia, criatividade e execução para realizar o seu próximo evento.">
   <meta property="og:url" content="https://crioneventos.com.br/">
-  <meta property="og:image" content="https://crioneventos.com.br/media/eventos-corporativos.webp">
+  <meta property="og:image" content="<?php echo $assets; ?>media/eventos-corporativos.webp">
   <meta property="og:image:width" content="1218">
   <meta property="og:image:height" content="670">
   <meta property="og:image:alt" content="Eventos realizados pela Crion">
