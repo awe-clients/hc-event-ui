@@ -20,8 +20,8 @@ $assets = get_stylesheet_directory_uri() . '/assets/';
     content="Crion Eventos, produção de eventos, eventos corporativos, eventos científicos, ações promocionais, live marketing, Natal RN">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://crioneventos.com.br/">
-  <link rel="icon" href="./favicon.png" type="image/png">
-  <link rel="apple-touch-icon" href="./favicon.png">
+  <link rel="icon" href="<?php echo $assets; ?>media/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="<?php echo $assets; ?>media/favicon.png">
 
 
   <meta property="og:type" content="website">
