@@ -54,7 +54,7 @@ $assets = get_stylesheet_directory_uri() . '/assets/';
       "sameAs": ["https://www.instagram.com/crion_eventos/"]
     }
   </script>
-  <link rel="stylesheet" crossorigin href="<?php echo $assets; ?>index-CZgQo4mR.css">
+  <link rel="stylesheet" crossorigin href="<?php echo $assets; ?>css/index-CZgQo4mR.css">
 </head>
 
 <body>
