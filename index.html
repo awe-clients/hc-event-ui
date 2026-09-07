@@ -621,107 +621,505 @@
     </section>
 
     <!-- Palestras -->
-    <section id="palestras" class="relative overflow-hidden bg-[#e5187e] py-20 text-white sm:py-28 lg:py-32">
+    <section id="palestras" class="relative overflow-hidden bg-[#e5187e] py-20 text-white sm:py-28 lg:py-32"
+      aria-labelledby="palestras-title">
       <div class="absolute -left-24 top-8 h-72 w-72 rounded-full border-[50px] border-[#ffd51f]/20" aria-hidden="true">
       </div>
-      <div class="mx-auto max-w-[1440px] px-5 lg:px-8">
-        <div class="grid gap-10 lg:grid-cols-[1.05fr_.95fr] lg:items-end">
+      <div class="mx-auto max-w-[1600px] px-5 lg:px-8">
+        <div class="grid gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,.85fr)] lg:items-end">
           <div data-reveal>
-            <span class="text-xs font-bold uppercase tracking-[.2em] text-[#ffd51f]">Programação de palestras</span>
-            <h2
-              class="mt-5 max-w-4xl font-display text-[clamp(4.2rem,8vw,8rem)] font-extrabold uppercase italic leading-[.8]">
-              Ideias também<br>colocam a gente<br><span class="text-[#ffd51f]">em movimento.</span></h2>
+            <h2 id="palestras-title"
+              class="max-w-4xl font-display text-[clamp(4.2rem,8vw,8rem)] font-extrabold uppercase italic leading-[.8]">
+              Ideias também<br>colocam a gente<br><span class="text-[#ffd51f]">em movimento.</span>
+            </h2>
           </div>
-          <div data-reveal>
-            <p class="max-w-xl text-xl font-medium leading-relaxed text-white/80">Na Arena, conteúdo também é atração.
-              Acompanhe por aqui a programação de palestras, os nomes confirmados, temas e horários dos dois dias de
-              conteúdo.</p>
-          </div>
-        </div>
 
-        <div class="mt-14 overflow-hidden bg-white text-[#101827]" data-reveal>
-          <div class="border-b border-[#082f72]/10 px-6 py-5 sm:px-8 lg:px-10">
-            <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-              <div>
-                <p class="text-xs font-bold uppercase tracking-[.18em] text-[#e5187e]">22 e 23 de outubro</p>
-                <h3
-                  class="mt-2 font-display text-4xl font-extrabold uppercase italic leading-[.8] text-[#082f72] sm:text-5xl">
-                  Programação de conteúdo</h3>
-              </div>
-              <a href="./palestras.html"
-                class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[.08em] text-[#082f72] transition hover:text-[#e5187e]">
-                Ver programação completa <i class="ph ph-arrow-up-right text-[1.05em]" aria-hidden="true"></i>
-              </a>
+          <div class="space-y-7" data-reveal>
+            <p class="max-w-xl text-lg font-medium leading-relaxed text-white/85 sm:text-xl">
+              Conheça quem sobe ao palco e escolha as conversas que fazem sentido para você. Os detalhes de cada
+              palestra ficam a um toque de distância.
+            </p>
+
+            <div class="flex flex-wrap items-center gap-2" aria-label="Filtrar palestrantes por dia">
+              <span class="mr-1 text-xs font-bold uppercase tracking-[.16em] text-white/65">Filtrar por dia</span>
+              <button type="button"
+                class="speaker-day-filter focus-ring inline-flex min-h-10 items-center border border-white/35 px-4 text-sm font-bold uppercase tracking-[.08em] transition hover:bg-white hover:text-[#082f72]"
+                data-speaker-day="22" aria-pressed="false">22 OUT</button>
+              <button type="button"
+                class="speaker-day-filter focus-ring inline-flex min-h-10 items-center border border-white/35 px-4 text-sm font-bold uppercase tracking-[.08em] transition hover:bg-white hover:text-[#082f72]"
+                data-speaker-day="23" aria-pressed="false">23 OUT</button>
+              <button type="button" id="speakerFilterReset"
+                class="focus-ring hidden min-h-10 items-center gap-2 px-2 text-sm font-bold text-[#ffd51f] underline decoration-2 underline-offset-4 hover:no-underline">
+                Mostrar todos <i class="ph ph-x text-base" aria-hidden="true"></i>
+              </button>
             </div>
-          </div>
-
-          <div class="grid lg:grid-cols-2">
-            <article class="border-b border-[#082f72]/10 p-6 sm:p-8 lg:border-b-0 lg:border-r lg:p-10">
-              <div class="flex items-start gap-5 sm:gap-7">
-                <div class="shrink-0">
-                  <span class="font-display block text-7xl font-extrabold leading-[.7] text-[#e5187e]">22</span>
-                  <span class="mt-3 block text-xs font-bold uppercase tracking-[.18em] text-[#687387]">Outubro</span>
-                </div>
-                <div class="min-w-0 pt-1">
-                  <p class="text-xs font-bold uppercase tracking-[.18em] text-[#082f72]/50">Dia 01 · Abertura</p>
-                  <h4
-                    class="mt-3 font-display text-3xl font-extrabold uppercase italic leading-[.9] text-[#082f72] sm:text-4xl">
-                    Palestras e conteúdo na Arena</h4>
-                  <div class="mt-6 border-l-4 border-[#ffd51f] bg-[#f6f3ed] p-5">
-                    <p class="font-bold text-[#082f72]">Programação em confirmação</p>
-                    <p class="mt-2 text-base leading-relaxed text-[#596579]">Palestrantes, temas e horários serão
-                      publicados aqui assim que a agenda oficial for confirmada.</p>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article class="p-6 sm:p-8 lg:p-10">
-              <div class="flex items-start gap-5 sm:gap-7">
-                <div class="shrink-0">
-                  <span class="font-display block text-7xl font-extrabold leading-[.7] text-[#082f72]">23</span>
-                  <span class="mt-3 block text-xs font-bold uppercase tracking-[.18em] text-[#687387]">Outubro</span>
-                </div>
-                <div class="min-w-0 pt-1">
-                  <p class="text-xs font-bold uppercase tracking-[.18em] text-[#082f72]/50">Dia 02 · Imersão</p>
-                  <h4
-                    class="mt-3 font-display text-3xl font-extrabold uppercase italic leading-[.9] text-[#082f72] sm:text-4xl">
-                    Mais ideias, conexões e negócios</h4>
-                  <div class="mt-6 border-l-4 border-[#79c143] bg-[#f6f3ed] p-5">
-                    <p class="font-bold text-[#082f72]">Programação em confirmação</p>
-                    <p class="mt-2 text-base leading-relaxed text-[#596579]">A programação completa será atualizada
-                      conforme novos palestrantes e conteúdos forem confirmados.</p>
-                  </div>
-                </div>
-              </div>
-            </article>
-          </div>
-
-          <div
-            class="flex flex-col gap-5 border-t border-[#082f72]/10 bg-[#f6f3ed] px-6 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-10">
-            <p class="max-w-2xl text-base font-medium leading-relaxed text-[#405069]">Você pode participar das palestras
-              mesmo sem correr. Os ingressos para a programação de conteúdo serão disponibilizados separadamente.</p>
-            <a href="#ingressos"
-              class="focus-ring inline-flex min-h-12 shrink-0 items-center justify-center bg-[#e5187e] px-6 text-sm font-bold uppercase tracking-[.08em] text-white transition hover:bg-[#082f72]">
-              Inscreva-se nas palestras <i class="ph ph-arrow-right ml-2 text-lg" aria-hidden="true"></i>
-            </a>
+            <p id="speakerFilterStatus" class="text-sm text-white/65" aria-live="polite">Exibindo todos os palestrantes.
+            </p>
           </div>
         </div>
 
-        <div class="mt-4 grid overflow-hidden bg-[#ffd51f] text-[#082f72] lg:grid-cols-[1.25fr_.75fr]" data-reveal>
-          <div class="p-7 sm:p-9 lg:p-11">
-            <span class="text-xs font-bold uppercase tracking-[.18em]">Benefício de quem corre</span>
-            <h3 class="mt-4 max-w-3xl font-display text-5xl font-extrabold uppercase italic leading-[.86] sm:text-6xl">
-              Sua inscrição na corrida garante 3 acessos às palestras.</h3>
-            <p class="mt-5 max-w-2xl text-base font-medium leading-relaxed text-[#082f72]/75">Ao se inscrever na
-              corrida, você garante seu acesso à programação de palestras e ainda recebe mais 2 cortesias para convidar
-              quem quiser.</p>
+        <!-- Alternância de visualização exclusiva para telas pequenas -->
+        <div class="mt-10 flex items-center justify-between gap-4 sm:hidden" data-reveal>
+          <p class="text-xs font-bold uppercase tracking-[.14em] text-white/70">Visualização</p>
+          <div class="inline-flex border border-white/30 p-1" role="group"
+            aria-label="Formato da lista de palestrantes">
+            <button id="speakerCardsView" type="button"
+              class="focus-ring inline-flex h-10 items-center gap-2 bg-white px-3 text-sm font-bold text-[#082f72]"
+              aria-pressed="true">
+              <i class="ph ph-cards-three" aria-hidden="true"></i> Cards
+            </button>
+            <button id="speakerListView" type="button"
+              class="focus-ring inline-flex h-10 items-center gap-2 px-3 text-sm font-bold text-white"
+              aria-pressed="false">
+              <i class="ph ph-list-bullets" aria-hidden="true"></i> Lista
+            </button>
           </div>
-          <div class="flex items-end justify-start bg-[#ffd51f] p-7 sm:p-9 lg:justify-end lg:p-11">
-            <a href="#faq"
-              class="focus-ring inline-flex min-h-14 items-center justify-center bg-[#082f72] px-7 text-sm font-bold uppercase tracking-[.08em] text-white transition hover:bg-[#e5187e]">
-              Entender as cortesias <i class="ph ph-arrow-up-right ml-3 text-lg" aria-hidden="true"></i>
-            </a>
+        </div>
+
+        <!-- Cards: horizontal no mobile, 4 colunas em telas grandes e até 6 em telas muito grandes -->
+        <div id="speakerCards"
+          class="mt-6 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mt-12 sm:grid sm:grid-cols-2 sm:overflow-visible sm:pb-0 lg:grid-cols-4 2xl:grid-cols-6"
+          data-reveal>
+          <article class="speaker-item group w-[78vw] max-w-[310px] shrink-0 snap-start sm:w-auto sm:max-w-none"
+            data-day="22" itemscope itemtype="https://schema.org/Person">
+            <button type="button" class="speaker-open focus-ring block w-full text-left" data-speaker="gabriela"
+              aria-haspopup="dialog" aria-controls="speakerModal"
+              aria-label="Ver detalhes da palestra de Gabriela Prioli">
+              <span
+                class="block overflow-hidden border-2 border-white/70 bg-[#f6f3ed] p-3 transition duration-300 group-hover:-translate-y-1 group-hover:border-[#ffd51f]">
+                <img
+                  src="https://image.divulga.sebraern.com.br/lib/fe3811727364047f751c70/m/1/b2cc9f1a-1e3b-4be6-a2f9-24c00f2fa361.png"
+                  alt="Gabriela Prioli" class="aspect-square w-full object-cover" loading="lazy" itemprop="image" />
+                <span class="block px-1 pb-1 pt-5">
+                  <span class="block font-display text-3xl font-extrabold leading-none text-[#082f72]"
+                    itemprop="name">Gabriela Prioli</span>
+                  <span class="mt-2 block text-base font-medium text-[#526078]" itemprop="jobTitle">Comunicadora</span>
+                  <span
+                    class="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[.1em] text-[#e5187e]">Ver
+                    palestra <i class="ph ph-arrow-up-right text-base" aria-hidden="true"></i></span>
+                </span>
+              </span>
+            </button>
+          </article>
+          <article class="speaker-item group w-[78vw] max-w-[310px] shrink-0 snap-start sm:w-auto sm:max-w-none"
+            data-day="22" itemscope itemtype="https://schema.org/Person">
+            <button type="button" class="speaker-open focus-ring block w-full text-left" data-speaker="igor"
+              aria-haspopup="dialog" aria-controls="speakerModal" aria-label="Ver detalhes da palestra de Igor 3K">
+              <span
+                class="block overflow-hidden border-2 border-white/70 bg-[#f6f3ed] p-3 transition duration-300 group-hover:-translate-y-1 group-hover:border-[#ffd51f]">
+                <img
+                  src="https://image.divulga.sebraern.com.br/lib/fe3811727364047f751c70/m/1/33a30eff-b78a-446c-b28d-a6d71fab3a6c.png"
+                  alt="Igor 3K" class="aspect-square w-full object-cover" loading="lazy" itemprop="image" />
+                <span class="block px-1 pb-1 pt-5">
+                  <span class="block font-display text-3xl font-extrabold leading-none text-[#082f72]"
+                    itemprop="name">Igor 3K</span>
+                  <span class="mt-2 block text-base font-medium text-[#526078]" itemprop="jobTitle">Flow Podcast</span>
+                  <span
+                    class="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[.1em] text-[#e5187e]">Ver
+                    palestra <i class="ph ph-arrow-up-right text-base" aria-hidden="true"></i></span>
+                </span>
+              </span>
+            </button>
+          </article>
+          <article class="speaker-item group w-[78vw] max-w-[310px] shrink-0 snap-start sm:w-auto sm:max-w-none"
+            data-day="22" itemscope itemtype="https://schema.org/Person">
+            <button type="button" class="speaker-open focus-ring block w-full text-left" data-speaker="michel"
+              aria-haspopup="dialog" aria-controls="speakerModal"
+              aria-label="Ver detalhes da palestra de Michel Alcoforado">
+              <span
+                class="block overflow-hidden border-2 border-white/70 bg-[#f6f3ed] p-3 transition duration-300 group-hover:-translate-y-1 group-hover:border-[#ffd51f]">
+                <img
+                  src="https://image.divulga.sebraern.com.br/lib/fe3811727364047f751c70/m/1/607304f2-d01d-4f26-a85a-ec5c8ffba4e6.png"
+                  alt="Michel Alcoforado" class="aspect-square w-full object-cover" loading="lazy" itemprop="image" />
+                <span class="block px-1 pb-1 pt-5">
+                  <span class="block font-display text-3xl font-extrabold leading-none text-[#082f72]"
+                    itemprop="name">Michel Alcoforado</span>
+                  <span class="mt-2 block text-base font-medium text-[#526078]" itemprop="jobTitle">Doutor</span>
+                  <span
+                    class="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[.1em] text-[#e5187e]">Ver
+                    palestra <i class="ph ph-arrow-up-right text-base" aria-hidden="true"></i></span>
+                </span>
+              </span>
+            </button>
+          </article>
+          <article class="speaker-item group w-[78vw] max-w-[310px] shrink-0 snap-start sm:w-auto sm:max-w-none"
+            data-day="22" itemscope itemtype="https://schema.org/Person">
+            <button type="button" class="speaker-open focus-ring block w-full text-left" data-speaker="fred"
+              aria-haspopup="dialog" aria-controls="speakerModal" aria-label="Ver detalhes da palestra de Fred Alecrim">
+              <span
+                class="block overflow-hidden border-2 border-white/70 bg-[#f6f3ed] p-3 transition duration-300 group-hover:-translate-y-1 group-hover:border-[#ffd51f]">
+                <img
+                  src="https://image.divulga.sebraern.com.br/lib/fe3811727364047f751c70/m/1/e473c82e-1281-41c2-b3d9-8a5859c23590.png"
+                  alt="Fred Alecrim" class="aspect-square w-full object-cover" loading="lazy" itemprop="image" />
+                <span class="block px-1 pb-1 pt-5">
+                  <span class="block font-display text-3xl font-extrabold leading-none text-[#082f72]"
+                    itemprop="name">Fred Alecrim</span>
+                  <span class="mt-2 block text-base font-medium text-[#526078]" itemprop="jobTitle">Empresário</span>
+                  <span
+                    class="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[.1em] text-[#e5187e]">Ver
+                    palestra <i class="ph ph-arrow-up-right text-base" aria-hidden="true"></i></span>
+                </span>
+              </span>
+            </button>
+          </article>
+          <article class="speaker-item group w-[78vw] max-w-[310px] shrink-0 snap-start sm:w-auto sm:max-w-none"
+            data-day="22" itemscope itemtype="https://schema.org/Person">
+            <button type="button" class="speaker-open focus-ring block w-full text-left" data-speaker="rapha"
+              aria-haspopup="dialog" aria-controls="speakerModal" aria-label="Ver detalhes da palestra de Rapha Falcão">
+              <span
+                class="block overflow-hidden border-2 border-white/70 bg-[#f6f3ed] p-3 transition duration-300 group-hover:-translate-y-1 group-hover:border-[#ffd51f]">
+                <img
+                  src="https://image.divulga.sebraern.com.br/lib/fe3811727364047f751c70/m/1/e308f8ba-cad1-4811-8a13-dc856abf7d39.png"
+                  alt="Rapha Falcão" class="aspect-square w-full object-cover" loading="lazy" itemprop="image" />
+                <span class="block px-1 pb-1 pt-5">
+                  <span class="block font-display text-3xl font-extrabold leading-none text-[#082f72]"
+                    itemprop="name">Rapha Falcão</span>
+                  <span class="mt-2 block text-base font-medium text-[#526078]" itemprop="jobTitle">Especialista em
+                    Marketing</span>
+                  <span
+                    class="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[.1em] text-[#e5187e]">Ver
+                    palestra <i class="ph ph-arrow-up-right text-base" aria-hidden="true"></i></span>
+                </span>
+              </span>
+            </button>
+          </article>
+          <article class="speaker-item group w-[78vw] max-w-[310px] shrink-0 snap-start sm:w-auto sm:max-w-none"
+            data-day="22" itemscope itemtype="https://schema.org/Person">
+            <button type="button" class="speaker-open focus-ring block w-full text-left" data-speaker="camila"
+              aria-haspopup="dialog" aria-controls="speakerModal" aria-label="Ver detalhes da palestra de Camila Ortiz">
+              <span
+                class="block overflow-hidden border-2 border-white/70 bg-[#f6f3ed] p-3 transition duration-300 group-hover:-translate-y-1 group-hover:border-[#ffd51f]">
+                <img
+                  src="https://image.divulga.sebraern.com.br/lib/fe3811727364047f751c70/m/1/6b08a166-7c1f-4ea0-9767-cf27ad4f7466.png"
+                  alt="Camila Ortiz" class="aspect-square w-full object-cover" loading="lazy" itemprop="image" />
+                <span class="block px-1 pb-1 pt-5">
+                  <span class="block font-display text-3xl font-extrabold leading-none text-[#082f72]"
+                    itemprop="name">Camila Ortiz</span>
+                  <span class="mt-2 block text-base font-medium text-[#526078]" itemprop="jobTitle">Loft Style</span>
+                  <span
+                    class="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[.1em] text-[#e5187e]">Ver
+                    palestra <i class="ph ph-arrow-up-right text-base" aria-hidden="true"></i></span>
+                </span>
+              </span>
+            </button>
+          </article>
+          <article class="speaker-item group w-[78vw] max-w-[310px] shrink-0 snap-start sm:w-auto sm:max-w-none"
+            data-day="23" itemscope itemtype="https://schema.org/Person">
+            <button type="button" class="speaker-open focus-ring block w-full text-left" data-speaker="cris-itamar"
+              aria-haspopup="dialog" aria-controls="speakerModal"
+              aria-label="Ver detalhes da palestra de Cris Dios e Itamar Cechetto">
+              <span
+                class="block overflow-hidden border-2 border-white/70 bg-[#f6f3ed] p-3 transition duration-300 group-hover:-translate-y-1 group-hover:border-[#ffd51f]">
+                <img
+                  src="https://image.divulga.sebraern.com.br/lib/fe3811727364047f751c70/m/1/f7b3bb81-06f6-4d0c-ae60-168369b512ee.png"
+                  alt="Cris Dios e Itamar Cechetto" class="aspect-square w-full object-cover" loading="lazy"
+                  itemprop="image" />
+                <span class="block px-1 pb-1 pt-5">
+                  <span class="block font-display text-3xl font-extrabold leading-none text-[#082f72]"
+                    itemprop="name">Cris Dios e Itamar Cechetto</span>
+                  <span class="mt-2 block text-base font-medium text-[#526078]" itemprop="jobTitle">Laces and
+                    Hair</span>
+                  <span
+                    class="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[.1em] text-[#e5187e]">Ver
+                    palestra <i class="ph ph-arrow-up-right text-base" aria-hidden="true"></i></span>
+                </span>
+              </span>
+            </button>
+          </article>
+          <article class="speaker-item group w-[78vw] max-w-[310px] shrink-0 snap-start sm:w-auto sm:max-w-none"
+            data-day="23" itemscope itemtype="https://schema.org/Person">
+            <button type="button" class="speaker-open focus-ring block w-full text-left" data-speaker="fabiano"
+              aria-haspopup="dialog" aria-controls="speakerModal"
+              aria-label="Ver detalhes da palestra de Fabiano Zortéa">
+              <span
+                class="block overflow-hidden border-2 border-white/70 bg-[#f6f3ed] p-3 transition duration-300 group-hover:-translate-y-1 group-hover:border-[#ffd51f]">
+                <img
+                  src="https://image.divulga.sebraern.com.br/lib/fe3811727364047f751c70/m/1/41332e50-130b-4b55-9206-93ee5f7a84e2.png"
+                  alt="Fabiano Zortéa" class="aspect-square w-full object-cover" loading="lazy" itemprop="image" />
+                <span class="block px-1 pb-1 pt-5">
+                  <span class="block font-display text-3xl font-extrabold leading-none text-[#082f72]"
+                    itemprop="name">Fabiano Zortéa</span>
+                  <span class="mt-2 block text-base font-medium text-[#526078]" itemprop="jobTitle">Especialista em
+                    Varejo</span>
+                  <span
+                    class="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[.1em] text-[#e5187e]">Ver
+                    palestra <i class="ph ph-arrow-up-right text-base" aria-hidden="true"></i></span>
+                </span>
+              </span>
+            </button>
+          </article>
+          <article class="speaker-item group w-[78vw] max-w-[310px] shrink-0 snap-start sm:w-auto sm:max-w-none"
+            data-day="23" itemscope itemtype="https://schema.org/Person">
+            <button type="button" class="speaker-open focus-ring block w-full text-left" data-speaker="natiele"
+              aria-haspopup="dialog" aria-controls="speakerModal"
+              aria-label="Ver detalhes da palestra de Natiele Krassmann">
+              <span
+                class="block overflow-hidden border-2 border-white/70 bg-[#f6f3ed] p-3 transition duration-300 group-hover:-translate-y-1 group-hover:border-[#ffd51f]">
+                <img
+                  src="https://image.divulga.sebraern.com.br/lib/fe3811727364047f751c70/m/1/97de58ba-becb-4190-a8f9-f7fbcd0687af.png"
+                  alt="Natiele Krassmann" class="aspect-square w-full object-cover" loading="lazy" itemprop="image" />
+                <span class="block px-1 pb-1 pt-5">
+                  <span class="block font-display text-3xl font-extrabold leading-none text-[#082f72]"
+                    itemprop="name">Natiele Krassmann</span>
+                  <span class="mt-2 block text-base font-medium text-[#526078]" itemprop="jobTitle">Criamigos</span>
+                  <span
+                    class="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[.1em] text-[#e5187e]">Ver
+                    palestra <i class="ph ph-arrow-up-right text-base" aria-hidden="true"></i></span>
+                </span>
+              </span>
+            </button>
+          </article>
+          <article class="speaker-item group w-[78vw] max-w-[310px] shrink-0 snap-start sm:w-auto sm:max-w-none"
+            data-day="23" itemscope itemtype="https://schema.org/Person">
+            <button type="button" class="speaker-open focus-ring block w-full text-left" data-speaker="fabia-pablo"
+              aria-haspopup="dialog" aria-controls="speakerModal"
+              aria-label="Ver detalhes da palestra de Fabia Miranda e Pablo Farias">
+              <span
+                class="block overflow-hidden border-2 border-white/70 bg-[#f6f3ed] p-3 transition duration-300 group-hover:-translate-y-1 group-hover:border-[#ffd51f]">
+                <img
+                  src="https://image.divulga.sebraern.com.br/lib/fe3811727364047f751c70/m/1/2d4a9bac-74eb-4498-98e7-26ad3c92f65f.png"
+                  alt="Fabia Miranda e Pablo Farias" class="aspect-square w-full object-cover" loading="lazy"
+                  itemprop="image" />
+                <span class="block px-1 pb-1 pt-5">
+                  <span class="block font-display text-3xl font-extrabold leading-none text-[#082f72]"
+                    itemprop="name">Fabia Miranda e Pablo Farias</span>
+                  <span class="mt-2 block text-base font-medium text-[#526078]" itemprop="jobTitle">Negócios RN</span>
+                  <span
+                    class="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[.1em] text-[#e5187e]">Ver
+                    palestra <i class="ph ph-arrow-up-right text-base" aria-hidden="true"></i></span>
+                </span>
+              </span>
+            </button>
+          </article>
+          <article class="speaker-item group w-[78vw] max-w-[310px] shrink-0 snap-start sm:w-auto sm:max-w-none"
+            data-day="23" itemscope itemtype="https://schema.org/Person">
+            <button type="button" class="speaker-open focus-ring block w-full text-left" data-speaker="sergio"
+              aria-haspopup="dialog" aria-controls="speakerModal"
+              aria-label="Ver detalhes da palestra de Sérgio de Paula">
+              <span
+                class="block overflow-hidden border-2 border-white/70 bg-[#f6f3ed] p-3 transition duration-300 group-hover:-translate-y-1 group-hover:border-[#ffd51f]">
+                <img
+                  src="https://image.divulga.sebraern.com.br/lib/fe3811727364047f751c70/m/1/1f9a58e5-a702-4839-98b2-1a49a1082009.png"
+                  alt="Sérgio de Paula" class="aspect-square w-full object-cover" loading="lazy" itemprop="image" />
+                <span class="block px-1 pb-1 pt-5">
+                  <span class="block font-display text-3xl font-extrabold leading-none text-[#082f72]"
+                    itemprop="name">Sérgio de Paula</span>
+                  <span class="mt-2 block text-base font-medium text-[#526078]" itemprop="jobTitle">Vox2you</span>
+                  <span
+                    class="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[.1em] text-[#e5187e]">Ver
+                    palestra <i class="ph ph-arrow-up-right text-base" aria-hidden="true"></i></span>
+                </span>
+              </span>
+            </button>
+          </article>
+        </div>
+
+        <!-- Lista compacta: alternativa de leitura no mobile -->
+        <div id="speakerList" class="mt-6 hidden divide-y divide-white/20 border-y border-white/20 sm:hidden"
+          aria-label="Lista compacta de palestrantes">
+          <button type="button"
+            class="speaker-item speaker-open focus-ring grid w-full grid-cols-[1fr_auto] items-center gap-4 py-5 text-left"
+            data-day="22" data-speaker="gabriela" aria-haspopup="dialog" aria-controls="speakerModal">
+            <span><span class="block font-display text-2xl font-extrabold uppercase leading-none">Gabriela
+                Prioli</span><span class="mt-1 block text-base text-white/65">Comunicadora</span></span><i
+              class="ph ph-arrow-up-right text-xl text-[#ffd51f]" aria-hidden="true"></i>
+          </button>
+          <button type="button"
+            class="speaker-item speaker-open focus-ring grid w-full grid-cols-[1fr_auto] items-center gap-4 py-5 text-left"
+            data-day="22" data-speaker="igor" aria-haspopup="dialog" aria-controls="speakerModal">
+            <span><span class="block font-display text-2xl font-extrabold uppercase leading-none">Igor 3K</span><span
+                class="mt-1 block text-base text-white/65">Flow Podcast</span></span><i
+              class="ph ph-arrow-up-right text-xl text-[#ffd51f]" aria-hidden="true"></i>
+          </button>
+          <button type="button"
+            class="speaker-item speaker-open focus-ring grid w-full grid-cols-[1fr_auto] items-center gap-4 py-5 text-left"
+            data-day="22" data-speaker="michel" aria-haspopup="dialog" aria-controls="speakerModal">
+            <span><span class="block font-display text-2xl font-extrabold uppercase leading-none">Michel
+                Alcoforado</span><span class="mt-1 block text-base text-white/65">Doutor</span></span><i
+              class="ph ph-arrow-up-right text-xl text-[#ffd51f]" aria-hidden="true"></i>
+          </button>
+          <button type="button"
+            class="speaker-item speaker-open focus-ring grid w-full grid-cols-[1fr_auto] items-center gap-4 py-5 text-left"
+            data-day="22" data-speaker="fred" aria-haspopup="dialog" aria-controls="speakerModal">
+            <span><span class="block font-display text-2xl font-extrabold uppercase leading-none">Fred
+                Alecrim</span><span class="mt-1 block text-base text-white/65">Empresário</span></span><i
+              class="ph ph-arrow-up-right text-xl text-[#ffd51f]" aria-hidden="true"></i>
+          </button>
+          <button type="button"
+            class="speaker-item speaker-open focus-ring grid w-full grid-cols-[1fr_auto] items-center gap-4 py-5 text-left"
+            data-day="22" data-speaker="rapha" aria-haspopup="dialog" aria-controls="speakerModal">
+            <span><span class="block font-display text-2xl font-extrabold uppercase leading-none">Rapha
+                Falcão</span><span class="mt-1 block text-base text-white/65">Especialista em Marketing</span></span><i
+              class="ph ph-arrow-up-right text-xl text-[#ffd51f]" aria-hidden="true"></i>
+          </button>
+          <button type="button"
+            class="speaker-item speaker-open focus-ring grid w-full grid-cols-[1fr_auto] items-center gap-4 py-5 text-left"
+            data-day="22" data-speaker="camila" aria-haspopup="dialog" aria-controls="speakerModal">
+            <span><span class="block font-display text-2xl font-extrabold uppercase leading-none">Camila
+                Ortiz</span><span class="mt-1 block text-base text-white/65">Loft Style</span></span><i
+              class="ph ph-arrow-up-right text-xl text-[#ffd51f]" aria-hidden="true"></i>
+          </button>
+          <button type="button"
+            class="speaker-item speaker-open focus-ring grid w-full grid-cols-[1fr_auto] items-center gap-4 py-5 text-left"
+            data-day="23" data-speaker="cris-itamar" aria-haspopup="dialog" aria-controls="speakerModal">
+            <span><span class="block font-display text-2xl font-extrabold uppercase leading-none">Cris Dios e Itamar
+                Cechetto</span><span class="mt-1 block text-base text-white/65">Laces and Hair</span></span><i
+              class="ph ph-arrow-up-right text-xl text-[#ffd51f]" aria-hidden="true"></i>
+          </button>
+          <button type="button"
+            class="speaker-item speaker-open focus-ring grid w-full grid-cols-[1fr_auto] items-center gap-4 py-5 text-left"
+            data-day="23" data-speaker="fabiano" aria-haspopup="dialog" aria-controls="speakerModal">
+            <span><span class="block font-display text-2xl font-extrabold uppercase leading-none">Fabiano
+                Zortéa</span><span class="mt-1 block text-base text-white/65">Especialista em Varejo</span></span><i
+              class="ph ph-arrow-up-right text-xl text-[#ffd51f]" aria-hidden="true"></i>
+          </button>
+          <button type="button"
+            class="speaker-item speaker-open focus-ring grid w-full grid-cols-[1fr_auto] items-center gap-4 py-5 text-left"
+            data-day="23" data-speaker="natiele" aria-haspopup="dialog" aria-controls="speakerModal">
+            <span><span class="block font-display text-2xl font-extrabold uppercase leading-none">Natiele
+                Krassmann</span><span class="mt-1 block text-base text-white/65">Criamigos</span></span><i
+              class="ph ph-arrow-up-right text-xl text-[#ffd51f]" aria-hidden="true"></i>
+          </button>
+          <button type="button"
+            class="speaker-item speaker-open focus-ring grid w-full grid-cols-[1fr_auto] items-center gap-4 py-5 text-left"
+            data-day="23" data-speaker="fabia-pablo" aria-haspopup="dialog" aria-controls="speakerModal">
+            <span><span class="block font-display text-2xl font-extrabold uppercase leading-none">Fabia Miranda e Pablo
+                Farias</span><span class="mt-1 block text-base text-white/65">Negócios RN</span></span><i
+              class="ph ph-arrow-up-right text-xl text-[#ffd51f]" aria-hidden="true"></i>
+          </button>
+          <button type="button"
+            class="speaker-item speaker-open focus-ring grid w-full grid-cols-[1fr_auto] items-center gap-4 py-5 text-left"
+            data-day="23" data-speaker="sergio" aria-haspopup="dialog" aria-controls="speakerModal">
+            <span><span class="block font-display text-2xl font-extrabold uppercase leading-none">Sérgio de
+                Paula</span><span class="mt-1 block text-base text-white/65">Vox2you</span></span><i
+              class="ph ph-arrow-up-right text-xl text-[#ffd51f]" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <!-- Benefício: mantido, porém com menor saliência que a programação -->
+        <div class="mt-10 grid gap-6 border-t border-white/25 pt-7 lg:grid-cols-[1fr_auto] lg:items-center" data-reveal>
+          <div>
+            <p class="text-xs font-bold uppercase tracking-[.18em] text-[#ffd51f]">Benefício de quem corre</p>
+            <h3 class="mt-3 max-w-4xl font-display text-3xl font-extrabold uppercase italic leading-[.9] sm:text-4xl">
+              Sua inscrição garante 3 acessos à programação de palestras.
+            </h3>
+            <p class="mt-3 max-w-2xl text-base leading-relaxed text-white/75 sm:text-lg">
+              Você participa e ainda recebe 2 cortesias para convidar quem quiser.
+            </p>
+          </div>
+          <a href="#faq"
+            class="focus-ring inline-flex min-h-11 items-center justify-center gap-2 text-sm font-bold uppercase tracking-[.08em] text-[#ffd51f] hover:text-white">
+            Entender as cortesias <i class="ph ph-arrow-right text-lg" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Modal de detalhes: conteúdo da palestra + perfil do palestrante -->
+      <div id="speakerModal" class="fixed inset-0 z-[80] hidden" role="dialog" aria-modal="true"
+        aria-labelledby="speakerModalTitle" aria-describedby="speakerModalDescription">
+        <button type="button" class="speaker-modal-backdrop absolute inset-0 bg-[#061c4a]/85 backdrop-blur-sm"
+          aria-label="Fechar detalhes da palestra"></button>
+        <div class="relative mx-auto flex min-h-full max-w-[1380px] items-center px-3 py-3 sm:px-6 sm:py-6 lg:px-8">
+          <div
+            class="speaker-modal-scroll relative max-h-[94dvh] w-full overflow-y-auto overscroll-contain bg-[#f7f6ef] text-[#101827] shadow-2xl [scrollbar-gutter:stable]">
+            <div
+              class="sticky top-0 z-20 flex min-h-16 items-center justify-between gap-4 border-b border-[#082f72]/10 bg-[#f7f6ef]/95 px-5 py-3 backdrop-blur sm:px-8">
+              <div class="flex min-w-0 items-center gap-3">
+                <span id="speakerModalDay"
+                  class="shrink-0 bg-[#ffd51f] px-3 py-1 text-xs font-extrabold uppercase tracking-[.12em] text-[#082f72]"></span>
+                <span class="truncate text-sm font-semibold text-[#667085]">Programação de palestras</span>
+              </div>
+              <button type="button"
+                class="speaker-modal-close focus-ring grid h-11 w-11 shrink-0 place-items-center bg-[#082f72] text-white transition hover:bg-[#e5187e]"
+                aria-label="Fechar modal">
+                <i class="ph ph-x text-xl" aria-hidden="true"></i>
+              </button>
+            </div>
+            <article class="grid lg:grid-cols-[minmax(0,1.6fr)_minmax(320px,.72fr)]" itemscope
+              itemtype="https://schema.org/Event">
+              <div class="min-w-0 p-6 sm:p-9 lg:p-12 xl:p-14">
+                <meta id="speakerModalStartDate" itemprop="startDate" content="2026-10-22" />
+                <p class="text-xs font-bold uppercase tracking-[.18em] text-[#e5187e]">Sobre esta palestra</p>
+                <h3 id="speakerModalTitle"
+                  class="mt-3 max-w-4xl font-display text-[clamp(2.8rem,6vw,5.4rem)] font-extrabold uppercase italic leading-[.84] text-[#082f72]"
+                  itemprop="name"></h3>
+                <div
+                  class="mt-7 flex flex-wrap gap-x-5 gap-y-2 border-y border-[#082f72]/10 py-4 text-sm font-semibold text-[#596579]">
+                  <span class="inline-flex items-center gap-2"><i class="ph ph-calendar-blank text-[#e5187e]"
+                      aria-hidden="true"></i><span id="speakerModalDate"></span></span>
+                  <span class="inline-flex items-center gap-2"><i class="ph ph-clock text-[#e5187e]"
+                      aria-hidden="true"></i><span id="speakerModalTime"></span></span>
+                  <span class="inline-flex items-center gap-2"><i class="ph ph-map-pin text-[#e5187e]"
+                      aria-hidden="true"></i><span id="speakerModalPlace"></span></span>
+                </div>
+                <div class="mt-9">
+                  <div id="speakerTalkCollapse"
+                    class="relative max-h-[27rem] overflow-hidden transition-[max-height] duration-300 sm:max-h-[31rem]"
+                    data-collapsed="true">
+                    <div id="speakerModalDescription"
+                      class="max-w-3xl space-y-5 text-[17px] leading-[1.75] text-[#48566d] sm:text-lg"
+                      itemprop="description"></div>
+                    <div
+                      class="speaker-fade pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#f7f6ef] via-[#f7f6ef]/95 to-transparent"
+                      aria-hidden="true"></div>
+                  </div>
+                  <button id="speakerTalkMore" type="button"
+                    class="focus-ring mt-5 inline-flex min-h-11 items-center gap-2 text-sm font-bold uppercase tracking-[.08em] text-[#e5187e]"
+                    aria-expanded="false" aria-controls="speakerTalkCollapse">Ver mais sobre a palestra <i
+                      class="ph ph-caret-down text-base" aria-hidden="true"></i></button>
+                </div>
+                <div class="mt-10 border-t border-[#082f72]/15 pt-7">
+                  <p class="text-xs font-bold uppercase tracking-[.16em] text-[#e5187e]">O que você pode levar desta
+                    conversa</p>
+                  <ul id="speakerModalTakeaways" class="mt-5 grid gap-3 sm:grid-cols-2"></ul>
+                </div>
+              </div>
+              <aside class="border-t border-[#082f72]/10 bg-[#efede6] p-6 lg:border-l lg:border-t-0 lg:p-8 xl:p-10"
+                itemscope itemtype="https://schema.org/Person" itemprop="performer">
+                <div class="lg:sticky lg:top-20">
+                  <img id="speakerModalImage" src="" alt="" class="aspect-[4/5] w-full object-cover" itemprop="image" />
+                  <div class="mt-6">
+                    <p class="text-xs font-bold uppercase tracking-[.16em] text-[#e5187e]">Palestrante</p>
+                    <p id="speakerModalName"
+                      class="mt-2 font-display text-4xl font-extrabold leading-none text-[#082f72]" itemprop="name"></p>
+                    <p id="speakerModalRole" class="mt-2 text-base font-medium text-[#687387]" itemprop="jobTitle"></p>
+                  </div>
+                  <div class="mt-7 border-t border-[#082f72]/15 pt-6">
+                    <p class="text-xs font-bold uppercase tracking-[.16em] text-[#082f72]/55">Biografia</p>
+                    <div id="speakerBioCollapse"
+                      class="relative mt-4 max-h-[17rem] overflow-hidden transition-[max-height] duration-300"
+                      data-collapsed="true">
+                      <div id="speakerModalBio" class="space-y-4 text-base leading-[1.7] text-[#566276]"
+                        itemprop="description"></div>
+                      <div
+                        class="speaker-fade pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#efede6] via-[#efede6]/95 to-transparent"
+                        aria-hidden="true"></div>
+                    </div>
+                    <button id="speakerBioMore" type="button"
+                      class="focus-ring mt-4 inline-flex min-h-10 items-center gap-2 text-sm font-bold text-[#082f72] underline decoration-2 underline-offset-4"
+                      aria-expanded="false" aria-controls="speakerBioCollapse">Ver biografia completa <i
+                        class="ph ph-caret-down" aria-hidden="true"></i></button>
+                  </div>
+                  <div class="mt-7 border-t border-[#082f72]/15 pt-6">
+                    <p class="text-xs font-bold uppercase tracking-[.16em] text-[#082f72]/55">Nesta edição</p>
+                    <dl class="mt-4 grid gap-3 text-sm">
+                      <div class="flex items-start justify-between gap-4">
+                        <dt class="text-[#687387]">Dia</dt>
+                        <dd id="speakerMetaDay" class="font-bold text-[#082f72]"></dd>
+                      </div>
+                      <div class="flex items-start justify-between gap-4">
+                        <dt class="text-[#687387]">Horário</dt>
+                        <dd id="speakerMetaTime" class="font-bold text-[#082f72]"></dd>
+                      </div>
+                      <div class="flex items-start justify-between gap-4">
+                        <dt class="text-[#687387]">Espaço</dt>
+                        <dd id="speakerMetaPlace" class="text-right font-bold text-[#082f72]"></dd>
+                      </div>
+                    </dl>
+                  </div>
+                </div>
+              </aside>
+            </article>
           </div>
         </div>
       </div>
@@ -1086,8 +1484,9 @@
             <span class="text-xs font-bold uppercase tracking-[.2em] text-[#79c143]">Informação sem ruído</span>
             <h2
               class="mt-4 font-display text-6xl font-extrabold uppercase italic leading-[.8] text-[#082f72] sm:text-7xl">
-              Você pergunta.<br><span class="text-[#e5187e]">A gente resolve.</span></h2>
-            <p class="mt-6 max-w-md text-base leading-relaxed text-[#596579]">As perguntas são organizadas para ajudar
+              Você pergunta.<br><span class="text-[#e5187e]">A gente resolve.</span>
+            </h2>
+            <p class="mt-6 max-w-md text-base leading-relaxed text-[#596579]">As perguntas estão organizadas para ajudar
               você a encontrar rapidamente as principais informações sobre corrida, kit, palestras, Expo e local.</p>
           </div>
 
@@ -1098,96 +1497,83 @@
                     distâncias da corrida?</span><span
                     class="faq-symbol grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#f6f3ed] text-xl"
                     aria-hidden="true"><i class="ph ph-minus"></i></span></button></h3>
-              <div id="faq-1" class="faq-panel pb-6 pr-12 text-base leading-relaxed text-[#596579]">A Corrida do
-                Empreendedor terá percursos de 5 km, 10 km e 15 km, no dia 24 de outubro, na Arena das Dunas.</div>
+              <div id="faq-1" class="faq-panel pb-6 pr-12 text-[#596579]">A Corrida do Empreendedor terá percursos de 5
+                km, 10 km e 15 km, no dia 24 de outubro, na Arena das Dunas.</div>
             </div>
-
             <div class="faq-item border-b border-[#082f72]/15">
               <h3><button class="faq-button focus-ring flex w-full items-center justify-between gap-6 py-6 text-left"
                   aria-expanded="false" aria-controls="faq-2"><span class="text-lg font-bold text-[#082f72]">Quando e
-                    onde
-                    será a retirada dos kits?</span><span
+                    onde será a retirada dos kits?</span><span
                     class="faq-symbol grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#f6f3ed] text-xl"
                     aria-hidden="true"><i class="ph ph-plus"></i></span></button></h3>
-              <div id="faq-2" class="faq-panel pb-6 pr-12 text-base leading-relaxed text-[#596579]" hidden>A retirada
-                dos kits acontecerá nos dias 22 e 23 de outubro, na Arena das Dunas. Os horários, documentos necessários
-                e orientações para retirada por terceiros serão divulgados aqui.</div>
+              <div id="faq-2" class="faq-panel pb-6 pr-12 text-[#596579]" hidden>A retirada dos kits acontecerá nos dias
+                <strong>22 e 23 de outubro</strong>, na Arena das Dunas. Os horários, documentos necessários e
+                orientações para retirada por terceiros serão divulgados aqui.</div>
             </div>
-
             <div class="faq-item border-b border-[#082f72]/15">
               <h3><button class="faq-button focus-ring flex w-full items-center justify-between gap-6 py-6 text-left"
                   aria-expanded="false" aria-controls="faq-3"><span class="text-lg font-bold text-[#082f72]">Quem se
                     inscreve na corrida tem acesso às palestras?</span><span
                     class="faq-symbol grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#f6f3ed] text-xl"
                     aria-hidden="true"><i class="ph ph-plus"></i></span></button></h3>
-              <div id="faq-3" class="faq-panel pb-6 pr-12 text-base leading-relaxed text-[#596579]" hidden>Sim. Cada
-                inscrição na corrida garante 3 acessos à programação de palestras: 1 para o corredor + 2 cortesias para
-                convidados.</div>
+              <div id="faq-3" class="faq-panel pb-6 pr-12 text-[#596579]" hidden>Sim. Cada inscrição na corrida garante
+                3 acessos à programação de palestras: 1 para o corredor + 2 cortesias para convidados.</div>
             </div>
-
             <div class="faq-item border-b border-[#082f72]/15">
               <h3><button class="faq-button focus-ring flex w-full items-center justify-between gap-6 py-6 text-left"
                   aria-expanded="false" aria-controls="faq-4"><span class="text-lg font-bold text-[#082f72]">Onde
-                    acontece
-                    o evento?</span><span
+                    acontece o evento?</span><span
                     class="faq-symbol grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#f6f3ed] text-xl"
                     aria-hidden="true"><i class="ph ph-plus"></i></span></button></h3>
-              <div id="faq-4" class="faq-panel pb-6 pr-12 text-base leading-relaxed text-[#596579]" hidden>Toda a
-                programação acontece na Arena das Dunas, em Natal/RN, nos dias 22, 23 e 24 de outubro de 2026.</div>
+              <div id="faq-4" class="faq-panel pb-6 pr-12 text-[#596579]" hidden>Toda a programação acontece na Arena
+                das Dunas, em Natal/RN, nos dias 22, 23 e 24 de outubro de 2026.</div>
             </div>
-
             <div class="faq-item border-b border-[#082f72]/15">
               <h3><button class="faq-button focus-ring flex w-full items-center justify-between gap-6 py-6 text-left"
                   aria-expanded="false" aria-controls="faq-5"><span class="text-lg font-bold text-[#082f72]">A Expo será
                     aberta ao público?</span><span
                     class="faq-symbol grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#f6f3ed] text-xl"
                     aria-hidden="true"><i class="ph ph-plus"></i></span></button></h3>
-              <div id="faq-5" class="faq-panel pb-6 pr-12 text-base leading-relaxed text-[#596579]" hidden>As
-                informações sobre acesso à Expo Sebrae serão divulgadas em breve.</div>
+              <div id="faq-5" class="faq-panel pb-6 pr-12 text-[#596579]" hidden>As informações sobre acesso à Expo
+                Sebrae serão divulgadas em breve.</div>
             </div>
-
             <div class="faq-item border-b border-[#082f72]/15">
               <h3><button class="faq-button focus-ring flex w-full items-center justify-between gap-6 py-6 text-left"
                   aria-expanded="false" aria-controls="faq-6"><span class="text-lg font-bold text-[#082f72]">Preciso me
                     inscrever na corrida para participar das palestras?</span><span
                     class="faq-symbol grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#f6f3ed] text-xl"
                     aria-hidden="true"><i class="ph ph-plus"></i></span></button></h3>
-              <div id="faq-6" class="faq-panel pb-6 pr-12 text-base leading-relaxed text-[#596579]" hidden>Não. Também
-                será possível realizar a inscrição diretamente na programação de palestras.</div>
+              <div id="faq-6" class="faq-panel pb-6 pr-12 text-[#596579]" hidden>Não. Também será possível realizar a
+                inscrição diretamente na programação de palestras.</div>
             </div>
-
             <div class="faq-item border-b border-[#082f72]/15">
               <h3><button class="faq-button focus-ring flex w-full items-center justify-between gap-6 py-6 text-left"
                   aria-expanded="false" aria-controls="faq-7"><span class="text-lg font-bold text-[#082f72]">Como
                     funcionam as 2 cortesias para convidados?</span><span
                     class="faq-symbol grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#f6f3ed] text-xl"
                     aria-hidden="true"><i class="ph ph-plus"></i></span></button></h3>
-              <div id="faq-7" class="faq-panel pb-6 pr-12 text-base leading-relaxed text-[#596579]" hidden>Quem se
-                inscrever na corrida terá direito ao próprio acesso às palestras e a 2 cortesias para convidados. As
-                orientações para utilização das cortesias serão informadas após a inscrição.</div>
+              <div id="faq-7" class="faq-panel pb-6 pr-12 text-[#596579]" hidden>Quem se inscrever na corrida terá
+                direito ao próprio acesso às palestras e a 2 cortesias para convidados. As orientações para utilização
+                das cortesias serão informadas após a inscrição.</div>
             </div>
-
             <div class="faq-item border-b border-[#082f72]/15">
               <h3><button class="faq-button focus-ring flex w-full items-center justify-between gap-6 py-6 text-left"
                   aria-expanded="false" aria-controls="faq-8"><span class="text-lg font-bold text-[#082f72]">Quais serão
                     os horários da corrida?</span><span
                     class="faq-symbol grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#f6f3ed] text-xl"
                     aria-hidden="true"><i class="ph ph-plus"></i></span></button></h3>
-              <div id="faq-8" class="faq-panel pb-6 pr-12 text-base leading-relaxed text-[#596579]" hidden>Os horários
-                de concentração, largada de cada percurso e premiação serão divulgados na programação oficial do evento.
-              </div>
+              <div id="faq-8" class="faq-panel pb-6 pr-12 text-[#596579]" hidden>Os horários de concentração, largada de
+                cada percurso e premiação serão divulgados na programação oficial do evento.</div>
             </div>
-
             <div class="faq-item border-b border-[#082f72]/15">
               <h3><button class="faq-button focus-ring flex w-full items-center justify-between gap-6 py-6 text-left"
                   aria-expanded="false" aria-controls="faq-9"><span class="text-lg font-bold text-[#082f72]">Outra
-                    pessoa
-                    pode retirar meu kit?</span><span
+                    pessoa pode retirar meu kit?</span><span
                     class="faq-symbol grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#f6f3ed] text-xl"
                     aria-hidden="true"><i class="ph ph-plus"></i></span></button></h3>
-              <div id="faq-9" class="faq-panel pb-6 pr-12 text-base leading-relaxed text-[#596579]" hidden>As regras e
-                os documentos necessários para retirada do kit por terceiros serão informados juntamente com as
-                orientações oficiais de retirada.</div>
+              <div id="faq-9" class="faq-panel pb-6 pr-12 text-[#596579]" hidden>As regras e os documentos necessários
+                para retirada do kit por terceiros serão informados juntamente com as orientações oficiais de retirada.
+              </div>
             </div>
           </div>
         </div>
@@ -1322,6 +1708,435 @@
           icon?.classList.toggle('ph-minus', !expanded);
         }
       });
+    });
+
+    // Palestras: filtros, visualização mobile e modal contextual
+    const speakerData = {
+      "gabriela": {
+        "name": "Gabriela Prioli",
+        "role": "Comunicadora",
+        "title": "Tolerância em tempos digitais",
+        "image": "https://image.divulga.sebraern.com.br/lib/fe3811727364047f751c70/m/1/b2cc9f1a-1e3b-4be6-a2f9-24c00f2fa361.png",
+        "day": "22",
+        "date": "22 de outubro",
+        "time": "14:00",
+        "place": "Arena do Conhecimento",
+        "paragraphs": [
+          "Esta é uma simulação editorial de alto volume para testar como o modal se comporta quando a equipe de Marketing cadastra uma descrição extensa. Em “Tolerância em tempos digitais”, o conteúdo parte de situações concretas e provoca uma reflexão sobre escolhas, comportamento e tomada de decisão em ambientes de mudança.",
+          "A conversa começa pelo contexto: excesso de informação, velocidade, novas expectativas e a necessidade de construir repertório para decidir melhor. Em vez de apresentar respostas prontas, a proposta é organizar perguntas que ajudem o público a reconhecer padrões e transformar percepção em ação.",
+          "Ao longo da palestra, exemplos e situações de negócio são usados para aproximar conceitos aparentemente abstratos da rotina de quem empreende. O objetivo é permitir que diferentes perfis de público encontrem pontos de conexão sem exigir conhecimento prévio do tema.",
+          "Um segundo eixo aborda comunicação e posicionamento. Como empresas e pessoas podem construir confiança quando a atenção é disputada por centenas de estímulos? Como ser claro sem simplificar demais? Como sustentar uma ideia quando o ambiente muda rapidamente?",
+          "A narrativa também explora tensões comuns entre crescimento e consistência, velocidade e qualidade, exposição e reputação. O conteúdo foi propositalmente alongado nesta versão de protótipo para testar leitura, scroll, hierarquia e mecanismos de expansão em telas pequenas.",
+          "Na parte final, a discussão se volta para aplicação prática. O participante é convidado a identificar quais escolhas dependem de estratégia, quais dependem de cultura e quais podem ser transformadas imediatamente em pequenos experimentos dentro do negócio.",
+          "Este parágrafo adicional simula uma equipe editorial que ultrapassou o volume recomendado. O sistema não deve quebrar, aumentar indefinidamente a altura inicial do modal ou esconder o botão de fechamento. Em vez disso, deve preservar uma primeira leitura controlada e oferecer expansão consciente por meio de “Ver mais”.",
+          "Por fim, a palestra fecha com uma síntese dos principais conceitos e uma provocação para que cada participante defina o próximo passo que pretende executar depois do evento. O aprofundamento permanece disponível sem obrigar quem busca apenas uma visão rápida a consumir todo o conteúdo."
+        ],
+        "bio": [
+          "Gabriela Prioli participa desta simulação como Comunicadora. Este texto é demonstrativo e existe para testar um cadastro editorial extenso sem transformar informações não fornecidas pelo Marketing em dados biográficos oficiais.",
+          "Em produção, este espaço receberá a biografia homologada pela organização, incluindo trajetória profissional, projetos, áreas de atuação e demais informações relevantes para contextualizar a participação no evento.",
+          "Também estamos simulando um terceiro parágrafo para verificar o comportamento do componente quando a biografia ultrapassa o espaço previsto no desktop e precisa ser apresentada de forma progressiva no mobile. O conteúdo excedente permanece acessível pelo controle “Ver biografia completa”.",
+          "Um quarto parágrafo demonstra que a coluna lateral pode continuar extensa sem deslocar o conteúdo central da palestra. A interface mantém as informações principais visíveis, preserva o botão de fechamento e evita que o usuário seja obrigado a percorrer toda a biografia para retornar à palestra."
+        ],
+        "takeaways": [
+          "Repertório para decisões mais conscientes",
+          "Aplicações práticas para negócios",
+          "Novas perguntas para orientar estratégia",
+          "Conexões entre comportamento e mercado"
+        ]
+      },
+      "igor": {
+        "name": "Igor 3K",
+        "role": "Flow Podcast",
+        "title": "Conversas que constroem comunidades",
+        "image": "https://image.divulga.sebraern.com.br/lib/fe3811727364047f751c70/m/1/33a30eff-b78a-446c-b28d-a6d71fab3a6c.png",
+        "day": "22",
+        "date": "22 de outubro",
+        "time": "15:00",
+        "place": "Arena do Conhecimento",
+        "paragraphs": [
+          "Esta é uma simulação editorial de alto volume para testar como o modal se comporta quando a equipe de Marketing cadastra uma descrição extensa. Em “Conversas que constroem comunidades”, o conteúdo parte de situações concretas e provoca uma reflexão sobre escolhas, comportamento e tomada de decisão em ambientes de mudança.",
+          "A conversa começa pelo contexto: excesso de informação, velocidade, novas expectativas e a necessidade de construir repertório para decidir melhor. Em vez de apresentar respostas prontas, a proposta é organizar perguntas que ajudem o público a reconhecer padrões e transformar percepção em ação.",
+          "Ao longo da palestra, exemplos e situações de negócio são usados para aproximar conceitos aparentemente abstratos da rotina de quem empreende. O objetivo é permitir que diferentes perfis de público encontrem pontos de conexão sem exigir conhecimento prévio do tema."
+        ],
+        "bio": [
+          "Igor 3K participa desta simulação como Flow Podcast. Este texto é demonstrativo e existe para testar um cadastro editorial extenso sem transformar informações não fornecidas pelo Marketing em dados biográficos oficiais.",
+          "Em produção, este espaço receberá a biografia homologada pela organização, incluindo trajetória profissional, projetos, áreas de atuação e demais informações relevantes para contextualizar a participação no evento."
+        ],
+        "takeaways": [
+          "Repertório para decisões mais conscientes",
+          "Aplicações práticas para negócios",
+          "Novas perguntas para orientar estratégia",
+          "Conexões entre comportamento e mercado"
+        ]
+      },
+      "michel": {
+        "name": "Michel Alcoforado",
+        "role": "Doutor",
+        "title": "Comportamento, cultura e consumo",
+        "image": "https://image.divulga.sebraern.com.br/lib/fe3811727364047f751c70/m/1/607304f2-d01d-4f26-a85a-ec5c8ffba4e6.png",
+        "day": "22",
+        "date": "22 de outubro",
+        "time": "16:00",
+        "place": "Arena do Conhecimento",
+        "paragraphs": [
+          "Esta é uma simulação editorial de alto volume para testar como o modal se comporta quando a equipe de Marketing cadastra uma descrição extensa. Em “Comportamento, cultura e consumo”, o conteúdo parte de situações concretas e provoca uma reflexão sobre escolhas, comportamento e tomada de decisão em ambientes de mudança.",
+          "A conversa começa pelo contexto: excesso de informação, velocidade, novas expectativas e a necessidade de construir repertório para decidir melhor. Em vez de apresentar respostas prontas, a proposta é organizar perguntas que ajudem o público a reconhecer padrões e transformar percepção em ação.",
+          "Ao longo da palestra, exemplos e situações de negócio são usados para aproximar conceitos aparentemente abstratos da rotina de quem empreende. O objetivo é permitir que diferentes perfis de público encontrem pontos de conexão sem exigir conhecimento prévio do tema."
+        ],
+        "bio": [
+          "Michel Alcoforado participa desta simulação como Doutor. Este texto é demonstrativo e existe para testar um cadastro editorial extenso sem transformar informações não fornecidas pelo Marketing em dados biográficos oficiais.",
+          "Em produção, este espaço receberá a biografia homologada pela organização, incluindo trajetória profissional, projetos, áreas de atuação e demais informações relevantes para contextualizar a participação no evento."
+        ],
+        "takeaways": [
+          "Repertório para decisões mais conscientes",
+          "Aplicações práticas para negócios",
+          "Novas perguntas para orientar estratégia",
+          "Conexões entre comportamento e mercado"
+        ]
+      },
+      "fred": {
+        "name": "Fred Alecrim",
+        "role": "Empresário",
+        "title": "Marcas que crescem com consistência",
+        "image": "https://image.divulga.sebraern.com.br/lib/fe3811727364047f751c70/m/1/e473c82e-1281-41c2-b3d9-8a5859c23590.png",
+        "day": "22",
+        "date": "22 de outubro",
+        "time": "17:00",
+        "place": "Arena do Conhecimento",
+        "paragraphs": [
+          "Esta é uma simulação editorial de alto volume para testar como o modal se comporta quando a equipe de Marketing cadastra uma descrição extensa. Em “Marcas que crescem com consistência”, o conteúdo parte de situações concretas e provoca uma reflexão sobre escolhas, comportamento e tomada de decisão em ambientes de mudança.",
+          "A conversa começa pelo contexto: excesso de informação, velocidade, novas expectativas e a necessidade de construir repertório para decidir melhor. Em vez de apresentar respostas prontas, a proposta é organizar perguntas que ajudem o público a reconhecer padrões e transformar percepção em ação.",
+          "Ao longo da palestra, exemplos e situações de negócio são usados para aproximar conceitos aparentemente abstratos da rotina de quem empreende. O objetivo é permitir que diferentes perfis de público encontrem pontos de conexão sem exigir conhecimento prévio do tema."
+        ],
+        "bio": [
+          "Fred Alecrim participa desta simulação como Empresário. Este texto é demonstrativo e existe para testar um cadastro editorial extenso sem transformar informações não fornecidas pelo Marketing em dados biográficos oficiais.",
+          "Em produção, este espaço receberá a biografia homologada pela organização, incluindo trajetória profissional, projetos, áreas de atuação e demais informações relevantes para contextualizar a participação no evento."
+        ],
+        "takeaways": [
+          "Repertório para decisões mais conscientes",
+          "Aplicações práticas para negócios",
+          "Novas perguntas para orientar estratégia",
+          "Conexões entre comportamento e mercado"
+        ]
+      },
+      "rapha": {
+        "name": "Rapha Falcão",
+        "role": "Especialista em Marketing",
+        "title": "Marketing que vira movimento",
+        "image": "https://image.divulga.sebraern.com.br/lib/fe3811727364047f751c70/m/1/e308f8ba-cad1-4811-8a13-dc856abf7d39.png",
+        "day": "22",
+        "date": "22 de outubro",
+        "time": "18:00",
+        "place": "Arena do Conhecimento",
+        "paragraphs": [
+          "Esta é uma simulação editorial de alto volume para testar como o modal se comporta quando a equipe de Marketing cadastra uma descrição extensa. Em “Marketing que vira movimento”, o conteúdo parte de situações concretas e provoca uma reflexão sobre escolhas, comportamento e tomada de decisão em ambientes de mudança.",
+          "A conversa começa pelo contexto: excesso de informação, velocidade, novas expectativas e a necessidade de construir repertório para decidir melhor. Em vez de apresentar respostas prontas, a proposta é organizar perguntas que ajudem o público a reconhecer padrões e transformar percepção em ação.",
+          "Ao longo da palestra, exemplos e situações de negócio são usados para aproximar conceitos aparentemente abstratos da rotina de quem empreende. O objetivo é permitir que diferentes perfis de público encontrem pontos de conexão sem exigir conhecimento prévio do tema."
+        ],
+        "bio": [
+          "Rapha Falcão participa desta simulação como Especialista em Marketing. Este texto é demonstrativo e existe para testar um cadastro editorial extenso sem transformar informações não fornecidas pelo Marketing em dados biográficos oficiais.",
+          "Em produção, este espaço receberá a biografia homologada pela organização, incluindo trajetória profissional, projetos, áreas de atuação e demais informações relevantes para contextualizar a participação no evento."
+        ],
+        "takeaways": [
+          "Repertório para decisões mais conscientes",
+          "Aplicações práticas para negócios",
+          "Novas perguntas para orientar estratégia",
+          "Conexões entre comportamento e mercado"
+        ]
+      },
+      "camila": {
+        "name": "Camila Ortiz",
+        "role": "Loft Style",
+        "title": "Experiência de marca no varejo",
+        "image": "https://image.divulga.sebraern.com.br/lib/fe3811727364047f751c70/m/1/6b08a166-7c1f-4ea0-9767-cf27ad4f7466.png",
+        "day": "22",
+        "date": "22 de outubro",
+        "time": "19:00",
+        "place": "Arena do Conhecimento",
+        "paragraphs": [
+          "Esta é uma simulação editorial de alto volume para testar como o modal se comporta quando a equipe de Marketing cadastra uma descrição extensa. Em “Experiência de marca no varejo”, o conteúdo parte de situações concretas e provoca uma reflexão sobre escolhas, comportamento e tomada de decisão em ambientes de mudança.",
+          "A conversa começa pelo contexto: excesso de informação, velocidade, novas expectativas e a necessidade de construir repertório para decidir melhor. Em vez de apresentar respostas prontas, a proposta é organizar perguntas que ajudem o público a reconhecer padrões e transformar percepção em ação.",
+          "Ao longo da palestra, exemplos e situações de negócio são usados para aproximar conceitos aparentemente abstratos da rotina de quem empreende. O objetivo é permitir que diferentes perfis de público encontrem pontos de conexão sem exigir conhecimento prévio do tema."
+        ],
+        "bio": [
+          "Camila Ortiz participa desta simulação como Loft Style. Este texto é demonstrativo e existe para testar um cadastro editorial extenso sem transformar informações não fornecidas pelo Marketing em dados biográficos oficiais.",
+          "Em produção, este espaço receberá a biografia homologada pela organização, incluindo trajetória profissional, projetos, áreas de atuação e demais informações relevantes para contextualizar a participação no evento."
+        ],
+        "takeaways": [
+          "Repertório para decisões mais conscientes",
+          "Aplicações práticas para negócios",
+          "Novas perguntas para orientar estratégia",
+          "Conexões entre comportamento e mercado"
+        ]
+      },
+      "cris-itamar": {
+        "name": "Cris Dios e Itamar Cechetto",
+        "role": "Laces and Hair",
+        "title": "Cultura, cuidado e construção de marca",
+        "image": "https://image.divulga.sebraern.com.br/lib/fe3811727364047f751c70/m/1/f7b3bb81-06f6-4d0c-ae60-168369b512ee.png",
+        "day": "23",
+        "date": "23 de outubro",
+        "time": "14:30",
+        "place": "Arena do Conhecimento",
+        "paragraphs": [
+          "Esta é uma simulação editorial de alto volume para testar como o modal se comporta quando a equipe de Marketing cadastra uma descrição extensa. Em “Cultura, cuidado e construção de marca”, o conteúdo parte de situações concretas e provoca uma reflexão sobre escolhas, comportamento e tomada de decisão em ambientes de mudança.",
+          "A conversa começa pelo contexto: excesso de informação, velocidade, novas expectativas e a necessidade de construir repertório para decidir melhor. Em vez de apresentar respostas prontas, a proposta é organizar perguntas que ajudem o público a reconhecer padrões e transformar percepção em ação.",
+          "Ao longo da palestra, exemplos e situações de negócio são usados para aproximar conceitos aparentemente abstratos da rotina de quem empreende. O objetivo é permitir que diferentes perfis de público encontrem pontos de conexão sem exigir conhecimento prévio do tema."
+        ],
+        "bio": [
+          "Cris Dios e Itamar Cechetto participa desta simulação como Laces and Hair. Este texto é demonstrativo e existe para testar um cadastro editorial extenso sem transformar informações não fornecidas pelo Marketing em dados biográficos oficiais.",
+          "Em produção, este espaço receberá a biografia homologada pela organização, incluindo trajetória profissional, projetos, áreas de atuação e demais informações relevantes para contextualizar a participação no evento."
+        ],
+        "takeaways": [
+          "Repertório para decisões mais conscientes",
+          "Aplicações práticas para negócios",
+          "Novas perguntas para orientar estratégia",
+          "Conexões entre comportamento e mercado"
+        ]
+      },
+      "fabiano": {
+        "name": "Fabiano Zortéa",
+        "role": "Especialista em Varejo",
+        "title": "Varejo que entende pessoas",
+        "image": "https://image.divulga.sebraern.com.br/lib/fe3811727364047f751c70/m/1/41332e50-130b-4b55-9206-93ee5f7a84e2.png",
+        "day": "23",
+        "date": "23 de outubro",
+        "time": "15:30",
+        "place": "Arena do Conhecimento",
+        "paragraphs": [
+          "Esta é uma simulação editorial de alto volume para testar como o modal se comporta quando a equipe de Marketing cadastra uma descrição extensa. Em “Varejo que entende pessoas”, o conteúdo parte de situações concretas e provoca uma reflexão sobre escolhas, comportamento e tomada de decisão em ambientes de mudança.",
+          "A conversa começa pelo contexto: excesso de informação, velocidade, novas expectativas e a necessidade de construir repertório para decidir melhor. Em vez de apresentar respostas prontas, a proposta é organizar perguntas que ajudem o público a reconhecer padrões e transformar percepção em ação.",
+          "Ao longo da palestra, exemplos e situações de negócio são usados para aproximar conceitos aparentemente abstratos da rotina de quem empreende. O objetivo é permitir que diferentes perfis de público encontrem pontos de conexão sem exigir conhecimento prévio do tema."
+        ],
+        "bio": [
+          "Fabiano Zortéa participa desta simulação como Especialista em Varejo. Este texto é demonstrativo e existe para testar um cadastro editorial extenso sem transformar informações não fornecidas pelo Marketing em dados biográficos oficiais.",
+          "Em produção, este espaço receberá a biografia homologada pela organização, incluindo trajetória profissional, projetos, áreas de atuação e demais informações relevantes para contextualizar a participação no evento."
+        ],
+        "takeaways": [
+          "Repertório para decisões mais conscientes",
+          "Aplicações práticas para negócios",
+          "Novas perguntas para orientar estratégia",
+          "Conexões entre comportamento e mercado"
+        ]
+      },
+      "natiele": {
+        "name": "Natiele Krassmann",
+        "role": "Criamigos",
+        "title": "Experiências que criam vínculo",
+        "image": "https://image.divulga.sebraern.com.br/lib/fe3811727364047f751c70/m/1/97de58ba-becb-4190-a8f9-f7fbcd0687af.png",
+        "day": "23",
+        "date": "23 de outubro",
+        "time": "16:30",
+        "place": "Arena do Conhecimento",
+        "paragraphs": [
+          "Esta é uma simulação editorial de alto volume para testar como o modal se comporta quando a equipe de Marketing cadastra uma descrição extensa. Em “Experiências que criam vínculo”, o conteúdo parte de situações concretas e provoca uma reflexão sobre escolhas, comportamento e tomada de decisão em ambientes de mudança.",
+          "A conversa começa pelo contexto: excesso de informação, velocidade, novas expectativas e a necessidade de construir repertório para decidir melhor. Em vez de apresentar respostas prontas, a proposta é organizar perguntas que ajudem o público a reconhecer padrões e transformar percepção em ação.",
+          "Ao longo da palestra, exemplos e situações de negócio são usados para aproximar conceitos aparentemente abstratos da rotina de quem empreende. O objetivo é permitir que diferentes perfis de público encontrem pontos de conexão sem exigir conhecimento prévio do tema."
+        ],
+        "bio": [
+          "Natiele Krassmann participa desta simulação como Criamigos. Este texto é demonstrativo e existe para testar um cadastro editorial extenso sem transformar informações não fornecidas pelo Marketing em dados biográficos oficiais.",
+          "Em produção, este espaço receberá a biografia homologada pela organização, incluindo trajetória profissional, projetos, áreas de atuação e demais informações relevantes para contextualizar a participação no evento."
+        ],
+        "takeaways": [
+          "Repertório para decisões mais conscientes",
+          "Aplicações práticas para negócios",
+          "Novas perguntas para orientar estratégia",
+          "Conexões entre comportamento e mercado"
+        ]
+      },
+      "fabia-pablo": {
+        "name": "Fabia Miranda e Pablo Farias",
+        "role": "Negócios RN",
+        "title": "Negócios locais, impacto real",
+        "image": "https://image.divulga.sebraern.com.br/lib/fe3811727364047f751c70/m/1/2d4a9bac-74eb-4498-98e7-26ad3c92f65f.png",
+        "day": "23",
+        "date": "23 de outubro",
+        "time": "17:30",
+        "place": "Arena do Conhecimento",
+        "paragraphs": [
+          "Esta é uma simulação editorial de alto volume para testar como o modal se comporta quando a equipe de Marketing cadastra uma descrição extensa. Em “Negócios locais, impacto real”, o conteúdo parte de situações concretas e provoca uma reflexão sobre escolhas, comportamento e tomada de decisão em ambientes de mudança.",
+          "A conversa começa pelo contexto: excesso de informação, velocidade, novas expectativas e a necessidade de construir repertório para decidir melhor. Em vez de apresentar respostas prontas, a proposta é organizar perguntas que ajudem o público a reconhecer padrões e transformar percepção em ação.",
+          "Ao longo da palestra, exemplos e situações de negócio são usados para aproximar conceitos aparentemente abstratos da rotina de quem empreende. O objetivo é permitir que diferentes perfis de público encontrem pontos de conexão sem exigir conhecimento prévio do tema."
+        ],
+        "bio": [
+          "Fabia Miranda e Pablo Farias participa desta simulação como Negócios RN. Este texto é demonstrativo e existe para testar um cadastro editorial extenso sem transformar informações não fornecidas pelo Marketing em dados biográficos oficiais.",
+          "Em produção, este espaço receberá a biografia homologada pela organização, incluindo trajetória profissional, projetos, áreas de atuação e demais informações relevantes para contextualizar a participação no evento."
+        ],
+        "takeaways": [
+          "Repertório para decisões mais conscientes",
+          "Aplicações práticas para negócios",
+          "Novas perguntas para orientar estratégia",
+          "Conexões entre comportamento e mercado"
+        ]
+      },
+      "sergio": {
+        "name": "Sérgio de Paula",
+        "role": "Vox2you",
+        "title": "Comunicação que move pessoas",
+        "image": "https://image.divulga.sebraern.com.br/lib/fe3811727364047f751c70/m/1/1f9a58e5-a702-4839-98b2-1a49a1082009.png",
+        "day": "23",
+        "date": "23 de outubro",
+        "time": "18:30",
+        "place": "Arena do Conhecimento",
+        "paragraphs": [
+          "Esta é uma simulação editorial de alto volume para testar como o modal se comporta quando a equipe de Marketing cadastra uma descrição extensa. Em “Comunicação que move pessoas”, o conteúdo parte de situações concretas e provoca uma reflexão sobre escolhas, comportamento e tomada de decisão em ambientes de mudança.",
+          "A conversa começa pelo contexto: excesso de informação, velocidade, novas expectativas e a necessidade de construir repertório para decidir melhor. Em vez de apresentar respostas prontas, a proposta é organizar perguntas que ajudem o público a reconhecer padrões e transformar percepção em ação.",
+          "Ao longo da palestra, exemplos e situações de negócio são usados para aproximar conceitos aparentemente abstratos da rotina de quem empreende. O objetivo é permitir que diferentes perfis de público encontrem pontos de conexão sem exigir conhecimento prévio do tema."
+        ],
+        "bio": [
+          "Sérgio de Paula participa desta simulação como Vox2you. Este texto é demonstrativo e existe para testar um cadastro editorial extenso sem transformar informações não fornecidas pelo Marketing em dados biográficos oficiais.",
+          "Em produção, este espaço receberá a biografia homologada pela organização, incluindo trajetória profissional, projetos, áreas de atuação e demais informações relevantes para contextualizar a participação no evento."
+        ],
+        "takeaways": [
+          "Repertório para decisões mais conscientes",
+          "Aplicações práticas para negócios",
+          "Novas perguntas para orientar estratégia",
+          "Conexões entre comportamento e mercado"
+        ]
+      }
+    };
+
+    const speakerFilters = [...document.querySelectorAll('.speaker-day-filter')];
+    const speakerFilterReset = document.getElementById('speakerFilterReset');
+    const speakerFilterStatus = document.getElementById('speakerFilterStatus');
+    let activeSpeakerDay = null;
+
+    const applySpeakerFilter = (day = null) => {
+      activeSpeakerDay = day;
+      document.querySelectorAll('.speaker-item').forEach(item => {
+        const visible = !day || item.dataset.day === day;
+        item.classList.toggle('hidden', !visible);
+      });
+      speakerFilters.forEach(button => {
+        const active = button.dataset.speakerDay === day;
+        button.setAttribute('aria-pressed', String(active));
+        button.classList.toggle('bg-[#ffd51f]', active);
+        button.classList.toggle('border-[#ffd51f]', active);
+        button.classList.toggle('text-[#082f72]', active);
+        button.classList.toggle('border-white/35', !active);
+        button.classList.toggle('text-white', !active);
+      });
+      speakerFilterReset?.classList.toggle('hidden', !day);
+      speakerFilterReset?.classList.toggle('inline-flex', Boolean(day));
+      if (speakerFilterStatus) speakerFilterStatus.textContent = day ? `Exibindo palestrantes de ${day} de outubro.` : 'Exibindo todos os palestrantes.';
+    };
+
+    speakerFilters.forEach(button => button.addEventListener('click', () => {
+      const day = button.dataset.speakerDay;
+      applySpeakerFilter(activeSpeakerDay === day ? null : day);
+    }));
+    speakerFilterReset?.addEventListener('click', () => applySpeakerFilter(null));
+
+    const speakerCards = document.getElementById('speakerCards');
+    const speakerList = document.getElementById('speakerList');
+    const speakerCardsView = document.getElementById('speakerCardsView');
+    const speakerListView = document.getElementById('speakerListView');
+
+    const setSpeakerMobileView = (view) => {
+      const cards = view === 'cards';
+      speakerCards?.classList.toggle('hidden', !cards);
+      speakerList?.classList.toggle('hidden', cards);
+      speakerCardsView?.setAttribute('aria-pressed', String(cards));
+      speakerListView?.setAttribute('aria-pressed', String(!cards));
+      speakerCardsView?.classList.toggle('bg-white', cards);
+      speakerCardsView?.classList.toggle('text-[#082f72]', cards);
+      speakerCardsView?.classList.toggle('text-white', !cards);
+      speakerListView?.classList.toggle('bg-white', !cards);
+      speakerListView?.classList.toggle('text-[#082f72]', !cards);
+      speakerListView?.classList.toggle('text-white', cards);
+    };
+    speakerCardsView?.addEventListener('click', () => setSpeakerMobileView('cards'));
+    speakerListView?.addEventListener('click', () => setSpeakerMobileView('list'));
+
+    const speakerModal = document.getElementById('speakerModal');
+    const speakerModalTitle = document.getElementById('speakerModalTitle');
+    const speakerModalDescription = document.getElementById('speakerModalDescription');
+    const speakerModalName = document.getElementById('speakerModalName');
+    const speakerModalRole = document.getElementById('speakerModalRole');
+    const speakerModalImage = document.getElementById('speakerModalImage');
+    const speakerModalBio = document.getElementById('speakerModalBio');
+    const speakerModalDay = document.getElementById('speakerModalDay');
+    const speakerModalDate = document.getElementById('speakerModalDate');
+    const speakerModalTime = document.getElementById('speakerModalTime');
+    const speakerModalPlace = document.getElementById('speakerModalPlace');
+    const speakerModalStartDate = document.getElementById('speakerModalStartDate');
+    const speakerModalTakeaways = document.getElementById('speakerModalTakeaways');
+    const speakerMetaDay = document.getElementById('speakerMetaDay');
+    const speakerMetaTime = document.getElementById('speakerMetaTime');
+    const speakerMetaPlace = document.getElementById('speakerMetaPlace');
+    const speakerTalkCollapse = document.getElementById('speakerTalkCollapse');
+    const speakerBioCollapse = document.getElementById('speakerBioCollapse');
+    const speakerTalkMore = document.getElementById('speakerTalkMore');
+    const speakerBioMore = document.getElementById('speakerBioMore');
+    let speakerModalTrigger = null;
+
+    const setExpandedContent = (container, button, expanded, labels) => {
+      if (!container || !button) return;
+      container.dataset.collapsed = String(!expanded);
+      container.classList.toggle('max-h-none', expanded);
+      if (container.id === 'speakerTalkCollapse') {
+        container.classList.toggle('max-h-[27rem]', !expanded);
+        container.classList.toggle('sm:max-h-[31rem]', !expanded);
+      } else container.classList.toggle('max-h-[17rem]', !expanded);
+      container.querySelector('.speaker-fade')?.classList.toggle('hidden', expanded);
+      button.setAttribute('aria-expanded', String(expanded));
+      const textNode = [...button.childNodes].find(node => node.nodeType === Node.TEXT_NODE);
+      if (textNode) textNode.nodeValue = (expanded ? labels.less : labels.more) + ' ';
+      const icon = button.querySelector('i');
+      icon?.classList.toggle('ph-caret-down', !expanded);
+      icon?.classList.toggle('ph-caret-up', expanded);
+    };
+
+    speakerTalkMore?.addEventListener('click', () => setExpandedContent(speakerTalkCollapse, speakerTalkMore, speakerTalkMore.getAttribute('aria-expanded') !== 'true', { more: 'Ver mais sobre a palestra', less: 'Ver menos' }));
+    speakerBioMore?.addEventListener('click', () => setExpandedContent(speakerBioCollapse, speakerBioMore, speakerBioMore.getAttribute('aria-expanded') !== 'true', { more: 'Ver biografia completa', less: 'Ver menos' }));
+
+    const closeSpeakerModal = () => {
+      if (!speakerModal) return;
+      speakerModal.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+      speakerModalTrigger?.focus();
+    };
+
+    document.querySelectorAll('.speaker-open').forEach(button => button.addEventListener('click', () => {
+      const data = speakerData[button.dataset.speaker];
+      if (!data || !speakerModal) return;
+      speakerModalTrigger = button;
+      speakerModalTitle.textContent = data.title;
+      speakerModalName.textContent = data.name;
+      speakerModalRole.textContent = data.role;
+      speakerModalImage.src = data.image;
+      speakerModalImage.alt = data.name;
+      speakerModalDay.textContent = `${data.day} OUT`;
+      speakerModalDate.textContent = data.date;
+      speakerModalTime.textContent = data.time;
+      speakerModalPlace.textContent = data.place;
+      speakerMetaDay.textContent = data.date;
+      speakerMetaTime.textContent = data.time;
+      speakerMetaPlace.textContent = data.place;
+      speakerModalStartDate?.setAttribute('content', `2026-10-${data.day}`);
+      speakerModalDescription.innerHTML = data.paragraphs.map(text => `<p>${text}</p>`).join('');
+      speakerModalBio.innerHTML = data.bio.map(text => `<p>${text}</p>`).join('');
+      speakerModalTakeaways.innerHTML = data.takeaways.map(text => `<li class="flex gap-3 border border-[#082f72]/10 bg-white/60 p-4 text-base leading-snug text-[#405069]"><i class="ph ph-check-circle mt-0.5 shrink-0 text-xl text-[#79c143]" aria-hidden="true"></i><span>${text}</span></li>`).join('');
+      setExpandedContent(speakerTalkCollapse, speakerTalkMore, false, { more: 'Ver mais sobre a palestra', less: 'Ver menos' });
+      setExpandedContent(speakerBioCollapse, speakerBioMore, false, { more: 'Ver biografia completa', less: 'Ver menos' });
+      speakerModal.classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+      const scrollBox = speakerModal.querySelector('.speaker-modal-scroll');
+      if (scrollBox) scrollBox.scrollTop = 0;
+      requestAnimationFrame(() => speakerModal.querySelector('.speaker-modal-close')?.focus());
+    }));
+
+    speakerModal?.querySelectorAll('.speaker-modal-close, .speaker-modal-backdrop').forEach(button => button.addEventListener('click', closeSpeakerModal));
+    document.addEventListener('keydown', (event) => {
+      if (!speakerModal || speakerModal.classList.contains('hidden')) return;
+      if (event.key === 'Escape') closeSpeakerModal();
+      if (event.key === 'Tab') {
+        const focusable = [...speakerModal.querySelectorAll('button:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])')].filter(el => !el.closest('.hidden'));
+        if (!focusable.length) return;
+        const first = focusable[0], last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+        else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+      }
     });
 
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
