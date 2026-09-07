@@ -1,79 +1,654 @@
-<!doctype html>
-<html lang="pt-BR" class="scroll-smooth">
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="pt-BR">
+
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Corrida do Empreendedor 2026 — Arena das Dunas, Natal/RN."><meta name="theme-color" content="#082f72">
-<title>Corrida · Corrida do Empreendedor 2026</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800&family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700;1,800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
-<link rel="stylesheet" href="tailwind.css">
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta
+    content="Corrida do Empreendedor 2026 — 5K, 10K e 15K no dia 24 de outubro, com largada e chegada na Arena das Dunas, em Natal/RN."
+    name="description" />
+  <meta content="#082F72" name="theme-color" />
+  <title>Corrida | Corrida do Empreendedor 2026</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800&amp;family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700;1,800&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "Corrida do Empreendedor 2026",
+    "startDate": "2026-10-24T05:00:00-03:00",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Arena das Dunas",
+      "address": {"@type":"PostalAddress","addressLocality":"Natal","addressRegion":"RN","addressCountry":"BR"}
+    },
+    "organizer": {"@type":"Organization","name":"Sebrae RN"},
+    "url": "https://corridadoempreendedorrn.com.br/"
+  }
+  </script>
+  <style>
+    :root {
+      --blue: #0a3d91;
+      --navy: #082f72;
+      --pink: #e5187e;
+      --green: #79c143;
+      --yellow: #ffd51f;
+      --ink: #101827;
+      --paper: #f6f3ed
+    }
+
+    html {
+      scroll-padding-top: 92px
+    }
+
+    body {
+      font-family: "Barlow", ui-sans-serif, system-ui, sans-serif
+    }
+
+    .font-display {
+      font-family: "Barlow Condensed", "Arial Narrow", sans-serif
+    }
+
+    .track-grid {
+      background-image: linear-gradient(rgba(255, 255, 255, .07) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .07) 1px, transparent 1px);
+      background-size: 56px 56px
+    }
+
+    .noise {
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E");
+      mix-blend-mode: soft-light
+    }
+
+    .hero-run-mask {
+      background: linear-gradient(90deg, rgba(4, 25, 67, .98) 0%, rgba(4, 25, 67, .88) 42%, rgba(4, 25, 67, .35) 74%, rgba(4, 25, 67, .12) 100%), linear-gradient(0deg, rgba(4, 25, 67, .7), transparent 52%)
+    }
+
+    .focus-ring:focus-visible,
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--yellow);
+      outline-offset: 3px
+    }
+
+    dialog::backdrop {
+      background: rgba(4, 21, 52, .72);
+      backdrop-filter: blur(3px)
+    }
+
+    .race-track {
+      scrollbar-width: none
+    }
+
+    .race-track::-webkit-scrollbar {
+      display: none
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important
+      }
+    }
+  </style>
 </head>
+
 <body class="bg-[#f6f3ed] text-[#101827] antialiased selection:bg-[#ffd51f] selection:text-[#082f72]">
+  <a class="focus-ring fixed left-4 top-4 z-[100] -translate-y-24 rounded-full bg-white px-5 py-3 text-sm font-bold text-[#082f72] shadow-lg transition focus:translate-y-0"
+    href="#conteudo">Pular para o conteúdo</a>
+  <div class="relative z-50 bg-[#ffd51f] text-[#082f72]" data-global-utility="">
+    <div
+      class="mx-auto flex min-h-10 max-w-[1440px] items-center justify-center gap-3 px-5 py-2 text-center text-xs font-extrabold uppercase tracking-[.12em] sm:text-sm">
+      <span aria-hidden="true" class="hidden h-2 w-2 rounded-full bg-[#e5187e] sm:inline-block"></span>
+      22 a 24 de outubro · Arena das Dunas · Natal/RN
+      <a class="ml-1 hidden items-center gap-1 underline decoration-2 underline-offset-4 hover:no-underline sm:inline-flex"
+        href="index.html#programacao">Programação <i aria-hidden="true" class="ph ph-arrow-up-right"></i></a>
+    </div>
+  </div>
+  <header class="sticky top-0 z-40 border-b border-white/10 bg-[#082f72]/95 text-white backdrop-blur-xl"
+    data-global-header="">
+    <div class="mx-auto flex h-[76px] max-w-[1440px] items-center justify-between px-5 lg:px-8">
+      <a aria-label="Corrida do Empreendedor — início" class="group -ml-5 flex h-full shrink-0 items-center lg:-ml-8"
+        href="index.html">
+        <span
+          class="relative flex h-full w-[168px] items-center bg-[#f7f6ef] pl-5 pr-8 [clip-path:polygon(0_0,100%_0,88%_100%,0_100%)] sm:w-[190px] sm:pl-6 sm:pr-9 lg:w-[208px] lg:pl-8">
+          <img alt="Corrida do Empreendedor" class="h-auto w-[112px] object-contain sm:w-[126px] lg:w-[134px]"
+            src="site-assets/logo-corrida-empreendedor.png" />
+          <span aria-hidden="true" class="absolute bottom-0 left-0 h-1 w-14 bg-[#ffd51f]"></span>
+        </span>
+      </a>
+      <nav aria-label="Navegação principal" class="hidden items-center gap-8 text-sm font-bold lg:flex">
+        <a aria-current="page" class="transition hover:text-[#ffd51f] text-[#ffd51f]" href="corrida.html">Corrida</a>
+        <a class="transition hover:text-[#ffd51f]" href="index.html#palestras">Palestras</a>
+        <a class="transition hover:text-[#ffd51f]" href="expo.html">Expo</a>
+        <a class="transition hover:text-[#ffd51f]" href="noticias.html">Notícias</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <div class="relative hidden lg:block">
+          <button aria-controls="registrationMenu" aria-expanded="false"
+            class="focus-ring inline-flex h-11 items-center justify-center bg-[#e5187e] px-5 text-sm font-bold uppercase tracking-wide text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-[#082f72]"
+            id="registrationMenuButton" type="button">Inscreva-se <i aria-hidden="true"
+              class="ph ph-caret-down ml-2 text-base"></i></button>
+          <div aria-label="Escolha sua inscrição"
+            class="absolute right-0 top-[calc(100%+12px)] hidden w-[320px] border border-[#082f72]/10 bg-white p-2 text-[#082f72] shadow-2xl"
+            id="registrationMenu" role="menu">
+            <a class="focus-ring group flex items-center justify-between gap-5 p-4 transition hover:bg-[#f6f3ed]"
+              href="https://horadecorrer.com.br/e/corrida-do-empreendedor-sebraern" rel="noopener noreferrer"
+              role="menuitem" target="_blank"><span><strong class="block text-base">Corrida</strong><span
+                  class="mt-1 block text-sm font-medium text-[#667085]">5K · 10K · 15K</span></span><i
+                aria-hidden="true" class="ph ph-arrow-up-right text-xl"></i></a>
+            <a class="focus-ring group flex items-center justify-between gap-5 border-t border-[#082f72]/10 p-4 transition hover:bg-[#f6f3ed]"
+              href="https://horadecorrer.com.br/e/corrida-do-empreendedor-sebraern" rel="noopener noreferrer"
+              role="menuitem" target="_blank"><span><strong class="block text-base">Palestras</strong><span
+                  class="mt-1 block text-sm font-medium text-[#667085]">Programação de conteúdo</span></span><i
+                aria-hidden="true" class="ph ph-arrow-up-right text-xl"></i></a>
+          </div>
+        </div>
+        <button aria-controls="mobileMenu" aria-expanded="false" aria-label="Abrir menu"
+          class="focus-ring grid h-11 w-11 place-items-center border border-white/20 lg:hidden" id="menuButton"><i
+            aria-hidden="true" class="ph ph-list text-xl" id="menuIcon"></i></button>
+      </div>
+    </div>
+    <div class="hidden border-t border-white/10 bg-[#082f72] px-5 pb-6 pt-4 lg:hidden" id="mobileMenu">
+      <nav aria-label="Navegação mobile" class="grid gap-1 text-lg font-bold">
+        <a aria-current="page" class="py-3 border-b border-white/10 text-[#ffd51f]" href="corrida.html">Corrida</a>
+        <a class="py-3 border-b border-white/10" href="index.html#palestras">Palestras</a>
+        <a class="py-3 border-b border-white/10" href="expo.html">Expo</a>
+        <a class="py-3" href="noticias.html">Notícias</a>
+        <button
+          class="focus-ring mt-4 inline-flex h-12 items-center justify-center bg-[#e5187e] font-bold uppercase tracking-wide text-white"
+          data-open-registration="" type="button">Inscreva-se</button>
+      </nav>
+    </div>
+  </header>
+  <main id="conteudo">
+    <section class="relative isolate min-h-[72svh] overflow-hidden bg-[#082f72] text-white">
+      <img alt="Corredores da Corrida do Empreendedor" class="absolute inset-0 h-full w-full object-cover object-center"
+        fetchpriority="high"
+        src="https://corridadoempreendedorrn.com.br/wp-content/uploads/2026/08/BANNER-HERO-SITE.png" />
+      <div class="hero-run-mask absolute inset-0"></div>
+      <div class="track-grid absolute inset-0 opacity-30"></div>
+      <div aria-hidden="true" class="noise pointer-events-none absolute inset-0 opacity-30"></div>
+      <div aria-hidden="true" class="absolute right-0 top-0 hidden h-full w-20 grid-cols-3 lg:grid"><span
+          class="bg-[#e5187e]/85"></span><span class="bg-[#79c143]/85"></span><span class="bg-[#ffd51f]/90"></span>
+      </div>
+      <div class="relative mx-auto flex min-h-[72svh] max-w-[1440px] flex-col justify-end px-5 py-12 lg:px-8 lg:py-16">
+        <div class="max-w-4xl">
+          <p class="text-xs font-extrabold uppercase tracking-[.22em] text-[#ffd51f]">Corrida · 24 de outubro · Arena
+            das Dunas</p>
+          <h1 class="mt-5 font-display text-[clamp(4rem,9vw,8.5rem)] font-extrabold uppercase italic leading-[.8]">Corra
+            no ritmo<br /><span class="text-[#ffd51f]">das suas conquistas.</span></h1>
+          <p class="mt-7 max-w-2xl text-lg font-medium leading-relaxed text-white/80 sm:text-xl">Três distâncias. Uma
+            mesma Arena. Um percurso para transformar movimento em conquista — dentro de um evento que conecta esporte,
+            empreendedorismo e novas histórias.</p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a class="focus-ring inline-flex min-h-14 items-center justify-center bg-[#ffd51f] px-7 text-sm font-bold uppercase tracking-[.08em] text-[#082f72] transition hover:-translate-y-1 hover:bg-white"
+              href="#provas">Escolher minha prova <i aria-hidden="true" class="ph ph-arrow-down ml-3 text-lg"></i></a>
+            <a class="focus-ring inline-flex min-h-14 items-center justify-center border border-white/35 bg-white/5 px-7 text-sm font-bold uppercase tracking-[.08em] backdrop-blur transition hover:bg-white hover:text-[#082f72]"
+              href="https://horadecorrer.com.br/e/corrida-do-empreendedor-sebraern" rel="noopener noreferrer"
+              target="_blank">Inscreva-se <i aria-hidden="true" class="ph ph-arrow-up-right ml-3 text-lg"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section aria-labelledby="sobre-corrida" class="bg-white py-16 sm:py-20 lg:py-24">
+      <div class="mx-auto grid max-w-[1200px] gap-10 px-5 lg:grid-cols-[.75fr_1.25fr] lg:px-8">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[.18em] text-[#e5187e]">Networking &amp; esporte</p>
+          <h2
+            class="mt-4 font-display text-5xl font-extrabold uppercase italic leading-[.84] text-[#082f72] sm:text-6xl"
+            id="sobre-corrida">Uma corrida para quem move a economia.</h2>
+        </div>
+        <div class="max-w-2xl lg:pt-7">
+          <p class="text-lg leading-8 text-[#455268]">A Corrida do Empreendedor foi criada para celebrar quem movimenta
+            a economia potiguar todos os dias. A experiência aproxima o Sebrae de micro e pequenos empreendedores,
+            colaboradores e corredores em um ambiente ativo, inspirador e conectado.</p>
+          <p class="mt-5 text-lg leading-8 text-[#455268]">No dia 24 de outubro, a Arena das Dunas será o ponto de
+            concentração, largada e chegada das provas de 5K, 10K e 15K — uma corrida oficial licenciada pela Federação
+            Norte-Rio-Grandense de Atletismo.</p>
+        </div>
+      </div>
+    </section>
+    <section aria-labelledby="provas-titulo" class="overflow-hidden bg-[#f6f3ed] py-16 sm:py-20 lg:py-28" id="provas">
+      <div class="mx-auto max-w-[1440px] px-5 lg:px-8">
+        <div class="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-[.18em] text-[#e5187e]">Escolha seu desafio</p>
+            <h2
+              class="mt-4 font-display text-[clamp(3.5rem,7vw,7rem)] font-extrabold uppercase italic leading-[.8] text-[#082f72]"
+              id="provas-titulo">5K. 10K. 15K.<br /><span class="text-[#e5187e]">Qual é o seu ritmo?</span></h2>
+          </div>
+          <p class="max-w-md text-lg leading-8 text-[#526075]">Os três percursos partem da Arena das Dunas. Escolha a
+            distância e consulte o trajeto oficial.</p>
+        </div>
+        <div aria-label="Opções de prova"
+          class="race-track mt-12 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 lg:grid lg:grid-cols-3 lg:overflow-visible"
+          id="raceTrack">
+          <article
+            class="group min-w-[84%] snap-start overflow-hidden bg-[#0a3d91] text-white sm:min-w-[54%] lg:min-w-0">
+            <figure class="relative aspect-[4/3] overflow-hidden bg-[#0a3d91]">
+              <img alt="Camiseta azul da prova de 5 km da Corrida do Empreendedor"
+                class="h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]" loading="lazy"
+                src="site-assets/camisa-5k.png" />
+            </figure>
+            <div class="relative p-7 sm:p-8">
+              <div class="flex items-center justify-between"><span
+                  class="text-xs font-bold uppercase tracking-[.16em] text-[#ffd51f]">Prova 01</span><span
+                  class="text-[#ffd51f]">/////</span></div>
+              <p class="mt-10 font-display text-[6.5rem] font-extrabold leading-[.65]">5<span
+                  class="ml-2 text-3xl">KM</span></p>
+              <p class="mt-6 max-w-sm text-lg leading-7 text-white/75">A porta de entrada para quem quer viver a prova,
+                sentir a Arena e cruzar a linha de chegada.</p>
+              <a class="mt-7 inline-flex items-center gap-2 font-bold uppercase tracking-[.08em] text-[#ffd51f]"
+                href="https://www.mapmyrun.com/routes/view/6754677255" rel="noopener noreferrer" target="_blank">Ver
+                percurso oficial <i aria-hidden="true" class="ph ph-arrow-up-right"></i></a>
+            </div>
+          </article>
+          <article
+            class="group min-w-[84%] snap-start overflow-hidden bg-[#e5187e] text-white sm:min-w-[54%] lg:min-w-0">
+            <figure class="relative aspect-[4/3] overflow-hidden bg-[#e5187e]">
+              <img alt="Camiseta rosa da prova de 10 km da Corrida do Empreendedor"
+                class="h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]" loading="lazy"
+                src="site-assets/camisa-10k.png" />
+            </figure>
+            <div class="relative p-7 sm:p-8">
+              <div class="flex items-center justify-between"><span
+                  class="text-xs font-bold uppercase tracking-[.16em] text-[#ffd51f]">Prova 02</span><span
+                  class="text-[#ffd51f]">/////</span></div>
+              <p class="mt-10 font-display text-[6.5rem] font-extrabold leading-[.65]">10<span
+                  class="ml-2 text-3xl">KM</span></p>
+              <p class="mt-6 max-w-sm text-lg leading-7 text-white/80">Mais distância para quem quer transformar
+                constância em conquista e avançar no próprio ritmo.</p>
+              <a class="mt-7 inline-flex items-center gap-2 font-bold uppercase tracking-[.08em] text-[#ffd51f]"
+                href="https://www.mapmyrun.com/routes/view/6754676496" rel="noopener noreferrer" target="_blank">Ver
+                percurso oficial <i aria-hidden="true" class="ph ph-arrow-up-right"></i></a>
+            </div>
+          </article>
+          <article
+            class="group min-w-[84%] snap-start overflow-hidden bg-[#79c143] text-[#082f72] sm:min-w-[54%] lg:min-w-0">
+            <figure class="relative aspect-[4/3] overflow-hidden bg-[#79c143]">
+              <img alt="Camiseta branca da prova de 15 km da Corrida do Empreendedor"
+                class="h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]" loading="lazy"
+                src="site-assets/camisa-15k.png" />
+            </figure>
+            <div class="relative p-7 sm:p-8">
+              <div class="flex items-center justify-between"><span
+                  class="text-xs font-bold uppercase tracking-[.16em]">Prova 03</span><span>/////</span></div>
+              <p class="mt-10 font-display text-[6.5rem] font-extrabold leading-[.65]">15<span
+                  class="ml-2 text-3xl">KM</span></p>
+              <p class="mt-6 max-w-sm text-lg font-medium leading-7">Mais estratégia, mais resistência e uma história
+                ainda maior para levar da Arena.</p>
+              <a class="mt-7 inline-flex items-center gap-2 font-bold uppercase tracking-[.08em]"
+                href="https://www.mapmyrun.com/routes/view/6754380269" rel="noopener noreferrer" target="_blank">Ver
+                percurso oficial <i aria-hidden="true" class="ph ph-arrow-up-right"></i></a>
+            </div>
+          </article>
+        </div>
+        <div aria-label="Navegação das provas" class="mt-5 flex justify-end gap-2 lg:hidden">
+          <button aria-label="Prova anterior"
+            class="focus-ring grid h-11 w-11 place-items-center border border-[#082f72]/20 bg-white text-[#082f72] disabled:opacity-35"
+            id="racePrev" type="button"><i aria-hidden="true" class="ph ph-arrow-left"></i></button>
+          <button aria-label="Próxima prova"
+            class="focus-ring grid h-11 w-11 place-items-center bg-[#082f72] text-white disabled:opacity-35"
+            id="raceNext" type="button"><i aria-hidden="true" class="ph ph-arrow-right"></i></button>
+        </div>
+      </div>
+    </section>
+    <section aria-labelledby="info-title" class="bg-white py-16 sm:py-20 lg:py-24" id="informacoes">
+      <div class="mx-auto max-w-[1200px] px-5 lg:px-8">
+        <div class="grid gap-8 lg:grid-cols-[.8fr_1.2fr] lg:items-end">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-[.18em] text-[#e5187e]">Antes da largada</p>
+            <h2
+              class="mt-4 font-display text-5xl font-extrabold uppercase italic leading-[.84] text-[#082f72] sm:text-6xl"
+              id="info-title">O essencial para chegar preparado.</h2>
+          </div>
+          <p class="max-w-xl text-lg leading-8 text-[#526075]">Concentração, horários, regulamento e critérios de
+            premiação em acessos rápidos — sem tirar você do fluxo da página.</p>
+        </div>
+        <div class="mt-10 grid gap-3 md:grid-cols-3">
+          <button
+            class="focus-ring group min-h-[210px] bg-[#f6f3ed] p-6 text-left transition hover:bg-[#082f72] hover:text-white"
+            data-dialog-open="startDialog">
+            <div class="flex items-center justify-between"><span
+                class="text-xs font-bold uppercase tracking-[.16em] text-[#e5187e] group-hover:text-[#ffd51f]">Largada</span><i
+                aria-hidden="true" class="ph ph-clock text-2xl"></i></div>
+            <p class="mt-12 font-display text-4xl font-extrabold uppercase italic">24 OUT · 5h</p>
+            <p class="mt-3 text-base leading-6 text-[#5b6676] group-hover:text-white/75">Concentração a partir das 4h.
+              Veja os horários por categoria.</p>
+            <span class="mt-5 inline-flex items-center text-sm font-bold uppercase">Ver detalhes <i aria-hidden="true"
+                class="ph ph-arrow-up-right ml-2"></i></span>
+          </button>
+          <a class="focus-ring group min-h-[210px] bg-[#f6f3ed] p-6 transition hover:bg-[#082f72] hover:text-white"
+            href="https://corridadoempreendedorrn.com.br/wp-content/uploads/2026/07/Regulamento_Corrida-do-Empreendedor_REV-I.pdf"
+            rel="noopener noreferrer" target="_blank">
+            <div class="flex items-center justify-between"><span
+                class="text-xs font-bold uppercase tracking-[.16em] text-[#e5187e] group-hover:text-[#ffd51f]">Regulamento</span><i
+                aria-hidden="true" class="ph ph-file-text text-2xl"></i></div>
+            <p class="mt-12 font-display text-4xl font-extrabold uppercase italic">Regras oficiais</p>
+            <p class="mt-3 text-base leading-6 text-[#5b6676] group-hover:text-white/75">Categorias, critérios,
+              inscrições, kit, prova e demais diretrizes.</p>
+            <span class="mt-5 inline-flex items-center text-sm font-bold uppercase">Abrir regulamento <i
+                aria-hidden="true" class="ph ph-arrow-up-right ml-2"></i></span>
+          </a>
+          <button
+            class="focus-ring group min-h-[210px] bg-[#f6f3ed] p-6 text-left transition hover:bg-[#082f72] hover:text-white"
+            data-dialog-open="awardsDialog">
+            <div class="flex items-center justify-between"><span
+                class="text-xs font-bold uppercase tracking-[.16em] text-[#e5187e] group-hover:text-[#ffd51f]">Premiação</span><i
+                aria-hidden="true" class="ph ph-trophy text-2xl"></i></div>
+            <p class="mt-12 font-display text-4xl font-extrabold uppercase italic">Troféus e medalhas</p>
+            <p class="mt-3 text-base leading-6 text-[#5b6676] group-hover:text-white/75">Veja como funciona a premiação
+              geral, PCD, Empreendedor e faixas etárias.</p>
+            <span class="mt-5 inline-flex items-center text-sm font-bold uppercase">Ver critérios <i aria-hidden="true"
+                class="ph ph-arrow-up-right ml-2"></i></span>
+          </button>
+        </div>
+      </div>
+    </section>
+    <section aria-labelledby="kit-title" class="overflow-hidden bg-[#082f72] py-16 text-white sm:py-20 lg:py-28"
+      id="kit">
+      <div class="mx-auto max-w-[1440px] px-5 lg:px-8">
+        <div class="grid gap-10 lg:grid-cols-[.8fr_1.2fr] lg:items-end">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-[.18em] text-[#ffd51f]">Kit do corredor</p>
+            <h2 class="mt-4 font-display text-[clamp(3.8rem,7vw,7rem)] font-extrabold uppercase italic leading-[.8]"
+              id="kit-title">O kit também<br />faz parte da experiência.</h2>
+          </div>
+          <p class="max-w-xl text-lg leading-8 text-white/75">Cada distância leva a identidade da Corrida do
+            Empreendedor para o kit. Camiseta, número com chip e medalha acompanham a jornada do atleta da retirada à
+            linha de chegada.</p>
+        </div>
+        <div class="mt-12 grid gap-4 lg:grid-cols-[1.35fr_.65fr]">
+          <div class="grid gap-4 sm:grid-cols-3">
+            <figure class="overflow-hidden bg-white text-[#082f72]">
+              <img alt="Camiseta azul da prova de 5 km" class="aspect-[4/3] w-full object-cover" loading="lazy"
+                src="site-assets/camisa-5k.png" />
+              <figcaption class="p-5">
+                <p class="text-xs font-bold uppercase tracking-[.15em] text-[#e5187e]">5 km</p>
+                <p class="mt-2 font-display text-3xl font-extrabold uppercase italic">Camiseta 5K</p>
+                <p class="mt-2 text-base leading-7 text-[#687387]">Identidade em azul para quem escolhe os 5 km.</p>
+              </figcaption>
+            </figure>
+            <figure class="overflow-hidden bg-white text-[#082f72]">
+              <img alt="Camiseta rosa da prova de 10 km" class="aspect-[4/3] w-full object-cover" loading="lazy"
+                src="site-assets/camisa-10k.png" />
+              <figcaption class="p-5">
+                <p class="text-xs font-bold uppercase tracking-[.15em] text-[#e5187e]">10 km</p>
+                <p class="mt-2 font-display text-3xl font-extrabold uppercase italic">Camiseta 10K</p>
+                <p class="mt-2 text-base leading-7 text-[#687387]">Identidade em rosa para quem encara os 10 km.</p>
+              </figcaption>
+            </figure>
+            <figure class="overflow-hidden bg-white text-[#082f72]">
+              <img alt="Camiseta branca da prova de 15 km" class="aspect-[4/3] w-full object-cover" loading="lazy"
+                src="site-assets/camisa-15k.png" />
+              <figcaption class="p-5">
+                <p class="text-xs font-bold uppercase tracking-[.15em] text-[#e5187e]">15 km</p>
+                <p class="mt-2 font-display text-3xl font-extrabold uppercase italic">Camiseta 15K</p>
+                <p class="mt-2 text-base leading-7 text-[#687387]">Identidade em branco para quem vai aos 15 km.</p>
+              </figcaption>
+            </figure>
+          </div>
+          <figure class="overflow-hidden bg-[#071f4d]">
+            <img alt="Medalha da Corrida do Empreendedor, frente e verso"
+              class="h-full min-h-[320px] w-full object-cover" loading="lazy" src="site-assets/medalha.png" />
+            <figcaption class="border-t border-white/10 p-5">
+              <p class="text-xs font-bold uppercase tracking-[.15em] text-[#ffd51f]">Na chegada</p>
+              <p class="mt-2 font-display text-3xl font-extrabold uppercase italic">Medalha do evento</p>
+              <p class="mt-2 text-base leading-7 text-white/70">Um símbolo para marcar a conquista de quem completa a
+                Corrida do Empreendedor.</p>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="mt-10 grid gap-5 bg-white p-6 text-[#101827] sm:p-8 lg:grid-cols-[.9fr_1.1fr] lg:p-10">
+          <div>
+            <div class="grid grid-cols-3 gap-px overflow-hidden bg-[#082f72]/10">
+              <div class="bg-[#f6f3ed] p-5"><i aria-hidden="true" class="ph ph-t-shirt text-3xl text-[#082f72]"></i>
+                <p class="mt-4 font-bold text-[#082f72]">Camiseta</p>
+                <p class="mt-1 text-sm text-[#687387]">Poliamida</p>
+              </div>
+              <div class="bg-[#f6f3ed] p-5"><i aria-hidden="true"
+                  class="ph ph-number-circle-one text-3xl text-[#e5187e]"></i>
+                <p class="mt-4 font-bold text-[#082f72]">Número</p>
+                <p class="mt-1 text-sm text-[#687387]">+ chip</p>
+              </div>
+              <div class="bg-[#f6f3ed] p-5"><i aria-hidden="true" class="ph ph-medal text-3xl text-[#79c143]"></i>
+                <p class="mt-4 font-bold text-[#082f72]">Medalha</p>
+                <p class="mt-1 text-sm text-[#687387]">Pós-prova</p>
+              </div>
+            </div>
+          </div>
+          <div class="grid gap-7 sm:grid-cols-2">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-[.16em] text-[#e5187e]">Retirada</p>
+              <p class="mt-3 font-display text-4xl font-extrabold uppercase italic text-[#082f72]">22 e 23 OUT</p>
+              <p class="mt-2 text-lg font-semibold">09h às 20h</p>
+              <p class="mt-1 text-base leading-7 text-[#5b6676]">Setor Hospitalidade · Arena das Dunas</p>
+            </div>
+            <div>
+              <p class="text-xs font-bold uppercase tracking-[.16em] text-[#e5187e]">O que levar</p>
+              <ul class="mt-4 space-y-2 text-base leading-7 text-[#455268]">
+                <li class="flex gap-2"><i aria-hidden="true"
+                    class="ph ph-check mt-1 text-[#79c143]"></i><span>Confirmação/recibo da inscrição</span></li>
+                <li class="flex gap-2"><i aria-hidden="true" class="ph ph-check mt-1 text-[#79c143]"></i><span>Documento
+                    oficial com foto</span></li>
+              </ul>
+            </div>
+            <div class="sm:col-span-2 border-t border-[#082f72]/10 pt-6">
+              <p class="font-bold text-[#082f72]">Retirada por terceiros</p>
+              <p class="mt-2 text-base leading-7 text-[#5b6676]">É permitida mediante procuração e a documentação
+                exigida no regulamento. Atletas com mais de 60 anos e pessoas com deficiência devem retirar pessoalmente
+                para comprovação do benefício.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-[#f6f3ed] py-14 sm:py-16">
+      <div class="mx-auto flex max-w-[1200px] flex-col justify-between gap-6 px-5 sm:flex-row sm:items-center lg:px-8">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[.16em] text-[#e5187e]">Pronto para correr?</p>
+          <h2
+            class="mt-2 font-display text-4xl font-extrabold uppercase italic leading-[.84] text-[#082f72] sm:text-5xl">
+            Escolha sua distância e garanta sua vaga.</h2>
+        </div>
+        <a class="focus-ring inline-flex min-h-14 shrink-0 items-center justify-center bg-[#e5187e] px-7 text-sm font-bold uppercase tracking-[.08em] text-white transition hover:bg-[#082f72]"
+          href="https://horadecorrer.com.br/e/corrida-do-empreendedor-sebraern" rel="noopener noreferrer"
+          target="_blank">Inscreva-se na corrida <i aria-hidden="true"
+            class="ph ph-arrow-up-right ml-3 text-lg"></i></a>
+      </div>
+    </section>
+  </main>
+  <footer class="bg-[#061f4e] text-white" data-global-footer="">
+    <div class="mx-auto grid max-w-[1440px] gap-12 px-5 py-14 lg:grid-cols-[1.35fr_.8fr_.95fr] lg:px-8">
+      <div>
+        <div class="inline-flex bg-[#f7f6ef] p-4 [clip-path:polygon(0_0,100%_0,92%_100%,0_100%)]"><img
+            alt="Corrida do Empreendedor" class="w-36" src="site-assets/logo-corrida-empreendedor.png" /></div>
+        <p class="mt-5 max-w-sm text-base leading-7 text-white/65">Três dias de corrida, palestras, Expo Sebrae,
+          cultura, gastronomia, conexões e oportunidades na Arena das Dunas.</p>
+      </div>
+      <div>
+        <p class="text-xs font-bold uppercase tracking-[.16em] text-[#ffd51f]">Explore</p>
+        <nav aria-label="Experiências do evento" class="mt-4 grid gap-3 text-base">
+          <a class="transition hover:text-[#ffd51f]" href="corrida.html">Corrida</a>
+          <a class="transition hover:text-[#ffd51f]" href="index.html#palestras">Palestras</a>
+          <a class="transition hover:text-[#ffd51f]" href="expo.html">Expo</a>
+          <a class="transition hover:text-[#ffd51f]" href="noticias.html">Notícias</a>
+        </nav>
+      </div>
+      <div>
+        <p class="text-xs font-bold uppercase tracking-[.16em] text-[#ffd51f]">Planeje sua experiência</p>
+        <nav aria-label="Informações práticas" class="mt-4 grid gap-3 text-base">
+          <a class="transition hover:text-[#ffd51f]" href="index.html#programacao">Programação</a>
+          <a class="transition hover:text-[#ffd51f]" href="corrida.html#kit">Kit do corredor</a>
+          <a class="transition hover:text-[#ffd51f]" href="index.html#faq">FAQ</a>
+          <a class="transition hover:text-[#ffd51f]"
+            href="https://corridadoempreendedorrn.com.br/wp-content/uploads/2026/07/Regulamento_Corrida-do-Empreendedor_REV-I.pdf"
+            rel="noopener noreferrer" target="_blank">Regulamento <i aria-hidden="true"
+              class="ph ph-arrow-up-right ml-1 text-sm"></i></a>
+        </nav>
+      </div>
+    </div>
+    <div class="border-t border-white/10">
+      <div
+        class="mx-auto flex max-w-[1440px] flex-col gap-3 px-5 py-6 text-sm text-white/55 sm:flex-row sm:items-center sm:justify-between lg:px-8">
+        <p>© 2026 Corrida do Empreendedor · Sebrae RN</p>
+        <p>22—24 outubro · Arena das Dunas · Natal/RN</p>
+      </div>
+    </div>
+  </footer>
+  <div
+    class="fixed inset-x-0 bottom-0 z-30 flex gap-2 border-t border-[#082f72]/10 bg-white p-3 shadow-[0_-10px_30px_rgba(8,47,114,.12)] lg:hidden">
+    <button
+      class="focus-ring inline-flex min-h-12 flex-1 items-center justify-center bg-[#e5187e] px-5 text-sm font-bold uppercase text-white"
+      data-open-registration="" type="button">Inscreva-se</button>
+    <a aria-label="Ver provas"
+      class="focus-ring grid h-12 w-12 place-items-center border border-[#082f72]/15 text-[#082f72]" href="#provas"><i
+        aria-hidden="true" class="ph ph-sneaker-move text-xl"></i></a>
+  </div>
+  <dialog class="m-auto w-[min(92vw,760px)] max-h-[88dvh] overflow-hidden bg-white p-0 text-[#101827] shadow-2xl"
+    id="startDialog">
+    <div class="sticky top-0 z-10 flex items-center justify-between border-b border-[#082f72]/10 bg-white px-6 py-4">
+      <div>
+        <p class="text-xs font-bold uppercase tracking-[.16em] text-[#e5187e]">24 outubro</p>
+        <h2 class="font-display text-3xl font-extrabold uppercase italic text-[#082f72]">Largada</h2>
+      </div><button aria-label="Fechar" class="focus-ring grid h-10 w-10 place-items-center" data-dialog-close=""><i
+          class="ph ph-x text-2xl"></i></button>
+    </div>
+    <div class="overflow-y-auto p-6 sm:p-8">
+      <div class="grid gap-3 sm:grid-cols-2">
+        <div class="bg-[#f6f3ed] p-5">
+          <p class="text-xs font-bold uppercase tracking-[.14em] text-[#e5187e]">Concentração</p>
+          <p class="mt-2 font-display text-4xl font-extrabold text-[#082f72]">04h</p>
+        </div>
+        <div class="bg-[#f6f3ed] p-5">
+          <p class="text-xs font-bold uppercase tracking-[.14em] text-[#e5187e]">Acesso</p>
+          <p class="mt-2 font-bold text-[#082f72]">Portão 3 · Bilheteria D</p>
+        </div>
+      </div>
+      <div class="mt-7 divide-y divide-[#082f72]/10 border-y border-[#082f72]/10">
+        <div class="grid grid-cols-[90px_1fr] gap-5 py-5"><strong
+            class="font-display text-3xl text-[#082f72]">05h00</strong>
+          <div>
+            <p class="font-bold">Categoria PCD</p>
+            <p class="text-[#647083]">5K · 10K · 15K</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-[90px_1fr] gap-5 py-5"><strong
+            class="font-display text-3xl text-[#082f72]">05h05</strong>
+          <div>
+            <p class="font-bold">Categoria Geral</p>
+            <p class="text-[#647083]">5K · 10K · 15K</p>
+          </div>
+        </div>
+      </div>
+      <p class="mt-5 text-sm leading-6 text-[#657083]">Os horários podem ser ajustados pela organização por necessidade
+        técnica, segurança, percurso ou fatores externos. Consulte sempre a comunicação oficial mais próxima do evento.
+      </p>
+    </div>
+  </dialog>
+  <dialog class="m-auto w-[min(92vw,860px)] max-h-[88dvh] overflow-hidden bg-white p-0 text-[#101827] shadow-2xl"
+    id="awardsDialog">
+    <div class="sticky top-0 z-10 flex items-center justify-between border-b border-[#082f72]/10 bg-white px-6 py-4">
+      <div>
+        <p class="text-xs font-bold uppercase tracking-[.16em] text-[#e5187e]">Corrida do Empreendedor</p>
+        <h2 class="font-display text-3xl font-extrabold uppercase italic text-[#082f72]">Premiação</h2>
+      </div><button aria-label="Fechar" class="focus-ring grid h-10 w-10 place-items-center" data-dialog-close=""><i
+          class="ph ph-x text-2xl"></i></button>
+    </div>
+    <div class="overflow-y-auto p-6 sm:p-8">
+      <div class="grid gap-4 sm:grid-cols-3">
+        <div class="bg-[#082f72] p-5 text-white">
+          <p class="text-xs font-bold uppercase tracking-[.14em] text-[#ffd51f]">Geral</p>
+          <p class="mt-3 text-lg font-bold">1º ao 5º lugar</p>
+          <p class="mt-1 text-sm text-white/65">5K · 10K · 15K</p>
+        </div>
+        <div class="bg-[#e5187e] p-5 text-white">
+          <p class="text-xs font-bold uppercase tracking-[.14em] text-[#ffd51f]">PCD</p>
+          <p class="mt-3 text-lg font-bold">1º ao 5º lugar</p>
+          <p class="mt-1 text-sm text-white/70">Troféu + medalha</p>
+        </div>
+        <div class="bg-[#79c143] p-5 text-[#082f72]">
+          <p class="text-xs font-bold uppercase tracking-[.14em]">Empreendedor</p>
+          <p class="mt-3 text-lg font-bold">1º ao 5º lugar</p>
+          <p class="mt-1 text-sm text-[#082f72]/70">Troféu + medalha</p>
+        </div>
+      </div>
+      <div class="mt-7">
+        <h3 class="font-display text-3xl font-extrabold uppercase italic text-[#082f72]">Faixas etárias</h3>
+        <p class="mt-3 text-base leading-7 text-[#536075]">Na categoria Geral, o primeiro colocado de cada faixa etária,
+          no masculino e feminino, recebe troféu. As faixas variam conforme a distância; o 5K admite participantes a
+          partir de 14 anos, enquanto 10K e 15K começam aos 18 anos.</p>
+      </div>
+      <div class="mt-7 border-l-4 border-[#ffd51f] bg-[#f6f3ed] p-5">
+        <p class="font-bold text-[#082f72]">Sem premiação em dinheiro.</p>
+        <p class="mt-2 text-sm leading-6 text-[#657083]">Todos os atletas que concluírem legalmente a prova recebem
+          medalha de participação. A premiação das categorias PCD, Empreendedor e por faixa etária será entregue em 28
+          de outubro de 2026, das 14h às 19h, no auditório do Sebrae RN.</p>
+      </div>
+      <a class="mt-7 inline-flex items-center font-bold uppercase text-[#e5187e]"
+        href="https://corridadoempreendedorrn.com.br/wp-content/uploads/2026/07/Regulamento_Corrida-do-Empreendedor_REV-I.pdf"
+        rel="noopener noreferrer" target="_blank">Ver regras completas <i class="ph ph-arrow-up-right ml-2"></i></a>
+    </div>
+  </dialog>
+  <div aria-hidden="true" class="fixed inset-0 z-[90] hidden" id="registrationSheet">
+    <button aria-label="Fechar opções de inscrição" class="absolute inset-0 bg-[#041534]/70 backdrop-blur-[2px]"
+      data-registration-close=""></button>
+    <section aria-labelledby="registrationSheetTitle" aria-modal="true"
+      class="absolute inset-x-0 bottom-0 rounded-t-[28px] bg-white p-5 pb-7 text-[#082f72] shadow-2xl" role="dialog">
+      <div aria-hidden="true" class="mx-auto h-1.5 w-12 rounded-full bg-[#082f72]/15"></div>
+      <div class="mt-5 flex items-start justify-between gap-4">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[.15em] text-[#e5187e]">Inscrições</p>
+          <h2 class="mt-1 font-display text-3xl font-extrabold uppercase italic" id="registrationSheetTitle">Como você
+            quer participar?</h2>
+        </div><button aria-label="Fechar" class="focus-ring grid h-10 w-10 place-items-center"
+          data-registration-close="" type="button"><i class="ph ph-x text-xl"></i></button>
+      </div>
+      <div class="mt-5 grid gap-2"><a class="focus-ring flex items-center justify-between bg-[#f6f3ed] p-5"
+          href="https://horadecorrer.com.br/e/corrida-do-empreendedor-sebraern" rel="noopener noreferrer"
+          target="_blank"><span><strong class="block">Corrida</strong><span class="mt-1 block text-sm text-[#667085]">5K
+              · 10K · 15K</span></span><i class="ph ph-arrow-up-right text-xl"></i></a><a
+          class="focus-ring flex items-center justify-between bg-[#f6f3ed] p-5"
+          href="https://horadecorrer.com.br/e/corrida-do-empreendedor-sebraern" rel="noopener noreferrer"
+          target="_blank"><span><strong class="block">Palestras</strong><span
+              class="mt-1 block text-sm text-[#667085]">Programação de conteúdo</span></span><i
+            class="ph ph-arrow-up-right text-xl"></i></a></div>
+    </section>
+  </div>
+  <script>
+    const menuButton = document.getElementById('menuButton'); const mobileMenu = document.getElementById('mobileMenu'); const menuIcon = document.getElementById('menuIcon');
+    menuButton?.addEventListener('click', () => { const open = menuButton.getAttribute('aria-expanded') === 'true'; menuButton.setAttribute('aria-expanded', String(!open)); mobileMenu.classList.toggle('hidden', open); menuIcon.className = `ph ${open ? 'ph-list' : 'ph-x'} text-xl`; });
 
-<a href="#conteudo" class="fixed left-4 top-4 z-[100] -translate-y-24 bg-white px-5 py-3 text-sm font-bold text-[#082f72] shadow-lg transition focus:translate-y-0 focus:outline-none focus:ring-4 focus:ring-[#ffd51f]">Pular para o conteúdo</a>
-<div class="relative z-50 bg-[#ffd51f] text-[#082f72]">
-  <div class="mx-auto flex min-h-10 max-w-[1440px] items-center justify-center gap-3 px-5 py-2 text-center text-xs font-extrabold uppercase tracking-[.12em] sm:text-sm">
-    <span class="hidden h-2 w-2 rounded-full bg-[#e5187e] sm:inline-block" aria-hidden="true"></span>
-    22 a 24 de outubro · Arena das Dunas · Natal/RN
-    <a href="programacao.html" class="ml-1 inline-flex items-center gap-1 underline decoration-2 underline-offset-4 hover:no-underline">Programação <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
-  </div>
-</div>
-<header class="sticky top-0 z-40 border-b border-white/10 bg-[#082f72]/95 text-white backdrop-blur-xl">
-  <div class="mx-auto flex h-[76px] max-w-[1440px] items-center justify-between px-5 lg:px-8">
-    <a href="index.html" class="group -ml-5 flex h-full shrink-0 items-center lg:-ml-8" aria-label="Corrida do Empreendedor — início">
-      <span class="relative flex h-full w-[168px] items-center bg-[#f7f6ef] pl-5 pr-8 [clip-path:polygon(0_0,100%_0,88%_100%,0_100%)] sm:w-[190px] sm:pl-6 sm:pr-9 lg:w-[208px] lg:pl-8">
-        <img src="site-assets/logo-corrida-empreendedor.png" alt="Corrida do Empreendedor" class="h-auto w-[112px] object-contain sm:w-[126px] lg:w-[134px]" />
-        <span class="absolute bottom-0 left-0 h-1 w-14 bg-[#ffd51f]" aria-hidden="true"></span>
-      </span>
-    </a>
-    <nav class="hidden items-center gap-6 text-sm font-bold xl:flex" aria-label="Navegação principal"><a class="transition hover:text-[#ffd51f] text-[#ffd51f]" href="corrida.html" aria-current="page">Corrida</a><a class="transition hover:text-[#ffd51f] " href="palestras.html" >Palestras</a><a class="transition hover:text-[#ffd51f] " href="expo.html" >Expo</a><a class="transition hover:text-[#ffd51f] " href="programacao.html" >Programação</a><a class="transition hover:text-[#ffd51f] " href="noticias.html" >Notícias</a><a class="transition hover:text-[#ffd51f] " href="faq.html" >FAQ</a></nav>
-    <div class="flex items-center gap-2">
-      <button data-registration-button class="hidden h-11 items-center justify-center bg-[#e5187e] px-5 text-sm font-bold uppercase tracking-wide text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-[#082f72] sm:inline-flex" aria-expanded="false" aria-controls="registrationMenu">Inscreva-se <i class="ph ph-caret-down ml-2" aria-hidden="true"></i></button>
-      <button data-menu-button class="grid h-11 w-11 place-items-center border border-white/20 xl:hidden" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menu"><i data-menu-icon class="ph ph-list text-xl" aria-hidden="true"></i></button>
-    </div>
-  </div>
-  <div id="registrationMenu" data-registration-menu class="absolute right-5 top-[70px] hidden w-[320px] border border-[#082f72]/10 bg-white p-2 text-[#082f72] shadow-2xl sm:right-8">
-    <a href="corrida.html#inscricao" class="flex items-center justify-between p-4 hover:bg-[#f6f3ed]"><span><b class="block">Corrida</b><small class="mt-1 block text-[#657083]">5K · 10K · 15K</small></span><i class="ph ph-arrow-right"></i></a>
-    <a href="palestras.html#ingressos" class="flex items-center justify-between p-4 hover:bg-[#f6f3ed]"><span><b class="block">Palestras</b><small class="mt-1 block text-[#657083]">Programação de conteúdo</small></span><i class="ph ph-arrow-right"></i></a>
-  </div>
-  <div id="mobileMenu" data-mobile-menu class="hidden border-t border-white/10 bg-[#082f72] px-5 pb-6 pt-4 xl:hidden">
-    <nav class="grid gap-1 text-lg font-bold" aria-label="Navegação mobile"><a class="border-b border-white/10 py-3 text-[#ffd51f]" href="corrida.html" aria-current="page">Corrida</a><a class="border-b border-white/10 py-3 " href="palestras.html" >Palestras</a><a class="border-b border-white/10 py-3 " href="expo.html" >Expo</a><a class="border-b border-white/10 py-3 " href="programacao.html" >Programação</a><a class="border-b border-white/10 py-3 " href="noticias.html" >Notícias</a><a class="border-b border-white/10 py-3 " href="faq.html" >FAQ</a>
-      <div class="mt-4 grid grid-cols-2 gap-2"><a class="inline-flex min-h-12 items-center justify-center bg-[#e5187e] px-3 text-center text-sm font-bold uppercase" href="corrida.html#inscricao">Corrida</a><a class="inline-flex min-h-12 items-center justify-center bg-white px-3 text-center text-sm font-bold uppercase text-[#082f72]" href="palestras.html#ingressos">Palestras</a></div>
-    </nav>
-  </div>
-</header>
-<main id="conteudo">
-<section class="relative isolate min-h-[650px] overflow-hidden bg-[#082f72] text-white sm:min-h-[720px]">
-  <img src="site-assets/corrida-largada.webp" alt="" class="absolute inset-0 h-full w-full object-cover opacity-35" />
-  <div class="absolute inset-0 bg-gradient-to-r from-[#061f4e] via-[#082f72]/90 to-[#082f72]/35"></div>
-  <div class="track-grid absolute inset-0 opacity-30"></div>
-  <div class="relative mx-auto flex min-h-[650px] max-w-[1440px] items-end px-5 py-16 sm:min-h-[720px] sm:py-20 lg:px-8 lg:py-24">
-    <div class="max-w-[980px]" data-reveal>
-      <p class="text-xs font-extrabold uppercase tracking-[.2em]" style="color:#ffd51f">Corrida · 24 de outubro</p>
-      <h1 class="mt-5 font-display text-[clamp(4rem,10vw,9.5rem)] font-extrabold uppercase italic leading-[.8]">Escolha<br><span class="text-[#ffd51f]">seu desafio.</span></h1>
-      <p class="mt-7 max-w-3xl text-lg leading-relaxed text-white/80 sm:text-xl">5K, 10K ou 15K. Três percursos para viver uma largada dentro da Arena das Dunas e transformar cada quilômetro em parte de uma experiência maior.</p>
-      <p class="mt-5 text-sm font-bold uppercase tracking-[.12em] text-white/70">24 OUT · Arena das Dunas · Natal/RN</p>
-      <div class="mt-8 flex flex-col gap-3 sm:flex-row"><a href="#inscricao" class="inline-flex min-h-14 items-center justify-center bg-[#e5187e] px-7 text-sm font-bold uppercase tracking-[.08em] text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-[#082f72]">Inscreva-se na corrida<i class="ph ph-arrow-right ml-2"></i></a><a href="#distancias" class="inline-flex min-h-14 items-center justify-center border border-white/35 px-7 text-sm font-bold uppercase tracking-[.08em] text-white hover:bg-white hover:text-[#082f72]">Conhecer distâncias<i class="ph ph-arrow-down ml-2"></i></a></div>
-    </div>
-  </div>
-</section><section id="distancias" class="bg-white px-5 py-20 lg:px-8 lg:py-28"><div class="mx-auto max-w-[1240px]"><p class="text-xs font-bold uppercase tracking-[.16em] text-[#e5187e]">Primeiro passo</p><h2 class="mt-4 max-w-4xl font-display text-[clamp(4rem,7vw,7rem)] font-extrabold uppercase italic leading-[.8] text-[#082f72]">Qual corrida combina com você?</h2><p class="mt-6 max-w-2xl text-lg leading-relaxed text-[#657083]">Comece pela distância. Depois, encontre percurso, orientações, kit e detalhes de cada prova sem perder o contexto da corrida.</p><div class="mt-12 grid gap-4 md:grid-cols-3"><a href="5k.html" class="group border border-[#082f72]/12 bg-[#f7f6ef] p-6 text-center"><img src="site-assets/camisa-1.webp" alt="Camisa da prova de 5 km" class="mx-auto h-[380px] w-auto object-contain transition duration-500 group-hover:scale-[1.03]"><div class="border-t border-[#082f72]/10 pt-5"><span class="font-display text-6xl font-extrabold text-[#082f72]">5</span><span class="ml-1 font-display text-3xl font-bold text-[#e5187e]">KM</span><p class="mt-3 text-base leading-relaxed text-[#657083]">Uma porta de entrada para viver a experiência.</p><span class="mt-5 inline-flex items-center text-sm font-bold uppercase text-[#082f72]">Ver detalhes<i class="ph ph-arrow-right ml-2 transition group-hover:translate-x-1"></i></span></div></a><a href="10k.html" class="group border border-[#082f72]/12 bg-[#f7f6ef] p-6 text-center"><img src="site-assets/camisa-2.webp" alt="Camisa da prova de 10 km" class="mx-auto h-[380px] w-auto object-contain transition duration-500 group-hover:scale-[1.03]"><div class="border-t border-[#082f72]/10 pt-5"><span class="font-display text-6xl font-extrabold text-[#082f72]">10</span><span class="ml-1 font-display text-3xl font-bold text-[#e5187e]">KM</span><p class="mt-3 text-base leading-relaxed text-[#657083]">Um desafio intermediário para avançar no seu ritmo.</p><span class="mt-5 inline-flex items-center text-sm font-bold uppercase text-[#082f72]">Ver detalhes<i class="ph ph-arrow-right ml-2 transition group-hover:translate-x-1"></i></span></div></a><a href="15k.html" class="group border border-[#082f72]/12 bg-[#f7f6ef] p-6 text-center"><img src="site-assets/camisa-3.webp" alt="Camisa da prova de 15 km" class="mx-auto h-[380px] w-auto object-contain transition duration-500 group-hover:scale-[1.03]"><div class="border-t border-[#082f72]/10 pt-5"><span class="font-display text-6xl font-extrabold text-[#082f72]">15</span><span class="ml-1 font-display text-3xl font-bold text-[#e5187e]">KM</span><p class="mt-3 text-base leading-relaxed text-[#657083]">A maior distância da Corrida do Empreendedor.</p><span class="mt-5 inline-flex items-center text-sm font-bold uppercase text-[#082f72]">Ver detalhes<i class="ph ph-arrow-right ml-2 transition group-hover:translate-x-1"></i></span></div></a></div></div></section>
-<section class="px-5 py-20 lg:px-8 lg:py-28"><div class="mx-auto grid max-w-[1240px] gap-10 lg:grid-cols-[1fr_1fr] lg:items-center"><div class="relative min-h-[520px] overflow-hidden"><img src="site-assets/corrida-largada.webp" alt="Largada da corrida dentro da Arena" class="absolute inset-0 h-full w-full object-cover"></div><div><p class="text-xs font-bold uppercase tracking-[.16em] text-[#e5187e]">Da largada à chegada</p><h2 class="mt-4 font-display text-6xl font-extrabold uppercase italic leading-[.8] text-[#082f72]">A corrida começa dentro da Arena.</h2><p class="mt-6 text-lg leading-relaxed text-[#657083]">A experiência esportiva é o clímax dos três dias. Percurso, estrutura de largada, chegada, hidratação e pós-corrida serão publicados de forma progressiva à medida que forem homologados.</p><div class="mt-7 grid gap-3 sm:grid-cols-2"><a href="programacao.html#dia-24" class="flex items-center justify-between border-t border-[#082f72]/12 py-4 font-bold text-[#082f72]">Horários e largadas<i class="ph ph-arrow-right"></i></a><a href="regulamento.html" class="flex items-center justify-between border-t border-[#082f72]/12 py-4 font-bold text-[#082f72]">Regulamento<i class="ph ph-arrow-right"></i></a><a href="#premiacao" class="flex items-center justify-between border-t border-[#082f72]/12 py-4 font-bold text-[#082f72]">Premiação<i class="ph ph-arrow-right"></i></a><a href="kit.html" class="flex items-center justify-between border-t border-[#082f72]/12 py-4 font-bold text-[#082f72]">Kit do corredor<i class="ph ph-arrow-right"></i></a></div></div></div></section>
-<section class="bg-white px-5 py-20 lg:px-8"><div class="mx-auto grid max-w-[1120px] gap-10 lg:grid-cols-[.8fr_1.2fr] lg:items-center"><div><img src="site-assets/kit-medalha.webp" alt="Medalha da Corrida do Empreendedor" class="w-full object-cover"></div><div><p class="text-xs font-bold uppercase tracking-[.16em] text-[#e5187e]">Sua inscrição vai além da corrida</p><h2 class="mt-4 font-display text-5xl font-extrabold uppercase italic leading-[.8] text-[#082f72]">Você corre. E pode levar mais duas pessoas para as palestras.</h2><p class="mt-6 text-lg leading-relaxed text-[#657083]">Cada inscrição na corrida garante 3 acessos à programação de palestras: 1 para o corredor + 2 cortesias para convidados.</p><a href="palestras.html#cortesias" class="mt-6 inline-flex items-center text-sm font-bold uppercase text-[#082f72]">Entender como funciona<i class="ph ph-arrow-right ml-2"></i></a></div></div></section>
-<section id="premiacao" class="px-5 py-16 lg:px-8"><div class="mx-auto max-w-[1000px] border border-[#082f72]/12 bg-white p-7 sm:p-8"><div class="flex items-start gap-5"><i class="ph ph-medal text-3xl text-[#e5187e]"></i><div><p class="text-xs font-bold uppercase tracking-[.14em] text-[#e5187e]">Premiação</p><h2 class="mt-2 font-display text-4xl font-extrabold uppercase italic text-[#082f72]">Informações em breve.</h2><p class="mt-3 text-lg leading-relaxed text-[#657083]">Categorias, critérios e horários serão publicados aqui assim que forem homologados pela organização.</p><a href="programacao.html" class="mt-5 inline-flex items-center text-sm font-bold uppercase text-[#082f72]">Ver programação disponível<i class="ph ph-arrow-right ml-2"></i></a></div></div></div></section>
-<section id="inscricao" class="px-5 py-20 lg:px-8"><div class="mx-auto max-w-[1120px] border-y border-[#082f72]/12 py-10"><div class="grid gap-8 md:grid-cols-[1fr_auto] md:items-center"><div><p class="text-xs font-bold uppercase tracking-[.16em] text-[#e5187e]">Decisão</p><h2 class="mt-3 font-display text-5xl font-extrabold uppercase italic leading-[.8] text-[#082f72]">Escolha sua distância e garanta sua inscrição.</h2><p class="mt-4 max-w-2xl text-lg leading-relaxed text-[#657083]">Você será direcionado para a plataforma oficial de inscrições.</p></div><a href="#" class="inline-flex min-h-14 items-center justify-center bg-[#e5187e] px-7 text-sm font-bold uppercase text-white">Inscreva-se na corrida<i class="ph ph-arrow-up-right ml-2"></i></a></div></div></section>
-<section class="px-5 py-16 lg:px-8"><div class="mx-auto max-w-[1000px] border-y border-[#082f72]/12 py-8"><div class="grid gap-8 md:grid-cols-[.7fr_1.3fr]"><div><p class="text-xs font-bold uppercase tracking-[.16em] text-[#e5187e]">Continue</p><h2 class="mt-3 font-display text-4xl font-extrabold uppercase italic leading-[.85] text-[#082f72]">Continue preparando sua corrida.</h2><p class="mt-4 text-base leading-relaxed text-[#657083]">As informações operacionais ficam em páginas de suporte para facilitar a consulta sem interromper a narrativa principal.</p></div><div><a href="kit.html" class="group flex items-center justify-between border-t border-[#082f72]/12 py-5 text-[#082f72] first:border-t-0"><span><b class="block text-lg">Kit do corredor</b><span class="mt-1 block text-sm text-[#657083]">Retirada, itens e orientações</span></span><i class="ph ph-arrow-right text-xl transition group-hover:translate-x-1"></i></a><a href="programacao.html" class="group flex items-center justify-between border-t border-[#082f72]/12 py-5 text-[#082f72] first:border-t-0"><span><b class="block text-lg">Programação</b><span class="mt-1 block text-sm text-[#657083]">Horários dos três dias</span></span><i class="ph ph-arrow-right text-xl transition group-hover:translate-x-1"></i></a><a href="local.html" class="group flex items-center justify-between border-t border-[#082f72]/12 py-5 text-[#082f72] first:border-t-0"><span><b class="block text-lg">Arena das Dunas</b><span class="mt-1 block text-sm text-[#657083]">Acessos e como chegar</span></span><i class="ph ph-arrow-right text-xl transition group-hover:translate-x-1"></i></a></div></div></div></section></main>
+    const regBtn = document.getElementById('registrationMenuButton'); const regMenu = document.getElementById('registrationMenu');
+    regBtn?.addEventListener('click', () => { const open = regBtn.getAttribute('aria-expanded') === 'true'; regBtn.setAttribute('aria-expanded', String(!open)); regMenu.classList.toggle('hidden', open); });
+    document.addEventListener('click', e => { if (regBtn && regMenu && !regBtn.contains(e.target) && !regMenu.contains(e.target)) { regBtn.setAttribute('aria-expanded', 'false'); regMenu.classList.add('hidden'); } });
 
-<footer class="bg-[#061f4e] text-white">
-  <div class="mx-auto grid max-w-[1440px] gap-12 px-5 py-16 lg:grid-cols-[1.2fr_.8fr_.8fr_.8fr] lg:px-8">
-    <div>
-      <div class="inline-flex bg-[#f7f6ef] p-4 [clip-path:polygon(0_0,100%_0,92%_100%,0_100%)]"><img src="site-assets/logo-corrida-empreendedor.png" alt="Corrida do Empreendedor" class="w-36"></div>
-      <p class="mt-5 max-w-sm text-base leading-relaxed text-white/65">Três dias de corrida, palestras, Expo Sebrae, cultura, gastronomia, conexões e oportunidades na Arena das Dunas.</p>
-    </div>
-    <div><p class="text-xs font-bold uppercase tracking-[.16em] text-[#ffd51f]">Experiências</p><div class="mt-4 grid gap-3 text-base"><a href="corrida.html">Corrida</a><a href="palestras.html">Palestras</a><a href="expo.html">Expo</a><a href="programacao.html">Programação</a></div></div>
-    <div><p class="text-xs font-bold uppercase tracking-[.16em] text-[#ffd51f]">Informações</p><div class="mt-4 grid gap-3 text-base"><a href="kit.html">Kit</a><a href="local.html">Arena das Dunas</a><a href="faq.html">FAQ</a><a href="regulamento.html">Regulamento</a></div></div>
-    <div><p class="text-xs font-bold uppercase tracking-[.16em] text-[#ffd51f]">Conteúdo</p><div class="mt-4 grid gap-3 text-base"><a href="noticias.html">Notícias</a><a href="empresas.html">Para empresas</a><a href="acessibilidade.html">Acessibilidade</a><a href="privacidade.html">Privacidade</a></div></div>
-  </div>
-  <div class="border-t border-white/10"><div class="mx-auto flex max-w-[1440px] flex-col gap-3 px-5 py-6 text-sm text-white/55 sm:flex-row sm:items-center sm:justify-between lg:px-8"><p>© 2026 Corrida do Empreendedor · Sebrae RN</p><p>22—24 outubro · Arena das Dunas · Natal/RN</p></div></div>
-</footer><div class="fixed inset-x-0 bottom-0 z-30 border-t border-[#082f72]/10 bg-white/96 p-3 backdrop-blur lg:hidden"><a href="#inscricao" class="flex min-h-12 items-center justify-center bg-[#e5187e] px-5 text-sm font-bold uppercase tracking-[.08em] text-white">Inscreva-se na corrida<i class="ph ph-arrow-right ml-2"></i></a></div>
-<script src="site.js"></script>
-</body></html>
+    const sheet = document.getElementById('registrationSheet');
+    document.querySelectorAll('[data-open-registration]').forEach(btn => btn.addEventListener('click', () => { sheet.classList.remove('hidden'); sheet.setAttribute('aria-hidden', 'false'); document.body.classList.add('overflow-hidden'); }));
+    sheet?.querySelectorAll('[data-registration-close]').forEach(btn => btn.addEventListener('click', () => { sheet.classList.add('hidden'); sheet.setAttribute('aria-hidden', 'true'); document.body.classList.remove('overflow-hidden'); }));
+
+    document.querySelectorAll('[data-dialog-open]').forEach(btn => btn.addEventListener('click', () => document.getElementById(btn.dataset.dialogOpen)?.showModal()));
+    document.querySelectorAll('dialog [data-dialog-close]').forEach(btn => btn.addEventListener('click', () => btn.closest('dialog').close()));
+    document.querySelectorAll('dialog').forEach(d => d.addEventListener('click', e => { if (e.target === d) d.close(); }));
+
+    const raceTrack = document.getElementById('raceTrack'); const racePrev = document.getElementById('racePrev'); const raceNext = document.getElementById('raceNext');
+    function raceStep(dir) { const card = raceTrack?.querySelector('article'); if (!card) return; raceTrack.scrollBy({ left: dir * (card.getBoundingClientRect().width + 16), behavior: 'smooth' }); } racePrev?.addEventListener('click', () => raceStep(-1)); raceNext?.addEventListener('click', () => raceStep(1));
+    function updateRaceArrows() { if (!raceTrack || !racePrev || !raceNext) return; racePrev.disabled = raceTrack.scrollLeft < 8; raceNext.disabled = raceTrack.scrollLeft + raceTrack.clientWidth >= raceTrack.scrollWidth - 8; } raceTrack?.addEventListener('scroll', updateRaceArrows, { passive: true }); window.addEventListener('resize', updateRaceArrows); updateRaceArrows();
+
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') { document.querySelectorAll('dialog[open]').forEach(d => d.close()); if (sheet && !sheet.classList.contains('hidden')) { sheet.classList.add('hidden'); sheet.setAttribute('aria-hidden', 'true'); document.body.classList.remove('overflow-hidden'); } } });
+  </script>
+</body>
+
+</html>

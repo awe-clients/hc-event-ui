@@ -1,75 +1,575 @@
-<!doctype html>
-<html lang="pt-BR" class="scroll-smooth">
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="pt-BR">
+
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Corrida do Empreendedor 2026 — Arena das Dunas, Natal/RN."><meta name="theme-color" content="#082f72">
-<title>Notícia · Corrida do Empreendedor 2026</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800&family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700;1,800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
-<link rel="stylesheet" href="tailwind.css">
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta
+    content="Expo Sebrae na Corrida do Empreendedor 2026 — negócios, gastronomia, Feito Potiguar, hospitalidade e experiências de marca na Arena das Dunas, em Natal/RN."
+    name="description" />
+  <meta content="#082F72" name="theme-color" />
+  <title>Expo Sebrae | Corrida do Empreendedor 2026</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800&amp;family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700;1,800&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Expo Sebrae — Corrida do Empreendedor 2026",
+    "startDate": "2026-10-22",
+    "endDate": "2026-10-24",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Arena das Dunas",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Natal",
+        "addressRegion": "RN",
+        "addressCountry": "BR"
+      }
+    },
+    "organizer": {"@type":"Organization","name":"Sebrae RN"}
+  }
+  </script>
+  <style>
+    :root {
+      --blue: #0a3d91;
+      --navy: #082f72;
+      --pink: #e5187e;
+      --green: #79c143;
+      --yellow: #ffd51f;
+      --ink: #101827;
+      --paper: #f6f3ed
+    }
+
+    html {
+      scroll-padding-top: 92px
+    }
+
+    body {
+      font-family: "Barlow", ui-sans-serif, system-ui, sans-serif
+    }
+
+    .font-display {
+      font-family: "Barlow Condensed", "Arial Narrow", sans-serif
+    }
+
+    .focus-ring:focus-visible,
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--yellow);
+      outline-offset: 3px
+    }
+
+    .track-grid {
+      background-image: linear-gradient(rgba(255, 255, 255, .07) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .07) 1px, transparent 1px);
+      background-size: 56px 56px
+    }
+
+    .noise {
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E");
+      mix-blend-mode: soft-light
+    }
+
+    .expo-track {
+      scrollbar-width: none
+    }
+
+    .expo-track::-webkit-scrollbar {
+      display: none
+    }
+
+    dialog::backdrop {
+      background: rgba(4, 21, 52, .72);
+      backdrop-filter: blur(3px)
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important
+      }
+    }
+  </style>
 </head>
+
 <body class="bg-[#f6f3ed] text-[#101827] antialiased selection:bg-[#ffd51f] selection:text-[#082f72]">
-
-<a href="#conteudo" class="fixed left-4 top-4 z-[100] -translate-y-24 bg-white px-5 py-3 text-sm font-bold text-[#082f72] shadow-lg transition focus:translate-y-0 focus:outline-none focus:ring-4 focus:ring-[#ffd51f]">Pular para o conteúdo</a>
-<div class="relative z-50 bg-[#ffd51f] text-[#082f72]">
-  <div class="mx-auto flex min-h-10 max-w-[1440px] items-center justify-center gap-3 px-5 py-2 text-center text-xs font-extrabold uppercase tracking-[.12em] sm:text-sm">
-    <span class="hidden h-2 w-2 rounded-full bg-[#e5187e] sm:inline-block" aria-hidden="true"></span>
-    22 a 24 de outubro · Arena das Dunas · Natal/RN
-    <a href="programacao.html" class="ml-1 inline-flex items-center gap-1 underline decoration-2 underline-offset-4 hover:no-underline">Programação <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
-  </div>
-</div>
-<header class="sticky top-0 z-40 border-b border-white/10 bg-[#082f72]/95 text-white backdrop-blur-xl">
-  <div class="mx-auto flex h-[76px] max-w-[1440px] items-center justify-between px-5 lg:px-8">
-    <a href="index.html" class="group -ml-5 flex h-full shrink-0 items-center lg:-ml-8" aria-label="Corrida do Empreendedor — início">
-      <span class="relative flex h-full w-[168px] items-center bg-[#f7f6ef] pl-5 pr-8 [clip-path:polygon(0_0,100%_0,88%_100%,0_100%)] sm:w-[190px] sm:pl-6 sm:pr-9 lg:w-[208px] lg:pl-8">
-        <img src="site-assets/logo-corrida-empreendedor.png" alt="Corrida do Empreendedor" class="h-auto w-[112px] object-contain sm:w-[126px] lg:w-[134px]" />
-        <span class="absolute bottom-0 left-0 h-1 w-14 bg-[#ffd51f]" aria-hidden="true"></span>
-      </span>
-    </a>
-    <nav class="hidden items-center gap-6 text-sm font-bold xl:flex" aria-label="Navegação principal"><a class="transition hover:text-[#ffd51f] " href="corrida.html" >Corrida</a><a class="transition hover:text-[#ffd51f] " href="palestras.html" >Palestras</a><a class="transition hover:text-[#ffd51f] " href="expo.html" >Expo</a><a class="transition hover:text-[#ffd51f] " href="programacao.html" >Programação</a><a class="transition hover:text-[#ffd51f] text-[#ffd51f]" href="noticias.html" aria-current="page">Notícias</a><a class="transition hover:text-[#ffd51f] " href="faq.html" >FAQ</a></nav>
-    <div class="flex items-center gap-2">
-      <button data-registration-button class="hidden h-11 items-center justify-center bg-[#e5187e] px-5 text-sm font-bold uppercase tracking-wide text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-[#082f72] sm:inline-flex" aria-expanded="false" aria-controls="registrationMenu">Inscreva-se <i class="ph ph-caret-down ml-2" aria-hidden="true"></i></button>
-      <button data-menu-button class="grid h-11 w-11 place-items-center border border-white/20 xl:hidden" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menu"><i data-menu-icon class="ph ph-list text-xl" aria-hidden="true"></i></button>
+  <a class="focus-ring fixed left-4 top-4 z-[100] -translate-y-24 rounded-full bg-white px-5 py-3 text-sm font-bold text-[#082f72] shadow-lg transition focus:translate-y-0"
+    href="#conteudo">Pular para o conteúdo</a>
+  <!-- Barra utilitária -->
+  <div class="relative z-50 bg-[#ffd51f] text-[#082f72]" data-global-utility="">
+    <div
+      class="mx-auto flex min-h-10 max-w-[1440px] items-center justify-center gap-3 px-5 py-2 text-center text-xs font-extrabold uppercase tracking-[.12em] sm:text-sm">
+      <span aria-hidden="true" class="hidden h-2 w-2 rounded-full bg-[#e5187e] sm:inline-block"></span>
+      22 a 24 de outubro · Arena das Dunas · Natal/RN
+      <a class="ml-1 hidden items-center gap-1 underline decoration-2 underline-offset-4 hover:no-underline sm:inline-flex"
+        href="index.html#programacao">Programação <i aria-hidden="true" class="ph ph-arrow-up-right"></i></a>
     </div>
   </div>
-  <div id="registrationMenu" data-registration-menu class="absolute right-5 top-[70px] hidden w-[320px] border border-[#082f72]/10 bg-white p-2 text-[#082f72] shadow-2xl sm:right-8">
-    <a href="corrida.html#inscricao" class="flex items-center justify-between p-4 hover:bg-[#f6f3ed]"><span><b class="block">Corrida</b><small class="mt-1 block text-[#657083]">5K · 10K · 15K</small></span><i class="ph ph-arrow-right"></i></a>
-    <a href="palestras.html#ingressos" class="flex items-center justify-between p-4 hover:bg-[#f6f3ed]"><span><b class="block">Palestras</b><small class="mt-1 block text-[#657083]">Programação de conteúdo</small></span><i class="ph ph-arrow-right"></i></a>
-  </div>
-  <div id="mobileMenu" data-mobile-menu class="hidden border-t border-white/10 bg-[#082f72] px-5 pb-6 pt-4 xl:hidden">
-    <nav class="grid gap-1 text-lg font-bold" aria-label="Navegação mobile"><a class="border-b border-white/10 py-3 " href="corrida.html" >Corrida</a><a class="border-b border-white/10 py-3 " href="palestras.html" >Palestras</a><a class="border-b border-white/10 py-3 " href="expo.html" >Expo</a><a class="border-b border-white/10 py-3 " href="programacao.html" >Programação</a><a class="border-b border-white/10 py-3 text-[#ffd51f]" href="noticias.html" aria-current="page">Notícias</a><a class="border-b border-white/10 py-3 " href="faq.html" >FAQ</a>
-      <div class="mt-4 grid grid-cols-2 gap-2"><a class="inline-flex min-h-12 items-center justify-center bg-[#e5187e] px-3 text-center text-sm font-bold uppercase" href="corrida.html#inscricao">Corrida</a><a class="inline-flex min-h-12 items-center justify-center bg-white px-3 text-center text-sm font-bold uppercase text-[#082f72]" href="palestras.html#ingressos">Palestras</a></div>
-    </nav>
-  </div>
-</header>
-<main id="conteudo">
-<section class="border-b border-[#082f72]/10 bg-white">
-  <div class="mx-auto max-w-[1200px] px-5 py-9 sm:py-11 lg:px-8 lg:py-12">
-    <nav aria-label="Breadcrumb" class="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-[.1em] text-[#657083]"><a href="index.html" class="hover:text-[#082f72]">Início</a><i class="ph ph-caret-right text-[10px]" aria-hidden="true"></i><a href="noticias.html" class="hover:text-[#082f72]">Notícias</a><i class="ph ph-caret-right text-[10px]" aria-hidden="true"></i><span aria-current="page" class="font-bold text-[#082f72]">Notícia</span></nav>
-    <div class="mt-8 grid gap-7 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
-      <div>
-        <p class="text-xs font-bold uppercase tracking-[.16em] text-[#e5187e]">Notícia · Evento</p>
-        <h1 class="mt-3 max-w-4xl font-display text-[clamp(2.8rem,5vw,4.8rem)] font-extrabold uppercase italic leading-[.8] text-[#082f72]">Corrida do Empreendedor 2026 acontece de 22 a 24 de outubro na Arena das Dunas.</h1>
-        <p class="mt-5 max-w-3xl text-lg leading-relaxed text-[#556174]">Corrida, palestras, Expo Sebrae, cultura, gastronomia e conexões fazem parte da programação de três dias.</p>
-        <p class="mt-4 text-sm font-bold uppercase tracking-[.1em] text-[#082f72]/65">Publicado em 2026 · conteúdo demonstrativo</p>
+  <!-- Header global -->
+  <header class="sticky top-0 z-40 border-b border-white/10 bg-[#082f72]/95 text-white backdrop-blur-xl"
+    data-global-header="">
+    <div class="mx-auto flex h-[76px] max-w-[1440px] items-center justify-between px-5 lg:px-8">
+      <a aria-label="Corrida do Empreendedor — início" class="group -ml-5 flex h-full shrink-0 items-center lg:-ml-8"
+        href="index.html">
+        <span
+          class="relative flex h-full w-[168px] items-center bg-[#f7f6ef] pl-5 pr-8 [clip-path:polygon(0_0,100%_0,88%_100%,0_100%)] sm:w-[190px] sm:pl-6 sm:pr-9 lg:w-[208px] lg:pl-8">
+          <img alt="Corrida do Empreendedor" class="h-auto w-[112px] object-contain sm:w-[126px] lg:w-[134px]"
+            src="site-assets/logo-corrida-empreendedor.png" />
+          <span aria-hidden="true" class="absolute bottom-0 left-0 h-1 w-14 bg-[#ffd51f]"></span>
+        </span>
+      </a>
+      <nav aria-label="Navegação principal" class="hidden items-center gap-8 text-sm font-bold lg:flex">
+        <a class="transition hover:text-[#ffd51f]" href="corrida.html">Corrida</a>
+        <a class="transition hover:text-[#ffd51f]" href="index.html#palestras">Palestras</a>
+        <a aria-current="page" class="transition hover:text-[#ffd51f] text-[#ffd51f]" href="expo.html">Expo</a>
+        <a class="transition hover:text-[#ffd51f]" href="noticias.html">Notícias</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <div class="relative hidden lg:block">
+          <button aria-controls="registrationMenu" aria-expanded="false"
+            class="focus-ring inline-flex h-11 items-center justify-center bg-[#e5187e] px-5 text-sm font-bold uppercase tracking-wide text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-[#082f72]"
+            id="registrationMenuButton" type="button">Inscreva-se <i aria-hidden="true"
+              class="ph ph-caret-down ml-2 text-base"></i></button>
+          <div aria-label="Escolha sua inscrição"
+            class="absolute right-0 top-[calc(100%+12px)] hidden w-[320px] border border-[#082f72]/10 bg-white p-2 text-[#082f72] shadow-2xl"
+            id="registrationMenu" role="menu">
+            <a class="focus-ring group flex items-center justify-between gap-5 p-4 transition hover:bg-[#f6f3ed]"
+              href="https://horadecorrer.com.br/e/corrida-do-empreendedor-sebraern" rel="noopener noreferrer"
+              role="menuitem" target="_blank"><span><strong class="block text-base">Corrida</strong><span
+                  class="mt-1 block text-sm font-medium text-[#667085]">5K · 10K · 15K</span></span><i
+                aria-hidden="true" class="ph ph-arrow-up-right text-xl"></i></a>
+            <a class="focus-ring group flex items-center justify-between gap-5 border-t border-[#082f72]/10 p-4 transition hover:bg-[#f6f3ed]"
+              href="https://horadecorrer.com.br/e/corrida-do-empreendedor-sebraern" rel="noopener noreferrer"
+              role="menuitem" target="_blank"><span><strong class="block text-base">Palestras</strong><span
+                  class="mt-1 block text-sm font-medium text-[#667085]">Programação de conteúdo</span></span><i
+                aria-hidden="true" class="ph ph-arrow-up-right text-xl"></i></a>
+          </div>
+        </div>
+        <button aria-controls="mobileMenu" aria-expanded="false" aria-label="Abrir menu"
+          class="focus-ring grid h-11 w-11 place-items-center border border-white/20 lg:hidden" id="menuButton"><i
+            aria-hidden="true" class="ph ph-list text-xl" id="menuIcon"></i></button>
       </div>
-      
     </div>
-  </div>
-</section><article class="bg-white px-5 py-14 lg:px-8"><div class="mx-auto max-w-[780px]"><img src="site-assets/campanha-midia.webp" alt="Comunicação do evento" class="mb-10 w-full object-cover"><p class="text-xl leading-[1.75] text-[#3f4b5e]">A Corrida do Empreendedor 2026 acontece entre os dias 22 e 24 de outubro, na Arena das Dunas, em Natal/RN. A corrida será realizada no dia 24, com percursos de 5K, 10K e 15K.</p><h2 class="mt-10 text-3xl font-bold text-[#082f72]">Muito mais que uma corrida</h2><p class="mt-5 text-lg leading-[1.75] text-[#4e5b6e]">Durante os três dias, a Arena reunirá também palestras, Expo Sebrae, atrações culturais, gastronomia, empresas e experiências de marca. A proposta é transformar o espaço em um ponto de encontro entre esporte, conhecimento e negócios.</p><h2 class="mt-10 text-3xl font-bold text-[#082f72]">Informação oficial permanece nas páginas de serviço</h2><p class="mt-5 text-lg leading-[1.75] text-[#4e5b6e]">Notícias ajudam a contextualizar novidades. Horários, regras e orientações operacionais permanecem vinculados às páginas estruturadas de Programação, Kit, Corrida e FAQ para evitar divergências.</p><div class="mt-10 border-t border-[#082f72]/12 pt-6"><p class="text-base text-[#657083]">Este artigo demonstra o template editorial do site. O CMS permitirá título, linha fina, imagem, corpo, subtítulos e conteúdo relacionado mantendo a ergonomia de leitura.</p></div></div></article>
-<section class="px-5 py-16 lg:px-8"><div class="mx-auto max-w-[1000px] border-y border-[#082f72]/12 py-8"><div class="grid gap-8 md:grid-cols-[.7fr_1.3fr]"><div><p class="text-xs font-bold uppercase tracking-[.16em] text-[#e5187e]">Continue</p><h2 class="mt-3 font-display text-4xl font-extrabold uppercase italic leading-[.85] text-[#082f72]">Continue informado.</h2><p class="mt-4 text-base leading-relaxed text-[#657083]">Depois da leitura, retorne ao conteúdo relacionado sem perder o contexto do evento.</p></div><div><a href="noticias.html" class="group flex items-center justify-between border-t border-[#082f72]/12 py-5 text-[#082f72] first:border-t-0"><span><b class="block text-lg">Todas as notícias</b><span class="mt-1 block text-sm text-[#657083]">Atualizações oficiais</span></span><i class="ph ph-arrow-right text-xl transition group-hover:translate-x-1"></i></a><a href="programacao.html" class="group flex items-center justify-between border-t border-[#082f72]/12 py-5 text-[#082f72] first:border-t-0"><span><b class="block text-lg">Programação</b><span class="mt-1 block text-sm text-[#657083]">Horários e atividades</span></span><i class="ph ph-arrow-right text-xl transition group-hover:translate-x-1"></i></a><a href="faq.html" class="group flex items-center justify-between border-t border-[#082f72]/12 py-5 text-[#082f72] first:border-t-0"><span><b class="block text-lg">FAQ</b><span class="mt-1 block text-sm text-[#657083]">Dúvidas frequentes</span></span><i class="ph ph-arrow-right text-xl transition group-hover:translate-x-1"></i></a></div></div></div></section></main>
+    <div class="hidden border-t border-white/10 bg-[#082f72] px-5 pb-6 pt-4 lg:hidden" id="mobileMenu">
+      <nav aria-label="Navegação mobile" class="grid gap-1 text-lg font-bold">
+        <a class="py-3 border-b border-white/10" href="corrida.html">Corrida</a>
+        <a class="py-3 border-b border-white/10" href="index.html#palestras">Palestras</a>
+        <a aria-current="page" class="py-3 border-b border-white/10 text-[#ffd51f]" href="expo.html">Expo</a>
+        <a class="py-3" href="noticias.html">Notícias</a>
+        <button
+          class="focus-ring mt-4 inline-flex h-12 items-center justify-center bg-[#e5187e] font-bold uppercase tracking-wide text-white"
+          data-open-registration="" type="button">Inscreva-se</button>
+      </nav>
+    </div>
+  </header>
+  <main id="conteudo">
+    <!-- Hero -->
+    <section class="relative isolate overflow-hidden bg-[#082f72] text-white">
+      <div aria-hidden="true" class="track-grid absolute inset-0 opacity-25"></div>
+      <div aria-hidden="true" class="noise pointer-events-none absolute inset-0 opacity-25"></div>
+      <div aria-hidden="true" class="absolute right-0 top-0 hidden h-full w-20 grid-cols-3 lg:grid"><span
+          class="bg-[#e5187e]/85"></span><span class="bg-[#79c143]/85"></span><span class="bg-[#ffd51f]/90"></span>
+      </div>
+      <div
+        class="relative mx-auto grid min-h-[74svh] max-w-[1440px] gap-10 px-5 py-12 sm:py-16 lg:grid-cols-[.94fr_1.06fr] lg:items-center lg:px-8 lg:py-20">
+        <div class="max-w-3xl">
+          <p class="text-xs font-extrabold uppercase tracking-[.22em] text-[#ffd51f]">Expo Sebrae · 22 a 24 de outubro
+          </p>
+          <h1 class="mt-5 font-display text-[clamp(4rem,8.6vw,8.2rem)] font-extrabold uppercase italic leading-[.8]">A
+            Arena vira<br /><span class="text-[#ffd51f]">vitrine de ideias.</span></h1>
+          <p class="mt-7 max-w-2xl text-lg font-medium leading-relaxed text-white/80 sm:text-xl">Negócios, gastronomia,
+            produtos potiguares, hospitalidade e experiências de marca ocupam a Arena das Dunas em uma Expo feita para
+            circular, descobrir e criar conexões.</p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a class="focus-ring inline-flex min-h-14 items-center justify-center bg-[#e5187e] px-7 text-sm font-bold uppercase tracking-[.08em] text-white transition hover:-translate-y-1 hover:bg-white hover:text-[#082f72]"
+              href="#experiencias">Explorar a Expo <i aria-hidden="true" class="ph ph-arrow-down ml-3 text-lg"></i></a>
+            <a class="focus-ring inline-flex min-h-14 items-center justify-center border border-white/35 bg-white/5 px-7 text-sm font-bold uppercase tracking-[.08em] text-white transition hover:bg-white hover:text-[#082f72]"
+              href="#empresas">Quero expor minha marca <i aria-hidden="true"
+                class="ph ph-arrow-down-right ml-3 text-lg"></i></a>
+          </div>
+        </div>
+        <div aria-label="Ambientes da Expo Sebrae" class="relative min-h-[430px] lg:min-h-[560px]">
+          <figure
+            class="absolute left-0 top-[8%] w-[72%] overflow-hidden border border-white/15 bg-white/10 shadow-2xl">
+            <img alt="Visual do espaço de hospitalidade da Expo Sebrae" class="aspect-[4/3] h-full w-full object-cover"
+              fetchpriority="high" src="site-assets/expo-hospitalidade.webp" />
+          </figure>
+          <figure
+            class="absolute bottom-[3%] right-0 w-[58%] overflow-hidden border-[10px] border-[#082f72] bg-white shadow-2xl">
+            <img alt="Visual do espaço Feito Potiguar na Expo Sebrae" class="aspect-[4/3] h-full w-full object-cover"
+              src="site-assets/expo-feito-potiguar.webp" />
+          </figure>
+          <div class="absolute right-[3%] top-[3%] bg-[#ffd51f] px-4 py-3 text-[#082f72] shadow-xl"><span
+              class="font-display text-4xl font-extrabold uppercase italic leading-none">EXPO</span><span
+              class="mt-1 block text-[10px] font-bold uppercase tracking-[.16em]">Arena das Dunas</span></div>
+          <div class="absolute bottom-[8%] left-[2%] bg-[#e5187e] px-4 py-3 text-white shadow-xl"><span
+              class="text-xs font-bold uppercase tracking-[.16em]">///// Negócios em movimento</span></div>
+        </div>
+      </div>
+    </section>
+    <!-- Contexto / descoberta -->
+    <section aria-labelledby="expo-intro-title" class="bg-white py-16 sm:py-20 lg:py-28">
+      <div class="mx-auto max-w-[1200px] px-5 lg:px-8">
+        <div class="grid gap-10 lg:grid-cols-[.9fr_1.1fr] lg:items-end">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-[.18em] text-[#e5187e]">Muito além dos estandes</p>
+            <h2
+              class="mt-4 font-display text-[clamp(3.4rem,6vw,6rem)] font-extrabold uppercase italic leading-[.82] text-[#082f72]"
+              id="expo-intro-title">Um espaço para encontrar, experimentar e permanecer.</h2>
+          </div>
+          <div class="max-w-xl">
+            <p class="text-lg leading-8 text-[#526075]">A Expo integra a experiência da Corrida do Empreendedor durante
+              os três dias na Arena. Cada ambiente aproxima público, empresas, produtos e experiências em uma jornada
+              que continua antes e depois da corrida.</p>
+            <div class="mt-7 grid grid-cols-3 gap-px bg-[#082f72]/10">
+              <div class="bg-[#f6f3ed] p-4 sm:p-5"><span
+                  class="font-display text-4xl font-extrabold text-[#082f72]">3</span><span
+                  class="mt-1 block text-xs font-bold uppercase tracking-[.12em] text-[#657083]">dias na Arena</span>
+              </div>
+              <div class="bg-[#f6f3ed] p-4 sm:p-5"><i aria-hidden="true"
+                  class="ph ph-storefront text-3xl text-[#e5187e]"></i><span
+                  class="mt-3 block text-xs font-bold uppercase tracking-[.12em] text-[#657083]">negócios</span></div>
+              <div class="bg-[#f6f3ed] p-4 sm:p-5"><i aria-hidden="true"
+                  class="ph ph-fork-knife text-3xl text-[#79c143]"></i><span
+                  class="mt-3 block text-xs font-bold uppercase tracking-[.12em] text-[#657083]">gastronomia</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Experiências -->
+    <section aria-labelledby="experiencias-title" class="overflow-hidden bg-[#f6f3ed] py-16 sm:py-20 lg:py-28"
+      id="experiencias">
+      <div class="mx-auto max-w-[1440px] px-5 lg:px-8">
+        <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-[.18em] text-[#e5187e]">Explore a Expo</p>
+            <h2
+              class="mt-4 font-display text-[clamp(3.4rem,6vw,6rem)] font-extrabold uppercase italic leading-[.82] text-[#082f72]"
+              id="experiencias-title">Cada espaço abre uma nova experiência.</h2>
+          </div>
+          <p class="hidden max-w-xl text-lg leading-8 text-[#526075] sm:block">Da hospitalidade aos pequenos negócios,
+            cada área tem uma função própria dentro da jornada. Escolha por onde começar.</p>
+        </div>
+        <div aria-label="Experiências da Expo"
+          class="expo-track mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 lg:grid lg:grid-cols-12 lg:overflow-visible"
+          id="expoTrack">
+          <a class="group relative min-h-[390px] w-[82vw] max-w-[420px] shrink-0 snap-start overflow-hidden bg-[#082f72] text-white sm:w-[56vw] lg:col-span-5 lg:w-auto lg:max-w-none"
+            href="hospitalidade.html">
+            <img alt="Espaço Hospitalidade"
+              class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
+              loading="lazy" src="site-assets/expo-hospitalidade.webp" />
+            <span class="absolute inset-0 bg-gradient-to-t from-[#041a45] via-[#082f72]/25 to-transparent"></span>
+            <span class="relative flex h-full min-h-[390px] flex-col justify-end p-7"><span
+                class="text-xs font-bold uppercase tracking-[.16em] text-[#ffd51f]">Receber e conectar</span><strong
+                class="mt-2 font-display text-5xl font-extrabold uppercase italic leading-none">Hospitalidade</strong><span
+                class="mt-5 inline-flex items-center text-sm font-bold uppercase">Conhecer espaço <i aria-hidden="true"
+                  class="ph ph-arrow-right ml-2 transition group-hover:translate-x-1"></i></span></span>
+          </a>
+          <a class="group relative min-h-[390px] w-[82vw] max-w-[420px] shrink-0 snap-start overflow-hidden bg-[#e5187e] text-white sm:w-[56vw] lg:col-span-4 lg:w-auto lg:max-w-none"
+            href="feito-potiguar.html">
+            <img alt="Espaço Feito Potiguar"
+              class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
+              loading="lazy" src="site-assets/expo-feito-potiguar.webp" />
+            <span class="absolute inset-0 bg-gradient-to-t from-[#601039] via-[#e5187e]/20 to-transparent"></span>
+            <span class="relative flex h-full min-h-[390px] flex-col justify-end p-7"><span
+                class="text-xs font-bold uppercase tracking-[.16em] text-[#ffd51f]">Identidade local</span><strong
+                class="mt-2 font-display text-5xl font-extrabold uppercase italic leading-none">Feito
+                Potiguar</strong><span class="mt-5 inline-flex items-center text-sm font-bold uppercase">Explorar <i
+                  aria-hidden="true"
+                  class="ph ph-arrow-right ml-2 transition group-hover:translate-x-1"></i></span></span>
+          </a>
+          <a class="group relative min-h-[390px] w-[82vw] max-w-[420px] shrink-0 snap-start overflow-hidden bg-[#79c143] text-white sm:w-[56vw] lg:col-span-3 lg:w-auto lg:max-w-none"
+            href="gastronomia.html">
+            <img alt="Espaço de gastronomia"
+              class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
+              loading="lazy" src="site-assets/expo-gastronomia.webp" />
+            <span class="absolute inset-0 bg-gradient-to-t from-[#041a45]/90 via-transparent to-transparent"></span>
+            <span class="relative flex h-full min-h-[390px] flex-col justify-end p-7"><span
+                class="text-xs font-bold uppercase tracking-[.16em] text-[#ffd51f]">Sabores na Arena</span><strong
+                class="mt-2 font-display text-4xl font-extrabold uppercase italic leading-none">Gastronomia</strong><span
+                class="mt-5 inline-flex items-center text-sm font-bold uppercase">Descobrir <i aria-hidden="true"
+                  class="ph ph-arrow-right ml-2 transition group-hover:translate-x-1"></i></span></span>
+          </a>
+          <a class="group relative min-h-[330px] w-[82vw] max-w-[420px] shrink-0 snap-start overflow-hidden bg-white text-white sm:w-[56vw] lg:col-span-7 lg:w-auto lg:max-w-none"
+            href="experiencias-de-marca.html">
+            <img alt="Estandes 3 por 3 para experiências de marca"
+              class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
+              loading="lazy" src="site-assets/expo-estandes.webp" />
+            <span class="absolute inset-0 bg-gradient-to-r from-[#041a45]/95 via-[#082f72]/45 to-transparent"></span>
+            <span class="relative flex h-full min-h-[330px] max-w-xl flex-col justify-end p-7 sm:p-8"><span
+                class="text-xs font-bold uppercase tracking-[.16em] text-[#ffd51f]">Marcas em contato com o
+                público</span><strong
+                class="mt-2 font-display text-5xl font-extrabold uppercase italic leading-none">Estandes e
+                ativações</strong><span class="mt-5 inline-flex items-center text-sm font-bold uppercase">Ver
+                experiências <i aria-hidden="true"
+                  class="ph ph-arrow-right ml-2 transition group-hover:translate-x-1"></i></span></span>
+          </a>
+          <article
+            class="relative min-h-[330px] w-[82vw] max-w-[420px] shrink-0 snap-start overflow-hidden bg-[#082f72] text-white sm:w-[56vw] lg:col-span-5 lg:w-auto lg:max-w-none">
+            <img alt="Camarote Rota da Cerveja" class="absolute inset-0 h-full w-full object-cover" loading="lazy"
+              src="site-assets/expo-rota-cerveja.webp" />
+            <span class="absolute inset-0 bg-gradient-to-t from-[#041a45]/95 via-[#082f72]/15 to-transparent"></span>
+            <span class="relative flex h-full min-h-[330px] flex-col justify-end p-7 sm:p-8"><span
+                class="text-xs font-bold uppercase tracking-[.16em] text-[#79c143]">Convivência</span><strong
+                class="mt-2 font-display text-4xl font-extrabold uppercase italic leading-none">Rota da
+                Cerveja</strong><span class="mt-4 text-base leading-7 text-white/75">Um ambiente integrado à Expo para
+                ampliar a permanência e a experiência na Arena.</span></span>
+          </article>
+        </div>
+        <div class="mt-5 flex items-center justify-between lg:hidden">
+          <p class="text-sm font-medium text-[#657083]">Arraste para explorar os espaços</p>
+          <div aria-label="Navegação das experiências" class="flex gap-2">
+            <button aria-label="Experiência anterior"
+              class="focus-ring grid h-11 w-11 place-items-center border border-[#082f72]/20 bg-white text-[#082f72] disabled:opacity-35"
+              id="expoPrev" type="button"><i aria-hidden="true" class="ph ph-arrow-left"></i></button>
+            <button aria-label="Próxima experiência"
+              class="focus-ring grid h-11 w-11 place-items-center bg-[#082f72] text-white disabled:opacity-35"
+              id="expoNext" type="button"><i aria-hidden="true" class="ph ph-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Jornada nos três dias -->
+    <section aria-labelledby="dias-title" class="bg-white py-16 sm:py-20 lg:py-24">
+      <div class="mx-auto max-w-[1200px] px-5 lg:px-8">
+        <div class="grid gap-8 lg:grid-cols-[.75fr_1.25fr] lg:items-end">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-[.18em] text-[#e5187e]">Três dias na Arena</p>
+            <h2
+              class="mt-4 font-display text-5xl font-extrabold uppercase italic leading-[.84] text-[#082f72] sm:text-6xl"
+              id="dias-title">A Expo acompanha o ritmo do evento.</h2>
+          </div>
+          <p class="hidden max-w-xl text-lg leading-8 text-[#526075] sm:block">A experiência muda ao longo dos dias e se
+            conecta à retirada de kits, às palestras, às atrações e ao pós-corrida.</p>
+        </div>
+        <div class="mt-10 grid gap-px bg-[#082f72]/10 md:grid-cols-3">
+          <a class="group bg-[#f6f3ed] p-6 transition hover:bg-[#082f72] hover:text-white"
+            href="index.html#programacao">
+            <span
+              class="font-display text-6xl font-extrabold leading-none text-[#e5187e] group-hover:text-[#ffd51f]">22</span>
+            <p class="mt-5 text-xs font-bold uppercase tracking-[.16em] text-[#e5187e] group-hover:text-[#ffd51f]">
+              Abertura</p>
+            <p class="mt-2 text-lg font-bold">Expo · Palestras · Kits · Cultura</p>
+            <span class="mt-5 inline-flex items-center text-sm font-bold uppercase">Ver programação <i
+                aria-hidden="true" class="ph ph-arrow-right ml-2"></i></span>
+          </a>
+          <a class="group bg-[#f6f3ed] p-6 transition hover:bg-[#082f72] hover:text-white"
+            href="index.html#programacao">
+            <span
+              class="font-display text-6xl font-extrabold leading-none text-[#082f72] group-hover:text-[#ffd51f]">23</span>
+            <p class="mt-5 text-xs font-bold uppercase tracking-[.16em] text-[#e5187e] group-hover:text-[#ffd51f]">
+              Imersão</p>
+            <p class="mt-2 text-lg font-bold">Expo · Palestras · Kits · Cultura</p>
+            <span class="mt-5 inline-flex items-center text-sm font-bold uppercase">Ver programação <i
+                aria-hidden="true" class="ph ph-arrow-right ml-2"></i></span>
+          </a>
+          <a class="group bg-[#f6f3ed] p-6 transition hover:bg-[#082f72] hover:text-white"
+            href="index.html#programacao">
+            <span
+              class="font-display text-6xl font-extrabold leading-none text-[#79c143] group-hover:text-[#ffd51f]">24</span>
+            <p class="mt-5 text-xs font-bold uppercase tracking-[.16em] text-[#e5187e] group-hover:text-[#ffd51f]">
+              Corrida</p>
+            <p class="mt-2 text-lg font-bold">Pós-corrida com Expo · Atrações</p>
+            <span class="mt-5 inline-flex items-center text-sm font-bold uppercase">Ver programação <i
+                aria-hidden="true" class="ph ph-arrow-right ml-2"></i></span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- B2B / exposição -->
+    <section aria-labelledby="empresas-title" class="overflow-hidden bg-[#082f72] py-16 text-white sm:py-20 lg:py-28"
+      id="empresas">
+      <div class="mx-auto grid max-w-[1440px] gap-10 px-5 lg:grid-cols-[1fr_.9fr] lg:items-center lg:px-8">
+        <div class="max-w-3xl">
+          <p class="text-xs font-bold uppercase tracking-[.18em] text-[#ffd51f]">Sua marca dentro da experiência</p>
+          <h2 class="mt-4 font-display text-[clamp(3.6rem,7vw,7rem)] font-extrabold uppercase italic leading-[.8]"
+            id="empresas-title">Presença que vira<br /><span class="text-[#79c143]">experiência de marca.</span></h2>
+          <p class="mt-6 max-w-2xl text-lg leading-8 text-white/75">A Expo cria espaço para estandes, ativações e
+            relacionamento direto com o público. Uma oportunidade para marcas fazerem parte dos três dias na Arena e se
+            conectarem ao movimento do evento.</p>
+          <a class="focus-ring mt-8 inline-flex min-h-14 items-center justify-center bg-[#ffd51f] px-7 text-sm font-bold uppercase tracking-[.08em] text-[#082f72] transition hover:bg-white"
+            href="mailto:contato@sebraern.com.br?subject=Expo%20Corrida%20do%20Empreendedor%202026">Quero participar
+            como expositor <i aria-hidden="true" class="ph ph-arrow-up-right ml-3 text-lg"></i></a>
+        </div>
+        <figure class="relative min-h-[390px] overflow-hidden border border-white/15">
+          <img alt="Estrutura de estandes da Expo Sebrae" class="absolute inset-0 h-full w-full object-cover"
+            loading="lazy" src="site-assets/expo-estandes.webp" />
+          <span class="absolute inset-0 bg-gradient-to-t from-[#041a45]/90 via-transparent to-transparent"></span>
+          <figcaption class="absolute inset-x-0 bottom-0 p-7">
+            <p class="text-xs font-bold uppercase tracking-[.16em] text-[#ffd51f]">Estandes 3 × 3</p>
+            <p class="mt-2 font-display text-4xl font-extrabold uppercase italic">Sua marca no fluxo da Arena.</p>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+    <!-- Continuidade -->
+    <section aria-label="Continue sua jornada" class="bg-[#f6f3ed] py-14 sm:py-16">
+      <div class="mx-auto max-w-[1100px] px-5 lg:px-8">
+        <div class="grid gap-8 border-y border-[#082f72]/15 py-8 md:grid-cols-[.7fr_1.3fr]">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-[.16em] text-[#e5187e]">Continue pela experiência</p>
+            <h2 class="mt-3 font-display text-4xl font-extrabold uppercase italic leading-[.86] text-[#082f72]">Planeje
+              sua passagem pela Arena.</h2>
+          </div>
+          <div class="divide-y divide-[#082f72]/12">
+            <a class="group flex items-center justify-between gap-5 py-5 text-[#082f72]"
+              href="index.html#programacao"><span><strong class="block text-lg">Programação do evento</strong><span
+                  class="mt-1 block text-base text-[#657083]">Veja o que acontece em cada dia.</span></span><i
+                aria-hidden="true" class="ph ph-arrow-right text-xl transition group-hover:translate-x-1"></i></a>
+            <a class="group flex items-center justify-between gap-5 py-5 text-[#082f72]"
+              href="index.html#palestras"><span><strong class="block text-lg">Palestras</strong><span
+                  class="mt-1 block text-base text-[#657083]">Conheça os nomes e conteúdos da
+                  programação.</span></span><i aria-hidden="true"
+                class="ph ph-arrow-right text-xl transition group-hover:translate-x-1"></i></a>
+            <a class="group flex items-center justify-between gap-5 py-5 text-[#082f72]"
+              href="corrida.html"><span><strong class="block text-lg">Corrida</strong><span
+                  class="mt-1 block text-base text-[#657083]">Escolha entre 5K, 10K e 15K.</span></span><i
+                aria-hidden="true" class="ph ph-arrow-right text-xl transition group-hover:translate-x-1"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="bg-[#061f4e] text-white" data-global-footer="">
+    <div class="mx-auto grid max-w-[1440px] gap-12 px-5 py-14 lg:grid-cols-[1.35fr_.8fr_.95fr] lg:px-8">
+      <div>
+        <div class="inline-flex bg-[#f7f6ef] p-4 [clip-path:polygon(0_0,100%_0,92%_100%,0_100%)]"><img
+            alt="Corrida do Empreendedor" class="w-36" src="site-assets/logo-corrida-empreendedor.png" /></div>
+        <p class="mt-5 max-w-sm text-base leading-7 text-white/65">Três dias de corrida, palestras, Expo Sebrae,
+          cultura, gastronomia, conexões e oportunidades na Arena das Dunas.</p>
+      </div>
+      <div>
+        <p class="text-xs font-bold uppercase tracking-[.16em] text-[#ffd51f]">Explore</p>
+        <nav aria-label="Experiências do evento" class="mt-4 grid gap-3 text-base">
+          <a class="transition hover:text-[#ffd51f]" href="corrida.html">Corrida</a>
+          <a class="transition hover:text-[#ffd51f]" href="index.html#palestras">Palestras</a>
+          <a class="transition hover:text-[#ffd51f]" href="expo.html">Expo</a>
+          <a class="transition hover:text-[#ffd51f]" href="noticias.html">Notícias</a>
+        </nav>
+      </div>
+      <div>
+        <p class="text-xs font-bold uppercase tracking-[.16em] text-[#ffd51f]">Planeje sua experiência</p>
+        <nav aria-label="Informações práticas" class="mt-4 grid gap-3 text-base">
+          <a class="transition hover:text-[#ffd51f]" href="index.html#programacao">Programação</a>
+          <a class="transition hover:text-[#ffd51f]" href="corrida.html#kit">Kit do corredor</a>
+          <a class="transition hover:text-[#ffd51f]" href="index.html#faq">FAQ</a>
+          <a class="transition hover:text-[#ffd51f]"
+            href="https://corridadoempreendedorrn.com.br/wp-content/uploads/2026/07/Regulamento_Corrida-do-Empreendedor_REV-I.pdf"
+            rel="noopener noreferrer" target="_blank">Regulamento <i aria-hidden="true"
+              class="ph ph-arrow-up-right ml-1 text-sm"></i></a>
+        </nav>
+      </div>
+    </div>
+    <div class="border-t border-white/10">
+      <div
+        class="mx-auto flex max-w-[1440px] flex-col gap-3 px-5 py-6 text-sm text-white/55 sm:flex-row sm:items-center sm:justify-between lg:px-8">
+        <p>© 2026 Corrida do Empreendedor · Sebrae RN</p>
+        <p>22—24 outubro · Arena das Dunas · Natal/RN</p>
+      </div>
+    </div>
+  </footer>
+  <!-- Bottom sheet de inscrição mobile -->
+  <dialog class="m-0 mt-auto w-full max-w-none bg-transparent p-0 backdrop:bg-[#041534]/70 lg:hidden"
+    id="registrationDialog">
+    <div
+      class="rounded-t-[28px] bg-white px-5 pb-[calc(env(safe-area-inset-bottom)+24px)] pt-3 text-[#082f72] shadow-2xl">
+      <div aria-hidden="true" class="mx-auto h-1.5 w-12 rounded-full bg-[#082f72]/15"></div>
+      <div class="mt-5 flex items-start justify-between gap-5">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[.16em] text-[#e5187e]">Inscreva-se</p>
+          <h2 class="mt-1 font-display text-4xl font-extrabold uppercase italic">Como você quer participar?</h2>
+        </div><button aria-label="Fechar"
+          class="focus-ring grid h-11 w-11 shrink-0 place-items-center border border-[#082f72]/15"
+          id="closeRegistrationDialog" type="button"><i aria-hidden="true" class="ph ph-x text-xl"></i></button>
+      </div>
+      <div class="mt-6 grid gap-2"><a
+          class="focus-ring flex min-h-20 items-center justify-between bg-[#082f72] p-5 text-white"
+          href="https://horadecorrer.com.br/e/corrida-do-empreendedor-sebraern" rel="noopener noreferrer"
+          target="_blank"><span><strong class="block text-lg">Corrida</strong><span
+              class="mt-1 block text-sm text-white/65">5K · 10K · 15K</span></span><i aria-hidden="true"
+            class="ph ph-arrow-up-right text-2xl"></i></a><a
+          class="focus-ring flex min-h-20 items-center justify-between bg-[#e5187e] p-5 text-white"
+          href="https://horadecorrer.com.br/e/corrida-do-empreendedor-sebraern" rel="noopener noreferrer"
+          target="_blank"><span><strong class="block text-lg">Palestras</strong><span
+              class="mt-1 block text-sm text-white/75">Programação de conteúdo</span></span><i aria-hidden="true"
+            class="ph ph-arrow-up-right text-2xl"></i></a></div>
+    </div>
+  </dialog>
+  <script>
+    (() => {
+      const menuButton = document.getElementById('menuButton');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const menuIcon = document.getElementById('menuIcon');
+      menuButton?.addEventListener('click', () => {
+        const open = menuButton.getAttribute('aria-expanded') === 'true';
+        menuButton.setAttribute('aria-expanded', String(!open));
+        mobileMenu.classList.toggle('hidden', open);
+        menuIcon.className = open ? 'ph ph-list text-xl' : 'ph ph-x text-xl';
+      });
 
-<footer class="bg-[#061f4e] text-white">
-  <div class="mx-auto grid max-w-[1440px] gap-12 px-5 py-16 lg:grid-cols-[1.2fr_.8fr_.8fr_.8fr] lg:px-8">
-    <div>
-      <div class="inline-flex bg-[#f7f6ef] p-4 [clip-path:polygon(0_0,100%_0,92%_100%,0_100%)]"><img src="site-assets/logo-corrida-empreendedor.png" alt="Corrida do Empreendedor" class="w-36"></div>
-      <p class="mt-5 max-w-sm text-base leading-relaxed text-white/65">Três dias de corrida, palestras, Expo Sebrae, cultura, gastronomia, conexões e oportunidades na Arena das Dunas.</p>
-    </div>
-    <div><p class="text-xs font-bold uppercase tracking-[.16em] text-[#ffd51f]">Experiências</p><div class="mt-4 grid gap-3 text-base"><a href="corrida.html">Corrida</a><a href="palestras.html">Palestras</a><a href="expo.html">Expo</a><a href="programacao.html">Programação</a></div></div>
-    <div><p class="text-xs font-bold uppercase tracking-[.16em] text-[#ffd51f]">Informações</p><div class="mt-4 grid gap-3 text-base"><a href="kit.html">Kit</a><a href="local.html">Arena das Dunas</a><a href="faq.html">FAQ</a><a href="regulamento.html">Regulamento</a></div></div>
-    <div><p class="text-xs font-bold uppercase tracking-[.16em] text-[#ffd51f]">Conteúdo</p><div class="mt-4 grid gap-3 text-base"><a href="noticias.html">Notícias</a><a href="empresas.html">Para empresas</a><a href="acessibilidade.html">Acessibilidade</a><a href="privacidade.html">Privacidade</a></div></div>
-  </div>
-  <div class="border-t border-white/10"><div class="mx-auto flex max-w-[1440px] flex-col gap-3 px-5 py-6 text-sm text-white/55 sm:flex-row sm:items-center sm:justify-between lg:px-8"><p>© 2026 Corrida do Empreendedor · Sebrae RN</p><p>22—24 outubro · Arena das Dunas · Natal/RN</p></div></div>
-</footer>
-<script src="site.js"></script>
-</body></html>
+      const regButton = document.getElementById('registrationMenuButton');
+      const regMenu = document.getElementById('registrationMenu');
+      regButton?.addEventListener('click', (event) => {
+        event.stopPropagation();
+        const open = regButton.getAttribute('aria-expanded') === 'true';
+        regButton.setAttribute('aria-expanded', String(!open));
+        regMenu.classList.toggle('hidden', open);
+      });
+      document.addEventListener('click', (event) => {
+        if (regMenu && regButton && !regMenu.contains(event.target) && !regButton.contains(event.target)) {
+          regMenu.classList.add('hidden');
+          regButton.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      const dialog = document.getElementById('registrationDialog');
+      const closeDialog = document.getElementById('closeRegistrationDialog');
+      document.querySelectorAll('[data-open-registration]').forEach(btn => btn.addEventListener('click', () => {
+        mobileMenu?.classList.add('hidden');
+        menuButton?.setAttribute('aria-expanded', 'false');
+        if (menuIcon) menuIcon.className = 'ph ph-list text-xl';
+        dialog?.showModal();
+      }));
+      closeDialog?.addEventListener('click', () => dialog.close());
+      dialog?.addEventListener('click', (e) => { if (e.target === dialog) dialog.close(); });
+
+      const track = document.getElementById('expoTrack');
+      const prev = document.getElementById('expoPrev');
+      const next = document.getElementById('expoNext');
+      const cards = () => [...track.querySelectorAll(':scope > a, :scope > article')];
+      const update = () => {
+        if (!track || !prev || !next) return;
+        prev.disabled = track.scrollLeft <= 8;
+        next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 8;
+      };
+      const scrollCard = (dir) => {
+        const first = cards()[0];
+        if (!first) return;
+        const gap = 16;
+        track.scrollBy({ left: dir * (first.getBoundingClientRect().width + gap), behavior: 'smooth' });
+      };
+      prev?.addEventListener('click', () => scrollCard(-1));
+      next?.addEventListener('click', () => scrollCard(1));
+      track?.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      update();
+    })();
+  </script>
+</body>
+
+</html>
