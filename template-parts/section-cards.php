@@ -22,9 +22,14 @@ $kit_cover       = get_theme_mod('card_kit_img', 'https://via.placeholder.com/40
                     <p class="text-zinc-500 text-sm leading-relaxed mb-8">
                         <?php echo wp_kses_post($percurso_text); ?>
                     </p>
-                    
+
                     <?php if (!$percurso_link_hide) : ?>
-                        <a href="<?php echo esc_url($percurso_url); ?>"  class="flex items-center gap-4 text-xs font-black uppercase tracking-widest color-5km-text group-hover:gap-6 transition-all">
+                        <div class="grid grid-cols-3 gap-4 mt-16 pt-10 border-t border-zinc-100 text-white text-center font-black italic uppercase">
+                            <a href="https://www.mapmyrun.com/routes/view/6748522612" target="_percurso" class="color-5km-text p-4 border"><span class="unskew">5 KM</span></a>
+                            <a href="https://www.mapmyrun.com/routes/view/6748469105" target="_percurso" class="color-5km-text p-4 border"><span class="unskew">10 KM</span></a>
+                            <a href="https://www.mapmyrun.com/routes/view/6748516939" target="_percurso" class="color-5km-text p-4 border"><span class="unskew">15 KM</span></a>
+                        </div>
+                        <a href="<?php echo esc_url($percurso_url); ?>" class="hidden flex items-center gap-4 text-xs font-black uppercase tracking-widest color-5km-text group-hover:gap-6 group-hover:color-15km-text transition-all">
                             Ver detalhes <i class="fas fa-arrow-right"></i>
                         </a>
                     <?php endif; ?>
@@ -38,15 +43,15 @@ $kit_cover       = get_theme_mod('card_kit_img', 'https://via.placeholder.com/40
                         <h3 class="text-4xl font-black italic uppercase mt-2 mb-4 color-5km-text">Kit Atleta</h3>
                     </div>
                     <img src="<?php echo esc_url($kit_cover); ?>" class="h-48 object-contain my-4 transform group-hover:scale-110 transition duration-700">
-   
-                    
-                        <?php if (!$kit_link_hide) : ?>
+
+
+                    <?php if (!$kit_link_hide) : ?>
                         <div class="color-10km-bg text-white w-full py-4 skew-element font-black uppercase italic text-sm">
-                            <a href="<?php echo esc_url($kit_url); ?>"  class="unskew">
+                            <a href="<?php echo esc_url($kit_url); ?>" class="unskew">
                                 Conhecer o Kit
                             </a>
                         </div>
-                        <?php endif; ?>
+                    <?php endif; ?>
 
                 </div>
             </div>
