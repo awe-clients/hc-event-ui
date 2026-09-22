@@ -30,6 +30,9 @@ $image    = get_theme_mod('sobre_image', 'https://via.placeholder.com/800x1200/2
                     <div class="color-5km-bg p-4 skew-element"><span class="unskew">5 KM</span></div>
                     <div class="color-10km-bg p-4 skew-element"><span class="unskew">10 KM</span></div>
                     <div class="color-15km-bg p-4 skew-element"><span class="unskew">15 KM</span></div>
+                    <a href="https://www.mapmyrun.com/routes/view/6748522612" target="_percurso" class="color-5km-bg p-4 skew-element"><span class="unskew">5 KM</span></a>
+                    <a href="https://www.mapmyrun.com/routes/view/6748469105" target="_percurso" class="color-10km-bg p-4 skew-element"><span class="unskew">10 KM</span></a>
+                    <a href="https://www.mapmyrun.com/routes/view/6748516939" target="_percurso" class="color-15km-bg p-4 skew-element"><span class="unskew">15 KM</span></a>
                 </div>
             </div>
 
